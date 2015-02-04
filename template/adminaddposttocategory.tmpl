@@ -1,0 +1,44 @@
+{{define "adminaddposttocategory"}}{{template "adminheader" .}}
+</head>
+
+<body>
+    <div id="cont" class="units-container bckgrnd">
+        {{template "admintop" .}}
+
+
+
+        <div id="main" class="units-row end" style="padding-top:30px;">
+            <div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
+                <div class="unit-row">
+                    <div class="unit-100">
+                        {{if .Error}} Wystąpił błąd: {{.Error}}{{end}}
+                        <form method="post" action="/admin/form/addposttocategory" class="forms">
+                            <fieldset>
+                                <legend>Dodaj treść do kategorii</legend>
+                                
+                                <div class="bckgrnd1" style="margin:10px;padding:15px; text-align:justify;">Możesz tutaj zaimportować element (artykuł, post, wydarzenie) z innej strony poprzez wklejenie adresu tego elementu. Wybierz kategorię, do której ma zostać dodany element, po czym zatwierdź.
+                                    <p>Elementu nie będziesz mógł edytować. Będzie wyświetlany w oryginalnej formie.</p> </div>
+                                
+                                <label>Adres artykułu ({{/*przykład: http://example.com/art/121 lub */}}http://example.com/pic/41):
+                                    <input type="text" class="width-60" name="PostUrl" placeholder="Adres artykułu" {{with .Form.PostUrl}}value="{{.}}" {{end}}/>
+                                </label>
+                                <label>
+                                    Dodaj do kategori:
+                                    <select name="CategoryId" class="width-60">
+                                        {{$forminid := .Form.CategoryId}}
+                                        {{range .Categories}}
+                                            {{if eq .Typeid 0}}
+                                                <option value="{{.Id}}" {{if eq $forminid .Id}}selected="selected" {{end}}>{{.Title}}</option>
+                                            {{end}}
+                                        {{end}}
+                                    </select>
+                                </label>
+                                <p>
+                                    <input class="btn btn-blue" type="submit" value="Wyslij" />
+                                </p>
+                            </fieldset>
+                        </form>
+                    </div></div></div></div>
+
+
+{{template "adminfooter" .}} {{end}}

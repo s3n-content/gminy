@@ -1,0 +1,76 @@
+{{define "admineditsettings"}}{{template "adminheader" .}}
+<style>
+    .formsy {
+        list-style-type: none;
+    }
+    
+    span {
+        display: block;
+        font-size: 14px;
+        text-indent: 5px;
+    }
+    
+    label {
+        font-size: 16px;
+    }
+</style>
+</head>
+
+<body>
+    <div id="cont" class="units-container bckgrnd">
+        {{template "admintop" .}}
+
+
+
+        <div id="main" class="units-row end" style="padding-top:30px;">
+            <div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
+                <div class="unit-row">
+                    <div class="unit-100">
+                        <form method="post" action="/admin/form/editsettings" class="forms">
+                            <input type="hidden" name="Send" value="1" />
+                            <ul class="formsy">
+                                <li>
+                                    <label>Adresy obrazków pojawiających się jako logo u góry strony (zalecana szerokość powyżej 1600px, waga poniżej 200kb). Pamiętaj, nie mogą zawierać spacji i muszą być rozdzielone średnikami ( ; ).
+                                        <textarea id="Images" name="Images" placeholder="Linki do obrazków rozdzielone średnikami...">{{if .Form.Images}}{{.Form.Images}}{{else if .Domain.Images}}{{.Domain.Images}}{{end}}</textarea>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>Adres e-mail znajdujący się w zakładce kontakt.
+                                        <input type="email" name="Email" placeholder="Adres e-mail..." {{if .Form.Email}}value="{{.Form.Email}}" {{else if .Domain.Email}}value="{{.Domain.Email}}" {{end}}/>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="Announcements" {{if .Form.Announcements}}checked="checked" {{else if .Domain.Announcements}}checked="checked"{{end}}/> Włącz/wyłącz moduł ogłoszeń
+                                    </label>
+                                </li>
+
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="Showonfrontpage" {{if .Form.Showonfrontpage}}checked="checked" {{else if .Domain.Showonfrontpage}}checked="checked"{{end}}/> Włącz/wyłącz moduł post na stronie głównej
+                                    </label>
+                                </li>
+
+                            </ul>
+                            <p>
+                                <input class="btn btn-blue" type="submit" value="Wyślij" />
+                            </p>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('body').ready(function () {
+            var str = $('#Images').val();
+            if (str.slice(0, 1) == '[') {
+                var res = str.substring(1, str.length - 1);
+                res = res.replace(/\s+/g, ";");
+                $('#Images').attr('value', res);
+            }
+        });
+    </script>
+    {{template "adminfooter" .}} {{end}}

@@ -1,0 +1,120 @@
+{{define "admincategory"}}{{template "adminheader" .}}
+{{$ThisSiteName := .Domain.Name}}
+<style>
+li button {
+    float:right;
+    margin-left: 8px!important;
+}
+    {{/*li a {
+    color: #fff;   
+}
+li a:hover {
+    color: #Fff;   
+}*/}}
+li .label {
+ margin-left:8px!important;   
+}
+</style>
+</head>
+
+<body>
+    <div id="cont" class="units-container bckgrnd">
+        {{template "admintop" .}}
+
+
+
+        <div id="main" class="units-row end" style="padding-top:30px;">
+            <div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
+                <div class="units-row end">
+                    <nav class="breadcrumbs">
+                        <ul>
+                            <li><a href="/admin">Panel administracyjny</a>
+                            </li>
+                            <li><span>Przeglądaj kategorie</span>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <div class="unit-row">
+                    <div class="unit-100 catego">
+                    <ul>
+{{if .Categories}}
+    {{range .Categories}}
+        {{if eq .Typeid 0}}<a href="/admin/category/{{.Id}}">{{end}}
+            <li class="c{{.Colorid}}">
+                    <span class="label label-black">{{if eq .Typeid 2}}RSS{{else if .Typeid}}WWW{{else}}Kategoria{{end}}</span> {{.Title}}{{/*.Imageurl*/}}
+                <span>
+                    <a href="/admin/form/editcategory/{{.Id}}"><button class="btn btn-small btn-black"><i class="fa fa-edit"></i> Edytuj</button></a> 
+                    <a href="/admin/form/delete/category/{{.Id}}"><button class="btn btn-small btn-black"><i class="fa fa-close"></i> Usuń</button></a>
+                </span>
+            </li>
+        {{if eq .Typeid 0}}</a>{{end}}
+    {{end}}
+                        
+                        
+{{else}}<ul class="insidecategory"> 
+    {{range .Category.Insidecategory}}
+        {{if eq .Typeid 0}}<a href="/admin/category/{{.Id}}">{{end}}
+            <li class="c{{.Colorid}}">
+                    <span class="label label-black">{{if eq .Typeid 2}}RSS{{else if .Typeid}}WWW{{else}}Kategoria{{end}}</span> {{.Title}}{{/*.Imageurl*/}}
+                <span>
+                    <a href="/admin/form/editcategory/{{.Id}}"><button class="btn btn-small btn-black"><i class="fa fa-edit"></i> Edytuj</button></a> 
+                    <a href="/admin/form/delete/category/{{.Id}}"><button class="btn btn-small btn-black"><i class="fa fa-close"></i> Usuń</button></a>
+                </span>
+            </li>
+        {{if eq .Typeid 0}}</a>{{end}}
+                        {{end}}</ul>
+{{end}}
+{{if .PostsInCategory}}
+    Posty w kategori: <br />
+    {{range .PostsInCategory}}
+<a href="/pic/{{.Id}}" class="no-style">
+    <div class="news-1 unit-mobile-100" style="margin-bottom:10px; padding:10px 0 5px 0">
+        <div class="news-badge"><i class="fa fa-chevron-right{{/*if eq .Type 2}}calendar{{else if .Type}}map-marker{{else}}comment{{end*/}}"></i></div>
+        <div class="news-badge-1">
+        <h2>{{.Title}}</h2>
+            {{/*<p style="display:none;">Ogólnopolska Karta Dużej Rodziny. Można już składać wnioski.</p>*/}}
+        </div>
+        <div class="sep"><div class="elems">
+            {{if .Post}}<span>{{.Post.Createdon}}</span>{{end}}{{/*if not .Visible}}<span> | UKRYTY</span>{{end*/}}
+        {{if ne $ThisSiteName .SiteName}}<span> z serwisu: <strong>{{.SiteName}}</strong></span>{{else}} 
+            <a href="/admin/form/editpost/{{.OryginalId}}"><span class="label"><i class="fa fa-edit"></i> Edytuj</span></a> 
+            <a href="/admin/form/delete/post/{{.OryginalId}}"><span class="label"><i class="fa fa-close"></i> Usuń</span></a>{{end}} 
+            <a href="/admin/form/delete/postincategory/{{.OryginalId}}"><span class="label"><i class="fa fa-close"></i> Usuń z kategorii</span></a>
+            </div></div>
+        <div class=""></div>
+    </div>
+</a>    
+                        {{end}}
+{{end}}
+                        </ul>
+                    </div></div>
+                
+                <div class="units-row">
+                    <div class="unit-100 units-centered" style="text-align:center;">
+                        <span class="btn-group ">
+                            {{$id := .Category.Id}}
+                            {{$pid := .PageId}}
+                            {{if eq .PageId 0}}{{else if ne .PageIdMinus -1}}<a href="/admin/category/{{$id}}/{{.PageIdMinus}}"><button class="btn btn-outline pagin">&lt;&lt;</button></a>{{end}}
+                            {{range .PageList}}
+                                {{if eq . $pid}}
+                                    <a href="/admin/category/{{$id}}/{{.}}">
+                            <button class="btn btn-outline btn-active pagin">{{.}}</button></a>
+                                {{else}}
+                                    <a href="/admin/category/{{$id}}/{{.}}">
+                            <button class="btn btn-outline pagin">{{.}}</button></a>
+                                {{end}}
+                            {{end}} 
+                            {{if ne .PageIdPlus -1}}<a href="/admin/category/{{$id}}/{{.PageIdPlus}}"><button class="btn btn-outline pagin">>></button></a>{{end}}
+                            
+                        </span>
+                    </div>
+                </div>
+            
+            
+            
+            
+            </div></div>
+{{template "adminfooter" .}}
+{{end}}

@@ -1,0 +1,267 @@
+{{define "front"}}{{template "header" .}}
+{{/*
+<link rel="stylesheet" href="/assets/less/ext2.css">
+<script>
+    function initialize() {
+        var poland = new google.maps.LatLng(52.168760, 20.816062),
+            pointToMoveTo,
+            first = true,
+            curMarker = new google.maps.Marker({}),
+            $el;
+
+        var mapOptions = {
+            zoom: 8,
+            draggable: false,
+            //center: new google.maps.LatLng(-34.397, 150.644)
+        };
+
+        var map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
+
+        $(".place-list .place-1").mouseenter(function () {
+
+            $el = $(this);
+
+            if (!$el.hasClass("hover")) {
+
+                $(".place-list .place-1").removeClass("hover");
+                $el.addClass("hover");
+
+                if (!first) {
+
+                    // Clear current marker
+                    curMarker.setMap();
+
+                    // Set zoom back to Chicago level
+                    // map.setZoom(10);
+                }
+
+                // Move (pan) map to new location
+                pointToMoveTo = new google.maps.LatLng($el.attr("data-geo-lat"), $el.attr("data-geo-long"));
+                map.panTo(pointToMoveTo);
+                map.setZoom(8);
+
+                // Add new marker
+                curMarker = new google.maps.Marker({
+                    position: pointToMoveTo,
+                    map: map,
+                });
+
+                var contentString = $el.find("h3").html().concat('<br/>').concat($el.find("p").html());
+
+
+                var infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                });
+
+                // On click, zoom map
+                google.maps.event.addListener(curMarker, 'click', function () {
+                    map.setZoom(15);
+                    infowindow.open(map, curMarker);
+                });
+
+                // Fill more info area
+                //$("#more-info")
+                //    .find("h2")
+                //      .html($el.find("h3").html())
+                //      .end()
+                //    .find("p")
+                //      .html($el.find(".longdesc").html());
+
+                // No longer the first time through (re: marker clearing)        
+                first = false;
+            }
+
+        });
+
+        $(".place-list .place-1:first").trigger("mouseenter");
+
+    }
+
+    function loadScript() {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&' +
+            'callback=initialize';
+        document.body.appendChild(script);
+    }
+
+    window.onload = loadScript;
+</script>
+<script>
+    $('body').ready(function () {
+                $('.annontext').replace(/\<(.*?)\>/g, '');
+            }
+</script>*/}}
+</head>
+
+<body>
+    <div id="cont" class="units-container bckgrnd">
+        {{template "top" .}}
+        <div id="main" class="units-row end">
+            <div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
+                <br />
+                <div class="units-row">
+                    <div class="unit-mobile-100 catego">
+                        <ul>
+                            <a href="search">
+                                <li class="c10">
+                                    <div style="display:inline-block;float:left;padding: 8px 14px 8px 0;"><span class="fa-stack fa-lg">
+<i class="fa fa-circle fa-stack-2x" style="color:#111;"></i>
+<i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
+</span>
+                                    </div>
+                                    <div style="display:inline-block">
+                                        <p style="font-weight:400;font-size:28px;margin: 0;padding: 0;">Gdzie najbliżej?</p>
+                                    </div>
+                                    <div style="display:block">
+                                        <p style="font-size: 20px;margin: 0;">Znajdź interesujące Ciebie obiekty w Twojej okolicy</p>
+                                    </div>
+                                </li>
+                            </a>
+                            {{range .Categories}} {{if .Visible}}
+                            <a href="/{{if eq .Typeid 2}}rss/{{.Id}}">{{else if eq .Typeid 1}}url/{{.Id}}" target="_blank">{{else}}cat/{{.Id}}">{{end}}
+                                <li class="c{{.Colorid}}">{{.Title}}{{/*.Imageurl*/}}</li>
+                            </a>
+                            {{if .Insidecategory}}
+                            <ul class="insidecategory">
+                                {{range .Insidecategory}} {{if .Visible}}
+                                <a href="/{{if eq .Typeid 2}}rss/{{.Id}}">{{else if eq .Typeid 1}}url/{{.Id}}" target="_blank">{{else}}cat/{{.Id}}">{{end}}
+                                    <li class="c{{.Colorid}}">{{.Title}}{{/*.Imageurl*/}}</li>
+                                </a>
+                                {{end}} {{end}}
+                            </ul> {{end}} {{end}} {{end}} 
+                            {{if .Domain.Showonfrontpage}}
+                            
+                            
+                            {{if and .postinfrontpage (ne .postinfrontpage.Id 0)}}
+                            <a href="{{.postinfrontpage.Adres}}">
+                                <li class="{{if eq .postinfrontpage.Type 2}}c5{{else if .postinfrontpage.Type}}c18{{else}}c6{{end}}">
+                                    <div style="display:inline-block;float:left;padding: 8px 14px 8px 0;"><span class="fa-stack fa-lg">
+<i class="fa fa-circle fa-stack-2x" style="color:#fff;"></i>
+                                        {{if eq .postinfrontpage.Type 2}}<i class="fa fa-calendar fa-stack-1x fa-inverse" style="color:#673ab7"></i>{{else if .postinfrontpage.Type}}<i class="fa fa-map-marker fa-stack-1x fa-inverse" style="color:#607d8b;"></i>{{else}}<i class="fa fa-comment fa-stack-1x fa-inverse" style="color:#3f51b5"></i>{{end}}
+</span> 
+                                    </div>
+                                    <div style="display:inline-block">
+                                        <p style="font-weight:400;font-size:28px;margin: 0;padding: 0;">{{.postinfrontpage.Title}}</p>
+                                    </div>
+                                    <div style="display:block">
+                                        <p style="font-size: 20px;margin: 0;">{{if eq .postinfrontpage.Type 2}}{{if eq .postinfrontpage.Eventtime .postinfrontpage.Eventtime}}Odbędzie się: {{.postinfrontpage.Eventtime}}{{else}}Trwa od {{.postinfrontpage.Eventtime}} do {{.postinfrontpage.Eventtimeend}}{{end}}{{else if .postinfrontpage.Type}}Adres: {{.postinfrontpage.Address}}{{else}}Kliknij tutaj, aby przejść do artykułu.{{end}}</p>
+                                    </div>
+                                </li>
+                            </a>
+                            {{end}}{{end}}
+
+                        </ul>
+                    </div>
+                </div>
+                {{if .Domain.Announcements}}
+                {{if .announcements}}
+                <div class="units-row anndiv bckgrnd1">
+                    <div class="unit-mobile-100 purple-800 announcementshead">
+                        Ogłoszenia
+                    </div>
+
+                    <div class="unit-mobile-100">
+                        <ul class="announcements">
+                            {{/*<li>
+                                <div class="units-row">
+                                    <div class="ellipsis unit-15" style="float:left;"><strong>Tytuł</strong></div>
+                                    <div class="ellipsis unit-85 end" style="float:right;"><strong>Treść</strong></div>
+                                </div>
+                            </li>*/}}
+                            {{range .announcements}}
+                            <li><a href="/li1/{{.Id}}" class="no-style">
+                                <div class="units-row">
+                                    <div class="ellipsis unit-15" style="float:left;"><i class="fa fa-chevron-circle-right" style="margin-right:8px;"></i> {{.Title}}</div>
+                                    <div class="ellipsis unit-80 end" style="float:right;">{{.Text}}</div>
+                                </div>
+                                </a>
+                            </li>
+                            {{end}}
+                            <li style="text-align:center;"><a href="/li1">Zobacz więcej...</a></li>
+                        </ul>
+                    </div>
+                </div>{{else}}
+                <div class="units-row">
+                    <div class="unit-mobile-100 catego">
+                        <ul>
+                            <a href="/li1">
+                                <li class="c9"><i class="fa fa-chevron-right"></i> Ogłoszenia</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                {{end}}{{end}}
+                
+                {{/*
+
+                <!--<div class="units-row ">
+                    <div class="unit-mobile-100 artic" style="padding-top:20px;">
+                        <div class="unit-50 bckgrnd2" style="padding:20px;">
+                            <img src="http://lorempixel.com/200/100/" class="bckgrnd2" style="float:left; margin: 10px 20px;">
+                            <h3>Mauris aliquet malesuada</h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet malesuada feugiat. Curabitur fermentum bibendum nulla, non dictum ipsum tincidunt non. Quisque convallis pharetra tempor. Donec id pretium leo. Pellentesque luctus massa non elit viverra pellentesque. Cras vitae neque molestie, rhoncus ipsum sit amet, lobortis dui. Fusce in urna sem. Vivamus vehicula dignissim augue et scelerisque. Etiam quam nisi, molestie ac dolor in, tincidunt tincidunt arcu. Praesent sed justo finibus, fringilla velit quis, porta erat. Donec blandit metus ut arcu iaculis iaculis. Cras nec dolor fringilla justo ullamcorper auctor. Aliquam eget pretium velit. Morbi urna justo, pulvinar id lobortis in, aliquet placerat orci. <a href="#">&raquo; Przeczytaj pełny artykuł...</a>
+                        </div>
+                        <div class="unit-50 bckgrnd2" style="padding:20px;text-align:justify">
+                            <img src="http://lorempixel.com/140/200/" class="bckgrnd2" style="float:left; margin: 10px 20px;">
+                            <h2>Cras vitae</h2>neque molestie, rhoncus ipsum sit amet, lobortis dui. Fusce in urna sem. Vivamus vehicula dignissim augue et scelerisque. Etiam quam nisi, molestie ac dolor in, tincidunt tincidunt arcu. Praesent sed justo finibus, fringilla velit quis, porta erat. Donec blandit metus ut arcu iaculis iaculis. Cras nec dolor fringilla justo ullamcorper auctor. Aliquam eget pretium velit. Morbi urna justo, pulvinar id lobortis in, aliquet placerat orci. <a href="#">&raquo; Przeczytaj pełny artykuł...</a>
+                        </div>
+                    </div>
+                </div>-->
+
+                <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+                <!--<div class="units-row end">
+                    <div class="unit-100 bckgrnd1" style="background:#004D40;width:100%;margin:0;padding:0;">
+                        <p style="text-align:center;font-size: 22px;font-weight:500;padding:10px 0;color:#fff;">Nowe miejsca i obiekty</p>
+                    </div>
+                    <a id="mapa" name="mapa"></a>
+                </div>
+                <div class="units-row end">
+                    <div class="unit-60">
+                        <div id="map-canvas"></div>
+                    </div>
+                    <div class="unit-40">
+                        <div class="place-list">
+                            <div class="place-1" data-geo-lat="53.118181" data-geo-long="23.149628" data-geo-zoom="16">
+                                <a href="#"><i class="fa fa-chevron-right"></i></a>
+                                <h3>Politechnika Białostocka</h3>
+                                <p><small>Kategoria:</small>  <i class="fa fa-truck"></i>, <i class="fa fa-tags"></i> 
+                                    <br/>
+                                    <small>Lokalizacja:</small> Białystok, 15-001</p>
+                            </div>
+                            <div class="place-1" data-geo-lat="52.622918" data-geo-long="20.376180" data-geo-zoom="14">
+                                <a href="#"><i class="fa fa-chevron-right"></i></a>
+                                <h3>Postój taksówek przy Pałacu</h3>
+                                <p><small>Kategoria:</small>  <i class="fa fa-taxi"></i>, <i class="fa fa-users"></i> 
+                                    <br/>
+                                    <small>Lokalizacja:</small> Płońsk, 38-200</p>
+                            </div>
+                            <div class="place-1" data-geo-lat="52.228943" data-geo-long="21.011756" data-geo-zoom="16">
+                                <a href="#"><i class="fa fa-chevron-right"></i></a>
+                                <h3>Dworzec Centralny</h3>
+                                <p><small>Kategoria:</small>  <i class="fa fa-users"></i> 
+                                    <br/>
+                                    <small>Lokalizacja:</small> Warszawa, 01-120</p>
+                            </div>
+                            <div class="place-1" data-geo-lat="43.508284" data-geo-long="16.439900" data-geo-zoom="15">
+                                <a href="#"><i class="fa fa-chevron-right"></i></a>
+                                <h3>Pomnik przyrody</h3>
+                                <p><small>Kategoria:</small>  <i class="fa fa-tree"></i>, <i class="fa fa-heart"></i>, <i class="fa fa-shopping-cart"></i> 
+                                    <br/>
+                                    <small>Lokalizacja:</small> Split, Chorwacja</p>
+                            </div>
+                        </div>
+                        <div style="text-align:center;">
+
+                            <span class="btn-group btn-group-sm">
+                                <button class="btn btn-outline">&lt;&lt;</button>
+                                <button class="btn btn-outline btn-active">{{.PageList}}</button>
+                                <button class="btn btn-outline">>></button>
+                            </span> 
+                        </div>
+                    </div>
+                </div>-->*/}}
+            </div>
+        </div>
+        <!-- end of main -->
+        {{template "footer" .}} {{end}}

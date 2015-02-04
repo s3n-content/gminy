@@ -1,0 +1,50 @@
+{{define "qrform"}}{{template "header"}}
+
+
+</head>
+
+<body>
+    <div id="cont" class="units-container bckgrnd">
+        {{template "top" .}}
+
+        <div id="main" class="units-row end">
+            <div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
+                <div class="units-row end">
+                    <nav class="breadcrumbs">
+                        <ul>
+                            <li><a href="/">Strona główna</a>
+                            </li>
+                            <li><span>Skanuj kod QR</span>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="units-row end">
+
+                     <section class="styleguide__featured-section">
+                        <div class="featured-section">
+                            <div class="container-medium">
+                                        <div class="container-small">
+                                            <div class="featured-list__content g--half">
+                                                <h3>Dekodowanie kodów QR</h3>
+                                                <!--Znalazłeś kod i interesuje Ciebie co pod nim się kryje? Nie posiadasz jednak specjalnej aplikacji, bądź telefon nie daje Ci takich możliwości?--><p>Skorzystaj z naszego narzędzia do dekodowania kodów QR.<br/>Zrób zdjęcie kodu, po czym wybierz je z galerii klikając przycisk poniżej "wybierz plik", a my powiemy Ci co kryje kod!</p>
+                                            </div>
+                                            <div class="g-medium--full g-wide--full" style="clear:both;margin-top:30px; padding-left:30px;background:#f0f0f0">
+                                                <div class="styleguide__inverted-block">
+                                                    <form method="post" action="/qr/result"  enctype="multipart/form-data">
+                                                        <input id="plik" type="file" name="image0" />
+                                                        <input type="submit" value="Wyślij plik" class="button--primary" />
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{{template "footer"}}
+{{end}}

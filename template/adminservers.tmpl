@@ -1,0 +1,42 @@
+{{define "adminservers"}}{{template "adminheader" .}}
+</head>
+
+<body>
+    <div id="cont" class="units-container bckgrnd">
+        {{template "admintop" .}}
+
+
+
+        <div id="main" class="units-row end" style="padding-top:30px;">
+            <div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
+                <div class="unit-row">
+                    <div class="unit-100">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Adres</th>
+                                    <th>Czy pobierać dane z 'Gdzie najbliżej'?</th>
+                                    <th>Opcje</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{range .Servers}} 
+                                    {{if ne .Id 1}}
+                                <tr>
+                                    <td>{{.Address}}</td>
+                                    <td>{{if .GetLocationData}}TAK{{else}}NIE{{end}}</td>
+                                    <td>
+                                        <a href="/admin/form/adddomain/{{.Id}}">Dodaj domene </a><br/>
+                                        <a href="/admin/form/adduser/{{.Id}}">Dodaj użytkownika</a><br/>
+                                        <a href="/admin/form/togglelocationdata/{{.Id}}">{{if .GetLocationData}}Wyłącz{{else}}Włącz{{end}} pobieranie danych z 'Gdzie najbliżej'</a>
+                                    </td>
+                                </tr>
+                                    {{end}}
+                                {{end}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{template "adminfooter" .}} {{end}}

@@ -1,0 +1,52 @@
+{{define "adminaddsubscription"}}{{template "adminheader" .}}
+</head>
+
+<body>
+    <div id="cont" class="units-container bckgrnd">
+        {{template "admintop" .}}
+
+
+
+        <div id="main" class="units-row end" style="padding-top:30px;">
+            <div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
+                <div class="unit-row">
+                    <div class="unit-100">
+
+                        {{if .Error}} Wystąpił błąd: {{.Error}}
+                        <br /> {{end}}
+                        <form method="post" action="/admin/form/addsubscription" class="forms">
+                            <fieldset>
+                                <legend>Dodaj subskrypcje</legend>
+                                {{/* moze potem przerobie na pobieranie z serwera glownego */}}
+                                <div class="bckgrnd1" style="margin:10px;padding:15px;text-align:justify;">Możesz tutaj zdefiniować stronę, z której chcesz pobierać informacje. Podaj adres, wybierz kategorię z innej strony, a także kategorię w Twoim serwisie, do której dane mają być importowane.<br/>Dane są tylko kopiowane, nie można zmieniać ich zawartości.</div>
+                                <label>Podaj adres strony, z której chcesz importować treści
+                                    <input type="text" name="Address" placeholder="http://mojastrona.pl" {{with .Form.Address}}value="{{.}}" {{end}}/>
+                                </label>
+                                {{if and .CategoriesTo .CategoriesSub}}
+                                <label>Wybierz, <strong>z której</strong> kategorii mają być importowane dane:
+                                    <select name="CategorySubId">
+                                        {{$formcatsubid := .Form.CategorySubId}} {{range .CategoriesSub}} {{if .Visible}}
+                                        <option value="{{.Id}}" {{if eq $formcatsubid .Id}}selected="selected" {{end}}>{{.Title}}</option>
+                                        {{end}} {{end}}
+                                    </select>
+                                    </label>
+                                        <label>
+                                            Wybierz, <strong>do której</strong> kategorii mają być importowane dane:
+                                            <select name="CategoryToId">
+                                                {{$formcattoid := .Form.CategoryToId}} {{range .CategoriesTo}} {{if .Visible}}
+                                                <option value="{{.Id}}" {{if eq $formcattoid .Id}}selected="selected" {{end}}>{{.Title}}</option>
+                                                {{end}} {{end}}
+                                            </select>
+                                        </label>
+                                        {{end}}
+                                        <p>
+                                            <input class="btn btn-blue" type="submit" value="Wyślij" />
+                                        </p>
+                                </label>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{template "adminfooter" .}} {{end}}

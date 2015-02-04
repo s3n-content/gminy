@@ -1,0 +1,65 @@
+{{define "adminfront"}}{{template "adminheader" .}}
+</head>
+
+<body>
+    <div id="cont" class="units-container bckgrnd">
+        {{template "admintop" .}}
+
+
+
+        <div id="main" class="units-row end" style="padding-top:90px;">
+            <div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
+                <div class="unit-row">
+                    <div class="unit-100">
+                        <ul class="blocks-4 a-menu">
+                            {{if ge .User.admintype 1}}
+                            <li class="teal-700">
+                                <a href="/admin/category">
+                                    <i class="fa fa-bars fa-2x"></i><p>Przeglądaj treści i kategorie</p></a>
+                                </li>
+                            <li class="yellow-900"><a href="/admin/form/addpost">
+                                <i class="fa fa-plus fa-2x"></i><p>Dodaj treść</p>
+                                </a>
+                            </li>
+                            <li class="lime-800">
+                                <a href="/admin/announcements">
+                                    <i class="fa fa-plus fa-2x"></i><p>Wyświetl i dodaj ogłoszenie</p></a>
+                                </li>
+                            {{end}} {{if ge .User.admintype 2}}
+                            <li class="red-700">
+                                <a href="/admin/form/addposttocategory">
+                                    <i class="fa fa-plus fa-2x"></i><p>Dodaj treść do kategorii</p></a>
+                            </li>
+                            <li class="green-700">
+                                <a href="/admin/form/addcategory">
+                                    <i class="fa fa-plus fa-2x"></i><p>Dodaj kategorie</p></a>
+                            </li>
+                            {{end}} {{if ge .User.admintype 3}}
+                            <li class="blue-700">
+                                <a href="/admin/subscriptions">
+                                    <i class="fa fa-globe fa-2x"></i><p>Przeglądaj subskrypcje</p></a>
+                                </li>
+                            <li class="blue-700">
+                                <a href="/admin/form/addsubscription">
+                                    <i class="fa fa-globe fa-2x"></i><p>Dodaj subskrypcje</p></a>
+                            </li>
+                            <li class="purple-700">
+                                <a href="/admin/servers">
+                                    <i class="fa fa-wrench fa-2x"></i><p>Zmień ustawienia serwerów</p></a>
+                            </li>
+                            <li class="purple-500">
+                                <a href="/admin/form/editsettings">
+                                    <i class="fa fa-wrench fa-2x"></i><p>Ustawienia <strong>tego</strong> serwera</p></a>
+                            </li>
+                            {{end}} {{if ge .User.admintype 4}}
+                            <li class="purple-800">
+                                <a href="/admin/queue">
+                                    <i class="fa fa-wrench fa-2x"></i><p>Wyświetl kolejkę akcji</p></a>
+                                </li>
+                            {{end}}
+                        </ul>
+                    </div>
+
+                </div></div></div></div>
+
+{{template "adminfooter" .}} {{end}}

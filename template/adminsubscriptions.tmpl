@@ -1,0 +1,78 @@
+{{define "adminsubscriptions"}}{{template "adminheader" .}}
+<style>
+    a:hover {
+        text-decoration: underline;
+    }
+    
+    .badge {
+        font-size: 15px;
+        padding: 3px 6px;
+        border-radius: 5px;
+        background: #eee;
+    }
+</style>
+</head>
+
+<body>
+    <div id="cont" class="units-container bckgrnd">
+        {{template "admintop" .}}
+
+
+
+        <div id="main" class="units-row end" style="padding-top:30px;">
+            <div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
+                <div class="units-row end">
+                    <nav class="breadcrumbs">
+                        <ul>
+                            <li><a href="/admin">Panel administracyjny</a>
+                            </li>
+                            <li><span>Wyświetl subskrypcje</span>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="unit-row">
+                    <div class="unit-100">
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Adres</th>
+                                    <th>z</th>
+                                    <th>do</th>
+                                    <th>Ostatnia zmiana (ID)</th>
+                                    <th>Ostatnia zmiana (data)</th>
+                                    <th>Opcje</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {{range .Subscriptions}}
+                                <tr>
+                                    <td>{{.Address}}</td>
+                                    <td>{{.Categorysubid}}</td>
+                                    <td>{{.Categorytoid}}</td>
+                                    <td>{{.Lastchangeid}}</td>
+                                    <td>{{.Lastupdate}}</td>
+                                    <td>
+                                        <a href="/admin/form/delete/subscription/{{.Id}}" class="no-style"><i class="fa fa-times"></i> Usuń</a>
+                                    </td>
+                                </tr>
+                                {{end}}
+                            </tbody>
+                        </table>
+
+                        {{/*<ul>
+                            <li>adres | z | do | ostatnia zmiana id | ostatnia zmiana czas</li>
+                            {{range .Subscriptions}}
+                            <li> | {{.Categorysubid}} | {{.Categorytoid}} | {{.Lastchangeid}} | {{.Lastupdate}} |
+                                <a href="/admin/form/delete/subscription/{{.Id}}"><i class="fa fa-times"></i>Usuń</a>
+                            </li>
+                            {{end}}
+                        </ul>*/}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{template "footer"}} {{end}}

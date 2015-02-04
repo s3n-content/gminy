@@ -1,0 +1,30 @@
+{{define "contact"}}{{template "header" .}}
+
+
+</head>
+
+<body>
+    <div id="cont" class="units-container bckgrnd">
+        {{template "top" .}}
+        <div id="main" class="units-row end">
+            <div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
+                <div class="units-row end">
+                    <nav class="breadcrumbs">
+                        <ul>
+                            <li><a href="/">Strona główna</a>
+                            </li>
+                            <li><span>Kontakt</span>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="units-row">
+                    <div class="unit-40 unit-centered bckgrnd2 blue-500" style="padding: 50px 40px 60px 40px;">
+                        <i class="fa fa-envelope-o fa-5x" style="position:relative;float:left;margin-right:10px;margin-top:-19px;"></i> <h2 style="color: rgba(255,255,255,0.9);">Skontaktuj się.</h4>
+                        <h4 style="color: rgba(255,255,255,0.9);  clear: both;  padding-top: 10px;">Adres e-mail: {{.Domain.Email}}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{template "footer" .}}{{end}}

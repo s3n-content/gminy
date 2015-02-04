@@ -1,0 +1,48 @@
+{{define "searchinfo"}} {{template "header" .}}
+
+
+
+
+</head>
+
+<body>
+    <div id="cont" class="units-container bckgrnd">
+        {{template "top" .}}
+
+        <div id="main" class="units-row end">
+            <div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
+                <div class="units-row end">
+                    <nav class="breadcrumbs">
+                        <ul>
+                            <li><a href="/">Strona główna</a>
+                            </li>
+                            <li><a href="/search">Gdzie najbliżej</a>
+                            </li>
+                            <li><span>Ustaw swoją lokalizację</span>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="units-row end">
+                    <a href="/searchset">
+                        <div class="unit-100 bckgrnd1" style="background:#ffd45b;">
+                            <p class="big sipbig"><i class="fa fa-question fa-4x" style="position:relative;float:left;margin-right:10px;margin-top:-19px;"></i> Podaj nam swoją lokalizację byśmy mogli znaleźć najbliżej znajdujące się obiekty... <strong>Kliknij tutaj</strong>.</p>
+                        </div>
+                    </a>
+                    <div class="unit-row end">
+                        <div class="unit-100 bckgrnd1 sipbigbtn">
+                            <div class="unit-mobile-100"><a href="/searchauto{{if .b}}?b={{.b}}{{end}}" class="btn btn-yellow" style="font-size:24px;padding:20px;width:100%;">Automatycznie z pomocą GPS/A-GPS</a>
+                            </div>
+                            <div class="unit-mobile-100"><a href="/searchset{{if .b}}?b={{.b}}{{end}}" class="btn btn-red" style="font-size:24px;padding:20px;width:100%;"><i class="fa fa-angle-right"></i> Ręcznie ustal pozycje na mapie</a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+            {{template "footer" .}} {{end}}

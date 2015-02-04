@@ -1,0 +1,96 @@
+{{define "search"}} {{template "header"}}
+
+
+
+
+</head>
+
+<body>
+    <div id="cont" class="units-container bckgrnd">
+        {{template "top" .}}
+        
+        <div id="main" class="units-row end">
+            <div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
+                <div class="units-row end">
+                    <nav class="breadcrumbs">
+                        <ul>
+                            <li><a href="/">Strona główna</a>
+                            </li>
+                            <li><span>Gdzie najbliżej</span>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="units-row end">
+                    {{if .localizationset}}
+                    <div class="width-mobile-100 catego">
+                        <ul style="margin: 0;">
+                            <li class="" style="text-align:center;font-weight:700;">Gdzie najbliżej...</li>
+                            <a href="/search/wydarzenie">
+                                <li class="light-blue-500"><span class="fa-stack fa-lg">
+                                      <i class="fa fa-circle fa-stack-2x" style="color:#111;"></i>
+                                      <i class="fa fa-calendar fa-stack-1x fa-inverse"></i>
+                                    </span> ...coś się dzieje</li>
+                            </a>
+                            <a href="/search/nocleg">
+                                <li class="cyan-500"><span class="fa-stack fa-lg">
+                                      <i class="fa fa-circle fa-stack-2x" style="color:#111;"></i>
+                                      <i class="fa fa-home fa-stack-1x fa-inverse"></i>
+                                    </span> ...znajdę nocleg
+                                </li>
+                            </a>
+                            <a href="/search/zjem">
+                                <li class="green-500"><span class="fa-stack fa-lg">
+                                      <i class="fa fa-circle fa-stack-2x" style="color:#111;"></i>
+                                      <i class="fa fa-cutlery fa-stack-1x fa-inverse"></i>
+                                    </span> ...coś zjem</li>
+                            </a>
+                            <a href="/search/stacja">
+                                <li class="green-900"><span class="fa-stack fa-lg">
+                                      <i class="fa fa-circle fa-stack-2x" style="color:#111;"></i>
+                                      <i class="fa fa-truck fa-stack-1x fa-inverse"></i>
+                                    </span> ...stacja benzynowa</li>
+                            </a>
+                            <a href="/search/poi">
+                                <li class="red-900"><span class="fa-stack fa-lg">
+                                      <i class="fa fa-circle fa-stack-2x" style="color:#111;"></i>
+                                      <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
+                                    </span> ...miejsce użyteczności publicznej</li>
+                            </a>
+                            <a href="/search/atrakcje">
+                                <li class="blue-grey-700"><span class="fa-stack fa-lg">
+                                      <i class="fa fa-circle fa-stack-2x" style="color:#111;"></i>
+                                      <i class="fa fa-picture-o fa-stack-1x fa-inverse"></i>
+                                    </span> ...atrakcje turystyczne</li>
+                            </a>
+                            <a href="/searchinfo">
+                                <li class="orange-700"><span class="fa-stack fa-lg">
+                                      <i class="fa fa-circle fa-stack-2x" style="color:#111;"></i>
+                                      <i class="fa fa-compass fa-stack-1x fa-inverse"></i>
+                                    </span> ...zaktualizuj swoją pozycję</li>
+                            </a>
+                        </ul>
+                    </div>
+
+                    {{else}}
+
+                    <a href="/searchset">
+                        <div class="g-medium--full g-wide--full" style="background:#ffd45b;">
+                            <p class="large" style=" color:#404040; padding: 25px 25px 25px 5px;"><i class="fa fa-question fa-4x" style="position:relative;float:left; margin-right: 10px"></i> Podaj nam swoją lokalizację byśmy mogli znaleźć najbliżej znajdujące się obiekty... <strong>Kliknij tutaj</strong>.</p>
+                        </div>
+                    </a>
+                    <div class="unit-row end">
+                        <div class="unit-100 bckgrnd1">
+                            <div class="unit-mobile-50"><a href="/searchauto{{if .b}}?b={{.b}}{{end}}" class="btn btn-yellow" style="font-size:24px;padding:20px;width:100%;">Automatycznie z pomocą GPS/A-GPS</a>
+                            </div>
+                            <div class="unit-mobile-50"><a href="/searchset{{if .b}}?b={{.b}}{{end}}" class="btn btn-red" style="font-size:24px;padding:20px;width:100%;"><i class="fa fa-angle-right"></i> Ręcznie ustal pozycje na mapie</a>
+                            </div>
+
+                        </div>
+                    </div>
+                    {{end}}
+
+                </div>
+            </div>
+
+            {{template "footer"}} {{end}}

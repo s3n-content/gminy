@@ -1,0 +1,44 @@
+{{define "searchgoogle"}}
+{{template "header" .}}
+<style>
+*, *:before, *:after {
+  -webkit-box-sizing: initial;
+  -moz-box-sizing: initial;
+  box-sizing: initial;
+}
+input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus {
+    line-height: 0;
+}
+table.gsc-search-box td {
+  vertical-align: middle;
+  padding: 1px 0;
+}
+table th, table td {
+  border-bottom: none;
+}
+</style>
+</head>
+<body>
+        <div id="cont" class="units-container bckgrnd">
+        {{template "top" .}}
+        <div id="main" class="units-row end">
+            <div class="unit-centered unit-80 bckgrnd5">
+
+<script>
+  (function() {
+    var cx = '006164692008574366715:dyznu5ppyt0';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+
+            </div></div></div>
+
+{{template "footer" .}}
+{{end}}

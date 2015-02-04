@@ -1,0 +1,91 @@
+{{define "adminaddpostnews"}}
+{{if .Error}} Wystąpił błąd: {{.Error}} {{end}}
+                        <form method="post" action="/admin/form/addpost" class="forms">
+                                <input type="hidden" name="Type" placeholder="typ int" value="0"/>
+                            <label>
+                                Tytuł
+                                <input class="width-60" type="text" name="Title" placeholder="title" {{with .Form.Title}}value="{{.}}" {{end}}/>
+
+                            </label>
+                            <label>
+                                Treść
+                                <input class="width-60" type="text" name="Text" placeholder="text" {{with .Form.Text}}value="{{.}}" {{end}}/>
+
+                            </label>
+                            <label>
+                                Tagi
+                                <input class="width-60" type="text" name="Tags" placeholder=",tags,tags,tags," {{with .Form.Tags}}value="{{.}}" {{end}}/>
+
+                            </label>
+                            <label>
+                                Lokalizacja
+                                <input class="width-50" type="checkbox" name="Locationset boolean" {{with .Form.Locationset}}value="{{.}}" {{end}}/>
+                            </label>
+                            <label>lat
+                                <input class="width-50" type="text" name="Locationlat" placeholder="Locationlat float" {{with .Form.Locationlat}}value="{{.}}" {{end}}/>
+                            </label>
+                            <label>lng
+                                <input class="width-50" type="text" name="Locationlng" placeholder="Locationlng float" {{with .Form.Locationlng}}value="{{.}}" {{end}}/>
+                            </label>
+                            <label>
+                                Adres obrazka
+                                <input class="width-60" type="text" name="Imageurl" placeholder="Imageurl" {{with .Form.Imageurl}}value="{{.}}" {{end}}/>
+
+                                <label>
+                                    Numer telefonu
+                                    <input class="width-60" type="text" name="Telephone" placeholder="Telephone int" {{with .Form.Telephone}}value="{{.}}" {{end}}/>
+
+                                    <label>
+                                        Informacje kontaktowe
+                                        <input class="width-60" type="text" name="Contact" placeholder="Contact string" {{with .Form.Contact}}value="{{.}}" {{end}}/>
+
+                                        <label>
+                                            Dodatkowe informacje
+                                            <input class="width-60" type="text" name="Moreinformations" placeholder="Moreinformations string" {{with .Form.Moreinformations}}value="{{.}}" {{end}}/>
+
+                                            <label>
+                                                Adres
+                                                <input class="width-60" type="text" name="Address" placeholder="Address string" {{with .Form.Address}}value="{{.}}" {{end}}/>
+
+                                            </label>
+                                            <label>
+                                                Źródło
+                                                <input class="width-60" type="text" name="Source" placeholder="Source string" {{with .Form.Source}}value="{{.}}" {{end}}/>
+
+                                            </label>
+                                            <label>
+                                                Mapscript
+                                                <input class="width-60" type="text" name="Mapscript" placeholder="Mapscript string" {{with .Form.Mapscript}}value="{{.}}" {{end}}/>
+
+                                            </label>
+                                            <label>
+                                                Widoczność
+                                                <input class="width-60" type="checkbox" name="Visible" {{with .Form.Visible}}value="{{.}}" {{end}}/>Visible
+
+                                            </label>
+                                            <label>
+                                                Wydarzenie
+                                                <input class="width-60" type="checkbox" name="Eventtimeset" {{with .Form.Eventtimeset}}value="{{.}}" {{end}}/>Eventtimeset
+
+                                            </label>
+                                            <label>
+                                                Rozpoczęcie wydzarzenia
+                                                <input class="width-60" type="datetime" name="Eventtime" placeholder="Eventtime string rrrr-mm-dd h:m" {{with .Form.Eventtime}}value="{{.}}" {{end}}/>
+
+                                            </label>
+                                            <label>
+                                                Zakończenie wydarzenia
+                                                <input class="width-60" type="datetime" name="Eventtimeend" placeholder="Eventtimeend string rrrr-mm-dd h:m" {{with .Form.Eventtimeend}}value="{{.}}" {{end}}/>
+
+                                            </label>
+                                            <label>
+                                                Numer kategorii
+                                                <input class="width-60" type="number" name="Categoryid" placeholder="Categoryid int" {{with .Form.Categoryid}}value="{{.}}" {{end}}/>
+
+                                            </label>
+
+                                            <p>
+                                                <input class="btn btn-blue" type="submit" value="Wyslij" />
+                                            </p>
+                        </form>
+                                        {{end}}

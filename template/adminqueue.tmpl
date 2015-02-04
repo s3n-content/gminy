@@ -1,0 +1,23 @@
+{{define "adminqueue"}}{{template "adminheader" .}}
+</head>
+
+<body>
+    <div id="cont" class="units-container bckgrnd">
+        {{template "admintop" .}}
+
+
+
+        <div id="main" class="units-row end" style="padding-top:30px;">
+            <div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
+                <div class="unit-row">
+                    <div class="unit-100">
+                        <p>Wyświetli kolejkę akcji, które oczekują na zrezalizowanie z różnych powodów.</p><br/>
+                        {{range $index, $element := .Queue}}
+                                {{$index}}: {{$element.Description}} <br />
+                        {{end}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{template "adminfooter" .}} {{end}}

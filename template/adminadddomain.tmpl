@@ -1,0 +1,69 @@
+{{define "adminadddomain"}}{{template "adminheader" .}}
+<style>
+    .formsy {
+        list-style-type: none;
+    }
+    
+    span {
+        display: block;
+        font-size: 14px;
+        text-indent: 5px;
+    }
+    
+    label {
+        font-size: 16px;
+    }
+</style>
+</head>
+
+<body>
+    <div id="cont" class="units-container bckgrnd">
+        {{template "admintop" .}}
+
+
+
+        <div id="main" class="units-row end" style="padding-top:30px;">
+            <div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
+                <div class="units-row end">
+                    <nav class="breadcrumbs">
+                        <ul>
+                            <li><a href="/admin">Panel administracyjny</a>
+                            </li>
+                            <li><a href="/admin/servers">Zmień ustawienia serwerów</a>
+                            </li>
+                            <li><span>Dodaj domene</span>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="unit-row">
+                    <div class="unit-100">
+
+                        {{if .Error}} Wystąpił błąd: {{.Error}}
+                        <br /> {{end}}
+                        <form method="post" action="/admin/form/adddomain/{{.Server.Id}}" class="forms">
+                            <ul class="formsy">
+                                <h4>Zmieniasz ustawienia dla serwera <strong>{{.Server.Address}}</strong>:</h4>
+                                <li>
+                                    <label>Domena
+                                        <input type="text" name="Address" placeholder="mojastrona.pl (bez http)" {{with .Form.Address}}value="{{.}}" {{end}}/></label>
+                                </li>
+                                <li>
+                                    <label>Nazwa
+                                        <input type="text" name="Name" placeholder="Przykładowa nazwa..." {{with .Form.Name}}value="{{.}}" {{end}}/></label>
+                                </li>
+
+                                <input type="hidden" name="Id" value="{{.Server.Id}}">
+                                
+                                <span class="req">Sprawdź poprawność, ponieważ nie będzie drugiej możliwośći!</span>
+                            </ul>
+                            <p>
+                                <input class="btn btn-blue" type="submit" value="Wyślij" />
+                            </p>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{template "adminfooter" .}} {{end}}

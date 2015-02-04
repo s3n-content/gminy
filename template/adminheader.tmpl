@@ -1,0 +1,26 @@
+{{define "adminheader"}}<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{.Domain.Name}}</title>
+
+    <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <link rel="stylesheet" href="/assets/css/main.css" />
+
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="/assets/js/kube.js"></script>
+    <script src="/assets/js/seamless-iframe.js"></script>
+    
+    <style>
+        .breadcrumbs span {
+            display: inline!important;
+        }
+    </style>
+{{end}}

@@ -1,0 +1,98 @@
+{{define "searchauto"}} {{template "header" .}}
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&language=pl"></script>
+<style>
+    #map-canvas {
+        min-height: 450px;
+    }
+</style>
+</head>
+
+<body>
+    <div id="cont" class="units-container bckgrnd">
+        {{template "top" .}}
+
+        <div id="main" class="units-row end">
+            <div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
+                <div class="units-row end">
+                    <nav class="breadcrumbs">
+                        <ul>
+                            <li><a href="/">Strona główna</a>
+                            </li>
+                            <li><a href="/search">Gdzie najbliżej</a>
+                            </li>
+                            <li><a href="/searchinfo">Ustaw swoją lokalizację</a>
+                            </li>
+                            <li><span>Automatyczne ustawianie lokalizacji</span>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="mobile-width-100 unit-100">
+                    <div class="unit-50 mobile-width-100">
+                        <h2>Płynące korzyści</h2>
+                        <p style="text-align:justify">Dzięki ustaleniu dokładnej (bądź przybliżonej) pozycji w jakiej się znajdujesz otrzymujesz możliwość korzystania z funkcji <strong>nawiguj</strong>.</p>
+                    </div>
+                    <div class="unit-50 mobile-width-100">
+                        <p style="margin-bottom:4px;text-align:justify"><i class="fa fa-3x fa-globe" style="float:left;padding: 0px 10px;"></i>Określ swoją pozycję korzystając z nadajnika GPS/A-GPS wbudowanego w Twoje urządzenie. Wyraź zgodę na skorzystanie z lokalizacji poprzez Twoją przeglądarkę.</p>
+                    </div>
+                    <form method="post" class="forms" action="/form/localization" style="margin-bottom:0px;">
+                        <input id="lat" type="hidden" name="Locationlat" value="" />
+                        <input id="lng" type="hidden" name="Locationlng" value="" />{{if .b}}
+                        <input id="B" type="hidden" name="B" value="{{.b}}" />{{end}}
+                        <button type="submit" class="btn btn-blue btn-big bold width-100">Kliknij tutaj, aby zapisać pozycję.</button>
+                    </form>
+                    <div id="map-canvas" class="bckgrnd2 mobile-width-100">
+                        Tu powinna znajdować się mapa, jeśli widzisz tą wiadomość oznacza to, że Twoje urządzenie nie wspiera map google.
+                    </div>
+                </div>
+
+
+
+                <script>
+                    var map;
+
+                    function initialize() {
+                        var mapOptions = {
+                            zoom: 12
+                        };
+                        map = new google.maps.Map(document.getElementById('map-canvas'),
+                            mapOptions);
+                        if (navigator.geolocation) {
+                            navigator.geolocation.getCurrentPosition(function (position) {
+                                var pos = new google.maps.LatLng(position.coords.latitude,
+                                    position.coords.longitude);
+                                var infowindow = new google.maps.InfoWindow({
+                                    map: map,
+                                    position: pos,
+                                    content: 'Jeśli znajdujesz się tutaj, kliknij niebieski guzik powyżej.'
+                                });
+                                document.getElementById('lat').value = pos.k;
+                                document.getElementById('lng').value = pos.D;
+                                map.setCenter(pos);
+                            }, function () {
+                                handleNoGeolocation(true);
+                            });
+                        } else {
+                            handleNoGeolocation(false);
+                        }
+                    }
+
+                    function handleNoGeolocation(errorFlag) {
+                        if (errorFlag) {
+                            var content = 'Błąd: Usługa lokalizacji HTML5 nie działa.';
+                        } else {
+                            var content = 'Błąd: Twoja przeglądarka nie wspiera lokalizacji.';
+                        }
+                        var options = {
+                            map: map,
+                            position: new google.maps.LatLng(53.1276252, 23.1560658),
+                            content: content
+                        };
+                        var infowindow = new google.maps.InfoWindow(options);
+                        map.setCenter(options.position);
+                    }
+                    google.maps.event.addDomListener(window, 'load', initialize);
+                </script>
+
+                {{template "footer"}} {{end}}

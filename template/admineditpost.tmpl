@@ -1,0 +1,644 @@
+{{define "admineditpost"}}{{template "adminheader" .}}
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+
+<style>
+    .formsy {
+        list-style-type: none;
+    }
+    span {
+        display: block;
+        font-size: 14px;
+        text-indent: 5px;
+    }
+    li span {
+        display: inline!important;   
+    }
+    label {
+        font-size: 16px;
+    }
+    .polemapka {
+        height: 500px;
+        margin: 10px 0 100px 0;
+        padding: 0px
+    }
+    #map-canvas {
+        margin: 10px 0 20px 0;
+        padding: 0px;
+    }
+    .controls {
+        margin-top: 16px;
+        border: 1px solid transparent;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        height: 32px;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+    #pac-input {
+        background-color: #fff;
+        padding: 0 11px 0 13px;
+        width: 400px;
+        font-family: 'Lato';
+        font-size: 15px;
+        font-weight: 300;
+        text-overflow: ellipsis;
+    }
+    #pac-input:focus {
+        border-color: #4d90fe;
+        margin-left: -1px;
+        padding-left: 14px;
+        /* Regular padding-left + 1. */
+        width: 401px;
+    }
+    .pac-container {
+        font-family: 'Lato';
+    }
+    #type-selector {
+        color: #fff;
+        background-color: #4d90fe;
+        padding: 5px 11px 0px 11px;
+    }
+    #type-selector label {
+        font-family: 'Lato';
+        font-size: 13px;
+        font-weight: 300;
+    }
+    .pac-item-query {
+        display: inline-block;
+    }
+    .pac-matched {
+        display: inline-block;
+    }
+    .pac-icon {
+        display: inline-block;
+    }
+
+</style>
+<script>
+    
+    var map;
+    var markers = [];
+    var infos = [];
+    
+    function initialize() {
+        var maplat = "{{if .Form.Locationlat}}{{with .Form.Locationlat}}{{.}}{{end}}{{else}}{{with .Post.Locationlat}}{{.}}{{end}}{{end}}";
+        var maplng = "{{if .Form.Locationlng}}{{with .Form.Locationlng}}{{.}}{{end}}{{else}}{{with .Post.Locationlng}}{{.}}{{end}}{{end}}";
+
+        if (!maplat || !maplng) {
+            var mapOptions = {
+                center: new google.maps.LatLng(53.1276252, 23.1560658),
+                zoom: 12
+            };
+        } else {
+            var mapOptions = {
+                center: new google.maps.LatLng(maplat, maplng),
+                zoom: 12
+            };
+        }
+        map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
+        
+        google.maps.event.addListener(map, 'click', function (event) {
+            clearMarkers();
+            clearInfos();
+            addMarker(event.latLng);
+            var pozycja = event.latLng;
+            
+        });
+
+        var input = (
+            document.getElementById('pac-input'));
+
+        var types = document.getElementById('type-selector');
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(types);
+
+        var autocomplete = new google.maps.places.Autocomplete(input);
+        autocomplete.bindTo('bounds', map);
+
+        var infowindow = new google.maps.InfoWindow();
+        var marker = new google.maps.Marker({
+            map: map,
+            anchorPoint: new google.maps.Point(0, -29)
+        });
+
+        if(maplng && maplat){
+            var markerif = new google.maps.Marker({});
+            markerif = new google.maps.Marker({
+                    position: new google.maps.LatLng(maplat, maplng),
+                    map: map,
+                    animation: google.maps.Animation.DROP,
+                });
+            markers.push(markerif);
+        }
+
+        google.maps.event.addListener(autocomplete, 'place_changed', function () {
+            clearMarkers();
+            clearInfos();
+            
+            infowindow.close();
+            marker.setVisible(false);
+            var place = autocomplete.getPlace();
+            if (!place.geometry) {
+                return;
+            }
+
+
+            if (place.geometry.viewport) {
+                map.fitBounds(place.geometry.viewport);
+            } else {
+                map.setCenter(place.geometry.location);
+                map.setZoom(15);
+                $('#lat').attr('value', place.geometry.location.k);
+                $('#lng').attr('value', place.geometry.location.D);
+            }
+
+            markerif.setMap(null);
+
+            marker.setIcon(({
+                url: place.icon,
+                size: new google.maps.Size(71, 71),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(17, 34),
+                scaledSize: new google.maps.Size(35, 35)
+            }));
+            marker.setPosition(place.geometry.location);
+            marker.setVisible(true);
+
+
+            var address = '';
+            if (place.address_components) {
+                address = [
+                    (place.address_components[0] && place.address_components[0].short_name || ''),
+                    (place.address_components[1] && place.address_components[1].short_name || ''),
+                    (place.address_components[2] && place.address_components[2].short_name || '')
+                ].join(' ');
+            }
+
+            infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+            infowindow.open(map, marker);
+
+            autocomplete.setTypes(['address']);
+        });
+
+        /*function setupClickListener(id, types) {
+            var radioButton = document.getElementById(id);
+            google.maps.event.addDomListener(radioButton, 'click', function () {
+                autocomplete.setTypes(types);
+            });
+        }
+
+        setupClickListener('changetype-all', []);
+        setupClickListener('changetype-address', ['address']);
+        setupClickListener('changetype-establishment', ['establishment']);
+        setupClickListener('changetype-geocode', ['geocode']);*/
+
+
+
+        google.maps.event.addListenerOnce(map, 'idle', function () {
+            google.maps.event.trigger(map, 'resize');
+        });
+
+
+
+    }
+
+    function addMarker(location) {
+        var marker = new google.maps.Marker({
+            position: location,
+            map: map
+        });
+        var infowindow = new google.maps.InfoWindow({
+            content: 'Lokalizację obiektu ustawiono w tym miejscu.',
+            position: location
+        });
+        infowindow.open(map);
+        markers.push(marker);
+        infos.push(infowindow);
+        document.getElementById('lat').value = location.k;
+        document.getElementById('lng').value = location.D;
+    }
+    function setAllMap(map) {
+        for (var i = 0; i < markers.length; i++) {
+            markers[i].setMap(map);
+        }
+    }
+
+    function clearMarkers() {
+        setAllMap(null);
+    }
+
+    function deleteMarkers() {
+        clearMarkers();
+        markers = [];
+    }
+
+    function setAllInf(map) {
+        for (var i = 0; i < infos.length; i++) {
+            infos[i].setMap(map);
+        }
+    }
+
+    function clearInfos() {
+        setAllInf(null);
+    }
+
+    function deleteInfos() {
+        clearInfos();
+        infos = [];
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<script type="text/javascript" src="/assets/tinymce/tinymce.min.js"></script>
+<script type="text/javascript">
+tinymce.init({
+  selector: "textarea",
+  plugins: [
+  "advlist autolink lists link image charmap print preview anchor",
+  "searchreplace visualblocks code fullscreen",
+  "insertdatetime media table contextmenu paste"
+  ],
+  toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+  language : 'pl',
+});
+</script>
+</head>
+
+<body>
+    <div id="cont" class="units-container bckgrnd">
+        {{template "admintop" .}}
+
+
+
+        <div id="main" class="units-row end" style="padding-top:30px;">
+            <div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
+                <div class="units-row end">
+                    <nav class="breadcrumbs">
+                        <ul>
+                            <li><a href="/admin">Panel administracyjny</a>
+                            </li>
+                            <li><a href="/admin/category">Przeglądaj kategorie</a>
+                            </li>
+                            <li><span>Edytuj treść</span>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="unit-row">
+                    <div class="unit-100">
+                        Tytuł: {{.Post.Title}}<br/>
+                        Data utworzenia: {{.Post.Createdon}}<br/>
+                        Ostatnio edytowany: {{.Post.Modifiedon}}<br/><br/>
+                        {{if .Error}} Wystąpił błąd: {{.Error}} {{end}}
+                        <form id="editpost" method="post" action="/admin/form/editpost/{{.Post.Id}}" class="forms">
+
+                            {{/*
+                            <p data-tools="buttons" data-target="#target">
+                                <button id="butt0" class="btn butt" value="0" onclick="return false;">Artykuł</button>
+                                <button id="butt1" class="btn butt" value="1" onclick="return false;">Obiekt</button>
+                                <button id="butt2" class="btn butt" value="2" onclick="return false;">Wydarzenie</button>
+                            </p>*/}}
+
+                            <ul class="formsy">
+                                <li class="pole1">
+                                    <label>
+                                        inv
+                                        <input id="target" class="typeint" type="number" name="Type" placeholder="typ int" value="{{.Post.Type}}" />
+                                        <input type="hidden" name="Id" value="{{.Post.Id}}" />
+                                    </label>
+                                </li>
+
+                                <li class="pole2">
+                                    <label>
+                                        Tytuł<b class="req">*</b>
+                                        <input class="width-60" type="text" name="Title" placeholder="Podaj tytuł..." {{if .Form.Title}}{{with .Form.Title}}value="{{.}}" {{end}}{{else}}{{with .Post.Title}}value="{{.}}" {{end}}{{end}}/>
+
+                                    </label>
+                                </li>
+                                <li class="pole3">
+                                    <label>
+                                        Treść<b class="req">*</b>
+                                        <span>Dowolnie długi opis.</span>
+                                        <textarea class="width-60" name="Text" placeholder="Podaj opis...">{{if .Form.Text}}{{with .Form.Text}}{{.}}{{end}}{{else}}{{with .Post.Text}}{{.}}{{end}}{{end}}</textarea>
+
+                                    </label>
+                                </li>
+
+                                <li class="pole20">
+                                    <label>
+                                        <input id="showonfront" type="checkbox" name="Showonfrontpage" {{if .Form.Showonfrontpage}}checked="checked"{{else if .Post.Showonfrontpage}}checked="checked"{{end}}
+                                               />Pokaż na stronie głównej (jako wyróżniony)
+                                    </label>
+                                </li>
+
+                                <li class="pole4">
+                                    <label>
+                                        Tagi
+                                        <span>Wybierz kategorie najlepiej opisująca dany obiekt. Wedle tej kategorii zostanie on dodany do modułu "Gdzie najbliżej".</span>
+
+                                        <p data-tools="buttons" data-type="segmented" data-target="#target4">
+                                            <button class="btn cyan-500" value="1a">Nocleg</button>
+                                            <button class="btn green-500" value="2a">Jedzenie</button>
+                                            <button class="btn green-900" value="11">Stacja benzynowa</button>
+                                            <button class="btn red-900" value="10">Punkt Użyteczności Publicznej</button>
+                                            <button class="btn blue-grey-900" value="6">Atrakcje</button>
+                                        </p>
+                                        <p>
+                                            <input type="hidden" id="target4" name="Tags" {{if .Form.Tags}}{{with .Form.Tags}}value="{{.}}" {{end}}{{else}}{{with .Post.Tags}}value="{{.}}" {{end}}{{end}} size="50" />
+                                        </p>
+
+                                    </label>
+                                </li>
+                                <li class="pole5">
+                                    <label>
+                                        <input id="locat" type="checkbox" name="Locationset" {{if .Form.Locationset}}{{with .Form.Locationset}}value="{{.}}" {{end}}{{else}}{{with .Post.Locationset}}value="{{.}}" {{end}}{{end}}/>Lokalizacja
+                                        <span>Zaznacz, aby dodać mapkę do wydarzenia.</span>
+                                    </label>
+                                </li>
+                                <hr>
+                                <div id="posit">
+                                    <ul class="formsy forms-inline-list">
+                                        <li class="pole6">
+                                            <label>
+                                                Szerokość geograficzna
+                                                <input id="lat" class="width-50" type="text" name="Locationlat" placeholder="Szerokość (lat)" {{if .Form.Locationlat}}{{with .Form.Locationlat}}value="{{.}}" {{end}}{{else}}{{with .Post.Locationlat}}value="{{.}}" {{end}}{{end}} required />
+                                            </label>
+                                        </li>
+                                        <li class="pole7">
+                                            <label>
+                                                Długość geograficzna
+                                                <input id="lng" class="width-50" type="text" name="Locationlng" placeholder="Długość (lng)" {{if .Form.Locationlng}}{{with .Form.Locationlng}}value="{{.}}" {{end}}{{else}}{{with .Post.Locationlng}}value="{{.}}" {{end}}{{end}} required />
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <li class="polemapka">
+                                    <span>Upewnij się, że pola powyżej są uzupełnione danymi (zawierają liczby oznaczające długość i szerokość geograficzną). W przeciwnym wypadku w "Gdzie najbliżej" mapa obiektu będzie źle wyświetlana, a nawigacja będzie działać niepoprawnie.</span>
+                                    <input id="pac-input" class="controls" type="text" placeholder="Podaj lokalizację">
+
+                                    <div id="map-canvas">Przykro nam. :(
+                                        <br/>Twoja przeglądarka najprawdopodobniej nie wspiera Map Google i ich nie wyświetliła. Postaraj się o nowszą wersję przeglądarki!</div>
+                                </li>
+                                <li class="pole12">
+                                    <label>
+                                        Adres
+                                        <span>(Ulica, numer budynku/lokalu, kod pocztowy, miasto)</span>
+                                        <input class="width-60" type="text" name="Address" placeholder="Podaj adres..." {{if .Form.Address}}{{with .Form.Address}}value="{{.}}" {{end}}{{else}}{{with .Post.Address}}value="{{.}}" {{end}}{{end}} required />
+
+                                    </label>
+                                </li>
+                                <li class="pole8">
+                                    <label>
+                                        Adres WWW grafiki (miniaturki)
+                                        <span>Grafika wyświetli się w tytule postu. Dozwolone formaty (zakończenie linku) to: .jpg, .png, .webp, .svg, .jpeg<br/>Możesz ją wyszukać w internecie, a następnie skopiować jej adres i wkleić poniżej.</span>
+                                        <input class="width-60" type="text" name="Imageurl" placeholder="http://mojastrona.pl/obrazek.jpg" {{if .Form.Imageurl}}{{with .Form.Imageurl}}value="{{.}}" {{end}}{{else}}{{with .Post.Imageurl}}value="{{.}}" {{end}}{{end}}/>
+                                    </label>
+                                </li>
+
+                                <li class="pole9">
+                                    <label>
+                                        Numer telefonu
+                                        <span>Format 123456789. W przypadku telefonów stacjonarnych podajemy kierunkowy i resztę, np. 857678989</span>
+                                        <input class="width-60" type="text" name="Telephone" placeholder="Podaj numer telefonu..." {{if .Form.Telephone}}{{with .Form.Telephone}}value="{{.}}" {{end}}{{else}}{{with .Post.Telephone}}value="{{.}}" {{end}}{{end}}/>
+                                    </label>
+                                </li>
+                                <li class="pole10">
+                                    <label>
+                                        Informacje kontaktowe
+                                        <input class="width-60" type="text" name="Contact" placeholder="Dodatkowe informacje kontaktowe..." {{if .Form.Contact}}{{with .Form.Contact}}value="{{.}}" {{end}}{{else}}{{with .Post.Contact}}value="{{.}}" {{end}}{{end}}/>
+                                    </label>
+                                </li>
+
+                                <li class="pole11">
+                                    <label>
+                                        Dodatkowe informacje
+                                        <input class="width-60" type="text" name="Moreinformations" placeholder="Wpisz tutaj dodatkowe informacje..." {{if .Form.Moreinformations}}{{with .Form.Moreinformations}}value="{{.}}" {{end}}{{else}}{{with .Post.Moreinformations}}value="{{.}}" {{end}}{{end}}/>
+                                    </label>
+                                </li>
+                                <li class="pole13" style="display:none;">
+                                    <label>
+                                        Źródło
+                                        <input class="width-60" type="text" name="Source" placeholder="Source string" {{if .Form.Source}}{{with .Form.Source}}value="{{.}}" {{end}}{{else}}{{with .Post.Source}}value="{{.}}" {{end}}{{end}}/>
+
+                                    </label>
+                                </li>
+                                <li class="pole14">
+                                    <label>
+                                        Adres www
+                                        <input class="width-60" type="text" name="Mapscript" placeholder="Adres www..." {{if .Form.Mapscript}}{{with .Form.Mapscript}}value="{{.}}" {{end}}{{else}}{{with .Post.Mapscript}}value="{{.}}" {{end}}{{end}}/>
+
+                                    </label>
+                                </li>
+                                <li class="pole15">
+                                    <label>
+                                        <input id="visib" type="checkbox" name="Visible" checked="checked" {{/*if .Form}}
+	{{if .Form.Visible}}checked="checked"{{end}}
+{{else}}
+	{{if .Post.Visible}}checked="checked"{{end}}
+{{end*/}}/>Czy ma być wyświetlany?
+
+                                    </label>
+                                </li>
+                                <li class="pole16">
+                                    <label>
+                                        <input id="event" type="checkbox" name="Eventtimeset" {{if .Form.Eventtimeset}}{{with .Form.Eventtimeset}}value="{{.}}" {{end}}{{else}}{{with .Post.Eventtimeset}}value="{{.}}" {{end}}{{end}}/>Wydarzenie
+
+                                    </label>
+                                </li>
+                                <li class="pole17">
+                                    <label>
+                                        Rozpoczęcie wydzarzenia
+                                        <span>Format daty: rok-miesiąc-dzień godziny:minuty</span>
+                                        <input class="width-60" class="typedata" type="text" name="Eventtime" placeholder="rrrr-mm-dd h:m" {{if .Form.Eventtime}}value="{{.Form.Eventtime}}"{{else if .Post.Eventtime}}value="{{.Post.Eventtime}}"{{end}} pattern="([0-3])([0-9])-([0-1])([0-9])-([2])([0])([0-2])([0-9]) ([0-2])([0-9]):([0-5])([0-9])" required />
+
+                                    </label>
+                                </li>
+                                <li class="pole18">
+                                    <label>
+                                        Zakończenie wydarzenia
+                                        <span>Format daty: rok-miesiąc-dzień godziny:minuty</span>
+                                        <input class="width-60" class="typedata" type="text" name="Eventtimeend" placeholder="rrrr-mm-dd h:m" {{if .Form.Eventtimeend}}value="{{.Form.Eventtimeend}}"{{else if .Post.Eventtimeend}}value="{{.Post.Eventtimeend}}"{{end}} pattern="([0-3])([0-9])-([0-1])([0-9])-([2])([0])([0-2])([0-9]) ([0-2])([0-9]):([0-5])([0-9])" required />
+
+                                    </label>
+                                </li>
+                                <li class="pole19">
+                                    {{/*    <label>
+                                        Dodaj do kategorii</label>
+                                    <input class="width-60" type="number" name="Categoryid" placeholder="Categoryid int" {{if .Form.Categoryid}}{{with .Form.Categoryid}}value="{{.}}" {{end}}{{else}}{{with .Post.Categoryid}}value="{{.}}" {{end}}{{end}}/>
+                                    <select name="Categoryid" class="width-60">
+                                        {{$forminid := .Form.Categoryid}} {{range .Categories}}
+                                        <option value="{{.Id}}" {{if eq $forminid .Id}}selected="selected" {{end}}>{{.Title}}</option>
+
+                                        {{end}}
+                                    </select>
+                                    */}}
+                                </li>
+                            </ul>
+                            <p>
+                                <input class="btn btn-blue" type="submit" value="Wyślij" />
+                            </p>
+                        </form>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('form').keypress(function (e) {
+            if (e.which == 13) {
+                return false;
+            }
+        });
+        $('body').ready(function () {
+            /*for (var i = 1; i < 20; i++) {
+                if (i == 1 || i == 5 || i==6 || i==7 || i == 13 || i == 14 || i == 15 || i == 16 || i == 17 || i == 18) {
+                    $('.pole' + i).hide();
+                } else {
+                    $('.pole' + i).show();
+                }
+            }*/
+            if( $('#target4').val() ){
+                var before = $('#target4').val();
+                var after = before.substring(1, before.length-1);
+                after = after.replace(/ /g,',');
+                console.log(before + " " + after);
+                $('#target4').attr('value', after);
+            }
+
+
+            var editnow = "{{.Post.Type}}";
+
+            if (editnow == 0) {
+                for (var i = 1; i < 21; i++) {
+                    if (i == 2 || i == 3 || i == 8 || i == 19 || i == 20) {
+                        $('.pole' + i).show();
+                    } else {
+                        $('.pole' + i).hide();
+                    }
+                }
+                $('#locat').attr('checked', false);
+                $('#event').attr('checked', false);
+                $('#visib').attr('checked', true);
+            } else if (editnow == 1) {
+                for (var i = 1; i < 21; i++) {
+                    if (i == 1 || i == 5 || i == 13 || i == 15 || i == 16 || i == 17 || i == 18) {
+                        $('.pole' + i).hide();
+                    } else {
+                        $('.pole' + i).show();
+                    }
+                }
+                $('#locat').attr('checked', true);
+                $('#event').attr('checked', false);
+                $('#visib').attr('checked', true);
+            } else if (editnow == 2) {
+                for (var i = 1; i < 21; i++) {
+                    if (i == 1 || i == 4 || i == 5 || /*|| i == 7 ||*/ i == 9 || i == 10 || i == 11 || i == 13 || i == 15 || i == 16) {
+                        $('.pole' + i).hide();
+                    } else {
+                        $('.pole' + i).show();
+                    }
+                }
+                $('#locat').attr('checked', true);
+                $('#event').attr('checked', true);
+                $('#visib').attr('checked', true);
+            } else {
+                alert("Coś poszło nie tak. Wróć i ponownie wybierz element do edycji.");
+            }
+/*
+            if ($('#locat').prop('checked')) {
+                
+                $('.polemapka').removeClass('pointer-events');
+                $('#lng').attr('disabled', false);
+                $('#lat').attr('disabled', false);
+                $('.mapnoti').hide();
+              */  /*$('.pole6').show();
+                $('.pole7').show();*/
+            /*} else {
+            */    
+               /* $('.mapnoti').show();
+                $('.polemapka').addClass('pointer-events');
+                $('#lng').attr('disabled', true);
+                $('#lat').attr('disabled', true);*/
+                /*
+                $('.pole6').hide();
+                $('.pole7').hide();*/
+            /*}*/
+
+
+
+            /*  $('#butt1').addClass('btn-active');
+                    $('.typeint').attr('value', '1');*/
+
+            /*if( $('.typeint').val() ){
+                var buttnum = $('.typeint').val();
+                if (buttnum == 0 || buttnum == 2) {
+                    $('#butt' + buttnum).trigger('click').addClass('btn-active');
+                } else {
+                    $('#butt1').addClass('btn-active');
+                    $('.typeint').attr('value', '1');
+
+                    $('.polemapka').show();
+                }
+            }*/
+        });
+
+        /*$('#locat').click(function () {
+            if(this.checked){
+                $('.mapnoti').hide();
+                $('.polemapka').removeClass('pointer-events');
+                $('#lng').attr('disabled', false);
+                $('#lat').attr('disabled', false);
+            } else {
+                $('.mapnoti').show();
+                $('.polemapka').addClass('pointer-events');
+                $('#lng').attr('disabled', true);
+                $('#lat').attr('disabled', true);
+            }*/
+                
+           /* $('.pole6').toggle(this.checked);
+            $('.pole7').toggle(this.checked);*/
+        
+
+
+        $('#editpost').submit( function() {
+            var el = $('#target4').val();
+            el = "," + el + ",";
+            $('#target4').attr('value', el);
+            
+            //if typeint == wydarzenie, ustaw TAG na wydarzenie
+            if( $('.typeint').val() == 2 ){
+                var event2 = ",12,";
+                $('#target4').attr('value', event2);
+            }
+        });
+
+        /*$('#lat').bind('propertychange', function (){
+            $('.polemapkanotif').show();
+
+            var date = new Date;
+            var editdate = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+
+
+               var str = "";
+
+            if( $('#lat').val() && $('#lng').val() ){
+
+                var lat = $('#lat').val(),
+                    lng = $('#lng').val();
+            }
+
+            str += editdate + " Pozycja została zaktualizowana pomyślnie (" + lat + ", " + lng + ").";
+
+            $('.polemapkanotif').text(str);
+        }).change();*/
+
+
+
+
+    </script>
+
+    {{template "adminfooter" .}} {{end}}

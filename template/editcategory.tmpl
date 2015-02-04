@@ -1,0 +1,77 @@
+{{define "editcategory"}}
+{{template "headeradmin" .}}
+{{$admintype := .user.admintype}}
+<style>
+input[type="checkbox"], input[type="radio"] {
+	width:inherit!important;
+}
+label {
+	float:left;
+	margin-left:6px;
+}
+</style>
+<main class="specjalnie">
+			<div class="g-medium--full g-wide--full guzik guzik-purple">
+                <a href="/categories" class="large">Wróć do listy kategorii</a>
+            </div>
+
+            <div class="g-medium--full g-wide--full guzik">
+                <a href="#ignore-click" class="large">Edytowanie kategorii</a>
+            </div>
+            <div class="g-medium--full g-wide--full logowanie" style="padding:30px;border:1px solid #039be5">
+                <form method="post" action="/form/editcategory">
+		    <input type="hidden" name="Id" value="{{.category.Id}}" />
+				   <p class="medium" style="clear:both;">Nazwa kategorii</p>
+                    <input type="text" name="Title" placeholder="Nazwa kategorii..." value="{{.category.Title}}"/>
+{{if eq $admintype 3}}
+	{{$inid := .category.Inid}}
+	{{if ne $inid 0}}<label for="in" style="float:left;clear:both;">{{if eq $admintype 3}}Umieść w...{{end}}</label>
+		           <select id="in" name="Inid" {{if ne $admintype 3}}style="display:none;"{{end}} >
+
+
+		    {{range .categories}}
+				<option value="{{.Id}}" {{if eq .Id 15}}selected="selected"{{end}}{{if eq $inid .Id}} selected="selected"{{end}}>{{.Title}}</option>
+					{{range .Insidecategory}}
+						{{if or (not .Global) (eq $admintype 3)}}
+							{{if eq .TypeId 0}}
+							     <option value="{{.Id}}">>> {{.Title}}</option>
+							{{end}}
+						{{end}}
+					{{end}}
+		    {{end}}
+						</select>
+	{{end}}
+
+                    {{if eq $inid 0}}
+		            <label for="colorid" style="float:left;">Wybierz kolor...</label>
+		            <select id="colorid" name="Colorid">
+		                <option value="1" class="color1-first" {{if eq .category.Colorid 1}}selected="selected"{{end}}>Żółty</option>
+		                <option value="2" class="color2-first" {{if eq .category.Colorid 2}}selected="selected"{{end}}>Zielony</option>
+		                <option value="3" class="color3-first" {{if eq .category.Colorid 3}}selected="selected"{{end}}>Czerwony</option>
+		                <option value="5" class="color5-first" {{if eq .category.Colorid 5}}selected="selected"{{end}}>Różowy</option>
+		                <option value="6" class="color6-first" {{if eq .category.Colorid 6}}selected="selected"{{end}}>Niebieski</option>
+		                <option value="7" class="color7-first" {{if eq .category.Colorid 7}}selected="selected"{{end}}>Brązowy</option>
+		                <option value="8" class="color8-first" {{if eq .category.Colorid 8}}selected="selected"{{end}}>Czerwony</option>
+		            </select>
+		   {{end}}
+{{end}}
+                   <input type="checkbox" name="Visible" id="Visible" {{if eq .category.Visible true}}checked="checked"{{end}}> <label for="Visible">Kategoria widoczna</label>
+				   <p class="medium" style="clear:both;">Kolejność na liście</p>
+                    <input type="number" id="Orderele" name="Orderele" placeholder="Kolejność?" value="{{.category.Orderele}}"/>
+
+					<select id="typeid" name="TypeId">
+						<option value="0" {{if eq .category.TypeId 0}}selected="selected"{{end}}>Normalna kategoria</option>
+						<option value="1" {{if eq .category.TypeId 1}}selected="selected"{{end}}>Rss</option>
+						<option value="2" {{if eq .category.TypeId 2}}selected="selected"{{end}}>Url</option>
+					</select>
+					<input type="text" name="Txt" placeholder="Adres w przypadku typu: rss, url" value="{{.category.Txt}}"/>
+
+                    <div class="g-medium--full g-wide--full guzik" style="clear:both">
+                        <button type="submit" class="none"><a class="large">Zaktualizuj kategorie <i class="fa fa-angle-double-right"></i></a></button>
+                    </div>
+                </form>
+            </div>
+    </main>
+
+{{template "footer"}}
+{{end}}

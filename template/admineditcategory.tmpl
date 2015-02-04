@@ -1,0 +1,188 @@
+{{define "admineditcategory"}}{{template "adminheader" .}}
+<style>
+    .formsy {
+        list-style-type: none;
+    }
+    span {
+        display:block;
+        font-size:14px;
+        text-indent:5px;
+    }
+    label {
+        font-size:16px;
+    }
+</style>
+</head>
+
+<body>
+    <div id="cont" class="units-container bckgrnd">
+        {{template "admintop" .}}
+
+
+
+        <div id="main" class="units-row end" style="padding-top:30px;">
+            <div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
+                <div class="units-row end">
+                    <nav class="breadcrumbs">
+                        <ul>
+                            <li><a href="/admin">Panel administracyjny</a>
+                            </li>
+                            <li><a href="/admin/category">Przeglądaj kategorie</a>
+                            </li>
+                            <li><span>Edytuj kategorie</span>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="unit-row">
+                    <div class="unit-100">
+
+                        {{if .Error}} Wystąpił błąd: {{.Error}} {{end}}
+                        <form method="post" action="/admin/form/editcategory/{{.Category.Id}}" class="forms">
+
+
+                            {{/*<p data-tools="buttons" data-target="#target">
+                                <button id="butt0" class="btn butt" value="0" onclick="return false;">Kategoria</button>
+                                <button id="butt1" class="btn butt" value="1" onclick="return false;">Adres internetowy</button>
+                                <button id="butt2" class="btn butt" value="2" onclick="return false;">Kanał RSS</button>
+                            </p>*/}}
+                            <ul class="formsy">
+                                <li class="pole1">
+                                    <label>Nazwa<b class="req">*</b>
+                                        <input type="text" name="Title" placeholder="Podaj tytuł..." {{if .Form.Title}}value="{{.Form.Title}}" {{else if .Category.Title}}value="{{.Category.Title}}" {{end}}/>
+                                    </label>
+                                </li>
+                                <li class="pole2">
+                                    <label>Kategoria nadrzędna<b class="req">*</b>
+                                        <span>Wybierz do której kategorii ma zostać dodany element.</span>
+                                        <select name="Inid">
+                                            <option value="0">Strona główna</option>
+                                            {{$forminid := .Form.Inid}}
+                                            {{$categoryinid := .Category.Inid}}
+                                            {{range .Categories}}
+                                            <option value="{{.Id}}" {{if eq $forminid .Id}}selected="selected" {{else if eq $categoryinid .Id}}selected="selected" {{end}}>{{.Title}}</option>
+                                            {{end}}
+                                        </select>
+                                    </label>
+                                </li>
+                                <li class="pole3">
+                                    <label>Kolor
+                                        <span>Wybierz kolor jaki ma mieć belka</span>
+                                        <select id="numbkolor" name="Colorid">
+                                            <option class="c0" value="0">Szary-100</option>
+                                            <option class="c1" value="1">Niebieski-500</option>
+                                            <option class="c2" value="2">Czerwony-500</option>
+                                            <option class="c3" value="3">Różowy-500</option>
+                                            <option class="c4" value="4">Purpurowy-500</option>
+                                            <option class="c5" value="5">Mocno purpurowy-500</option>
+                                            <option class="c6" value="6">Indigo-500</option>
+                                            <option class="c7" value="7">Jasno niebieski-500</option>
+                                            <option class="c8" value="8">Cyan-500</option>
+                                            <option class="c9" value="9">Morski-500</option>
+                                            <option class="c10" value="10">Zielony-500</option>
+                                            <option class="c11" value="11">Jasno zielony-500</option>
+                                            <option class="c12" value="12">Limonkowy-500</option>
+                                            <option class="c13" value="13">Żółty-500</option>
+                                            <option class="c14" value="14">Amber-500</option>
+                                            <option class="c15" value="15">Pomarańczowy-500</option>
+                                            <option class="c16" value="16">Mocno pomarańczowy-500</option>
+                                            <option class="c17" value="17">Brązowy-500</option>
+                                            <option class="c18" value="18" selected="selected">Szaro-niebieski-500</option>
+                                            <option class="c19" value="19">Szary-500</option>
+                                        </select>
+
+                                    </label>
+                                </li>
+                                <li class="pole4">
+                                    {{/*<label>Adres obrazka
+                                        <span>Dozwolone formaty (zakończenie linku) to: .jpg, .png, .webp, .svg, .jpeg</span>
+                                        <input type="text" name="Imageurl" placeholder="Podaj adres obrazka..." {{if .Form.Imageurl}}value="{{.Form.Imageurl}}" {{else if .Category.Imageurl}}value="{{.Category.Imageurl}}" {{end}}/>
+                                    </label>*/}}
+                                </li>
+                                <li class="pole5">
+                                    <label>
+                                        <input type="checkbox" name="Visible" checked="checked" {{if .Form.Visible}}value="{{.Form.Visible}}" {{else if .Category.Visible}}checked="checked" {{end}}/>Czy ma być widoczna/y?
+                                    </label>
+                                </li>
+                                <li class="pole6">
+                                    <label>Kolejność
+                                        <span>Pole nieobowiązkowe, automatycznie doda kolejny element jako ostatni.</span>
+                                        <input type="number" name="Orderele" placeholder="Kolejność na liście..." {{if .Form.Orderele}}value="{{.Form.Orderele}}" {{else if .Category.Orderele}}value="{{.Category.Orderele}}" {{end}}/>
+                                    </label>
+                                </li>
+                                <li class="pole7">
+                                    <label>
+                                        <input class="typeint" type="hidden" name="Typeid" placeholder="typeid int" {{if .Form.Typeid}}value="{{.Form.Typeid}}" {{else if .Category.Typeid}}value="{{.Category.Typeid}}" {{end}}/>
+                                    </label>
+                                </li>
+                                <li class="pole8">
+                                    <label>Adres URL<b class="req">*</b>
+                                        <span>Przykład: <em>http://mojastrona.pl</em>. W przypadku kanału RSS <strong>zwykle</strong> powinien być on zakończony ".xml".</span>
+                                        <input type="text" name="Txt" placeholder="Podaj adres URL..." {{if .Form.Txt}}value="{{.Form.Txt}}" {{else if .Category.Txt}}value="{{.Category.Txt}}" {{end}}/>
+
+                                    </label>
+                                </li>
+                            </ul>
+                            <P>
+                                <input class="btn btn-blue" type="submit" value="Wyslij" />
+                            </P>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            $('body').ready(function () {
+                var numb = "{{if .Form.Colorid}}{{.Form.Colorid}}{{else if .Category.Colorid}}{{.Category.Colorid}}{{end}}";
+                
+                for (var i = 1; i < 20; i++) {
+                    if (i == 4 || i == 8) {
+                        $('.pole' + i).hide();
+                    } else {
+                        $('.pole' + i).show();
+                    }
+                }
+                var buttnum = $('.typeint').val();
+                if (buttnum == 1 || buttnum == 2) {
+                    $('#butt' + buttnum).trigger('click').addClass('btn-active');
+                } else {
+                    $('#butt0').addClass('btn-active');
+                    $('.typeint').attr('value', '0');
+                }
+                if( numb ) {
+                    $('#numbkolor option:eq(' + numb + ')').attr('selected', 'selected')
+                }
+                
+                if ($('.typeint').val() == 0) {
+                    for (var i = 1; i < 9; i++) {
+                        if (i == 4 || i == 8) {
+                            $('.pole' + i).hide();
+                        } else {
+                            $('.pole' + i).show();
+                        }
+                    }
+                } else if ($('.typeint').val() == 1) {
+                    for (var i = 1; i < 9; i++) {
+                        if (i == 4) {
+                            $('.pole' + i).hide();
+                        } else {
+                            $('.pole' + i).show();
+                        }
+                    }
+                } else if ($('.typeint').val() == 2) {
+                    for (var i = 1; i < 9; i++) {
+                        if (i == 4) {
+                            $('.pole' + i).hide();
+                        } else {
+                            $('.pole' + i).show();
+                        }
+                    }
+                }
+                
+            });
+        </script>
+
+
+    {{template "adminfooter" .}} {{end}}

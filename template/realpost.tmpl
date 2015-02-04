@@ -1,0 +1,290 @@
+{{define "realpost"}}
+
+{{$iframe := .iframe}}
+{{$last := .lastfourposts}}
+
+
+{{if $iframe}}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{.Domain.Name}}</title>
+
+    <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    
+    <base target="_parent" />
+    
+    <style>
+        body {
+            padding: 15px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+{{end}}
+
+{{if not $iframe}}
+{{template "header" .}}
+{{end}} 
+
+{{if not $iframe}}
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&language=pl"></script>
+</head> {{/* ten element jest w post.tmpl jesli jest iframe */}}
+<body>
+    <div id="cont" class="units-container bckgrnd">
+        {{template "top" .}}
+        <div id="main" class="units-row end">
+            <div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">{{end}}
+
+
+                {{$layout := 0}} {{/* wylacza funkcje 'zobacz rowniez/przeczytaj takze' 0,1 */}}
+                
+                {{if .Post.Visible}} {{with .Post}} 
+                
+                {{if eq .Type 0}}
+                <div class="units-row end">
+                    <div class="unit-100 p-news">
+                        <h1>{{.Title}}</h1>
+                        <dl>
+                            {{/*if .Createdon}}<dt>opublikowano</dt>
+                            <dd>{{.Createdon}}</dd>{{end*/}} {{if .Source}}<dt>autor</dt>
+                            <dd>{{.Source}}</dd>{{end}}
+                            {{if $iframe}}<dt>Źródło</dt><dd><a href="{{.Url}}">{{.Sitename}}</a></dd>{{end}}
+                            <dt></dt>
+                            <dd></dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="units-row end">
+                    <div class="{{if $iframe}}unit-100{{else}}{{if eq $layout 1}}unit-100{{else}}unit-70{{end}}{{end}}" style="padding: 5px; text-align:justify;">
+                        {{if .Text}}
+                        <p>{{.Text}}</p>{{end}}
+                    </div>
+                    {{if eq $layout 1}} {{/* element ponizej jest niepotrzebny w layout 1, wiec go nie wyswietla */}} {{else}}
+                    {{if not $iframe}}
+                    <div class="unit-30 bckgrnd1 list-news-other">
+                        <button class="btn btn-green bckgrnd2" style="width:100%">Przeczytaj również</button>
+                        {{range $last}}
+                        <a href="{{.Adres}}">
+                            <p>{{if eq .Type 2}}<i class="fa fa-calendar"></i>{{else if .Type}}<i class="fa fa-map-marker"></i>{{else}}<i class="fa fa-comments"></i>{{end}} {{.Title}}</p>{{/*<span>{{printf "%.28s" .Text}}...</span>*/}}{{/*<small><i class="fa fa-clock-o"></i> {{.Createdon}}</small>*/}}
+                        </a>
+                        {{end}}
+                    </div>{{end}}
+                    {{end}}
+                </div>
+                {{else if eq .Type 1}}
+
+                <div class="units-row end">
+                    <!--tu-->
+                    <div class="unit-100 p-news">
+                        {{if .Title}}
+                        <h1>{{.Title}}</h1>{{end}}
+                        <dl>
+                            {{/*{{if .Createdon}}<dt>opublikowano</dt>
+                            <dd>{{.Createdon}}</dd>{{end}}*/}} 
+                            {{if .Source}}<dt>autor</dt>
+                            <dd>{{.Source}}</dd>{{end}}
+                            {{if .Tags}}<dt>znajduje się w</dt>
+                            <dd>{{template "tags" .}}</dd>{{end}}
+                        </dl>
+                    </div>
+                </div>
+                <div class="units-row end">
+                    {{if eq $layout 1}} {{/* element ponizej jest niepotrzebny w layout 1, wiec go nie wyswietla */}} {{else}}
+                    {{if not $iframe}}
+                    <div class="unit-30 bckgrnd1 list-news-other loc">
+                        <button class="btn btn-green bckgrnd2" style="width:100%">Przeczytaj również</button>
+                        {{range $last}}
+                        <a href="{{.Adres}}">
+                            <p>{{if eq .Type 2}}<i class="fa fa-calendar"></i>{{else if .Type}}<i class="fa fa-map-marker"></i>{{else}}<i class="fa fa-comments"></i>{{end}} {{.Title}}</p>{{/*<span>{{printf "%.28s" .Text}}...</span>*/}}{{/*<small><i class="fa fa-clock-o"></i> {{.Createdon}}</small>*/}}
+                        </a>
+                        {{end}}
+                    </div>{{end}}
+                    {{end}}
+                    <div class="{{if $iframe}}unit-100{{else}}{{if eq $layout 1}}unit-100{{else}}unit-70{{end}}{{end}} bckgrnd1" style="padding: 5px; text-align:justify;">
+                        <div class="unit-row end" style="clear:both; min-height: 165px; border-bottom:1px solid rgba(0,0,0,0.2)">
+                            <div class="unit-100 loc-info loc-img">
+                                {{if .Imageurl}}
+                                <img src="{{.Imageurl}}" alt="" />{{end}}
+                                <dl>
+                                    {{if .Address}}<dt>Lokalizacja</dt>
+                                    <dd>{{.Address}}</dd>{{end}} {{/*if .Tags}}<dt>Kategoria</dt>
+                                    <dd>{{template "tags" .}}</dd>{{end*/}} {{if .Mapscript}}<dt>Adres www</dt>
+                                    <dd><a href="{{.Mapscript}}">{{.Mapscript}}</a>
+                                    </dd>{{end}} {{if .Telephone}}<dt>Telefon</dt>
+                                    <dd><a href="tel:{{.Telephone}}">{{.Telephone}}</a>
+                                    </dd>{{end}}
+                                    {{if $iframe}}<dt>Źródło</dt><dd><a href="http://{{.Url}}">{{.Sitename}}</a></dd>{{end}}
+                                </dl>
+                            </div>
+                        </div>
+                        {{if .Text}}
+                        <div style="padding:15px">{{.Text}}</div>{{end}}
+                {{if .Moreinformations}}
+                                    <p style="text-align:right;padding:10px;">{{.Moreinformations}}</p>{{end}}
+                    </div>
+                </div>
+
+                <div class="unit-row unit-push-20" style="padding: 35px 20px 25px 20px;">
+                    <div class="mobile-width-100">
+                        {{if .Telephone}}
+                        <div class="unit-40 guz">
+                            <a href="tel:{{.Telephone}}" class="btn btn-big btn-green" alt="Zadzwoń pod numer {{.Telephone}}"><i class="fa fa-phone"></i> Zadzwoń</a>
+                        </div>
+                        {{end}} {{if .Locationset}}
+                        <div class="unit-40 guz">
+                            <a href="http://91.196.50.145/nav/{{.Url}}/{{.Id}}/{{.Locationlat}}/{{.Locationlng}}" class="btn btn-big btn-blue" alt="Nawiguj pod adres {{.Adres}}"><i class="fa fa-globe"></i> Nawiguj</a>
+                        </div>
+                        {{end}}
+                    </div>
+                </div>
+
+                {{if and .Locationset (and .Locationlat .Locationlng)}} {{if $iframe}}
+                <div class="unit-row" style="padding-top: 20px;">
+                    <a href="{{.Adres}}"><button class="btn btn-blue big" style="width:100%">kliknij, aby przejść do pełnej wersji artykułu na stronie {{.Sitename}} i zobaczyć mapę</button></a>
+                    </div>
+                </div>
+                {{else}}
+                <div class="unit-row" style="padding-top: 80px;">
+                    <div id="map-canvas" class="bckgrnd2" data-geo-lat="{{.Locationlat}}" data-geo-long="{{.Locationlng}}"></div>
+                </div>
+                {{end}} {{end}} 
+                {{if eq $layout 1}} {{/* element ponizej jest niepotrzebny w layout 1, wiec go nie wyswietla */}} {{else}}
+                {{if not $iframe}}
+                <div class="unit-80 units-mobile-50 bckgrnd1 list-news-other loc2" style="margin-top:40px">
+                        <button class="btn btn-green bckgrnd2" style="width:100%">Przeczytaj również</button>
+                        {{range $last}}
+                        <a href="{{.Adres}}">
+                            <p>{{if eq .Type 2}}<i class="fa fa-calendar"></i>{{else if .Type}}<i class="fa fa-map-marker"></i>{{else}}<i class="fa fa-comments"></i>{{end}} {{.Title}}</p>{{/*<span>{{printf "%.28s" .Text}}...</span>*/}}{{/*<small><i class="fa fa-clock-o"></i> {{.Createdon}}</small>*/}}
+                        </a>
+                        {{end}}
+                    </div>{{end}}
+                
+                {{end}}
+                
+                {{else if eq .Type 2}}
+
+
+                <div class="units-row end">
+                    <div class="unit-100 p-news">
+                        {{if .Title}}
+                        <h1>{{.Title}}</h1>{{end}}
+                        <dl>
+                            {{/*if .Createdon}}<dt>opublikowano</dt>
+                            <dd>{{.Createdon}}</dd>{{end*/}} {{if .Source}}<dt>autor</dt>
+                            <dd>{{.Source}}</dd>{{end}}
+                            {{if .Tags}}<dt>znajduje się w</dt>
+                            <dd>{{template "tags" .}}</dd>{{end}}
+                        </dl>
+                    </div>
+                </div>
+                <div class="units-row end">
+                    <div class="{{if $iframe}}unit-100{{else}}{{if eq $layout 1}}unit-100{{else}}unit-70{{end}}{{end}}" style="padding: 5px; text-align:justify;">
+                        <div class="unit-row bckgrnd1" style="clear:both; min-height: 80px;margin-bottom:20px;">
+
+                            <div class="unit-100 loc-info loc-img">
+                                {{if .Imageurl}}
+                                <img src="{{.Imageurl}}">{{end}}
+                                <dl>
+                                    {{if eq .Eventtime .Eventtimeend}}
+                                    <dt>Odbędzie się</dt>
+                                    <dd>{{.Eventtimeend}}</dd>
+                                    {{else}}
+                                    <dt>Trwa od</dt><dd>{{.Eventtime}}</dd>
+                                    <dt>do</dt><dd>{{.Eventtimeend}}</dd>
+                                    {{end}}
+                                    {{/*if .Tags}}<dt>Kategoria</dt>
+                                    <dd>{{template "tags" .}}</dd>{{end*/}}
+                                    {{if .Mapscript}}<dd><a href="{{.Mapscript}}">{{.Mapscript}}</a></dd>{{end}} 
+                                    {{if .Telephone}}<dt>Zadzwoń <i class="fa fa-phone"></i></dt>
+                                    <dd><a href="tel:{{.Telephone}}">{{.Telephone}}</a>
+                                    </dd>{{end}}
+                                    {{if $iframe}}<dt>Źródło</dt><dd><a href="{{.Url}}">{{.Sitename}}</a></dd>{{end}}
+                                </dl>
+                            </div>
+                        </div>
+
+                        {{if .Text}}
+                        <p style="padding-top:15px">{{.Text}}</p>{{end}}
+                {{if .Moreinformations}}
+                                    <p style="text-align:right;padding-top:15px;">{{.Moreinformations}}</p>{{end}}
+                    </div>
+                    {{if eq $layout 1}}{{else}}
+                    {{if not $iframe}}
+                    <div class="unit-30 bckgrnd1 list-news-other">
+                        <button class="btn btn-green bckgrnd2" style="width:100%">Przeczytaj również</button>
+                        {{range $last}}
+                        <a href="{{.Adres}}">
+                            <p>{{if eq .Type 2}}<i class="fa fa-calendar"></i>{{else if .Type}}<i class="fa fa-map-marker"></i>{{else}}<i class="fa fa-comments"></i>{{end}} {{.Title}}</p>{{/*<span>{{printf "%.28s" .Text}}...</span>*/}}{{/*<small><i class="fa fa-clock-o"></i> {{.Createdon}}</small>*/}}
+                        </a>
+                        {{end}}
+                    </div>
+            {{end}}{{end}}
+                </div>
+            
+                <div class="unit-row" style="padding: 35px 20px 25px 20px;">
+                    {{if .Locationset}}
+                    <div class="unit-push-25 unit-50" style="display:inline-block;">
+                        <a href="http://91.196.50.145/nav/{{.Url}}/{{.Id}}/{{.Locationlat}}/{{.Locationlng}}" class="btn btn-big btn-blue" alt="Nawiguj pod adres {{.Adres}}"><i class="fa fa-globe"></i> Nawiguj</a>
+                    </div>
+                    {{end}}
+                </div>
+        
+        
+            {{if and .Locationset (and .Locationlat .Locationlng)}} {{if $iframe}}
+                <div class="unit-row" style="padding-top: 20px;">
+                    <a href="{{.Adres}}"><button class="btn btn-blue big" style="width:100%">kliknij, aby przejść do pełnej wersji artykułu na stronie {{.Sitename}} i zobaczyć mapę</button></a>
+                    </div>
+                </div>
+                {{else}}
+                <div class="unit-row" style="padding-top: 80px;">
+                    <div id="map-canvas" class="bckgrnd2" data-geo-lat="{{.Locationlat}}" data-geo-long="{{.Locationlng}}"></div>
+                </div>
+            {{end}} {{end}}
+        
+        
+                {{end}}
+    </div>
+        {{if not $iframe}}
+                <script>
+                    $('#frame').ready(function () {
+
+                        function initialize() {
+                            var lat = $('#map-canvas').attr('data-geo-lat');
+                            var lng = $('#map-canvas').attr('data-geo-long');
+
+                            var loc = new google.maps.LatLng(lat, lng),
+                                Marker = new google.maps.Marker({});;
+
+                            var mapOptions = {
+                                zoom: 16,
+                                center: loc
+                            };
+
+                            var map = new google.maps.Map(document.getElementById('map-canvas'),
+                                mapOptions);
+
+                            Marker = new google.maps.Marker({
+                                position: loc,
+                                map: map,
+                            });
+
+                        }
+                        google.maps.event.addDomListener(window, "load", initialize);
+
+                    });
+                </script>
+                {{end}}
+        {{end}}
+
+        {{end}}
+            {{if $iframe}}</div></div></body>{{else}}{{template "footer" .}}{{end}}
+            {{end}}

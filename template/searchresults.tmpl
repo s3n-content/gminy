@@ -1,0 +1,55 @@
+{{define "searchresults"}} {{template "header" .}}
+<style>
+    .left {
+        display: inline-block;
+        float: left;
+        border-radius: 100%;
+        padding: 9px;
+        margin: 5px 10px;
+        width: 45px;
+        height: 45px;
+        background: #222;
+        color: #fff;
+        font-size: 28px;
+        text-align: center;
+    }
+</style>
+</head>
+
+<body>
+    <div id="cont" class="units-container bckgrnd">
+        {{template "top" .}}
+
+        <div id="main" class="units-row end">
+            <div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
+                <div class="units-row end">
+                    <nav class="breadcrumbs">
+                        <ul>
+                            <li><a href="/">Strona główna</a>
+                            </li>
+                            <li><a href="/search">Gdzie najbliżej</a>
+                            <li><span>Lista wyników</span></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="units-row end">
+                    <div class="width-mobile-100 catego">
+                        <ul style="margin: 0;">
+                            <li class="" style="text-align:center;font-weight:700;">Gdzie najbliżej...</li>
+                    {{range .posts}} {{if .Visible}}
+                            <a href="{{.Adres}}">
+                                <li class="blue-600">
+                                        <span class="bckgrnd2 grey-900" style="padding: 4px 5px 4px 4px;margin: 0 5px 0 0;">{{.Distancestr}}</span>
+                                        {{.Title}}
+                                        <span class="adr" style="float:right;font-size:20px;">{{.Address}}</span>
+                                </li>
+                            </a>
+                            {{end}} {{end}}
+                        </ul>
+                    </div>
+                </div></div></div></div>
+
+
+
+
+                   {{template "footer" .}} {{end}}

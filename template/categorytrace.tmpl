@@ -1,0 +1,6 @@
+{{define "categorytrace"}}
+    {{if .Tracetocategory}}
+        {{template "categorytrace" .Tracetocategory}}
+    {{end}}
+    <li><a href="/cat/{{.Id}}">{{.Title}}</a></li>
+{{end}}

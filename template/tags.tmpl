@@ -1,0 +1,10 @@
+{{define "tags"}}
+	{{range .Tags}}
+		{{if eq . "1a"}}<i class="fa fa-home"></i> Nocleg 
+		{{else if eq . "2a"}}<i class="fa fa-cutlery"></i> Jedzenie 
+		{{else if eq . "6"}}<i class="fa fa-picture-o"></i> Atrakcje
+		{{else if eq . "10"}}<i class="fa fa-map-marker"></i> Punkt Użyteczności Pulicznej 
+		{{else if eq . "11"}}<i class="fa fa-truck"></i> Stacja benzynowa 
+		{{else if eq . "12"}}<i class="fa fa-calendar"></i> Wydarzenie {{end}}
+	{{end}}
+{{end}}

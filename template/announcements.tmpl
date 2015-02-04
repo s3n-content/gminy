@@ -1,0 +1,100 @@
+{{define "announcements"}}{{template "header" .}}
+<style>
+
+</style>
+</head>
+
+<body>
+    <div id="cont" class="units-container bckgrnd">
+        {{template "top" .}}
+        <div id="main" class="units-row end">
+            <div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
+                <div class="units-row end">
+                    <nav class="breadcrumbs">
+                        <ul>
+                            <li><a href="/">Strona główna</a>
+                            </li>
+                            <li><span>Ogłoszenia</span>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="units-row">
+                    <div class="unit-mobile-100 catego">
+                        {{if .announcements}}
+                        
+                        
+                        <ul>
+                            <li class="" style="text-align:center;font-weight:700;">Ogłoszenia</li>
+                            {{range .announcements}} 
+                            <a href="/li1/{{.Id}}">
+                                <li class="c9"><i class="fa fa-chevron-right"></i> {{.Title}}{{/*.Text*/}}</li>
+                            </a>
+                            {{end}}
+                        </ul>
+                        {{else}}
+                        <ul>
+                            <a>
+                                <li class="c6">Brak ogłoszeń!</li>
+                            </a>
+                        </ul>
+                        {{end}}
+                    </div>
+                </div>
+                {{/*<div class="units-row">
+                    <div class="unit-100">
+                        <div id="accordion1" data-tools="accordion" data-scroll="true">
+                            
+                            {{range .announcements}} 
+                            <a href="#a{{.Id}}" class="accordion-title">{{.Title}}</a>
+                            <div id="a{{.Id}}" class="accordion-panel">
+                                <dl>
+                                    {{if .Createdon}}<dt>opublikowano</dt>
+                                    <dd>{{.Createdon}}</dd>{{end}}
+                                    {{if .Hideafter}}<dt> widoczne</dt>
+                                    <dd>{{if eq .Hideafter 4}}zawsze{{else if eq .Hideafter 3}} przez cztery tygodnie{{else if eq .Hideafter 2}} przez trzy tygodnie{{else if .Hideafter}}przez dwa tygodnie{{else}}przez tydzień{{end}}</dd>{{end}}
+                                </dl>
+                                
+                                {{.Text}}
+                            </div>    
+                            {{end}}
+                        </div>
+                    </div>
+                </div>*/}}
+                    
+                    
+                    
+            {{/*if .announcements}}
+                <div class="units-row anndiv bckgrnd1">
+                    <div class="unit-mobile-100 purple-800 announcementshead">
+                        Ogłoszenia
+                    </div>
+
+                    <div class="unit-mobile-100">
+                        <ul class="announcements">
+                           <!-- {{<li>
+                                <div class="units-row">
+                                    <div class="ellipsis unit-15" style="float:left;"><strong>Tytuł</strong></div>
+                                    <div class="ellipsis unit-85 end" style="float:right;"><strong>Treść</strong></div>
+                                </div>
+                            </li>}}-->
+                            {{range .announcements}}
+                            <li><a href="/li1/{{.Id}}" class="no-style">
+                                <div class="units-row">
+                                    <div class="ellipsis unit-15" style="float:left;"><i class="fa fa-chevron-circle-right" style="margin-right:8px;"></i> {{.Title}}</div>
+                                    <div class="ellipsis unit-80 end" style="float:right;">{{.Text}}</div>
+                                </div>
+                                </a>
+                            </li>
+                            {{end}}
+                        </ul>
+                    </div>
+                </div>{{end}}{{end*/}}
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {{template "footer" .}}{{end}}

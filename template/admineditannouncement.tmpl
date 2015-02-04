@@ -1,0 +1,89 @@
+{{define "admineditannouncement"}}{{template "adminheader" .}}
+<style>
+    .formsy {
+        list-style-type: none;
+    }
+    span {
+        display:block;
+        font-size:14px;
+        text-indent:5px;
+    }
+    label {
+        font-size:16px;
+    }
+</style>
+</head>
+
+<body>
+    <div id="cont" class="units-container bckgrnd">
+        {{template "admintop" .}}
+
+
+
+        <div id="main" class="units-row end" style="padding-top:30px;">
+            <div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
+                <div class="units-row end">
+                    <nav class="breadcrumbs">
+                        <ul>
+                            <li><a href="/admin">Panel administracyjny</a>
+                            </li>
+                            <li><span>Edytuj ogłoszenie</span>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="unit-row end">
+                    <form method="post" action="/admin/form/editannouncement/{{.announcement.Id}}" class="forms">
+                        <ul class="formsy">
+                            <input type="hidden" name="Id" value="{{.announcement.Id}}" />
+                            <li>
+                                <label>Podaj tytuł ogłoszenia...
+                                    <input type="text" name="Title" placeholder="Tytuł ogłoszenia..." {{if .Form.Title}}value="{{.Form.Title}}" {{else if .announcement.Title}}value="{{.announcement.Title}}" {{end}} />
+                                </label>
+                            </li>
+                            <li>
+                                <label>Podaj treść ogłoszenia...
+                                    <textarea name="Text" cols="15">{{if .Form.Text}}{{.Form.Text}}{{else if .announcement.Text}}{{.announcement.Text}}{{end}}</textarea>
+                                </label>
+                            </li>
+                            <li>
+                                <label>Czy ogłoszenie ma być widoczne?
+                                    <input type="checkbox" {{if .Form.Visible}}checked="checked"{{else if .announcement.Visible}}checked="checked"{{end}} name="Visible" />
+                                </label>
+                            </li>
+                            <li>
+                                <label>Czy ogłoszenie ma być wyświetlane na stronie głównej?
+                                    <input type="checkbox" {{if .Form.Showonfrontpage}}checked="checked"{{else if .announcement.Showonfrontpage}}checked="checked"{{end}} name="Showonfrontpage" />
+                                </label>
+                            </li>
+                            <li>
+                                <label>Wybierz przez jaki czas ma się wyświetlać
+                                    <select id="hid" name="Hideafter">
+                                        <option value="0">Tydzień</option>
+                                        <option value="1">Dwa tygodnie</option>
+                                        <option value="2">Trzy tygodnie</option>
+                                        <option value="3">Cztery tygodnie</option>
+                                        <option value="4">Zawsze</option>
+                                    </select>
+                                </label>
+                            </li>
+                        </ul>
+                        <P>
+                            <input class="btn btn-blue" type="submit" value="Wyslij" />
+                        </P>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+    var numb = "{{if .Form.Hideafter}}{{.Form.Hideafter}}{{else if .announcement.Hideafter}}{{.announcement.Hideafter}}{{end}}";
+    
+    if( numb ) {
+        $('#hid option:eq(' + numb + ')').attr('selected', 'selected')
+    }
+    </script>
+    
+    {{template "adminfooter" .}}{{end}}

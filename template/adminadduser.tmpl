@@ -1,0 +1,103 @@
+{{define "adminadduser"}}{{template "adminheader" .}}
+<style>
+    .formsy {
+        list-style-type: none;
+    }
+    
+    span {
+        display: block;
+        font-size: 14px;
+        text-indent: 5px;
+    }
+    
+    label {
+        font-size: 16px;
+    }
+</style>
+</head>
+
+<body>
+    <div id="cont" class="units-container bckgrnd">
+        {{template "admintop" .}}
+
+
+
+        <div id="main" class="units-row end" style="padding-top:30px;">
+            <div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
+                <div class="units-row end">
+                    <nav class="breadcrumbs">
+                        <ul>
+                            <li><a href="/admin">Panel administracyjny</a>
+                            </li>
+                            <li><a href="/admin/servers">Zmień ustawienia serwerów</a>
+                            </li>
+                            <li><span>Dodaj użytkownika</span>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="unit-row">
+                    <div class="unit-100">
+
+                        {{if .Error}} Wystąpił błąd: {{.Error}}
+                        <br /> {{end}}
+                        <form method="post" action="/admin/form/adduser/{{.Server.Id}}" class="forms">
+                            <ul class="formsy">
+                                <h4>Zmieniasz ustawienia dla serwera {{.Server.Address}}:</h4>
+
+                                <input type="hidden" name="Id" value="{{.Server.Id}}">
+
+                                <li>
+                                    <label>Nazwa użytkownika (login)
+                                        <input type="text" name="Login" placeholder="Nazwa użytkownika..." {{with .Form.Login}}value="{{.}}" {{end}}/> </label>
+                                </li>
+                                <li>
+                                    <label>Hasło
+                                        <input type="password" name="Password" placeholder="Hasło..." {{with .Form.Password}}value="{{.}}" {{end}}/> </label>
+                                </li>
+                                <li>
+                                    <label>Email (jako alternatywny login)
+                                        <input type="email" name="Email" placeholder="Adres e-mail..." {{with .Form.Email}}value="{{.}}" {{end}}/> </label>
+                                </li>
+                                <li>
+                                    <label>Typ użytkownika:
+                                        <select name="AdminType">
+                                            <option value="1" {{if eq .Form.AdminType 1}}selected="selected" {{end}}>Redaktor</option>
+                                            <option value="2" {{if eq .Form.AdminType 2}}selected="selected" {{end}}>Moderator</option>
+                                            <option value="3" {{if eq .Form.AdminType 3}}selected="selected" {{end}}>Administrator</option>
+                                            {{if eq .Server.MyId 1}}
+                                            <option value="4" {{if eq .Form.AdminType 4}}selected="selected" {{end}}>Super Administrator</option>
+                                            {{end}}
+                                        </select>
+                                        <br/>
+                                        <div class="bckgrnd1" style="margin:10px; padding:15px;">
+                                            Redaktor - możliwość zarządzania artykułami
+                                        <br /> Moderator - możliwość zarządzania postami i kategoriami
+                                        <br /> Administrator - możliwość zarządznaia postami, kategoriami i ustawieniami strony
+                                        <br /> {{if eq .Server.MyId 1}} Super Administrator - Wszystkie opcje, może zostać utworzony tylko i wyłącznie na serwerze głównym, na pozostałych serwerach jest bezużyteczny.
+                                        <br /> {{end}}
+                                        </div>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>Wybierz stronę, którą ma zarządzać
+                                        <select name="AdminSiteId">
+                                            {{$adminsiteid := .Form.AdminSiteId}} {{range .Domains}}
+                                            <option value="{{.Id}}" {{if eq $adminsiteid .Id}}selected="selected" {{end}}>{{.Address}} - {{.Name}}</option>
+                                            {{end}}
+                                        </select>
+                                    </label>
+                                </li>
+
+
+                                <span class="req">Sprawdź poprawność, ponieważ nie będzie drugiej możliwośći</span>
+                            </ul>
+                            <p>
+                                <input class="btn btn-blue" type="submit" value="Wyślij" />
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{template "adminfooter" .}} {{end}}

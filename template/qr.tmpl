@@ -1,0 +1,41 @@
+{{define "qr"}}{{template "header"}}
+
+
+</head>
+
+<body>
+    <div id="cont" class="units-container bckgrnd">
+        {{template "top" .}}
+
+        <div id="main" class="units-row end">
+            <div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
+                <div class="units-row end">
+                    <nav class="breadcrumbs">
+                        <ul>
+                            <li><a href="/">Strona główna</a>
+                            </li>
+                            <li><a href="/qr">Skanuj kod QR</a>
+                            </li>
+                            <li><span>Wynik skanowania kodu QR</span>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="units-row end">
+                    
+                    <section class="styleguide__next-lessons" style="margin-top:64px;">
+                        <div class="next-lessons container-medium" data-current-lesson="99">
+                            <h3><i class="icon icon-lessons"></i> Z kodu odczytaliśmy...</h3>
+                            <ol class="list-lessons list-links">
+                                  {{range .output}}
+                            <li><a href="{{.}}">{{.}}</a></li>
+                            {{end}}
+                            </ol>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+{{template "footer"}}
+{{end}}

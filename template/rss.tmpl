@@ -1,0 +1,46 @@
+{{define "rss"}}{{template "header"}}
+
+    {{$ThisSiteName := .Domain.Name}}
+<style>
+    ul {
+        list-style-type: none;
+    }
+</style>
+</head>
+
+<body>
+    <div id="cont" class="units-container bckgrnd">
+        {{template "top" .}}
+
+        <div id="main" class="units-row end">
+            <div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
+                <div class="units-row end">
+                    <nav class="breadcrumbs">
+                        <ul>
+                            <li><a href="/">Strona główna</a>
+                            </li>
+                            {{if .Category.Tracetocategory}} {{template "categorytrace" .Category.Tracetocategory}} {{end}}
+                            <li><span>{{.Category.Title}}</span>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <div class="units-row end">
+                    {{if .rsselements}}
+                    <p>Adres przeglądanego kanału: <a href="{{.rssurl}}">{{.rssurl}}</a>
+                    </p>
+                    <ul>
+                        {{range .rsselements}}
+                        <li>{{.Date}}: <a href="{{.Url}}">{{.Title}}</a>
+                        </li>
+                        {{end}}
+                    </ul>
+                    {{else}}
+                    <p>Kanał o adresie <a href="{{.rssurl}}">{{.rssurl}}</a> nie zawiera żadnych danych.</p>
+                    {{end}}
+                </div>
+            </div>
+        </div>
+    </div>
+    {{template "footer"}} {{end}}
