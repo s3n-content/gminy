@@ -2,3 +2,4 @@ config.gcfg
 uploads
 uploads/
 uploads/*
+logs
