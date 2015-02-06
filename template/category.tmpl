@@ -33,7 +33,7 @@
                 <div class="units-row">
                     <div class="unit-100 news-list">
 
-                        {{if .PostInCategory}}{{range .PostsInCategory}} {{/*if .Visible*/}}
+                        {{if .PostsInCategory}}{{range .PostsInCategory}} {{/*if .Visible*/}}
                         <a href="/pic/{{.Id}}" class="no-style">
                             <div class="news-1 unit-mobile-100" style="margin-bottom:10px; padding:10px 0 5px 0">
                                 <div class="news-badge"><i class="fa fa-chevron-right{{/*if eq .Type 2}}calendar{{else if .Type}}map-marker{{else}}comment{{end*/}}"></i>
@@ -65,9 +65,9 @@
                                     <a href="/cat/{{$id}}/{{.}}">
                             <button class="btn btn-outline pagin">{{.}}</button></a>
                                 {{end}}
-                            {{end}} 
+                            {{end}}
                             {{if ne .PageIdPlus -1}}<a href="/cat/{{$id}}/{{.PageIdPlus}}"><button class="btn btn-outline pagin">>></button></a>{{end}}
-                            
+
                         </span>
                     </div>
                 </div>
