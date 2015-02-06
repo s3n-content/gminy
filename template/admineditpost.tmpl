@@ -12,7 +12,7 @@
         text-indent: 5px;
     }
     li span {
-        display: inline!important;   
+        display: inline!important;
     }
     label {
         font-size: 16px;
@@ -77,11 +77,11 @@
 
 </style>
 <script>
-    
+
     var map;
     var markers = [];
     var infos = [];
-    
+
     function initialize() {
         var maplat = "{{if .Form.Locationlat}}{{with .Form.Locationlat}}{{.}}{{end}}{{else}}{{with .Post.Locationlat}}{{.}}{{end}}{{end}}";
         var maplng = "{{if .Form.Locationlng}}{{with .Form.Locationlng}}{{.}}{{end}}{{else}}{{with .Post.Locationlng}}{{.}}{{end}}{{end}}";
@@ -99,13 +99,13 @@
         }
         map = new google.maps.Map(document.getElementById('map-canvas'),
             mapOptions);
-        
+
         google.maps.event.addListener(map, 'click', function (event) {
             clearMarkers();
             clearInfos();
             addMarker(event.latLng);
             var pozycja = event.latLng;
-            
+
         });
 
         var input = (
@@ -137,7 +137,7 @@
         google.maps.event.addListener(autocomplete, 'place_changed', function () {
             clearMarkers();
             clearInfos();
-            
+
             infowindow.close();
             marker.setVisible(false);
             var place = autocomplete.getPlace();
@@ -451,16 +451,16 @@ tinymce.init({
                                 <li class="pole17">
                                     <label>
                                         Rozpoczęcie wydzarzenia
-                                        <span>Format daty: rok-miesiąc-dzień godziny:minuty</span>
-                                        <input class="width-60" class="typedata" type="text" name="Eventtime" placeholder="rrrr-mm-dd h:m" {{if .Form.Eventtime}}value="{{.Form.Eventtime}}"{{else if .Post.Eventtime}}value="{{.Post.Eventtime}}"{{end}} pattern="([0-3])([0-9])-([0-1])([0-9])-([2])([0])([0-2])([0-9]) ([0-2])([0-9]):([0-5])([0-9])" required />
+                                        <span>Format daty: dzień-miesiąc-rok godziny:minuty</span>
+                                        <input class="width-60" class="typedata" type="text" name="Eventtime" placeholder="dd-mm-rrrr hh:mm" {{if .Form.Eventtime}}value="{{.Form.Eventtime}}"{{else if .Post.Eventtime}}value="{{.Post.Eventtime}}"{{end}} pattern="([0-3])([0-9])-([0-1])([0-9])-([2])([0])([0-2])([0-9]) ([0-2])([0-9]):([0-5])([0-9])" required />
 
                                     </label>
                                 </li>
                                 <li class="pole18">
                                     <label>
                                         Zakończenie wydarzenia
-                                        <span>Format daty: rok-miesiąc-dzień godziny:minuty</span>
-                                        <input class="width-60" class="typedata" type="text" name="Eventtimeend" placeholder="rrrr-mm-dd h:m" {{if .Form.Eventtimeend}}value="{{.Form.Eventtimeend}}"{{else if .Post.Eventtimeend}}value="{{.Post.Eventtimeend}}"{{end}} pattern="([0-3])([0-9])-([0-1])([0-9])-([2])([0])([0-2])([0-9]) ([0-2])([0-9]):([0-5])([0-9])" required />
+                                        <span>Format daty: dzień-miesiąc-rok godziny:minuty</span>
+                                        <input class="width-60" class="typedata" type="text" name="Eventtimeend" placeholder="dd-mm-rrrr hh:mm" {{if .Form.Eventtimeend}}value="{{.Form.Eventtimeend}}"{{else if .Post.Eventtimeend}}value="{{.Post.Eventtimeend}}"{{end}} pattern="([0-3])([0-9])-([0-1])([0-9])-([2])([0])([0-2])([0-9]) ([0-2])([0-9]):([0-5])([0-9])" required />
 
                                     </label>
                                 </li>
@@ -550,7 +550,7 @@ tinymce.init({
             }
 /*
             if ($('#locat').prop('checked')) {
-                
+
                 $('.polemapka').removeClass('pointer-events');
                 $('#lng').attr('disabled', false);
                 $('#lat').attr('disabled', false);
@@ -558,7 +558,7 @@ tinymce.init({
               */  /*$('.pole6').show();
                 $('.pole7').show();*/
             /*} else {
-            */    
+            */
                /* $('.mapnoti').show();
                 $('.polemapka').addClass('pointer-events');
                 $('#lng').attr('disabled', true);
@@ -598,17 +598,17 @@ tinymce.init({
                 $('#lng').attr('disabled', true);
                 $('#lat').attr('disabled', true);
             }*/
-                
+
            /* $('.pole6').toggle(this.checked);
             $('.pole7').toggle(this.checked);*/
-        
+
 
 
         $('#editpost').submit( function() {
             var el = $('#target4').val();
             el = "," + el + ",";
             $('#target4').attr('value', el);
-            
+
             //if typeint == wydarzenie, ustaw TAG na wydarzenie
             if( $('.typeint').val() == 2 ){
                 var event2 = ",12,";
