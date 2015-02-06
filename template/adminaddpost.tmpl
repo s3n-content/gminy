@@ -432,13 +432,9 @@ tinymce.init({
                                     {{/*<input class="width-60" type="number" name="Categoryid" placeholder="Categoryid int" {{with .Form.Categoryid}}value="{{.}}" {{end}}/>*/}}
                                     <select name="Categoryid" class="width-60">
                                         {{$forminid := .Form.Categoryid}}
+                                        {{.CategoriesTree}}
                                         {{range .CategoriesTree}}
                                             {{template "admincategorytreeselect" .}}
-                                            {{/*
-                                                {{if eq .Typeid 0}}
-                                                    <option value="{{.Id}}" {{if eq $forminid .Id}}selected="selected" {{end}}>{{.Title}}</option>
-                                                {{end}}
-                                            */}}
                                         {{end}}
                                     </select>
                                 </li>
