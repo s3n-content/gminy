@@ -27,13 +27,19 @@
 
 
 
-        <div id="main" class="units-row end" style="padding-top:90px;">
+        <div id="main" class="units-row end" style="margin-top:90px;">
             <div class="unit-row" style="/* padding:15px 20px; */">
                 <div class="unit-80 bckgrnd1 unit-centered">
                     <div class="unit-100">
                         <div class="unit-33">
                             <ul class="adml">
                                 
+                            {{if ge .User.admintype 2}}
+                                <li class="green-700">
+                                    <a href="/admin/form/addcategory">
+                                        <i class="fa fa-plus fa-2x"></i><p>Dodaj kategorie</p></a>
+                                </li>
+                            {{end}}
                             {{if ge .User.admintype 1}}
                                 <li class="green-700"><a href="/admin/form/addpost">
                                     <i class="fa fa-plus fa-2x"></i><p>Dodaj treść</p>
@@ -55,43 +61,32 @@
                                 {{end}}
                             {{end}}
                                 
-                            {{if ge .User.admintype 2}}
-                                <li class="green-700">
-                                    <a href="/admin/form/addcategory">
-                                        <i class="fa fa-plus fa-2x"></i><p>Dodaj kategorie</p></a>
-                                </li>
-                            {{end}}
                             </ul>
                         </div>
                         <div class="unit-33 adml">
-                            <ul>
-                                
-                            {{if ge .User.admintype 1}}
-                                <li class="teal-700">
-                                    <a href="/admin/form/addposttocategory">
-                                        <i class="fa fa-plus fa-2x"></i><p>Importuj treść</p></a>
-                                </li>
-                            {{end}}
-                                
-                            {{if ge .User.admintype 2}}
-                                <li class="teal-700">
-                                    <a href="/admin/subscriptions">
-                                        <i class="fa fa-globe fa-2x"></i><p>Przeglądaj subskrypcje</p></a>
+                            <ul>                                
+                                {{if ge .User.admintype 2}}
+                                    <li class="teal-700">
+                                        <a href="/admin/form/addsubscription">
+                                            <i class="fa fa-globe fa-2x"></i><p>Dodaj subskrypcje</p></a>
                                     </li>
-                                <li class="teal-700">
-                                    <a href="/admin/form/addsubscription">
-                                        <i class="fa fa-globe fa-2x"></i><p>Dodaj subskrypcje</p></a>
-                                </li>
-                            {{end}}
+                                    <li class="teal-700">
+                                        <a href="/admin/subscriptions">
+                                            <i class="fa fa-globe fa-2x"></i><p>Przeglądaj subskrypcje</p></a>
+                                    </li>
+                                {{end}}
+
+                                {{if ge .User.admintype 1}}
+                                    <li class="teal-700">
+                                        <a href="/admin/form/addposttocategory">
+                                            <i class="fa fa-plus fa-2x"></i><p>Importuj treść</p></a>
+                                    </li>
+                                {{end}}
                             </ul>
                         </div>
                         <div class="unit-33 adml">
                             <ul>
                             {{if ge .User.admintype 3}}
-                                <li class="red-700">
-                                    <a href="/admin/servers">
-                                        <i class="fa fa-wrench fa-2x"></i><p>Uprawnienia administracyjne</p></a>
-                                </li>
                                 <li class="red-700">
                                     <a href="/admin/form/editsettings">
                                         <i class="fa fa-wrench fa-2x"></i><p>Ustawienia ogólne</p></a>
@@ -99,6 +94,10 @@
                             {{end}}
                                 
                             {{if ge .User.admintype 4}}
+                                <li class="red-700">
+                                    <a href="/admin/servers">
+                                        <i class="fa fa-wrench fa-2x"></i><p>Uprawnienia administracyjne</p></a>
+                                </li>
                                 <li class="red-700">
                                     <a href="/admin/queue">
                                         <i class="fa fa-wrench fa-2x"></i><p>Wyświetl kolejkę akcji</p></a>
