@@ -57,7 +57,7 @@
                             {{/*if .Createdon}}<dt>opublikowano</dt>
                             <dd>{{.Createdon}}</dd>{{end*/}} {{if .Source}}<dt>autor</dt>
                             <dd>{{.Source}}</dd>{{end}}
-                            {{if $iframe}}<dt>Źródło</dt><dd><a href="{{.Url}}">{{.Sitename}}</a></dd>{{end}}
+                            {{if $iframe}}<dt>Źródło</dt><dd><a href="{{.Url}}" target="_blank">{{.Sitename}}</a></dd>{{end}}
                             <dt></dt>
                             <dd></dd>
                         </dl>
@@ -118,11 +118,11 @@
                                     {{if .Address}}<dt>Lokalizacja</dt>
                                     <dd>{{.Address}}</dd>{{end}} {{/*if .Tags}}<dt>Kategoria</dt>
                                     <dd>{{template "tags" .}}</dd>{{end*/}} {{if .Mapscript}}<dt>Adres www</dt>
-                                    <dd><a href="{{.Mapscript}}">{{.Mapscript}}</a>
+                                    <dd><a href="{{.Mapscript}}" target="_blank">{{.Mapscript}}</a>
                                     </dd>{{end}} {{if .Telephone}}<dt>Telefon</dt>
                                     <dd><a href="tel:{{.Telephone}}">{{.Telephone}}</a>
                                     </dd>{{end}}
-                                    {{if $iframe}}<dt>Źródło</dt><dd><a href="http://{{.Url}}">{{.Sitename}}</a></dd>{{end}}
+                                    {{if $iframe}}<dt>Źródło</dt><dd><a href="http://{{.Url}}" target="_blank">{{.Sitename}}</a></dd>{{end}}
                                 </dl>
                             </div>
                         </div>
@@ -134,14 +134,14 @@
                 </div>
 
                 <div class="unit-row unit-push-20" style="padding: 35px 20px 25px 20px;">
-                    <div class="mobile-width-100">
+                    <div class="unit-100" style="  text-align: center;margin-bottom: 50px;">
                         {{if .Telephone}}
                         <div class="unit-40 guz">
                             <a href="tel:{{.Telephone}}" class="btn btn-big btn-green" alt="Zadzwoń pod numer {{.Telephone}}"><i class="fa fa-phone"></i> Zadzwoń</a>
                         </div>
                         {{end}} {{if .Locationset}}
                         <div class="unit-40 guz">
-                            <a href="http://91.196.50.145/nav/{{.Url}}/{{.Id}}/{{.Locationlat}}/{{.Locationlng}}" class="btn btn-big btn-blue" alt="Nawiguj pod adres {{.Adres}}"><i class="fa fa-globe"></i> Nawiguj</a>
+                            <a href="http://91.196.50.145/nav/{{.Url}}/{{.Id}}/{{.Locationlat}}/{{.Locationlng}}" class="btn btn-big btn-blue" alt="Nawiguj pod adres {{.Adres}}" target="_blank"><i class="fa fa-globe"></i> Nawiguj</a>
                         </div>
                         {{end}}
                     </div>
@@ -149,7 +149,7 @@
 
                 {{if and .Locationset (and .Locationlat .Locationlng)}} {{if $iframe}}
                 <div class="unit-row" style="padding-top: 20px;">
-                    <a href="{{.Adres}}"><button class="btn btn-blue big" style="width:100%">kliknij, aby przejść do pełnej wersji artykułu na stronie {{.Sitename}} i zobaczyć mapę</button></a>
+                    <a href="{{.Adres}}" target="_blank"><button class="btn btn-blue big" style="width:100%">kliknij, aby przejść do pełnej wersji artykułu na stronie {{.Sitename}} i zobaczyć mapę</button></a>
                     </div>
                 </div>
                 {{else}}
@@ -203,11 +203,11 @@
                                     {{end}}
                                     {{/*if .Tags}}<dt>Kategoria</dt>
                                     <dd>{{template "tags" .}}</dd>{{end*/}}
-                                    {{if .Mapscript}}<dd><a href="{{.Mapscript}}">{{.Mapscript}}</a></dd>{{end}} 
+                                    {{if .Mapscript}}<dd><a href="{{.Mapscript}}" target="_blank">{{.Mapscript}}</a></dd>{{end}} 
                                     {{if .Telephone}}<dt>Zadzwoń <i class="fa fa-phone"></i></dt>
                                     <dd><a href="tel:{{.Telephone}}">{{.Telephone}}</a>
                                     </dd>{{end}}
-                                    {{if $iframe}}<dt>Źródło</dt><dd><a href="{{.Url}}">{{.Sitename}}</a></dd>{{end}}
+                                    {{if $iframe}}<dt>Źródło</dt><dd><a href="{{.Url}}" target="_blank">{{.Sitename}}</a></dd>{{end}}
                                 </dl>
                             </div>
                         </div>
@@ -233,7 +233,7 @@
                 <div class="unit-row" style="padding: 35px 20px 25px 20px;">
                     {{if .Locationset}}
                     <div class="unit-push-25 unit-50" style="display:inline-block;">
-                        <a href="http://91.196.50.145/nav/{{.Url}}/{{.Id}}/{{.Locationlat}}/{{.Locationlng}}" class="btn btn-big btn-blue" alt="Nawiguj pod adres {{.Adres}}"><i class="fa fa-globe"></i> Nawiguj</a>
+                        <a href="http://91.196.50.145/nav/{{.Url}}/{{.Id}}/{{.Locationlat}}/{{.Locationlng}}" class="btn btn-big btn-blue" alt="Nawiguj pod adres {{.Adres}}" target="_blank"><i class="fa fa-globe"></i> Nawiguj</a>
                     </div>
                     {{end}}
                 </div>
@@ -241,7 +241,7 @@
         
             {{if and .Locationset (and .Locationlat .Locationlng)}} {{if $iframe}}
                 <div class="unit-row" style="padding-top: 20px;">
-                    <a href="{{.Adres}}"><button class="btn btn-blue big" style="width:100%">kliknij, aby przejść do pełnej wersji artykułu na stronie {{.Sitename}} i zobaczyć mapę</button></a>
+                    <a href="{{.Adres}}" target="_blank"><button class="btn btn-blue big" style="width:100%">kliknij, aby przejść do pełnej wersji artykułu na stronie {{.Sitename}} i zobaczyć mapę</button></a>
                     </div>
                 </div>
                 {{else}}

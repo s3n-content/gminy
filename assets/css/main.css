@@ -2458,6 +2458,7 @@ table tfoot td {
 .c12 a,
 .c13 a,
 .c14 a,
+.c20 a,
 .orange-A700,
 .grey-100,
 .lime-500,
@@ -5128,6 +5129,9 @@ ul.dropdown li.divider {
   background: #fff;
   box-shadow: 0 0px 43px rgba(0, 0, 0, 0.5);
 }
+.footr img {
+  height: 22px;
+}
 .bckgrnd5 {
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   -webkit-transform: translateY(-9px);
@@ -5741,6 +5745,13 @@ dl dd {
 .c19:hover {
   background-color: #7f7f7f;
 }
+.c20 {
+  background-color: rgba(63, 81, 181, 0);
+  color: #000000;
+}
+.c20:hover {
+  background-color: rgba(47, 61, 136, 0);
+}
 .no-style {
   text-decoration: none;
   cursor: pointer;
@@ -5815,6 +5826,10 @@ iframe {
 .headnav-mobile li i {
   color: #000;
 }
+#main {
+  z-index: 1;
+  position: relative;
+}
 @media only screen and (max-width: 767px) {
   #main {
     padding-top: 80px;
@@ -5873,19 +5888,26 @@ ul.announcements li:hover {
     text-align: center;
   }
 }
-.topmenu {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  padding: 2px 11px;
+@media only screen and (max-width: 767px) {
+  .topmenu {
+    display: none;
+  }
 }
-.topmenu i {
-  padding: 10px 12px;
-  background-color: #4a148c;
-  color: rgba(255, 255, 255, 0.87);
-}
-.topmenu i:hover {
-  background-color: #2e0c56;
+@media only screen and (min-width: 767px) {
+  .topmenu {
+    position: absolute;
+    top: 4px;
+    right: 20px;
+    padding: 2px 11px;
+  }
+  .topmenu i {
+    padding: 10px 12px;
+    background-color: #4a148c;
+    color: rgba(255, 255, 255, 0.87);
+  }
+  .topmenu i:hover {
+    background-color: #2e0c56;
+  }
 }
 @media only screen and (min-width: 767px) {
   #viewsmenu {
@@ -5931,6 +5953,10 @@ ul.announcements li:hover {
 .accordion-title.accordion-title-opened {
   background: #1976d2 !important;
   color: #fff!important;
+}
+.req,
+.required {
+  display: inline;
 }
 /*
 	Kube Framework 4

@@ -12,6 +12,19 @@
         font-size:16px;
     }
 </style>
+<script type="text/javascript" src="/assets/tinymce/tinymce.min.js"></script>
+<script type="text/javascript">
+tinymce.init({
+    selector: "textarea",
+    plugins: [
+    "advlist autolink lists link image charmap print preview anchor",
+    "searchreplace visualblocks code fullscreen",
+    "insertdatetime media table contextmenu paste"
+    ],
+    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+    language : 'pl',
+});
+</script>
 </head>
 
 <body>
@@ -36,13 +49,13 @@
                     <form method="post" action="/admin/form/addannouncement" class="forms">
                         <ul class="formsy">
                             <li>
-                                <label>Podaj tytuł ogłoszenia...
-                                    <input type="text" name="Title" placeholder="Tytuł ogłoszenia..." {{if .Form.Title}}value="{{.Form.Title}}" {{end}} />
+                                <label>Podaj tytuł ogłoszenia<span class="req">*</span>
+                                    <input type="text" name="Title" placeholder="Tytuł ogłoszenia..." {{if .Form.Title}}value="{{.Form.Title}}" {{end}} required />
                                 </label>
                             </li>
                             <li>
-                                <label>Podaj treść ogłoszenia...
-                                    <textarea name="Text" cols="15">{{if .Form.Text}}{{.Form.Text}}{{end}}</textarea>
+                                <label>Podaj treść ogłoszenia<span class="req">*</span>
+                                    <textarea name="Text" cols="15" required>{{if .Form.Text}}{{.Form.Text}}{{end}}</textarea>
                                 </label>
                             </li>
                             <li>

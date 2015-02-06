@@ -1,6 +1,26 @@
 {{define "top"}}
 <div id="header" class="units-row end logo">
-    <div class="unit-centered unit-80 bckgrnd1" style="{{if .Domain.Image}}background:url({{.Domain.Image}});{{else}}background:url(/assets/img/logo2.jpg);{{end}}background-size: cover; min-height:200px;position:relative;z-index:111;">
+    <div class="unit-centered unit-80 bckgrnd1" style="{{if .Domain.Image}}background:url({{.Domain.Image}});background-size: cover; min-height:200px;{{else}}{{end}}position:relative;z-index:111;">
+        
+    </div>
+</div>
+
+
+<nav class="headnav" style="z-index:999; position:relative;">
+    <ul class="nav-ul">
+        <li class="active2"><a href="/">{{.Domain.Name}}</a>
+        </li>
+        <li><a href="http://91.196.50.145/search">Gdzie najbliżej</a>
+        </li>
+        <li><a href="/qr">Kody QR</a>
+        </li>
+       <!-- <li><a href="/google">Wyszukiwarka</a>
+        </li>-->
+        <li><a href="/contact">Kontakt</a>
+        </li>
+        
+    </ul>
+    
         {{if not .iframe}}<div class="topmenu"><a href="/google"><i class="fa fa-search fa-2x" style="margin-right:15px"></i></a> <a href="#" id="views"><i class="fa fa-cog fa-2x"></i></a>
         </div>
         
@@ -11,25 +31,7 @@
             <li><a href="#" class="highcontras">Zwiększ kontrast <i class="fa fa-adjust"></i></a>
             </li>
         </div>{{end}}
-    </div>
-</div>
-
-
-<nav class="headnav">
-    <ul class="nav-ul">
-        <li class="active2"><a href="/">{{.Domain.Name}}</a>
-        </li>
-        <li><a href="/search">Gdzie najbliżej</a>
-        </li>
-        <li><a href="/searchinfo" style="display:none">Ustaw lokalizację</a>
-        </li>
-        <li><a href="/qr">Kody QR</a>
-        </li>
-       <!-- <li><a href="/google">Wyszukiwarka</a>
-        </li>-->
-        <li><a href="/contact">Kontakt</a>
-        </li>
-    </ul>
+    
     <div class="icons">
         <a href="#" id="hem1" style="float:left; text-decoration: none; font-size: 29px; line-height: 34px; padding: 14px;"><i class="fa fa-bars" style="margin-right: 10px;"></i> {{.Domain.Name}}</a>
         <a href="#" id="hem2" style="float:right; right:5px;"><i class="fa fa-cog"></i></a>
@@ -37,9 +39,7 @@
     <div id="hm1" class="headnav-mobile" style="display:none;">
         <li class="active2"><a href="/"><i class="fa fa-chevron-right"></i> {{.Domain.Name}}</a>
         </li>
-        <li><a href="/search">Gdzie najbliżej <i class="fa fa-building"></i></a>
-        </li>
-        <li><a href="/searchinfo">Ustaw lokalizację <i class="fa fa-map-marker"></i> </a>
+        <li><a href="http://91.196.50.145/search">Gdzie najbliżej <i class="fa fa-building"></i></a>
         </li>
         <li><a href="/qr">Kody QR <i class="fa fa-qrcode"></i> </a>
         </li>

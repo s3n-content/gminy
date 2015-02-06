@@ -14,6 +14,19 @@
         font-size: 16px;
     }
 </style>
+<script type="text/javascript" src="/assets/tinymce/tinymce.min.js"></script>
+<script type="text/javascript">
+tinymce.init({
+    selector: "#contact",
+    plugins: [
+    "advlist autolink lists link image charmap print preview anchor",
+    "searchreplace visualblocks code fullscreen",
+    "insertdatetime media table contextmenu paste"
+    ],
+    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+    language : 'pl',
+});
+</script>
 </head>
 
 <body>
@@ -35,11 +48,6 @@
                                     </label>
                                 </li>
                                 <li>
-                                    <label>Adres e-mail znajdujący się w zakładce kontakt.
-                                        <input type="email" name="Email" placeholder="Adres e-mail..." {{if .Form.Email}}value="{{.Form.Email}}" {{else if .Domain.Email}}value="{{.Domain.Email}}" {{end}}/>
-                                    </label>
-                                </li>
-                                <li>
                                     <label>
                                         <input type="checkbox" name="Announcements" {{if .Form.Announcements}}checked="checked" {{else if .Domain.Announcements}}checked="checked"{{end}}/> Włącz/wyłącz moduł ogłoszeń
                                     </label>
@@ -51,6 +59,25 @@
                                     </label>
                                 </li>
 
+                                <li>
+                                    <label>Treść zakładki 'Kontakt'.
+                                        <span>Możesz zamieścić tutaj własną treść zakładki 'Kontakt'. Podaj adres jednostki, godziny kontaktu z zainteresowanymi, itp.</span>
+                                        <textarea id="contact" class="width-60" name="Text" placeholder="Zamieść tutaj dowolną treść zakładki kontakt.">{{if .Domain.Text}}{{.Domain.TextStr}}{{else if .Form.Text}}{{.Form.Text}}{{end}}</textarea>
+                                    </label>
+                                </li>
+                                
+                                
+                                <li>
+                                    <label>Numer telefonu znajdujący się w zakładce kontakt.
+                                        <span>Format 123456789. W przypadku telefonów stacjonarnych podajemy kierunkowy i resztę, np. 857678989</span>
+                                        <input type="text" name="Telephone" placeholder="Numer telefonu..." class="width-60" {{if .Form.Telephone}}value="{{.Form.Telephone}}" {{else if .Domain.Telephone}}value="{{.Domain.Telephone}}" {{end}} pattern="\d{9}" />
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>Adres e-mail znajdujący się w zakładce kontakt.
+                                        <input type="email" name="Email" placeholder="Adres e-mail..." class="width-60" {{if .Form.Email}}value="{{.Form.Email}}" {{else if .Domain.Email}}value="{{.Domain.Email}}" {{end}}/>
+                                    </label>
+                                </li>
                             </ul>
                             <p>
                                 <input class="btn btn-blue" type="submit" value="Wyślij" />

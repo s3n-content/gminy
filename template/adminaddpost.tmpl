@@ -317,11 +317,11 @@ tinymce.init({
                                         <span>Wybierz kategorie najlepiej obisująca dany obiekt. Wedle tej kategorii zostanie on dodany do modułu "Gdzie najbliżej".</span>
 
                                         <p data-tools="buttons" data-type="segmented" data-target="#target4">
-                                            <button class="btn cyan-500" value="1a">Nocleg</button>
-                                            <button class="btn green-500" value="2a">Jedzenie</button>
-                                            <button class="btn green-900" value="11">Stacja benzynowa</button>
-                                            <button class="btn red-900" value="10">Punkt Użyteczności Publicznej</button>
-                                            <button class="btn blue-grey-900" value="6">Atrakcje</button>
+                                            <button class="btn" value="1a">Nocleg</button>
+                                            <button class="btn" value="2a">Jedzenie</button>
+                                            <button class="btn" value="11">Stacja benzynowa</button>
+                                            <button class="btn" value="10">Punkt Użyteczności Publicznej</button>
+                                            <button class="btn" value="6">Atrakcje</button>
                                         </p>
                                         <p>
                                             <input type="hidden" id="target4" name="Tags" {{with .Form.Tags}}value="{{.}}" {{end}} size="50" />
@@ -435,10 +435,13 @@ tinymce.init({
                                     {{/*<input class="width-60" type="number" name="Categoryid" placeholder="Categoryid int" {{with .Form.Categoryid}}value="{{.}}" {{end}}/>*/}}
                                     <select name="Categoryid" class="width-60">
                                         {{$forminid := .Form.Categoryid}}
-                                        {{range .Categories}}
-                                            {{if eq .Typeid 0}}
-                                                <option value="{{.Id}}" {{if eq $forminid .Id}}selected="selected" {{end}}>{{.Title}}</option>
-                                            {{end}}
+                                        {{range .CategoriesTree}}
+                                            {{template "admincategorytreeselect" .}}
+                                            {{/*
+                                                {{if eq .Typeid 0}}
+                                                    <option value="{{.Id}}" {{if eq $forminid .Id}}selected="selected" {{end}}>{{.Title}}</option>
+                                                {{end}}
+                                            */}}
                                         {{end}}
                                     </select>
                                 </li>
@@ -523,7 +526,7 @@ tinymce.init({
                 $('#visib').attr('checked', true);
             } else if (this.value == 2) {
                 for (var i = 1; i < 21; i++) {
-                    if (i == 1 || i == 4 || i == 6 || i == 7 || i == 9 || i == 10 || i == 11 || i == 13 || i == 15 || i == 16) {
+                    if (i == 1 || i == 4 || i == 5 /*|| i == 6 || i == 7 */|| i == 9 || i == 10 || i == 11 || i == 13 || i == 15 || i == 16) {
                         $('.pole' + i).hide();
                     } else {
                         $('.pole' + i).show();
@@ -554,6 +557,11 @@ tinymce.init({
             var el = $('#target4').val();
             el = "," + el + ",";
             $('#target4').attr('value', el);
+            
+            if( $('.typeint').val() == 2 ){
+                var event2 = ",12,";
+                $('#target4').attr('value', event2);
+            }
         });
     </script>
 

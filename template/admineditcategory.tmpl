@@ -57,11 +57,32 @@
                                         <span>Wybierz do której kategorii ma zostać dodany element.</span>
                                         <select name="Inid">
                                             <option value="0">Strona główna</option>
-                                            {{$forminid := .Form.Inid}}
+                                            {{$forminid := .Form.Id}}
+                                            {{range .CategoriesTree}}
+                                                {{template "admincategorytreeselect" .}}*/}}
+                                                {{/*
+                                                    {{if eq .Typeid 0}}
+                                                        <option value="{{.Id}}" {{if eq $forminid .Id}}selected="selected" {{end}}>{{.Title}}</option>
+                                                    {{end}}
+                                                */}}
+                                            {{end}}
+                                            
+                                            
+                                            {{/*{{$forminid := .Form.Inid}}
                                             {{$categoryinid := .Category.Inid}}
                                             {{range .Categories}}
                                             <option value="{{.Id}}" {{if eq $forminid .Id}}selected="selected" {{else if eq $categoryinid .Id}}selected="selected" {{end}}>{{.Title}}</option>
                                             {{end}}
+                                            
+                                            {{$forminid := .Form.CategoryId}}
+                                            {{range .CategoriesTree}}
+                                                {{template "admincategorytreeselect" .}}*/}}
+                                                {{/*
+                                                    {{if eq .Typeid 0}}
+                                                        <option value="{{.Id}}" {{if eq $forminid .Id}}selected="selected" {{end}}>{{.Title}}</option>
+                                                    {{end}}
+                                                */}}{{/*
+                                            {{end}}*/}}
                                         </select>
                                     </label>
                                 </li>

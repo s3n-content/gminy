@@ -1,5 +1,6 @@
 {{define "admincategory"}}{{template "adminheader" .}}
 {{$ThisSiteName := .Domain.Name}}
+{{$AdminType := .User.admintype}}
 <style>
 li button {
     float:right;
@@ -44,10 +45,11 @@ li .label {
         {{if eq .Typeid 0}}<a href="/admin/category/{{.Id}}">{{end}}
             <li class="c{{.Colorid}}">
                     <span class="label label-black">{{if eq .Typeid 2}}RSS{{else if .Typeid}}WWW{{else}}Kategoria{{end}}</span> {{.Title}}{{/*.Imageurl*/}}
+                {{if ge $AdminType 2}}
                 <span>
                     <a href="/admin/form/editcategory/{{.Id}}"><button class="btn btn-small btn-black"><i class="fa fa-edit"></i> Edytuj</button></a> 
                     <a href="/admin/form/delete/category/{{.Id}}"><button class="btn btn-small btn-black"><i class="fa fa-close"></i> Usuń</button></a>
-                </span>
+                </span>{{end}}
             </li>
         {{if eq .Typeid 0}}</a>{{end}}
     {{end}}
@@ -58,10 +60,10 @@ li .label {
         {{if eq .Typeid 0}}<a href="/admin/category/{{.Id}}">{{end}}
             <li class="c{{.Colorid}}">
                     <span class="label label-black">{{if eq .Typeid 2}}RSS{{else if .Typeid}}WWW{{else}}Kategoria{{end}}</span> {{.Title}}{{/*.Imageurl*/}}
-                <span>
+                <span>{{if ge $AdminType 2}}
                     <a href="/admin/form/editcategory/{{.Id}}"><button class="btn btn-small btn-black"><i class="fa fa-edit"></i> Edytuj</button></a> 
                     <a href="/admin/form/delete/category/{{.Id}}"><button class="btn btn-small btn-black"><i class="fa fa-close"></i> Usuń</button></a>
-                </span>
+                </span>{{end}}
             </li>
         {{if eq .Typeid 0}}</a>{{end}}
                         {{end}}</ul>

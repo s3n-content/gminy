@@ -1,0 +1,12 @@
+{{define "admincategorytreeselect"}}
+    {{if eq .Typeid 0}}
+        <option value="{{.Id}}">{{.Id}} - {{.Title}}</option>
+        {{if .Insidecategory}}
+            <optgroup label="&#8627;{{.Id}} - {{.Title}} &#8628;">
+                {{range .Insidecategory}}
+                    {{template "admincategorytreeselect" .}}
+                {{end}}
+            </optgroup>
+        {{end}}
+    {{end}}
+{{end}}

@@ -56,10 +56,13 @@
                                         <select name="Inid">
                                             <option value="0">Strona główna</option>
                                             {{$forminid := .Form.Inid}}
-                                            {{range .Categories}}
-                                                {{if eq .Typeid 0}}
-                                                    <option value="{{.Id}}" {{if eq $forminid .Id}}selected="selected" {{end}}>{{.Title}}</option>
-                                                {{end}}
+                                            {{range .CategoriesTree}}
+                                                {{template "admincategorytreeselect" .}}
+                                                {{/*
+                                                    {{if eq .Typeid 0}}
+                                                        <option value="{{.Id}}" {{if eq $forminid .Id}}selected="selected" {{end}}>{{.Title}}</option>
+                                                    {{end}}
+                                                */}}
                                             {{end}}
                                         </select>
                                     </label>
@@ -68,6 +71,7 @@
                                     <label>Kolor
                                         <span>Wybierz kolor jaki ma mieć belka</span>
                                         <select id="numbkolor" name="Colorid">
+                                            <option class="c20" value="20">Przezroczysty</option>
                                             <option class="c0" value="0">Szary-100</option>
                                             <option class="c1" value="1">Niebieski-500</option>
                                             <option class="c2" value="2">Czerwony-500</option>

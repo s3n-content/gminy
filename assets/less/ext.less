@@ -21,6 +21,9 @@
     padding: 12px 0;
     background: #fff;
     box-shadow: 0 0px 43px rgba(0, 0, 0, 0.5);
+    img {
+        height: 22px;   
+    }
 }
 
 .bckgrnd5 {
@@ -611,6 +614,11 @@ dl dd {
 .c19 {
     .grey-500;
 }
+.c20 {
+  background-color: rgba(63, 81, 181, 0);
+  color: rgba(0, 0, 0, 1);
+    &:hover { background-color: darken(rgba(63, 81, 181, 0), 12%); }
+}
 
 .no-style {
     text-decoration: none;
@@ -704,6 +712,8 @@ iframe {
     @media only screen and (max-width: 767px) {
         padding-top: 80px;
     }
+    z-index:1;
+    position: relative;
 }
 
 .anndiv {
@@ -766,15 +776,22 @@ ul.announcements li:hover {
 }
 
 .topmenu {
+    
+    @media only screen and (max-width: 767px) {
+        display: none;   
+    }
+    @media only screen and (min-width: 767px) {
+    
       position: absolute;
-      top: 20px;
+      top: 4px;
       right: 20px;
       padding: 2px 11px;
        
     
-    i {
-      padding: 10px 12px;  
-        .purple-900;
+        i {
+          padding: 10px 12px;  
+            .purple-900;
+        }
     }
 }
 
@@ -822,4 +839,7 @@ ul.announcements li:hover {
 .accordion-title.accordion-title-opened {
     background: @blue-700!important;   
     color: #fff!important;
+}
+.req, .required {
+  display: inline;
 }

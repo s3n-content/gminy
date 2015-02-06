@@ -162,22 +162,12 @@
                         Ogłoszenia
                     </div>
 
-                    <div class="unit-mobile-100">
-                        <ul class="announcements">
-                            {{/*<li>
-                                <div class="units-row">
-                                    <div class="ellipsis unit-15" style="float:left;"><strong>Tytuł</strong></div>
-                                    <div class="ellipsis unit-85 end" style="float:right;"><strong>Treść</strong></div>
-                                </div>
-                            </li>*/}}
-                            {{range .announcements}}
-                            <li><a href="/li1/{{.Id}}" class="no-style">
-                                <div class="units-row">
-                                    <div class="ellipsis unit-15" style="float:left;"><i class="fa fa-chevron-circle-right" style="margin-right:8px;"></i> {{.Title}}</div>
-                                    <div class="ellipsis unit-80 end" style="float:right;">{{.Text}}</div>
-                                </div>
-                                </a>
-                            </li>
+                     <div class="unit-mobile-100 catego">
+                        <ul>
+                            {{range .announcements}} 
+                            <a href="/li1/{{.Id}}" target="_blank">
+                                <li class="c9"><i class="fa fa-chevron-right"></i> {{.Title}}{{/*.Text*/}}</li>
+                            </a>
                             {{end}}
                             <li style="text-align:center;"><a href="/li1">Zobacz więcej...</a></li>
                         </ul>

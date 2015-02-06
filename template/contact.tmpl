@@ -19,11 +19,22 @@
                     </nav>
                 </div>
                 <div class="units-row">
+                    {{if .Domain.Text}}
+                    <div style="padding:20px 10px">
+                        {{.Domain.TextStr}}
+                    </div>
+                    {{end}}
+                </div>
+                {{if or .Domain.Email .Domain.Telephone}}
+                <div class="units-row">
                     <div class="unit-40 unit-centered bckgrnd2 blue-500" style="padding: 50px 40px 60px 40px;">
                         <i class="fa fa-envelope-o fa-5x" style="position:relative;float:left;margin-right:10px;margin-top:-19px;"></i> <h2 style="color: rgba(255,255,255,0.9);">Skontaktuj się.</h4>
-                        <h4 style="color: rgba(255,255,255,0.9);  clear: both;  padding-top: 10px;">Adres e-mail: {{.Domain.Email}}</h5>
+                        {{if .Domain.Email}}<h4 style="color: rgba(255,255,255,0.9);  clear: both;  padding-top: 10px;">Adres e-mail: <a href="mailto:{{.Domain.Email}}" class="no-style" style="font-size:21px">{{.Domain.Email}}</a></h5>{{end}}
+                        {{if .Domain.Telephone}}<h4 style="color: rgba(255,255,255,0.9);  clear: both;  padding-top: 10px;">Numer telefonu: <a href="tel:{{.Domain.Telephone}}" class="no-style" style="font-size:21px">{{.Domain.Telephone}}</a></h5>{{end}}
+                        
                     </div>
                 </div>
+                {{end}}
             </div>
         </div>
     </div>
