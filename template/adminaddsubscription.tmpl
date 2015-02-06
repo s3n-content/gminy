@@ -33,9 +33,9 @@
                                         <label>
                                             Wybierz, <strong>do której</strong> kategorii mają być importowane dane:
                                             <select name="CategoryToId">
-                                                {{$formcattoid := .Form.CategoryToId}} {{range .CategoriesTo}} {{if .Visible}}
-                                                <option value="{{.Id}}" {{if eq $formcattoid .Id}}selected="selected" {{end}}>{{.Title}}</option>
-                                                {{end}} {{end}}
+                                                {{range .CategoriesTree}}
+                                                    {{template "admincategorytreeselect" .}}
+                                                {{end}}
                                             </select>
                                         </label>
                                         {{end}}
