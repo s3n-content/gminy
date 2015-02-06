@@ -71,15 +71,12 @@
     .pac-icon {
         display: inline-block;
     }
-    .pole15 {
-        display: inline !important;
-    }
 </style>
 <script>
     var map;
     var markers = [];
     var infos = [];
-    
+
     function initialize() {
         var maplat = "{{with .Form.Locationlat}}{{.}}{{end}}";
         var maplng = "{{with .Form.Locationlng}}{{.}}{{end}}";
@@ -97,7 +94,7 @@
         }
         map = new google.maps.Map(document.getElementById('map-canvas'),
             mapOptions);
-        
+
         google.maps.event.addListener(map, 'click', function (event) {
             clearMarkers();
             clearInfos();
@@ -124,7 +121,7 @@
         google.maps.event.addListener(autocomplete, 'place_changed', function () {
             clearMarkers();
             clearInfos();
-            
+
             infowindow.close();
             marker.setVisible(false);
             var place = autocomplete.getPlace();
@@ -186,10 +183,10 @@
             google.maps.event.trigger(map, 'resize');
         });
 
-        
-        
+
+
     }
-    
+
     function addMarker(location) {
         var marker = new google.maps.Marker({
             position: location,
@@ -360,7 +357,7 @@ tinymce.init({
                                 </li>
                                 <li class="pole12">
                                     <label>
-                                        Adres 
+                                        Adres
                                         <span>(Ulica, numer budynku/lokalu, kod pocztowy, miasto)</span>
                                         <input class="width-60" type="text" name="Address" placeholder="Podaj adres..." {{with .Form.Address}}value="{{.}}" {{end}}/>
 
@@ -445,11 +442,11 @@ tinymce.init({
                                         {{end}}
                                     </select>
                                 </li>
-                                {{/*<li class="pole15" style="display:none;">
-                                    <label>*/}}
-                                        <input id="visib" type="hidden" name="Visible" checked="checked" value="1" {{/*with .Form.Visible}}checked="checked" {{end*/}}/>{{/*Czy treść ma być widoczna w kategorii?
+                                <li class="pole15" style="display:none;">
+                                    <label>
+                                        <input id="visib" type="hidden" name="Visible" checked="checked" value="1" checked="checked"/>
                                     </label>
-                                </li>*/}}
+                                </li>
                             </ul>
                             <p>
                                 <input class="btn btn-blue" type="submit" value="Wyślij" />
@@ -557,7 +554,7 @@ tinymce.init({
             var el = $('#target4').val();
             el = "," + el + ",";
             $('#target4').attr('value', el);
-            
+
             if( $('.typeint').val() == 2 ){
                 var event2 = ",12,";
                 $('#target4').attr('value', event2);
