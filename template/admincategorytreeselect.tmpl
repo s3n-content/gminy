@@ -4,7 +4,6 @@
         {{if .Insidecategory}}
             <optgroup label="&#8627;{{/*.Id}} - */}}{{.Title}} &#8628;">
                 {{range .Insidecategory}}
-                    {{.Title}}
                     {{template "admincategorytreeselect" .}}
                 {{end}}
             </optgroup>
