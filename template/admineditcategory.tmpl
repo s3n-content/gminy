@@ -90,6 +90,7 @@
                                     <label>Kolor
                                         <span>Wybierz kolor jaki ma mieć belka</span>
                                         <select id="numbkolor" name="Colorid">
+                                            <option class="c20" value="20" selected="selected">Przezroczysty</option>
                                             <option class="c0" value="0">Szary-100</option>
                                             <option class="c1" value="1">Niebieski-500</option>
                                             <option class="c2" value="2">Czerwony-500</option>
@@ -108,7 +109,7 @@
                                             <option class="c15" value="15">Pomarańczowy-500</option>
                                             <option class="c16" value="16">Mocno pomarańczowy-500</option>
                                             <option class="c17" value="17">Brązowy-500</option>
-                                            <option class="c18" value="18" selected="selected">Szaro-niebieski-500</option>
+                                            <option class="c18" value="18">Szaro-niebieski-500</option>
                                             <option class="c19" value="19">Szary-500</option>
                                         </select>
 
@@ -123,6 +124,11 @@
                                 <li class="pole5">
                                     <label>
                                         <input type="checkbox" name="Visible" checked="checked" {{if .Form.Visible}}value="{{.Form.Visible}}" {{else if .Category.Visible}}checked="checked" {{end}}/>Czy ma być widoczna/y?
+                                    </label>
+                                </li>
+                                <li class="pole9">
+                                    <label>
+                                        <input type="checkbox" name="Hidetree" checked="checked" {{if .Form.Hidetree}}value="{{.Form.Hidetree}}" {{else if .Category.Hidetree}}checked="checked" {{end}}/>Czy ukryć drzewo tej kategorii na stronie głównej? (dotyczy kategorii znajdujących się tylko na stronie głównej)
                                     </label>
                                 </li>
                                 <li class="pole6">
@@ -177,7 +183,7 @@
                 }
                 
                 if ($('.typeint').val() == 0) {
-                    for (var i = 1; i < 9; i++) {
+                    for (var i = 1; i < 10; i++) {
                         if (i == 4 || i == 8) {
                             $('.pole' + i).hide();
                         } else {
@@ -185,16 +191,16 @@
                         }
                     }
                 } else if ($('.typeint').val() == 1) {
-                    for (var i = 1; i < 9; i++) {
-                        if (i == 4) {
+                    for (var i = 1; i < 10; i++) {
+                        if (i == 4 || i == 9) {
                             $('.pole' + i).hide();
                         } else {
                             $('.pole' + i).show();
                         }
                     }
                 } else if ($('.typeint').val() == 2) {
-                    for (var i = 1; i < 9; i++) {
-                        if (i == 4) {
+                    for (var i = 1; i < 10; i++) {
+                        if (i == 4 || i == 9) {
                             $('.pole' + i).hide();
                         } else {
                             $('.pole' + i).show();

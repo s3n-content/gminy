@@ -47,6 +47,9 @@ tinymce.init({
                 </div>
                 <div class="unit-row end">
                     <form method="post" action="/admin/form/addannouncement" class="forms">
+                        
+                            <p>Wymagane pola są oznaczone gwiazdką (<span class="req">*</span>)</p>
+                        
                         <ul class="formsy">
                             <li>
                                 <label>Podaj tytuł ogłoszenia<span class="req">*</span>
@@ -55,12 +58,12 @@ tinymce.init({
                             </li>
                             <li>
                                 <label>Podaj treść ogłoszenia<span class="req">*</span>
-                                    <textarea name="Text" cols="15" required>{{if .Form.Text}}{{.Form.Text}}{{end}}</textarea>
+                                    <textarea name="Text" cols="15">{{if .Form.Text}}{{.Form.Text}}{{end}}</textarea>
                                 </label>
                             </li>
                             <li>
                                 <label>Czy ogłoszenie ma być widoczne?
-                                    <input type="checkbox" {{if .Form.Visible}}checked="checked"{{end}} name="Visible" />
+                                    <input type="checkbox" checked="checked" name="Visible" />
                                 </label>
                             </li>
                             <li>

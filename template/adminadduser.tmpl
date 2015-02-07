@@ -65,9 +65,6 @@
                                             <option value="1" {{if eq .Form.AdminType 1}}selected="selected" {{end}}>Redaktor</option>
                                             <option value="2" {{if eq .Form.AdminType 2}}selected="selected" {{end}}>Moderator</option>
                                             <option value="3" {{if eq .Form.AdminType 3}}selected="selected" {{end}}>Administrator</option>
-                                            {{if eq .Server.MyId 1}}
-                                            <option value="4" {{if eq .Form.AdminType 4}}selected="selected" {{end}}>Super Administrator</option>
-                                            {{end}}
                                         </select>
                                         <br/>
                                         <div class="bckgrnd1" style="margin:10px; padding:15px;">

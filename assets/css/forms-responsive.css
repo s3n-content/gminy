@@ -1,6 +1,7 @@
 /* =Forms Responsive
 -----------------------------------------------------------------------------*/
 @media only screen and (max-width: 767px) {
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/forms-responsive\.less}line{font-family:\000035}}
   .forms-list label {
     display: inline-block;
   }

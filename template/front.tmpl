@@ -1,5 +1,5 @@
 {{define "front"}}{{template "header" .}}
-{{/*
+{{/*<!--
 <link rel="stylesheet" href="/assets/less/ext2.css">
 <script>
     function initialize() {
@@ -92,7 +92,7 @@
     $('body').ready(function () {
                 $('.annontext').replace(/\<(.*?)\>/g, '');
             }
-</script>*/}}
+</script>-->*/}}
 </head>
 
 <body>
@@ -123,7 +123,7 @@
                             <a href="/{{if eq .Typeid 2}}rss/{{.Id}}">{{else if eq .Typeid 1}}url/{{.Id}}" target="_blank">{{else}}cat/{{.Id}}">{{end}}
                                 <li class="c{{.Colorid}}">{{.Title}}{{/*.Imageurl*/}}</li>
                             </a>
-                            {{if .Insidecategory}}
+                            {{if and .Insidecategory (not .Hidetree)}}
                             <ul class="insidecategory">
                                 {{range .Insidecategory}} {{if .Visible}}
                                 <a href="/{{if eq .Typeid 2}}rss/{{.Id}}">{{else if eq .Typeid 1}}url/{{.Id}}" target="_blank">{{else}}cat/{{.Id}}">{{end}}
@@ -183,74 +183,6 @@
                     </div>
                 </div>
                 {{end}}{{end}}
-                
-                {{/*
-
-                <!--<div class="units-row ">
-                    <div class="unit-mobile-100 artic" style="padding-top:20px;">
-                        <div class="unit-50 bckgrnd2" style="padding:20px;">
-                            <img src="http://lorempixel.com/200/100/" class="bckgrnd2" style="float:left; margin: 10px 20px;">
-                            <h3>Mauris aliquet malesuada</h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet malesuada feugiat. Curabitur fermentum bibendum nulla, non dictum ipsum tincidunt non. Quisque convallis pharetra tempor. Donec id pretium leo. Pellentesque luctus massa non elit viverra pellentesque. Cras vitae neque molestie, rhoncus ipsum sit amet, lobortis dui. Fusce in urna sem. Vivamus vehicula dignissim augue et scelerisque. Etiam quam nisi, molestie ac dolor in, tincidunt tincidunt arcu. Praesent sed justo finibus, fringilla velit quis, porta erat. Donec blandit metus ut arcu iaculis iaculis. Cras nec dolor fringilla justo ullamcorper auctor. Aliquam eget pretium velit. Morbi urna justo, pulvinar id lobortis in, aliquet placerat orci. <a href="#">&raquo; Przeczytaj pełny artykuł...</a>
-                        </div>
-                        <div class="unit-50 bckgrnd2" style="padding:20px;text-align:justify">
-                            <img src="http://lorempixel.com/140/200/" class="bckgrnd2" style="float:left; margin: 10px 20px;">
-                            <h2>Cras vitae</h2>neque molestie, rhoncus ipsum sit amet, lobortis dui. Fusce in urna sem. Vivamus vehicula dignissim augue et scelerisque. Etiam quam nisi, molestie ac dolor in, tincidunt tincidunt arcu. Praesent sed justo finibus, fringilla velit quis, porta erat. Donec blandit metus ut arcu iaculis iaculis. Cras nec dolor fringilla justo ullamcorper auctor. Aliquam eget pretium velit. Morbi urna justo, pulvinar id lobortis in, aliquet placerat orci. <a href="#">&raquo; Przeczytaj pełny artykuł...</a>
-                        </div>
-                    </div>
-                </div>-->
-
-                <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-                <!--<div class="units-row end">
-                    <div class="unit-100 bckgrnd1" style="background:#004D40;width:100%;margin:0;padding:0;">
-                        <p style="text-align:center;font-size: 22px;font-weight:500;padding:10px 0;color:#fff;">Nowe miejsca i obiekty</p>
-                    </div>
-                    <a id="mapa" name="mapa"></a>
-                </div>
-                <div class="units-row end">
-                    <div class="unit-60">
-                        <div id="map-canvas"></div>
-                    </div>
-                    <div class="unit-40">
-                        <div class="place-list">
-                            <div class="place-1" data-geo-lat="53.118181" data-geo-long="23.149628" data-geo-zoom="16">
-                                <a href="#"><i class="fa fa-chevron-right"></i></a>
-                                <h3>Politechnika Białostocka</h3>
-                                <p><small>Kategoria:</small>  <i class="fa fa-truck"></i>, <i class="fa fa-tags"></i> 
-                                    <br/>
-                                    <small>Lokalizacja:</small> Białystok, 15-001</p>
-                            </div>
-                            <div class="place-1" data-geo-lat="52.622918" data-geo-long="20.376180" data-geo-zoom="14">
-                                <a href="#"><i class="fa fa-chevron-right"></i></a>
-                                <h3>Postój taksówek przy Pałacu</h3>
-                                <p><small>Kategoria:</small>  <i class="fa fa-taxi"></i>, <i class="fa fa-users"></i> 
-                                    <br/>
-                                    <small>Lokalizacja:</small> Płońsk, 38-200</p>
-                            </div>
-                            <div class="place-1" data-geo-lat="52.228943" data-geo-long="21.011756" data-geo-zoom="16">
-                                <a href="#"><i class="fa fa-chevron-right"></i></a>
-                                <h3>Dworzec Centralny</h3>
-                                <p><small>Kategoria:</small>  <i class="fa fa-users"></i> 
-                                    <br/>
-                                    <small>Lokalizacja:</small> Warszawa, 01-120</p>
-                            </div>
-                            <div class="place-1" data-geo-lat="43.508284" data-geo-long="16.439900" data-geo-zoom="15">
-                                <a href="#"><i class="fa fa-chevron-right"></i></a>
-                                <h3>Pomnik przyrody</h3>
-                                <p><small>Kategoria:</small>  <i class="fa fa-tree"></i>, <i class="fa fa-heart"></i>, <i class="fa fa-shopping-cart"></i> 
-                                    <br/>
-                                    <small>Lokalizacja:</small> Split, Chorwacja</p>
-                            </div>
-                        </div>
-                        <div style="text-align:center;">
-
-                            <span class="btn-group btn-group-sm">
-                                <button class="btn btn-outline">&lt;&lt;</button>
-                                <button class="btn btn-outline btn-active">{{.PageList}}</button>
-                                <button class="btn btn-outline">>></button>
-                            </span> 
-                        </div>
-                    </div>
-                </div>-->*/}}
             </div>
         </div>
         <!-- end of main -->

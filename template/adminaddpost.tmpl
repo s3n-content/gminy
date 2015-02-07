@@ -280,6 +280,8 @@ tinymce.init({
                                 <button id="butt2" class="btn butt" value="2" onclick="return false;">Wydarzenie</button>
                             </p>
 
+                            <p>Wymagane pola są oznaczone gwiazdką (<span class="req">*</span>)</p>
+                            
                             <ul class="formsy">
                                 <li class="pole1">
                                     <label>
@@ -291,7 +293,7 @@ tinymce.init({
                                 <li class="pole2">
                                     <label>
                                         Tytuł<b class="req">*</b>
-                                        <input class="width-60" type="text" name="Title" placeholder="Podaj tytuł..." {{with .Form.Title}}value="{{.}}" {{end}}/>
+                                        <input class="width-60" type="text" name="Title" placeholder="Podaj tytuł..." {{with .Form.Title}}value="{{.}}" {{end}} required/>
 
                                     </label>
                                 </li>
@@ -400,7 +402,7 @@ tinymce.init({
                                 </li>
                                 <li class="pole14">
                                     <label>
-                                        Adres WWW
+                                        Strona WWW
                                         <input class="width-60" type="text" name="Mapscript" placeholder="Adres www..." {{with .Form.Mapscript}}value="{{.}}" {{end}}/>
 
                                     </label>
@@ -414,7 +416,7 @@ tinymce.init({
                                     <label>
                                         Rozpoczęcie wydzarzenia
                                         <span>Format daty: dzień-miesiąc-rok godziny:minuty</span>
-                                        <input class="width-60" class="typedata" type="text" pattern="([0-3])([0-9])-([0-1])([0-9])-([2])([0])([0-2])([0-9]) ([0-2])([0-9]):([0-5])([0-9])" name="Eventtime" placeholder="dd-mm-rrrr hh:mm" {{with .Form.Eventtime}}value="{{.}}" {{end}}/>
+                                        <input id="eventstart" class="width-60" class="typedata" type="text" pattern="([0-3])([0-9])-([0-1])([0-9])-([2])([0])([0-2])([0-9]) ([0-2])([0-9]):([0-5])([0-9])" name="Eventtime" placeholder="dd-mm-rrrr hh:mm" {{with .Form.Eventtime}}value="{{.}}" {{end}}/>
 
                                     </label>
                                 </li>
@@ -422,7 +424,7 @@ tinymce.init({
                                     <label>
                                         Zakończenie wydarzenia
                                         <span>Format daty: dzień-miesiąc-rok godziny:minuty</span>
-                                        <input class="width-60" class="typedata" type="text" pattern="([0-3])([0-9])-([0-1])([0-9])-([2])([0])([0-2])([0-9]) ([0-2])([0-9]):([0-5])([0-9])" name="Eventtimeend" placeholder="dd-mm-rrrr hh:mm" {{with .Form.Eventtimeend}}value="{{.}}" {{end}}/>
+                                        <input id="eventend" class="width-60" class="typedata" type="text" pattern="([0-3])([0-9])-([0-1])([0-9])-([2])([0])([0-2])([0-9]) ([0-2])([0-9]):([0-5])([0-9])" name="Eventtimeend" placeholder="dd-mm-rrrr hh:mm" {{with .Form.Eventtimeend}}value="{{.}}" {{end}}/>
 
                                     </label>
                                 </li>
@@ -502,6 +504,11 @@ tinymce.init({
                         $('.pole' + i).hide();
                     }
                 }
+                $('.polemapka').hide();
+                $('#eventstart').attr('required', false);
+                $('#eventend').attr('required', false);
+                $('#lat').attr('required', false);
+                $('#lng').attr('required', false);
                 $('#locat').attr('checked', false);
                 $('#event').attr('checked', false);
                 $('#visib').attr('checked', true);
@@ -513,6 +520,11 @@ tinymce.init({
                         $('.pole' + i).show();
                     }
                 }
+                $('.polemapka').show();
+                $('#eventstart').attr('required', false);
+                $('#eventend').attr('required', false);
+                $('#lat').attr('required', true);
+                $('#lng').attr('required', true);
                 $('#locat').attr('checked', true);
                 $('#event').attr('checked', false);
                 $('#visib').attr('checked', true);
@@ -523,8 +535,13 @@ tinymce.init({
                     } else {
                         $('.pole' + i).show();
                     }
-                }
-                $('#locat').attr('checked', false);
+                } 
+                $('.polemapka').show();
+                $('#eventstart').attr('required', true);
+                $('#eventend').attr('required', true);
+                $('#lat').attr('required', true);
+                $('#lng').attr('required', true);
+                $('#locat').attr('checked', true);
                 $('#event').attr('checked', true);
                 $('#visib').attr('checked', true);
             }
@@ -554,6 +571,11 @@ tinymce.init({
                 var event2 = ",12,";
                 $('#target4').attr('value', event2);
             }
+            if( $('.typeint').val() == 1 ){
+                $('#locat').attr('checked', true);
+            }
+            
+            
         });
     </script>
 

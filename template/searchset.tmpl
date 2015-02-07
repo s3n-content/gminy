@@ -48,7 +48,7 @@
                         <input id="lat" type="hidden" name="Locationlat" value="" />
                         <input id="lng" type="hidden" name="Locationlng" value="" />{{if .b}}
                         <input id="B" type="hidden" name="B" value="{{.b}}" />{{end}}
-                        <button type="submit" class="btn btn-blue btn-big bold width-100">Kliknij tutaj, aby zapisać pozycję.</button>
+                        <button type="submit" class="btn btn-blue btn-big bold width-100" style="height:70px;">Kliknij tutaj, aby zapisać pozycję.</button>
                     </form>
                     <div id="map-canvas" class="bckgrnd2 mobile-width-100">
                         Tu powinna znajdować się mapa, jeśli widzisz tą wiadomość oznacza to, że Twoje urządzenie nie wspiera map google.
@@ -89,7 +89,7 @@
                             map: map
                         });
                         var infowindow = new google.maps.InfoWindow({
-                            content: 'Jeśli znajdujesz się tutaj, kliknij niebieski guzik powyżej.',
+                            content: 'Jeśli znajdujesz się tutaj, kliknij niebieski pasek powyżej.',
                             position: location
                         });
                         infowindow.open(map);
@@ -155,5 +155,5 @@
                     }
                     google.maps.event.addDomListener(window, 'load', initialize);
                 </script>
-
+            </div></div></div>
                 {{template "footer"}} {{end}}

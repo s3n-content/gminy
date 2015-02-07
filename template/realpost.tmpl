@@ -1,5 +1,6 @@
 {{define "realpost"}}
 
+{{$VarMain := .VarMain}}
 {{$iframe := .iframe}}
 {{$last := .lastfourposts}}
 
@@ -14,13 +15,13 @@
     <!--[if IE]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="/assets/css/main.css" />
-    
+
     <base target="_parent" />
-    
+
     <style>
         body {
             padding: 15px;
@@ -33,7 +34,7 @@
 
 {{if not $iframe}}
 {{template "header" .}}
-{{end}} 
+{{end}}
 
 {{if not $iframe}}
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&language=pl"></script>
@@ -46,9 +47,9 @@
 
 
                 {{$layout := 0}} {{/* wylacza funkcje 'zobacz rowniez/przeczytaj takze' 0,1 */}}
-                
-                {{if .Post.Visible}} {{with .Post}} 
-                
+
+                {{if .Post.Visible}} {{with .Post}}
+
                 {{if eq .Type 0}}
                 <div class="units-row end">
                     <div class="unit-100 p-news">
@@ -89,11 +90,10 @@
                         <h1>{{.Title}}</h1>{{end}}
                         <dl>
                             {{/*{{if .Createdon}}<dt>opublikowano</dt>
-                            <dd>{{.Createdon}}</dd>{{end}}*/}} 
+                            <dd>{{.Createdon}}</dd>{{end}}*/}}
                             {{if .Source}}<dt>autor</dt>
                             <dd>{{.Source}}</dd>{{end}}
-                            {{if .Tags}}<dt>znajduje się w</dt>
-                            <dd>{{template "tags" .}}</dd>{{end}}
+                            <dt></dt><dd></dd>
                         </dl>
                     </div>
                 </div>
@@ -115,9 +115,10 @@
                                 {{if .Imageurl}}
                                 <img src="{{.Imageurl}}" alt="" />{{end}}
                                 <dl>
-                                    {{if .Address}}<dt>Lokalizacja</dt>
-                                    <dd>{{.Address}}</dd>{{end}} {{/*if .Tags}}<dt>Kategoria</dt>
-                                    <dd>{{template "tags" .}}</dd>{{end*/}} {{if .Mapscript}}<dt>Adres www</dt>
+                                    {{if .Address}}<dt>Adres</dt>
+                                    <dd>{{.Address}}</dd>{{end}}
+                                    {{if .Tags}}<dt>Kategoria</dt>
+                                    <dd>{{template "tags" .}}</dd>{{end}} {{if .Mapscript}}<dt>Strona WWW</dt>
                                     <dd><a href="{{.Mapscript}}" target="_blank">{{.Mapscript}}</a>
                                     </dd>{{end}} {{if .Telephone}}<dt>Telefon</dt>
                                     <dd><a href="tel:{{.Telephone}}">{{.Telephone}}</a>
@@ -141,7 +142,7 @@
                         </div>
                         {{end}} {{if .Locationset}}
                         <div class="unit-40 guz">
-                            <a href="http://mpolska.mobi/nav/{{.Url}}/{{.Id}}/{{.Locationlat}}/{{.Locationlng}}" class="btn btn-big btn-blue" alt="Nawiguj pod adres {{.Adres}}" target="_blank"><i class="fa fa-globe"></i> Nawiguj</a>
+                            <a href="http://{{$VarMain}}/nav/{{.Url}}/{{.Id}}/{{.Locationlat}}/{{.Locationlng}}" class="btn btn-big btn-blue" alt="Nawiguj pod adres {{.Adres}}" target="_blank"><i class="fa fa-globe"></i> Nawiguj</a>
                         </div>
                         {{end}}
                     </div>
@@ -156,7 +157,7 @@
                 <div class="unit-row" style="padding-top: 80px;">
                     <div id="map-canvas" class="bckgrnd2" data-geo-lat="{{.Locationlat}}" data-geo-long="{{.Locationlng}}"></div>
                 </div>
-                {{end}} {{end}} 
+                {{end}} {{end}}
                 {{if eq $layout 1}} {{/* element ponizej jest niepotrzebny w layout 1, wiec go nie wyswietla */}} {{else}}
                 {{if not $iframe}}
                 <div class="unit-80 units-mobile-50 bckgrnd1 list-news-other loc2" style="margin-top:40px">
@@ -167,9 +168,9 @@
                         </a>
                         {{end}}
                     </div>{{end}}
-                
+
                 {{end}}
-                
+
                 {{else if eq .Type 2}}
 
 
@@ -179,10 +180,10 @@
                         <h1>{{.Title}}</h1>{{end}}
                         <dl>
                             {{/*if .Createdon}}<dt>opublikowano</dt>
-                            <dd>{{.Createdon}}</dd>{{end*/}} {{if .Source}}<dt>autor</dt>
+                            <dd>{{.Createdon}}</dd>{{end*/}} 
+                            {{if .Source}}<dt>autor</dt>
                             <dd>{{.Source}}</dd>{{end}}
-                            {{if .Tags}}<dt>znajduje się w</dt>
-                            <dd>{{template "tags" .}}</dd>{{end}}
+                            <dt></dt><dd></dd>
                         </dl>
                     </div>
                 </div>
@@ -201,9 +202,10 @@
                                     <dt>Trwa od</dt><dd>{{.Eventtime}}</dd>
                                     <dt>do</dt><dd>{{.Eventtimeend}}</dd>
                                     {{end}}
-                                    {{/*if .Tags}}<dt>Kategoria</dt>
-                                    <dd>{{template "tags" .}}</dd>{{end*/}}
-                                    {{if .Mapscript}}<dd><a href="{{.Mapscript}}" target="_blank">{{.Mapscript}}</a></dd>{{end}} 
+                                    {{if .Address}}<dt>Adres</dt><dd>{{.Address}}</dd>{{end}}
+                                    {{if .Tags}}<dt>Kategoria</dt>
+                                    <dd>{{template "tags" .}}</dd>{{end}}
+                                    {{if .Mapscript}}<dd><a href="{{.Mapscript}}" target="_blank">{{.Mapscript}}</a></dd>{{end}}
                                     {{if .Telephone}}<dt>Zadzwoń <i class="fa fa-phone"></i></dt>
                                     <dd><a href="tel:{{.Telephone}}">{{.Telephone}}</a>
                                     </dd>{{end}}
@@ -229,16 +231,16 @@
                     </div>
             {{end}}{{end}}
                 </div>
-            
+
                 <div class="unit-row" style="padding: 35px 20px 25px 20px;">
                     {{if .Locationset}}
                     <div class="unit-push-25 unit-50" style="display:inline-block;">
-                        <a href="http://mpolska.mobi/nav/{{.Url}}/{{.Id}}/{{.Locationlat}}/{{.Locationlng}}" class="btn btn-big btn-blue" alt="Nawiguj pod adres {{.Adres}}" target="_blank"><i class="fa fa-globe"></i> Nawiguj</a>
+                        <a href="http://{{$VarMain}}/nav/{{.Url}}/{{.Id}}/{{.Locationlat}}/{{.Locationlng}}" class="btn btn-big btn-blue" alt="Nawiguj pod adres {{.Adres}}" target="_blank"><i class="fa fa-globe"></i> Nawiguj</a>
                     </div>
                     {{end}}
                 </div>
-        
-        
+
+
             {{if and .Locationset (and .Locationlat .Locationlng)}} {{if $iframe}}
                 <div class="unit-row" style="padding-top: 20px;">
                     <a href="{{.Adres}}" target="_blank"><button class="btn btn-blue big" style="width:100%">kliknij, aby przejść do pełnej wersji artykułu na stronie {{.Sitename}} i zobaczyć mapę</button></a>
@@ -249,8 +251,8 @@
                     <div id="map-canvas" class="bckgrnd2" data-geo-lat="{{.Locationlat}}" data-geo-long="{{.Locationlng}}"></div>
                 </div>
             {{end}} {{end}}
-        
-        
+
+
                 {{end}}
     </div>
         {{if not $iframe}}

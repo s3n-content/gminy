@@ -43,6 +43,12 @@ tinymce.init({
                             <input type="hidden" name="Send" value="1" />
                             <ul class="formsy">
                                 <li>
+                                    <label>Ustaw nazwę serwisu
+                                        <span>Jest to nazwa wyświetlająca się na pierwszym miejscu (od lewej) w menu.</span>
+                                        <input type="text" name="Name" placeholder="Wpisz nazwę..." class="width-60" {{if .Form.Name}}value="{{.Form.Name}}" {{else if .Domain.Name}}value="{{.Domain.Name}}" {{end}}/>
+                                    </label>
+                                </li>
+                                <li>
                                     <label>Adresy obrazków pojawiających się jako logo u góry strony (zalecana szerokość powyżej 1600px, waga poniżej 200kb). Pamiętaj, nie mogą zawierać spacji i muszą być rozdzielone średnikami ( ; ).
                                         <textarea id="Images" name="Images" placeholder="Linki do obrazków rozdzielone średnikami...">{{if .Form.Images}}{{.Form.Images}}{{else if .Domain.Images}}{{.Domain.Images}}{{end}}</textarea>
                                     </label>

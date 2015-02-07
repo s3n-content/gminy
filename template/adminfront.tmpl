@@ -34,29 +34,34 @@
                         <div class="unit-33">
                             <ul class="adml">
                                 
+                                
+                            {{if ge .User.admintype 1}}
+                                <li class="green-700"><a href="/admin/form/addpost">
+                                    <i class="fa fa-plus fa-2x"></i><p>Dodaj treść</p>
+                                    </a>
+                                </li>
+                            {{end}}
+                                
                             {{if ge .User.admintype 2}}
                                 <li class="green-700">
                                     <a href="/admin/form/addcategory">
                                         <i class="fa fa-plus fa-2x"></i><p>Dodaj kategorie</p></a>
                                 </li>
                             {{end}}
+                            
                             {{if ge .User.admintype 1}}
-                                <li class="green-700"><a href="/admin/form/addpost">
-                                    <i class="fa fa-plus fa-2x"></i><p>Dodaj treść</p>
-                                    </a>
-                                </li>
                                 <li class="green-700">
                                     <a href="/admin/category">
                                         <i class="fa fa-bars fa-2x"></i><p>Przeglądaj treści i kategorie</p></a>
                                 </li>
                                 {{if .Domain.Announcements}}
                                 <li class="green-700">
-                                    <a href="/admin/announcements">
-                                        <i class="fa fa-plus fa-2x"></i><p>Przeglądaj ogłoszenia</p></a>
-                                </li>
-                                <li class="green-700">
                                     <a href="/admin/form/addannouncement">
                                         <i class="fa fa-plus fa-2x"></i><p>Dodaj ogłoszenie</p></a>
+                                </li>
+                                <li class="green-700">
+                                    <a href="/admin/announcements">
+                                        <i class="fa fa-plus fa-2x"></i><p>Przeglądaj ogłoszenia</p></a>
                                 </li>
                                 {{end}}
                             {{end}}

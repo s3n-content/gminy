@@ -1,0 +1,102 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/ext2\.less}line{font-family:\000032}}
+#map-canvas {
+  color: #000!important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/ext2\.less}line{font-family:\000035}}
+* {
+  color: #f5ff00!important;
+  font-family: Arial, sans-serif;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/ext2\.less}line{font-family:\000038}}
+* a {
+  color: #f5ff00!important;
+  text-decoration: underline!important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/ext2\.less}line{font-family:\0000311}}
+* a:hover {
+  background: #222!important;
+  color: #f5ff00!important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/ext2\.less}line{font-family:\0000318}}
+.catego li {
+  background: #999!important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/ext2\.less}line{font-family:\0000321}}
+.headnav-mobile li {
+  background: #333!important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/ext2\.less}line{font-family:\0000324}}
+body {
+  background: #000;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/ext2\.less}line{font-family:\0000328}}
+.headnav,
+.icons a {
+  background: #555!important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/ext2\.less}line{font-family:\0000331}}
+.headnav .nav-ul {
+  background: #999!important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/ext2\.less}line{font-family:\0000333}}
+.headnav .nav-ul li a {
+  background: #555!important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/ext2\.less}line{font-family:\0000337}}
+.fa-inverse {
+  color: #000000!important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/ext2\.less}line{font-family:\0000341}}
+.announcementshead {
+  color: #f5ff00!important;
+  background: #999!important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/ext2\.less}line{font-family:\0000348}}
+.announcements {
+  background: #000!important;
+  color: #f5ff00!important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/ext2\.less}line{font-family:\0000355}}
+.announcements li:hover {
+  background: #555!important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/ext2\.less}line{font-family:\0000360}}
+.footr {
+  background: #000!important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/ext2\.less}line{font-family:\0000363}}
+.news-badge {
+  background: rgba(255, 255, 255, 0.25) !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/ext2\.less}line{font-family:\0000366}}
+.pagin {
+  background: #555!important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/ext2\.less}line{font-family:\0000369}}
+.news-1:hover {
+  background: #333!important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/ext2\.less}line{font-family:\0000372}}
+.sipbig {
+  background: #555!important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/ext2\.less}line{font-family:\0000376}}
+.sipbigbtn a {
+  background: #666!important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/ext2\.less}line{font-family:\0000378}}
+.sipbigbtn a:hover {
+  background: #777!important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/ext2\.less}line{font-family:\0000383}}
+input.button--primary {
+  color: #000!Important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/ext2\.less}line{font-family:\0000386}}
+.styleguide__inverted-block {
+  background: #000!important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/ext2\.less}line{font-family:\0000389}}
+#viewsmenu li {
+  background: #333!important;
+}
