@@ -49,7 +49,7 @@ tinymce.init({
                                     </label>
                                 </li>
                                 <li>
-                                    <label>Adresy obrazków pojawiających się jako logo u góry strony (zalecana szerokość powyżej 1600px, waga poniżej 200kb). Pamiętaj, nie mogą zawierać spacji i muszą być rozdzielone średnikami ( ; ).
+                                    <label>Adresy obrazków pojawiających się jako logo u góry strony (zalecana szerokość powyżej 1600px, waga poniżej 200kb). Pamiętaj, nie mogą zawierać spacji i muszą być rozdzielone średnikami ( ; ), a linki muszą zaczynać się od <strong>http://</strong>.
                                         <textarea id="Images" name="Images" placeholder="Linki do obrazków rozdzielone średnikami...">{{if .Form.Images}}{{.Form.Images}}{{else if .Domain.Images}}{{.Domain.Images}}{{end}}</textarea>
                                     </label>
                                 </li>
