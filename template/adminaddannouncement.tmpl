@@ -1,103 +1,141 @@
 {{define "adminaddannouncement"}}{{template "adminheader" .}}
 <style>
-    .formsy {
-        list-style-type: none;
-    }
-    span {
-        display:block;
-        font-size:14px;
-        text-indent:5px;
-    }
-    label {
-        font-size:16px;
-    }
+	.formsy {
+		list-style-type: none;
+	}
+	
+	span {
+		display: block;
+		font-size: 14px;
+		text-indent: 5px;
+	}
+	
+	label {
+		font-size: 16px;
+	}
+	
+	.img-list li {
+	margin-bottom: 10px;	
+		  height: 186px;
+	}
+	.img-list img {
+		height: auto;
+		width:100%;
+	}
+	#gallery {
+	  height: 300px;
+	  overflow: hidden;
+	  overflow-y: scroll;
+	}
 </style>
 <script type="text/javascript" src="/assets/tinymce/tinymce.min.js"></script>
 <script type="text/javascript">
-tinymce.init({
-    selector: "textarea",
-    plugins: [
+	tinymce.init({
+		selector: "textarea",
+		plugins: [
     "advlist autolink lists link image charmap print preview anchor",
     "searchreplace visualblocks code fullscreen",
     "insertdatetime media table contextmenu paste"
     ],
-    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
-    language : 'pl',
-});
+		toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+		language: 'pl',
+	});
 </script>
 </head>
 
 <body>
-    <div id="cont" class="units-container bckgrnd">
-        {{template "admintop" .}}
+	<div id="cont" class="units-container bckgrnd">
+		{{template "admintop" .}}
 
 
 
-        <div id="main" class="units-row end" style="padding-top:30px;">
-            <div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
-                <div class="units-row end">
-                    <nav class="breadcrumbs">
-                        <ul>
-                            <li><a href="/admin">Panel administracyjny</a>
-                            </li>
-                            <li><span>Dodaj ogłoszenie</span>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="unit-row end">
-                    <form method="post" action="/admin/form/addannouncement" class="forms">
-                        
-                            <p>Wymagane pola są oznaczone gwiazdką (<span class="req">*</span>)</p>
-                        
-                        <ul class="formsy">
-                            <li>
-                                <label>Podaj tytuł ogłoszenia<span class="req">*</span>
-                                    <input type="text" name="Title" placeholder="Tytuł ogłoszenia..." {{if .Form.Title}}value="{{.Form.Title}}" {{end}} required />
-                                </label>
-                            </li>
-                            <li>
-                                <label>Podaj treść ogłoszenia<span class="req">*</span>
-                                    <textarea name="Text" cols="15">{{if .Form.Text}}{{.Form.Text}}{{end}}</textarea>
-                                </label>
-                            </li>
-                            <li>
-                                <label>Czy ogłoszenie ma być widoczne?
-                                    <input type="checkbox" checked="checked" name="Visible" />
-                                </label>
-                            </li>
-                            <li>
-                                <label>Czy ogłoszenie ma być wyświetlane na stronie głównej?
-                                    <input type="checkbox" {{if .Form.Showonfrontpage}}checked="checked"{{end}} name="Showonfrontpage" />
-                                </label>
-                            </li>
-                            <li>
-                                <label>Wybierz przez jaki czas ma się wyświetlać
-                                    <select id="hid" name="Hideafter">
-                                        <option value="0">Tydzień</option>
-                                        <option value="1">Dwa tygodnie</option>
-                                        <option value="2">Trzy tygodnie</option>
-                                        <option value="3">Cztery tygodnie</option>
-                                        <option value="4">Zawsze</option>
-                                    </select>
-                                </label>
-                            </li>
-                        </ul>
-                        <P>
-                            <input class="btn btn-blue" type="submit" value="Wyslij" />
-                        </P>
+		<div id="main" class="units-row end" style="padding-top:30px;">
+			<div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
+				<div class="units-row end">
+					<nav class="breadcrumbs">
+						<ul>
+							<li><a href="/admin">Panel administracyjny</a>
+							</li>
+							<li><span>Dodaj ogłoszenie</span>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="unit-row end">
+					<form method="post" action="/admin/form/addannouncement" class="forms">
 
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <script>
-    var numb = "{{if .Form.Hideafter}}{{.Form.Hideafter}}{{end}}";
-    
-    if( numb ) {
-        $('#hid option:eq(' + numb + ')').attr('selected', 'selected')
-    }
-    </script>
-    {{template "adminfooter" .}}{{end}}
+						<p>Wymagane pola są oznaczone gwiazdką (<span class="req">*</span>)</p>
+
+						<ul class="formsy">
+							<li>
+								<label>Podaj tytuł ogłoszenia<span class="req">*</span>
+									<input type="text" name="Title" placeholder="Tytuł ogłoszenia..." {{if .Form.Title}}value="{{.Form.Title}}" {{end}} required />
+								</label>
+							</li>
+							<li>
+								<label>Podaj treść ogłoszenia<span class="req">*</span>
+									<textarea name="Text" cols="15">{{if .Form.Text}}{{.Form.Text}}{{end}}</textarea>
+								</label>
+							</li>
+
+
+							<li style="margin: 30px 0;">
+								<input id="gallery-input" type="checkbox"> Pokaż galerie obrazków, które możesz wstawić do treści
+								{{$d := .Domain}}
+								<span id="gallery-info" style="display:none">Jeśli chcesz skorzystać z obrazka, kliknij na nim prawym przyciskiem myszy (PPM) i wybierz "kopiuj adres URL grafiki". Kolejno kliknij PPM w powyższym edytorze tekstu i wybierz 'wstaw obrazek'. Kolejno kliknij PPM w pole "źródło" i wybierz "wklej". Pozostałe pola są opcjonalne, możesz kliknąć zatwierdź, aby dodać obrazek do treści.</span>
+								<div id="gallery" class="unit-100 bckgrnd1 img-gallery" style="display:none">
+									<ul class="blocks-5 img-list">
+										{{range .images}}
+										<li><img src="http://{{$d.Address}}{{.}}" alt="http://{{$d.Address}}{{.}}">
+										</li>
+										{{end}}
+									</ul>
+								</div>
+							</li>
+
+							<li>
+								<label>Czy ogłoszenie ma być widoczne?
+									<input type="checkbox" checked="checked" name="Visible" />
+								</label>
+							</li>
+							<li>
+								<label>Czy ogłoszenie ma być wyświetlane na stronie głównej?
+									<input type="checkbox" {{if .Form.Showonfrontpage}}checked="checked" {{end}} name="Showonfrontpage" />
+								</label>
+							</li>
+							<li>
+								<label>Wybierz przez jaki czas ma się wyświetlać
+									<select id="hid" name="Hideafter">
+										<option value="0">Tydzień</option>
+										<option value="1">Dwa tygodnie</option>
+										<option value="2">Trzy tygodnie</option>
+										<option value="3">Cztery tygodnie</option>
+										<option value="4">Zawsze</option>
+									</select>
+								</label>
+							</li>
+						</ul>
+						<P>
+							<input class="btn btn-blue" type="submit" value="Wyslij" />
+						</P>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		
+		$('#gallery-input').click(function () {
+			$("#gallery").toggle(this.checked);
+			$("#gallery-info").toggle(this.checked);
+		});
+		
+		var numb = "{{if .Form.Hideafter}}{{.Form.Hideafter}}{{end}}";
+
+		if (numb) {
+			$('#hid option:eq(' + numb + ')').attr('selected', 'selected')
+		}
+	</script>
+	{{template "adminfooter" .}}{{end}}

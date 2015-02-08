@@ -11,6 +11,19 @@
     label {
         font-size:16px;
     }
+	.img-list li {
+	margin-bottom: 10px;	
+		  height: 186px;
+	}
+	.img-list img {
+		height: auto;
+		width:100%;
+	}
+	#gallery {
+	  height: 300px;
+	  overflow: hidden;
+	  overflow-y: scroll;
+	}
 </style>
 <script type="text/javascript" src="/assets/tinymce/tinymce.min.js"></script>
 <script type="text/javascript">
@@ -59,6 +72,22 @@ tinymce.init({
                                     <textarea name="Text" cols="15">{{if .Form.Text}}{{.Form.Text}}{{else if .announcement.Text}}{{.announcement.Text}}{{end}}</textarea>
                                 </label>
                             </li>
+							
+							
+							<li style="margin: 30px 0;">
+								<input id="gallery-input" type="checkbox"> Pokaż galerie obrazków, które możesz wstawić do treści
+								{{$d := .Domain}}
+								<span id="gallery-info" style="display:none">Jeśli chcesz skorzystać z obrazka, kliknij na nim prawym przyciskiem myszy (PPM) i wybierz "kopiuj adres URL grafiki". Kolejno kliknij PPM w powyższym edytorze tekstu i wybierz 'wstaw obrazek'. Kolejno kliknij PPM w pole "źródło" i wybierz "wklej". Pozostałe pola są opcjonalne, możesz kliknąć zatwierdź, aby dodać obrazek do treści.</span>
+								<div id="gallery" class="unit-100 bckgrnd1 img-gallery" style="display:none">
+									<ul class="blocks-5 img-list">
+										{{range .images}}
+										<li><img src="http://{{$d.Address}}{{.}}" alt="http://{{$d.Address}}{{.}}">
+										</li>
+										{{end}}
+									</ul>
+								</div>
+							</li>
+							
                             <li>
                                 <label>Czy ogłoszenie ma być widoczne?
                                     <input type="checkbox" {{if .Form.Visible}}checked="checked"{{else if .announcement.Visible}}checked="checked"{{end}} name="Visible" />
@@ -92,6 +121,12 @@ tinymce.init({
     </div>
     
     <script>
+		
+		$('#gallery-input').click(function () {
+			$("#gallery").toggle(this.checked);
+			$("#gallery-info").toggle(this.checked);
+		});
+		
     var numb = "{{if .Form.Hideafter}}{{.Form.Hideafter}}{{else if .announcement.Hideafter}}{{.announcement.Hideafter}}{{end}}";
     
     if( numb ) {

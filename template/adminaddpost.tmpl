@@ -71,6 +71,24 @@
     .pac-icon {
         display: inline-block;
     }
+	
+	.spebut .btn-active {
+		color: rgba(255, 255, 255, 0.9)!important;
+		background: #de2c3b!important;
+	}
+	.img-list li {
+	margin-bottom: 10px;	
+		  height: 186px;
+	}
+	.img-list img {
+		height: auto;
+		width:100%;
+	}
+	#gallery {
+	  height: 300px;
+	  overflow: hidden;
+	  overflow-y: scroll;
+	}
 </style>
 <script>
     var map;
@@ -305,17 +323,25 @@ tinymce.init({
 
                                     </label>
                                 </li>
-                                <li class="pole20">
-                                    <label>
-                                        <input id="showonfront" type="checkbox" name="Showonfrontpage" {{with .Form.Showonfrontpage}}value="{{.}}" {{end}}/>Pokaż na stronie głównej (jako wyróżniony)
-                                    </label>
-                                </li>
+								<li class="pole21" style="margin: 30px 0;">
+									<input id="gallery-input" type="checkbox"> Pokaż galerie obrazków, które możesz wstawić do treści
+									{{$d := .Domain}}
+										<span id="gallery-info" style="display:none">Jeśli chcesz skorzystać z obrazka, kliknij na nim prawym przyciskiem myszy (PPM) i wybierz "kopiuj adres URL grafiki". Kolejno kliknij PPM w powyższym edytorze tekstu i wybierz 'wstaw obrazek'. Kolejno kliknij PPM w pole "źródło" i wybierz "wklej". Pozostałe pola są opcjonalne, możesz kliknąć zatwierdź, aby dodać obrazek do treści.</span>
+									<div id="gallery" class="unit-100 bckgrnd1 img-gallery" style="display:none">
+										<ul class="blocks-5 img-list">
+											{{range .images}}
+											<li><img src="http://{{$d.Address}}{{.}}" alt="http://{{$d.Address}}{{.}}"></li>
+											{{end}}
+										</ul>
+									</div>						
+								</li>
+							
                                 <li class="pole4">
                                     <label>
                                         Tagi
                                         <span>Wybierz kategorie najlepiej obisująca dany obiekt. Wedle tej kategorii zostanie on dodany do modułu "Gdzie najbliżej".</span>
 
-                                        <p data-tools="buttons" data-type="segmented" data-target="#target4">
+                                        <p class="spebut" data-tools="buttons" data-type="segmented" data-target="#target4">
                                             <button class="btn" value="1a">Nocleg</button>
                                             <button class="btn" value="2a">Jedzenie</button>
                                             <button class="btn" value="11">Stacja benzynowa</button>
@@ -361,7 +387,7 @@ tinymce.init({
                                     <label>
                                         Adres
                                         <span>(Ulica, numer budynku/lokalu, kod pocztowy, miasto)</span>
-                                        <input class="width-60" type="text" name="Address" placeholder="Podaj adres..." {{with .Form.Address}}value="{{.}}" {{end}}/>
+                                        <input id="adres" class="width-60" type="text" name="Address" placeholder="Podaj adres..." {{with .Form.Address}}value="{{.}}" {{end}}/>
 
                                     </label>
                                 </li>
@@ -428,6 +454,13 @@ tinymce.init({
 
                                     </label>
                                 </li>
+								
+                                <li class="pole20">
+                                    <label>
+                                        <input id="showonfront" type="checkbox" name="Showonfrontpage" {{with .Form.Showonfrontpage}}value="{{.}}" {{end}}/>Pokaż na stronie głównej (jako wyróżniony)
+                                    </label>
+                                </li>
+								
                                 <li class="pole19">
                                     <label>
                                         Dodaj do kategorii</label>
@@ -445,24 +478,27 @@ tinymce.init({
                                     </label>
                                 </li>
                             </ul>
+							
+							
+							
+							
                             <p>
                                 <input class="btn btn-blue" type="submit" value="Wyślij" />
                             </p>
                         </form>
                     </div>
-                    </form>
                 </div>
             </div>
         </div>
     </div>
-    <script>
+    <script>		
         $('form').keypress(function (e) {
             if (e.which == 13) {
                 return false;
             }
         });
         $('body').ready(function () {
-            for (var i = 1; i < 21; i++) {
+            for (var i = 1; i < 22; i++) {
                 if (i == 1 || i == 5 || i == 13 || i == 15 || i == 16 || i == 17 || i == 18) {
                     $('.pole' + i).hide();
                 } else {
@@ -470,8 +506,13 @@ tinymce.init({
                 }
             }
 
-
-            $('#butt1').addClass('btn-active');
+			$('#lat').attr('required', true);
+			$('#lng').attr('required', true);
+            $('#visib').attr('checked', true);
+            $('#adres').attr('required', true);
+			
+			
+			$('#butt1').addClass('btn-active');
             $('.typeint').attr('value', '1');
 
             if ($('.typeint').val()) {
@@ -495,10 +536,16 @@ tinymce.init({
         });
 
 
+		$('#gallery-input').click(function () {
+			$("#gallery").toggle(this.checked);
+			$("#gallery-info").toggle(this.checked);
+		});
+		
+		
         $('.butt').click(function () {
             if (this.value == 0) {
-                for (var i = 1; i < 21; i++) {
-                    if (i == 2 || i == 3 || i == 8 || i == 19 || i == 20) {
+                for (var i = 1; i < 22; i++) {
+                    if (i == 2 || i == 3 || i == 8 || i == 19 || i == 20 || i == 21) {
                         $('.pole' + i).show();
                     } else {
                         $('.pole' + i).hide();
@@ -506,6 +553,7 @@ tinymce.init({
                 }
                 $('.polemapka').hide();
                 $('#eventstart').attr('required', false);
+                $('#adres').attr('required', false);
                 $('#eventend').attr('required', false);
                 $('#lat').attr('required', false);
                 $('#lng').attr('required', false);
@@ -522,6 +570,7 @@ tinymce.init({
                 }
                 $('.polemapka').show();
                 $('#eventstart').attr('required', false);
+                $('#adres').attr('required', true);
                 $('#eventend').attr('required', false);
                 $('#lat').attr('required', true);
                 $('#lng').attr('required', true);
@@ -538,6 +587,7 @@ tinymce.init({
                 } 
                 $('.polemapka').show();
                 $('#eventstart').attr('required', true);
+                $('#adres').attr('required', true);
                 $('#eventend').attr('required', true);
                 $('#lat').attr('required', true);
                 $('#lng').attr('required', true);

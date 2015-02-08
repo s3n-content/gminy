@@ -74,7 +74,23 @@
     .pac-icon {
         display: inline-block;
     }
-
+	.spebut .btn-active {
+		color: rgba(255, 255, 255, 0.9)!important;
+		background: #de2c3b!important;
+	}
+	.img-list li {
+	margin-bottom: 10px;	
+		  height: 186px;
+	}
+	.img-list img {
+		height: auto;
+		width:100%;
+	}
+	#gallery {
+	  height: 300px;
+	  overflow: hidden;
+	  overflow-y: scroll;
+	}
 </style>
 <script>
 
@@ -328,25 +344,32 @@ tinymce.init({
 
                                     </label>
                                 </li>
+								
+								<li class="pole21" style="margin: 30px 0;">
+									<input id="gallery-input" type="checkbox"> Pokaż galerie obrazków, które możesz wstawić do treści
+									{{$d := .Domain}}
+										<p id="gallery-info" style="display:none">Jeśli chcesz skorzystać z obrazka, kliknij na nim prawym przyciskiem myszy (PPM) i wybierz "kopiuj adres URL grafiki". Kolejno kliknij PPM w powyższym edytorze tekstu i wybierz 'wstaw obrazek'. Kolejno kliknij PPM w pole "źródło" i wybierz "wklej". Pozostałe pola są opcjonalne, możesz kliknąć zatwierdź, aby dodać obrazek do treści.</p>
+									<div id="gallery" class="unit-100 bckgrnd1 img-gallery" style="display:none">
+										<ul class="blocks-5 img-list">
+											{{range .images}}
+											<li><img src="http://{{$d.Address}}{{.}}" alt="http://{{$d.Address}}{{.}}"></li>
+											{{end}}
+										</ul>
+									</div>						
+								</li>
 
-                                <li class="pole20">
-                                    <label>
-                                        <input id="showonfront" type="checkbox" name="Showonfrontpage" {{if .Form.Showonfrontpage}}checked="checked"{{else if .Post.Showonfrontpage}}checked="checked"{{end}}
-                                               />Pokaż na stronie głównej (jako wyróżniony)
-                                    </label>
-                                </li>
 
                                 <li class="pole4">
                                     <label>
                                         Tagi
                                         <span>Wybierz kategorie najlepiej opisująca dany obiekt. Wedle tej kategorii zostanie on dodany do modułu "Gdzie najbliżej".</span>
 
-                                        <p data-tools="buttons" data-type="segmented" data-target="#target4">
-                                            <button class="btn cyan-500" value="1a">Nocleg</button>
-                                            <button class="btn green-500" value="2a">Jedzenie</button>
-                                            <button class="btn green-900" value="11">Stacja benzynowa</button>
-                                            <button class="btn red-900" value="10">Punkt Użyteczności Publicznej</button>
-                                            <button class="btn blue-grey-900" value="6">Atrakcje</button>
+                                        <p class="spebut" data-tools="buttons" data-type="segmented" data-target="#target4">
+                                            <button class="btn" value="1a">Nocleg</button>
+                                            <button class="btn" value="2a">Jedzenie</button>
+                                            <button class="btn" value="11">Stacja benzynowa</button>
+                                            <button class="btn" value="10">Punkt Użyteczności Publicznej</button>
+                                            <button class="btn" value="6">Atrakcje</button>
                                         </p>
                                         <p>
                                             <input type="hidden" id="target4" name="Tags" {{if .Form.Tags}}{{with .Form.Tags}}value="{{.}}" {{end}}{{else}}{{with .Post.Tags}}value="{{.}}" {{end}}{{end}} size="50" />
@@ -366,13 +389,13 @@ tinymce.init({
                                         <li class="pole6">
                                             <label>
                                                 Szerokość geograficzna
-                                                <input id="lat" class="width-50" type="text" name="Locationlat" placeholder="Szerokość (lat)" {{if .Form.Locationlat}}{{with .Form.Locationlat}}value="{{.}}" {{end}}{{else}}{{with .Post.Locationlat}}value="{{.}}" {{end}}{{end}} required />
+                                                <input id="lat" class="width-50" type="text" name="Locationlat" placeholder="Szerokość (lat)" {{if .Form.Locationlat}}{{with .Form.Locationlat}}value="{{.}}" {{end}}{{else}}{{with .Post.Locationlat}}value="{{.}}" {{end}}{{end}}  />
                                             </label>
                                         </li>
                                         <li class="pole7">
                                             <label>
                                                 Długość geograficzna
-                                                <input id="lng" class="width-50" type="text" name="Locationlng" placeholder="Długość (lng)" {{if .Form.Locationlng}}{{with .Form.Locationlng}}value="{{.}}" {{end}}{{else}}{{with .Post.Locationlng}}value="{{.}}" {{end}}{{end}} required />
+                                                <input id="lng" class="width-50" type="text" name="Locationlng" placeholder="Długość (lng)" {{if .Form.Locationlng}}{{with .Form.Locationlng}}value="{{.}}" {{end}}{{else}}{{with .Post.Locationlng}}value="{{.}}" {{end}}{{end}}  />
                                             </label>
                                         </li>
                                     </ul>
@@ -388,7 +411,7 @@ tinymce.init({
                                     <label>
                                         Adres
                                         <span>(Ulica, numer budynku/lokalu, kod pocztowy, miasto)</span>
-                                        <input class="width-60" type="text" name="Address" placeholder="Podaj adres..." {{if .Form.Address}}{{with .Form.Address}}value="{{.}}" {{end}}{{else}}{{with .Post.Address}}value="{{.}}" {{end}}{{end}} required />
+                                        <input id="adres" class="width-60" type="text" name="Address" placeholder="Podaj adres..." {{if .Form.Address}}{{with .Form.Address}}value="{{.}}" {{end}}{{else}}{{with .Post.Address}}value="{{.}}" {{end}}{{end}} />
 
                                     </label>
                                 </li>
@@ -454,7 +477,7 @@ tinymce.init({
                                     <label>
                                         Rozpoczęcie wydzarzenia
                                         <span>Format daty: dzień-miesiąc-rok godziny:minuty</span>
-                                        <input id="eventstart" class="width-60" class="typedata" type="text" name="Eventtime" placeholder="dd-mm-rrrr hh:mm" {{if .Form.Eventtime}}value="{{.Form.Eventtime}}"{{else if .Post.Eventtime}}value="{{.Post.Eventtime}}"{{end}} pattern="([0-3])([0-9])-([0-1])([0-9])-([2])([0])([0-2])([0-9]) ([0-2])([0-9]):([0-5])([0-9])" required />
+                                        <input id="eventstart" class="width-60" class="typedata" type="text" name="Eventtime" placeholder="dd-mm-rrrr hh:mm" {{if .Form.Eventtime}}value="{{.Form.Eventtime}}"{{else if .Post.Eventtime}}value="{{.Post.Eventtime}}"{{end}} pattern="([0-3])([0-9])-([0-1])([0-9])-([2])([0])([0-2])([0-9]) ([0-2])([0-9]):([0-5])([0-9])" />
 
                                     </label>
                                 </li>
@@ -462,10 +485,18 @@ tinymce.init({
                                     <label>
                                         Zakończenie wydarzenia
                                         <span>Format daty: dzień-miesiąc-rok godziny:minuty</span>
-                                        <input id="eventend" class="width-60" class="typedata" type="text" name="Eventtimeend" placeholder="dd-mm-rrrr hh:mm" {{if .Form.Eventtimeend}}value="{{.Form.Eventtimeend}}"{{else if .Post.Eventtimeend}}value="{{.Post.Eventtimeend}}"{{end}} pattern="([0-3])([0-9])-([0-1])([0-9])-([2])([0])([0-2])([0-9]) ([0-2])([0-9]):([0-5])([0-9])" required />
+                                        <input id="eventend" class="width-60" class="typedata" type="text" name="Eventtimeend" placeholder="dd-mm-rrrr hh:mm" {{if .Form.Eventtimeend}}value="{{.Form.Eventtimeend}}"{{else if .Post.Eventtimeend}}value="{{.Post.Eventtimeend}}"{{end}} pattern="([0-3])([0-9])-([0-1])([0-9])-([2])([0])([0-2])([0-9]) ([0-2])([0-9]):([0-5])([0-9])" />
 
                                     </label>
                                 </li>
+								
+                                <li class="pole20">
+                                    <label>
+                                        <input id="showonfront" type="checkbox" name="Showonfrontpage" {{if .Form.Showonfrontpage}}checked="checked"{{else if .Post.Showonfrontpage}}checked="checked"{{end}}
+                                               />Pokaż na stronie głównej (jako wyróżniony)
+                                    </label>
+                                </li>
+								
                                 <li class="pole19">
                                     {{/*    <label>
                                         Dodaj do kategorii</label>
@@ -495,6 +526,12 @@ tinymce.init({
                 return false;
             }
         });
+		
+		$('#gallery-input').click(function () {
+			$("#gallery").toggle(this.checked);
+			$("#gallery-info").toggle(this.checked);
+		});
+		
         $('body').ready(function () {
             /*for (var i = 1; i < 20; i++) {
                 if (i == 1 || i == 5 || i==6 || i==7 || i == 13 || i == 14 || i == 15 || i == 16 || i == 17 || i == 18) {
@@ -515,14 +552,15 @@ tinymce.init({
             var editnow = "{{.Post.Type}}";
 
             if (editnow == 0) {
-                for (var i = 1; i < 21; i++) {
-                    if (i == 2 || i == 3 || i == 8 || i == 19 || i == 20) {
+                for (var i = 1; i < 22; i++) {
+                    if (i == 2 || i == 3 || i == 8 || i == 19 || i == 20 || i == 21) {
                         $('.pole' + i).show();
                     } else {
                         $('.pole' + i).hide();
                     }
                 }
                 $('.polemapka').hide();
+                $('#adres').attr('required', false);
                 $('#eventstart').attr('required', false);
                 $('#eventend').attr('required', false);
                 $('#lat').attr('required', false);
@@ -531,7 +569,7 @@ tinymce.init({
                 $('#event').attr('checked', false);
                 $('#visib').attr('checked', true);
             } else if (editnow == 1) {
-                for (var i = 1; i < 21; i++) {
+                for (var i = 1; i < 22; i++) {
                     if (i == 1 || i == 5 || i == 13 || i == 15 || i == 16 || i == 17 || i == 18) {
                         $('.pole' + i).hide();
                     } else {
@@ -539,6 +577,7 @@ tinymce.init({
                     }
                 }
                 $('.polemapka').show();
+                $('#adres').attr('required', true);
                 $('#eventstart').attr('required', false);
                 $('#eventend').attr('required', false);
                 $('#lat').attr('required', true);
@@ -547,7 +586,7 @@ tinymce.init({
                 $('#event').attr('checked', false);
                 $('#visib').attr('checked', true);
             } else if (editnow == 2) {
-                for (var i = 1; i < 21; i++) {
+                for (var i = 1; i < 22; i++) {
                     if (i == 1 || i == 4 || i == 5 || /*|| i == 7 ||*/ i == 9 || i == 10 || i == 11 || i == 13 || i == 15 || i == 16) {
                         $('.pole' + i).hide();
                     } else {
@@ -555,6 +594,7 @@ tinymce.init({
                     }
                 }
                 $('.polemapka').show();
+                $('#adres').attr('required', true);
                 $('#eventstart').attr('required', true);
                 $('#eventend').attr('required', true);
                 $('#lat').attr('required', true);
