@@ -1,116 +1,148 @@
 {{define "navigation"}}{{template "header"}}
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 <script>
-    var directionsDisplay;
-    var directionsService = new google.maps.DirectionsService();
-    var map;
-    var start = new google.maps.LatLng({{.localizationlat}}, {{.localizationlng}});
-    var dest = new google.maps.LatLng({{.lat}}, {{.lng}});
+	var directionsDisplay;
+	var directionsService = new google.maps.DirectionsService();
+	var map;
+	var start = new google.maps.LatLng({
+		{.localizationlat
+		}
+	}, {
+		{.localizationlng
+		}
+	});
+	var dest = new google.maps.LatLng({
+		{.lat
+		}
+	}, {
+		{.lng
+		}
+	});
 
-    function initialize() {
-      directionsDisplay = new google.maps.DirectionsRenderer();
-      var mapOptions = {
-        zoom: 14,
-        center: start
-      }
-      map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-      directionsDisplay.setMap(map);
-        
-        var request = {
-          origin: start,
-          destination: dest,
-          // Note that Javascript allows us to access the constant
-          // using square brackets and a string value as its
-          // "property."
-          travelMode: google.maps.TravelMode.DRIVING
-      };
-      directionsService.route(request, function(response, status) {
-        if (status == google.maps.DirectionsStatus.OK) {
-          directionsDisplay.setDirections(response);
-        }
-      });
-    }
+	function initialize() {
+		directionsDisplay = new google.maps.DirectionsRenderer();
+		var mapOptions = {
+			zoom: 14,
+			center: start
+		}
+		map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+		directionsDisplay.setMap(map);
 
-    function calcRoute(value) {
-      var selectedMode = value;
-      var request = {
-          origin: start,
-          destination: dest,
-          // Note that Javascript allows us to access the constant
-          // using square brackets and a string value as its
-          // "property."
-          travelMode: google.maps.TravelMode[selectedMode]
-      };
-      directionsService.route(request, function(response, status) {
-        if (status == google.maps.DirectionsStatus.OK) {
-          directionsDisplay.setDirections(response);
-        }
-      });
-    }
+		var request = {
+			origin: start,
+			destination: dest,
+			// Note that Javascript allows us to access the constant
+			// using square brackets and a string value as its
+			// "property."
+			travelMode: google.maps.TravelMode.DRIVING
+		};
+		directionsService.route(request, function (response, status) {
+			if (status == google.maps.DirectionsStatus.OK) {
+				directionsDisplay.setDirections(response);
+			}
+		});
+	}
 
-    google.maps.event.addDomListener(window, 'load', initialize);
+	function calcRoute(value) {
+		var selectedMode = value;
+		var request = {
+			origin: start,
+			destination: dest,
+			// Note that Javascript allows us to access the constant
+			// using square brackets and a string value as its
+			// "property."
+			travelMode: google.maps.TravelMode[selectedMode]
+		};
+		directionsService.route(request, function (response, status) {
+			if (status == google.maps.DirectionsStatus.OK) {
+				directionsDisplay.setDirections(response);
+			}
+		});
+	}
 
+	google.maps.event.addDomListener(window, 'load', initialize);
 </script>
-    <style>
-      #panel {
-        position: absolute;
-        top: 5px;
-        left: 50%;
-        margin-left: -180px;
-        z-index: 5;
-        background-color: #fff;
-        padding: 5px;
-        border: 1px solid #999;
-      }
-    #map-canvas {
-        height:470px;
-    }
-        .panels {
-            
-        }
-    .panels button {
-        width: 100%;
-    }
-    </style>
+<style>
+	#panel {
+		position: absolute;
+		top: 5px;
+		left: 50%;
+		margin-left: -180px;
+		z-index: 5;
+		background-color: #fff;
+		padding: 5px;
+		border: 1px solid #999;
+	}
+	
+	#map-canvas {
+		height: 470px;
+	}
+	
+	.panels {}
+	
+	.panels button {
+		width: 100%;
+	}
+</style>
 
 </head>
 
 
 
 <body>
-    <div id="cont" class="units-container bckgrnd">
-        {{template "top" .}}
+	<div id="cont" class="units-container bckgrnd">
+		{{template "top" .}}
 
-        <div id="main" class="units-row end">
-            <div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
-                <div class="units-row end">
-                    <nav class="breadcrumbs">
-                        <ul>
-                            <li><a href="/">Strona główna</a>
-                            </li>
-                            <li><a href="/search">Gdzie najbliżej</a>
-                            </li>
-                            <li><span>Prowadź do: {{.name}}</span>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="units-row end">
-                    {{if and .localizationset .lat}}<span>
-                                <strong>Punkt A</strong> - Twoja pozycja</span>
-                                <strong>Punkt B</strong> - pozycja <em>{{.name}}</em><br />
-                    <div class="units-row end panels">
-                            
-                            <div class="unit-25"><button class="btn btn-blue" onclick="calcRoute('DRIVING');"><i class="fa fa-car"></i> Samochodem</button></div>
-                            <div class="unit-25"><button class="btn btn-blue" onclick="calcRoute('TRANSIT');"><i class="fa fa-bus"></i> Komunikacją miejską</button></div>
-                            <div class="unit-25"><button class="btn btn-blue" onclick="calcRoute('BICYCLING');"><i class="fa fa-bicycle"></i> Rowerem</button></div>
-                            <div class="unit-25"><button class="btn btn-blue" onclick="calcRoute('WALKING');"><i class="fa fa-child"></i> Pieszo</button></div>
-                    </div>
-                    <div id="map-canvas"></div>
-                    {{else}}<a href="/searchset">Nie ustawiłeś jeszcze swojej lokalizacji! Kliknij tutaj, aby to zrobić.</a>{{end}}
-                    
-                    
-                    
-                </div></div></div></div>
-    {{template "footer"}}
-{{end}}
+		<div id="main" class="units-row end">
+			<div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
+				<div class="units-row end">
+					<nav class="breadcrumbs">
+						<ul>
+							<li><a href="/">Strona główna</a>
+							</li>
+							<li><a href="/search">Gdzie najbliżej</a>
+							</li>
+							<li><span>Prowadź do: {{.name}}</span>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="units-row end">
+					{{if and .localizationset .lat}}
+					<a href="{{.link}}">
+						<button class="btn btn-green width-100">Wróć do poprzedniej strony</button>
+					</a>
+<br/><br/>
+					<span>
+						<strong>Punkt A</strong> - Twoja pozycja
+					</span><br/>
+					<span>
+						<strong>Punkt B</strong> - pozycja <em>{{.name}}</em>
+					</span>
+<br/>
+					<br />
+					<div class="units-row end panels">
+
+						<div class="unit-25">
+							<button class="btn btn-blue" onclick="calcRoute('DRIVING');"><i class="fa fa-car"></i> Samochodem</button>
+						</div>
+						<div class="unit-25">
+							<button class="btn btn-blue" onclick="calcRoute('TRANSIT');"><i class="fa fa-bus"></i> Komunikacją miejską</button>
+						</div>
+						<div class="unit-25">
+							<button class="btn btn-blue" onclick="calcRoute('BICYCLING');"><i class="fa fa-bicycle"></i> Rowerem</button>
+						</div>
+						<div class="unit-25">
+							<button class="btn btn-blue" onclick="calcRoute('WALKING');"><i class="fa fa-child"></i> Pieszo</button>
+						</div>
+					</div>
+					<div id="map-canvas"></div>
+					{{else}}<a href="/searchset">Nie ustawiłeś jeszcze swojej lokalizacji! Kliknij tutaj, aby to zrobić.</a>{{end}}
+
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+	{{template "footer"}} {{end}}

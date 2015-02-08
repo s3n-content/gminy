@@ -1,0 +1,72 @@
+{{define "adminimageuploadlist"}}
+{{template "adminheader" .}}
+<style>
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .badge {
+        font-size: 15px;
+        padding: 3px 6px;
+        border-radius: 5px;
+        background: #eee;
+    }
+</style>
+</head>
+
+<body>
+    <div id="cont" class="units-container bckgrnd">
+        {{template "admintop" .}}
+
+
+
+        <div id="main" class="units-row end" style="padding-top:30px;">
+            <div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
+                <div class="units-row end">
+                    <nav class="breadcrumbs">
+                        <ul>
+                            <li><a href="/admin">Panel administracyjny</a>
+                            </li>
+							<li><span>Galeria grafiki</span>
+							</li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="unit-row">
+                    <div class="unit-100">
+						
+						
+{{$d := .Domain}}
+						
+            <a href="/admin/form/uploadimage" class="btn btn-blue">Wyślij grafikę na serwer</a>
+			
+			<div class="unit-100">			
+			<table class="table-bordered">
+				<tr>
+					<td>Grafika</td>
+					<td>Adres</td>
+				</tr>
+				
+				{{range .images}}
+				<tr>
+				<td>
+					<img src="{{.}}" style="max-width:200px;max-height:200px;"/><br/>
+				</td>
+				<td>
+					Link bezpośredni: <a href="{{$d.Address}}{{.}}">{{$d.Address}}{{.}}</a>
+					<a href="{{$d.Address}}{{.}}" target="_blank">Kliknij tutaj, aby otworzyć grafikę w nowej karcie</a>
+				</td>
+				</tr>
+				{{end}}
+			</table>
+			</div>
+			
+						
+					</div></div></div></div></div>
+
+
+
+
+
+{{template "adminfooter"}}
+{{end}}

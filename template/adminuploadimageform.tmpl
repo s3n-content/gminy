@@ -1,0 +1,59 @@
+{{define "adminuploadimageform"}} {{template "adminheader" .}}
+<style>
+	a:hover {
+		text-decoration: underline;
+	}
+	
+	.badge {
+		font-size: 15px;
+		padding: 3px 6px;
+		border-radius: 5px;
+		background: #eee;
+	}
+</style>
+</head>
+
+<body>
+	<div id="cont" class="units-container bckgrnd">
+		{{template "admintop" .}}
+
+
+
+		<div id="main" class="units-row end" style="padding-top:30px;">
+			<div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
+				<div class="units-row end">
+					<nav class="breadcrumbs">
+						<ul>
+							<li><a href="/admin">Panel administracyjny</a>
+							</li>
+							<li><a href="/admin/images">Galeria grafiki</a>
+							</li>
+							<li><span>Prześlij grafikę</span>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="unit-row">
+					<div class="unit-100">
+
+
+						<h3>Prześlij grafikę</h3>
+						<p>Wybierz plik z dysku i kliknij "Wyślij plik". Plik powinien być w formacie grafiki <strong>(nie PDF!)</strong>, tj. .jpg, .gif, .png, itp.</p>
+						<form method="post" action="/admin/form/uploadimage" enctype="multipart/form-data">
+							<input id="plik" type="file" name="image0" />
+							<input type="submit" value="Wyślij plik" />
+						</form>
+
+
+
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	{{template "adminfooter"}} {{end}}
