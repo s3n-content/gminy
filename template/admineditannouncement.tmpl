@@ -13,7 +13,7 @@
     }
 	.img-list li {
 	margin-bottom: 10px;	
-		  height: 186px;
+		  height: 215px;
 	}
 	.img-list img {
 		height: auto;
@@ -82,6 +82,7 @@ tinymce.init({
 									<ul class="blocks-5 img-list">
 										{{range .images}}
 										<li><img src="http://{{$d.Address}}{{.}}" alt="http://{{$d.Address}}{{.}}">
+											<br/><input disabled="disabled" value="http://{{$d.Address}}{{.}}"/>
 										</li>
 										{{end}}
 									</ul>
