@@ -7,11 +7,11 @@
 </div>
 
 
-<nav class="{{if eq .Domain.Color 4}}headnav headnav4{{else if eq .Domain.Color 3}}headnav headnav3{{else if eq .Domain.Color 2}}headnav headnav2{{else if eq .Domain.Color 1}}headnav headnav1{{else}}headnav{{end}}" style="z-index:999; position:relative;">
+<nav class="{{if eq .Domain.Color 4}}headnav headnav4{{else if eq .Domain.Color 3}}headnav headnav3{{else if eq .Domain.Color 2}}headnav headnav2{{else if eq .Domain.Color 1}}headnav headnav1{{else}}headnav{{end}}" style="z-index:999;">
     <ul class="nav-ul">
         <li class="active2"><a href="/" alt="{{.Domain.Name}}">{{.Domain.Name}}</a>
         </li>
-		<li><a href="http://{{$VarMain}}/search" alt="Gdzie najbliżej">Gdzie najbliżej</a></li>
+		<li><a href="/search" alt="Gdzie najbliżej">Gdzie najbliżej</a></li>
         <li><a href="/contact">Kontakt</a>
         </li>
         {{if ne .Domain.Address $VarMain}}<li><a href="http://mpolska.mobi" target="_blank"><i class="fa fa-globe"></i></a></li>{{end}}
@@ -79,6 +79,7 @@
                 g = 0;
                 $('#hm1').hide();
             }
+			return false;
         });
         $('#hem2').click(function () {
             if (h == 0) {
@@ -92,6 +93,7 @@
                 h = 0;
                 $('#hm2').hide();
             }
+			return false;
         });
         $('#views').click(function() {
             if(v==0){
