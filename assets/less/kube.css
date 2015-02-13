@@ -3163,7 +3163,7 @@ ul.dropdown li.divider {
   ol ol,
   ul ol,
   ol ul {
-    margin-left: 1.65em;
+    margin: 1.65em;
   }
   blockquote {
     margin-left: 0;

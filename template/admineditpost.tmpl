@@ -275,9 +275,9 @@ tinymce.init({
   plugins: [
   "advlist autolink lists link image charmap print preview anchor",
   "searchreplace visualblocks code fullscreen",
-  "insertdatetime media table contextmenu paste"
+  "insertdatetime media contextmenu paste textcolor"
   ],
-  toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+  toolbar: "insertfile undo redo | styleselect | bold italic | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
   language : 'pl',
 });
 </script>
@@ -308,7 +308,7 @@ tinymce.init({
                         Tytuł: {{.Post.Title}}<br/>
                         Data utworzenia: {{.Post.Createdon}}<br/>
                         Ostatnio edytowany: {{.Post.Modifiedon}}<br/><br/>
-                        {{if .Error}} Wystąpił błąd: {{.Error}} {{end}}
+                        {{if .Error}} <p class="error bold upper big">Wystąpił błąd: {{.Error}}</p>{{end}}
                         <form id="editpost" method="post" action="/admin/form/editpost/{{.Post.Id}}" class="forms">
 
                             {{/*
@@ -419,7 +419,7 @@ tinymce.init({
                                 <li class="pole8">
                                     <label>
                                         Adres WWW grafiki (miniaturki)
-                                        <span>Grafika wyświetli się w tytule postu. Dozwolone formaty (zakończenie linku) to: .jpg, .png, .webp, .svg, .jpeg<br/>Możesz ją wyszukać w internecie, a następnie skopiować jej adres i wkleić poniżej.</span>
+                                        <span>Grafika wyświetli się w tytule postu. Dozwolone formaty (zakończenie linku) to: .jpg, .png, .webp, .svg, .jpeg<br/>Możesz ją wyszukać w internecie, a następnie skopiować jej adres i wkleić poniżej. <strong>Miniaturkę możesz wybrać z galerii grafiki.</strong></span>
                                         <input class="width-60" type="text" name="Imageurl" placeholder="http://mojastrona.pl/obrazek.jpg" {{if .Form.Imageurl}}{{with .Form.Imageurl}}value="{{.}}" {{end}}{{else}}{{with .Post.Imageurl}}value="{{.}}" {{end}}{{end}}/>
                                     </label>
                                 </li>
@@ -431,7 +431,7 @@ tinymce.init({
                                         <input class="width-60" type="text" name="Telephone" placeholder="Podaj numer telefonu..." {{if .Form.Telephone}}{{with .Form.Telephone}}value="{{.}}" {{end}}{{else}}{{with .Post.Telephone}}value="{{.}}" {{end}}{{end}}/>
                                     </label>
                                 </li>
-                                <li class="pole10">
+								{{/*<li class="pole10">
                                     <label>
                                         Informacje kontaktowe
                                         <input class="width-60" type="text" name="Contact" placeholder="Dodatkowe informacje kontaktowe..." {{if .Form.Contact}}{{with .Form.Contact}}value="{{.}}" {{end}}{{else}}{{with .Post.Contact}}value="{{.}}" {{end}}{{end}}/>
@@ -443,7 +443,7 @@ tinymce.init({
                                         Dodatkowe informacje
                                         <input class="width-60" type="text" name="Moreinformations" placeholder="Wpisz tutaj dodatkowe informacje..." {{if .Form.Moreinformations}}{{with .Form.Moreinformations}}value="{{.}}" {{end}}{{else}}{{with .Post.Moreinformations}}value="{{.}}" {{end}}{{end}}/>
                                     </label>
-                                </li>
+                                </li>*/}}
                                 <li class="pole13" style="display:none;">
                                     <label>
                                         Źródło

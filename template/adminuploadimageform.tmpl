@@ -19,7 +19,7 @@
 
 
 
-		<div id="main" class="units-row end" style="padding-top:30px;">
+		<div id="main" class="units-row end">
 			<div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
 				<div class="units-row end">
 					<nav class="breadcrumbs">
@@ -36,6 +36,7 @@
 				<div class="unit-row">
 					<div class="unit-100">
 
+						{{if .Error}} <p class="error bold upper big">Wystąpił błąd: {{.Error}}<br/>Skorzystaj z oprogramowania, które skompresuje obrazek (zmniejszy rozmiar pliku). <br/>Przykład: <a href="http://jpeg-optimizer.com" target="_blank">http://jpeg-optimizer.com</a> <br/><a href="https://tinypng.com/" target="_blank">https://tinypng.com/</a> </p>{{end}}
 
 						<h3>Prześlij grafikę</h3>
 						<p>Wybierz plik z dysku i kliknij "Wyślij plik". Plik powinien być w formacie grafiki <strong>(nie PDF!)</strong>, tj. .jpg, .gif, .png, itp.</p>

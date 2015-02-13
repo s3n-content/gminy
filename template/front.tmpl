@@ -104,36 +104,7 @@
                 <div class="units-row">
                     <div class="unit-mobile-100 catego">
                         <ul>
-                            <a href="search">
-                                <li class="c10">
-                                    <div style="display:inline-block;float:left;padding: 8px 14px 8px 0;"><span class="fa-stack fa-lg">
-<i class="fa fa-circle fa-stack-2x" style="color:#111;"></i>
-<i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
-</span>
-                                    </div>
-                                    <div style="display:inline-block">
-                                        <p style="font-weight:400;font-size:28px;margin: 0;padding: 0;">Gdzie najbliżej?</p>
-                                    </div>
-                                    <div style="display:block">
-                                        <p style="font-size: 20px;margin: 0;">Znajdź interesujące Ciebie obiekty w Twojej okolicy</p>
-                                    </div>
-                                </li>
-                            </a>
-                            {{range .Categories}} {{if .Visible}}
-                            <a href="/{{if eq .Typeid 2}}rss/{{.Id}}">{{else if eq .Typeid 1}}url/{{.Id}}" target="_blank">{{else}}cat/{{.Id}}">{{end}}
-                                <li class="c{{.Colorid}}">{{.Title}}{{/*.Imageurl*/}}</li>
-                            </a>
-                            {{if and .Insidecategory (not .Hidetree)}}
-                            <ul class="insidecategory">
-                                {{range .Insidecategory}} {{if .Visible}}
-                                <a href="/{{if eq .Typeid 2}}rss/{{.Id}}">{{else if eq .Typeid 1}}url/{{.Id}}" target="_blank">{{else}}cat/{{.Id}}">{{end}}
-                                    <li class="c{{.Colorid}}">{{.Title}}{{/*.Imageurl*/}}</li>
-                                </a>
-                                {{end}} {{end}}
-                            </ul> {{end}} {{end}} {{end}} 
-                            {{if .Domain.Showonfrontpage}}
-                            
-                            
+							{{if .Domain.Showonfrontpage}}
                             {{if and .postinfrontpage (ne .postinfrontpage.Id 0)}}
                             <a href="{{.postinfrontpage.Adres}}">
                                 <li class="{{if eq .postinfrontpage.Type 2}}c5{{else if .postinfrontpage.Type}}c18{{else}}c6{{end}}">
@@ -151,6 +122,43 @@
                                 </li>
                             </a>
                             {{end}}{{end}}
+							
+							{{/*<a href="search">
+                                <li class="c10">
+                                    <div style="display:inline-block;float:left;padding: 8px 14px 8px 0;"><span class="fa-stack fa-lg">
+<i class="fa fa-circle fa-stack-2x" style="color:#111;"></i>
+<i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
+</span>
+                                    </div>
+                                    <div style="display:inline-block">
+                                        <p style="font-weight:400;font-size:28px;margin: 0;padding: 0;">Gdzie najbliżej?</p>
+                                    </div>
+                                    <div style="display:block">
+                                        <p style="font-size: 20px;margin: 0;">Znajdź interesujące Ciebie obiekty w Twojej okolicy</p>
+                                    </div>
+                                </li>
+                            </a>*/}}
+							
+							<a href="search">
+                                <li class="c10">
+									<i class="fa fa-map-marker" style="font-weight:bold;font-size: 30px;margin-right: 10px;"></i> Gdzie najbliżej?
+								</li>
+							</a>
+							
+                            {{range .Categories}} {{if .Visible}}
+                            <a href="/{{if eq .Typeid 2}}rss/{{.Id}}">{{else if eq .Typeid 1}}url/{{.Id}}" target="_blank">{{else}}cat/{{.Id}}">{{end}}
+                                <li class="c{{.Colorid}}">{{.Title}}{{/*.Imageurl*/}}</li>
+                            </a>
+                            {{if and .Insidecategory (not .Hidetree)}}
+                            <ul class="insidecategory">
+                                {{range .Insidecategory}} {{if .Visible}}
+                                <a href="/{{if eq .Typeid 2}}rss/{{.Id}}">{{else if eq .Typeid 1}}url/{{.Id}}" target="_blank">{{else}}cat/{{.Id}}">{{end}}
+                                    <li class="c{{.Colorid}}">{{.Title}}{{/*.Imageurl*/}}</li>
+                                </a>
+                                {{end}} {{end}}
+                            </ul> {{end}} {{end}} {{end}} 
+                            
+							
 
                         </ul>
                     </div>

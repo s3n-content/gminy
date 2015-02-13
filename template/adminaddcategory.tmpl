@@ -35,7 +35,7 @@
                 <div class="unit-row">
                     <div class="unit-100">
 
-                        {{if .Error}} Wystąpił błąd: {{.Error}} {{end}}
+                        {{if .Error}} <p class="error bold upper big">Wystąpił błąd: {{.Error}}</p>{{end}}
                         <form method="post" action="/admin/form/addcategory" class="forms">
 
 

@@ -21,9 +21,9 @@ tinymce.init({
     plugins: [
     "advlist autolink lists link image charmap print preview anchor",
     "searchreplace visualblocks code fullscreen",
-    "insertdatetime media table contextmenu paste"
+    "insertdatetime media contextmenu paste textcolor"
     ],
-    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+    toolbar: "insertfile undo redo | styleselect | bold italic | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
     language : 'pl',
 });
 </script>
@@ -53,6 +53,17 @@ tinymce.init({
                                         <textarea id="Images" name="Images" placeholder="Linki do obrazków rozdzielone średnikami...">{{if .Form.Images}}{{.Form.Images}}{{else if .Domain.Images}}{{.Domain.Images}}{{end}}</textarea>
                                     </label>
                                 </li>
+								<li>
+									<label>Wybierz kolor górnej belki.
+                                        <select id="numbkolor" name="Color">
+                                            <option class="purple-900" value="0" selected="selected">Domyślny purpurowy</option>
+                                            <option class="red-900" value="1">Czerwony</option>
+                                            <option class="blue-900" value="2">Niebieski</option>
+                                            <option class="green-900" value="3">Zielony</option>
+                                            <option class="grey-900" value="4">Szary</option>
+                                        </select>
+									</label>
+								</li>
                                 <li>
                                     <label>
                                         <input type="checkbox" name="Announcements" {{if .Form.Announcements}}checked="checked" {{else if .Domain.Announcements}}checked="checked"{{end}}/> Włącz/wyłącz moduł ogłoszeń
@@ -104,6 +115,12 @@ tinymce.init({
                 res = res.replace(/\s+/g, ";");
                 $('#Images').attr('value', res);
             }
+			
+			var numb = "{{if .Domain.Color}}{{.Domain.Color}}{{end}}";
+
+			if( numb ) {
+				$('#numbkolor option:eq(' + numb + ')').attr('selected', 'selected')
+			}
         });
     </script>
     {{template "adminfooter" .}} {{end}}

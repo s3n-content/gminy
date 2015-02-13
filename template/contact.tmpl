@@ -27,11 +27,16 @@
                 </div>
                 {{if or .Domain.Email .Domain.Telephone}}
                 <div class="units-row">
-                    <div class="unit-40 unit-centered bckgrnd2 blue-500" style="padding: 50px 40px 60px 40px;">
-                        <i class="fa fa-envelope-o fa-5x" style="position:relative;float:left;margin-right:10px;margin-top:-19px;"></i> <h2 style="color: rgba(255,255,255,0.9);">Skontaktuj się.</h4>
-                        {{if .Domain.Email}}<h4 style="color: rgba(255,255,255,0.9);  clear: both;  padding-top: 10px;">Adres e-mail: <a href="mailto:{{.Domain.Email}}" class="no-style" style="font-size:21px">{{.Domain.Email}}</a></h5>{{end}}
-                        {{if .Domain.Telephone}}<h4 style="color: rgba(255,255,255,0.9);  clear: both;  padding-top: 10px;">Numer telefonu: <a href="tel:{{.Domain.Telephone}}" class="no-style" style="font-size:21px">{{.Domain.Telephone}}</a></h5>{{end}}
-                        
+                    <div class="unit-40 unit-centered bckgrnd2" style="padding: 50px 40px 60px 40px;">
+                        <i class="fa fa-envelope-o fa-5x" style="position:relative;float:left;margin-right:10px;margin-top:-19px;"></i> <h2 style="color: #222;">Skontaktuj się.</h4>
+						<div class="units-row end" style="margin-top: 50px;">
+							<div class="unit-100" style="padding:20px">
+							{{if .Domain.Email}}<a href="mailto:{{.Domain.Email}}" style="font-size:21px; margin-bottom:15px;"><button class="btn btn-red width-100">Wyślij e-mail<br/><i class="fa fa-envelope"></i> {{.Domain.Email}}</button></a>{{end}}
+							</div>
+							<div class="unit-100" style="padding:20px">
+							{{if .Domain.Telephone}}<a href="tel:{{.Domain.Telephone}}" style="font-size:21px"><button class="btn btn-green width-100">Zadzwoń<br/><i class="fa fa-phone"></i> {{.Domain.Telephone}}</button></a>{{end}}
+							</div>
+						</div>
                     </div>
                 </div>
                 {{end}}

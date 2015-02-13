@@ -39,8 +39,7 @@
                 <div class="unit-row">
                     <div class="unit-100">
 
-                        {{if .Error}} Wystąpił błąd: {{.Error}}
-                        <br /> {{end}}
+                        {{if .Error}} <p class="error bold upper big">Wystąpił błąd: {{.Error}}</p>{{end}}
                         <form method="post" action="/admin/form/adddomain/{{.Server.Id}}" class="forms">
                             <ul class="formsy">
                                 <h4>Zmieniasz ustawienia dla serwera <strong>{{.Server.Address}}</strong>:</h4>
