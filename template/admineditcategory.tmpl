@@ -54,21 +54,21 @@
                                 </li>
                                 <li class="pole2">
                                     <label>Kategoria nadrzędna<b class="req">*</b>
+                                            {{$forminid := .Form.Id}}
                                         <span>Wybierz do której kategorii ma zostać dodany element.</span>
                                         <select name="Inid">
                                             <option value="0">Strona główna</option>
-                                            {{$forminid := .Form.Id}}
                                             {{range .CategoriesTree}}
-                                                {{template "admincategorytreeselect" .}}*/}}
-                                                {{/*
+                                                {{template "admincategorytreeselect" .}}
+                                               <!-- {{/*
                                                     {{if eq .Typeid 0}}
                                                         <option value="{{.Id}}" {{if eq $forminid .Id}}selected="selected" {{end}}>{{.Title}}</option>
                                                     {{end}}
-                                                */}}
+                                                */}}-->
                                             {{end}}
                                             
                                             
-                                            {{/*{{$forminid := .Form.Inid}}
+                                          <!--  {{/*{{$forminid := .Form.Inid}}
                                             {{$categoryinid := .Category.Inid}}
                                             {{range .Categories}}
                                             <option value="{{.Id}}" {{if eq $forminid .Id}}selected="selected" {{else if eq $categoryinid .Id}}selected="selected" {{end}}>{{.Title}}</option>
@@ -82,7 +82,7 @@
                                                         <option value="{{.Id}}" {{if eq $forminid .Id}}selected="selected" {{end}}>{{.Title}}</option>
                                                     {{end}}
                                                 */}}{{/*
-                                            {{end}}*/}}
+                                            {{end}}*/}}-->
                                         </select>
                                     </label>
                                 </li>
@@ -90,7 +90,7 @@
                                     <label>Kolor
                                         <span>Wybierz kolor jaki ma mieć belka</span>
                                         <select id="numbkolor" name="Colorid">
-                                            <option class="c20" value="20" selected="selected">Przezroczysty</option>
+                                            <option class="c20" value="20">Przezroczysty</option>
                                             <option class="c0" value="0">Szary-100</option>
                                             <option class="c1" value="1">Niebieski-500</option>
                                             <option class="c2" value="2">Czerwony-500</option>
@@ -123,17 +123,17 @@
                                 </li>
                                 <li class="pole5">
                                     <label>
-                                        <input type="checkbox" name="Visible" checked="checked" {{if .Form.Visible}}value="{{.Form.Visible}}" {{else if .Category.Visible}}checked="checked" {{end}}/>Czy ma być widoczna/y?
+                                        <input type="checkbox" name="Visible" checked="checked" {{if .Form.Visible}}value="{{.Form.Visible}}" {{else if .Category.Visible}}checked="checked" {{end}}/>Widoczna?
                                     </label>
                                 </li>
                                 <li class="pole9">
                                     <label>
-                                        <input type="checkbox" name="Hidetree" checked="checked" {{if .Form.Hidetree}}value="{{.Form.Hidetree}}" {{else if .Category.Hidetree}}checked="checked" {{end}}/>Czy ukryć drzewo tej kategorii na stronie głównej? (dotyczy kategorii znajdujących się tylko na stronie głównej)
+                                        <input type="checkbox" name="Hidetree" checked="checked" {{if .Form.Hidetree}}value="{{.Form.Hidetree}}" {{else if .Category.Hidetree}}checked="checked" {{end}}/>Ukryte drzewo kategorii na stronie głównej (dotyczy tylko kategorii pierwszego rzędu znajdujących się na stronie głównej).
                                     </label>
                                 </li>
                                 <li class="pole6">
                                     <label>Kolejność
-                                        <span>Pole nieobowiązkowe, automatycznie doda kolejny element jako ostatni.</span>
+                                        <span>Pole nieobowiązkowe, element automatycznie jest dodawany jako ostatni.</span>
                                         <input type="number" name="Orderele" placeholder="Kolejność na liście..." {{if .Form.Orderele}}value="{{.Form.Orderele}}" {{else if .Category.Orderele}}value="{{.Category.Orderele}}" {{end}}/>
                                     </label>
                                 </li>
@@ -144,7 +144,7 @@
                                 </li>
                                 <li class="pole8">
                                     <label>Adres URL<b class="req">*</b>
-                                        <span>Przykład: <em>http://mojastrona.pl</em>. W przypadku kanału RSS <strong>zwykle</strong> powinien być on zakończony ".xml".</span>
+                                        <span>Przykład: <em>http://mojastrona.pl</em>. W przypadku kanału RSS np. http://wiadomosci.wp.pl/rss.xml</span>
                                         <input type="text" name="Txt" placeholder="Podaj adres URL..." {{if .Form.Txt}}value="{{.Form.Txt}}" {{else if .Category.Txt}}value="{{.Category.Txt}}" {{end}}/>
 
                                     </label>
@@ -162,8 +162,9 @@
 
         <script>
             $('body').ready(function () {
-                var numb = "{{if .Form.Colorid}}{{.Form.Colorid}}{{else if .Category.Colorid}}{{.Category.Colorid}}{{end}}";
-                
+                var numb = parseInt("{{if .Form.Colorid}}{{.Form.Colorid}}{{else if .Category.Colorid}}{{.Category.Colorid}}{{end}}");
+              
+				
                 for (var i = 1; i < 20; i++) {
                     if (i == 4 || i == 8) {
                         $('.pole' + i).hide();
@@ -179,8 +180,11 @@
                     $('.typeint').attr('value', '0');
                 }
                 if( numb ) {
-                    $('#numbkolor option:eq(' + numb + ')').attr('selected', 'selected')
-                }
+					numb = numb + 1;
+                    $('#numbkolor option:eq(' + numb + ')').attr('selected', 'selected');
+                } else {
+                    $('#numbkolor option:eq(20)').attr('selected', 'selected');					
+				}
                 
                 if ($('.typeint').val() == 0) {
                     for (var i = 1; i < 10; i++) {

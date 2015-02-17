@@ -76,18 +76,9 @@ tinymce.init({
 							
 							
 							<li style="margin: 30px 0;">
-								<input id="gallery-input" type="checkbox"> Pokaż galerie obrazków, które możesz wstawić do treści
-								{{$d := .Domain}}
-								<span id="gallery-info" style="display:none">Jeśli chcesz skorzystać z obrazka, kliknij na nim prawym przyciskiem myszy (PPM) i wybierz "kopiuj adres URL grafiki". Kolejno kliknij PPM w powyższym edytorze tekstu i wybierz 'wstaw obrazek'. Kolejno kliknij PPM w pole "źródło" i wybierz "wklej". Pozostałe pola są opcjonalne, możesz kliknąć zatwierdź, aby dodać obrazek do treści.</span>
-								<div id="gallery" class="unit-100 bckgrnd1 img-gallery" style="display:none">
-									<ul class="blocks-5 img-list">
-										{{range .images}}
-										<li><img src="http://{{$d.Address}}{{.}}" alt="http://{{$d.Address}}{{.}}">
-											<br/><input disabled="disabled" value="http://{{$d.Address}}{{.}}"/>
-										</li>
-										{{end}}
-									</ul>
-								</div>
+								<label><input id="gallery-input" type="checkbox">Pokaż galerie obrazków, które możesz wstawić do treści
+									</label>
+								<div id="gallery-is"></div>
 							</li>
 							
                             <li>
@@ -123,11 +114,19 @@ tinymce.init({
     </div>
     
     <script>
-		
-		$('#gallery-input').click(function () {
-			$("#gallery").toggle(this.checked);
-			$("#gallery-info").toggle(this.checked);
-		});
+		var $imagess = "{{$d := .Domain}}<span id='gallery-info'>Jeśli chcesz skorzystać z obrazka, kliknij na nim prawym przyciskiem myszy (PPM) i wybierz 'kopiuj adres URL grafiki'. Kolejno kliknij PPM w powyższym edytorze tekstu i wybierz 'wstaw obrazek'. Kolejno kliknij PPM w pole 'źródło' i wybierz 'wklej'. Pozostałe pola są opcjonalne, możesz kliknąć zatwierdź, aby dodać obrazek do treści.</span><div id='gallery' class='unit-100 bckgrnd1 img-gallery'><ul class='blocks-5 img-list'>{{range .images}}<li><img src='http://{{$d.Address}}{{.}}' alt='http://{{$d.Address}}{{.}}'><br/><input disabled='disabled' value='http://{{$d.Address}}{{.}}' /></li>{{end}}</ul></div>", isg = 0;
+	$('#gallery-input').click(function() {
+		if( $('#gallery-input').is(':checked') ){	
+			if(isg == 0){
+				isg = 1;
+				$("#gallery-is").append($imagess).html();
+			} else {
+				$("#gallery-is").show();
+			}
+		} else {
+				$("#gallery-is").hide();
+		}
+	});
 		
     var numb = "{{if .Form.Hideafter}}{{.Form.Hideafter}}{{else if .announcement.Hideafter}}{{.announcement.Hideafter}}{{end}}";
     

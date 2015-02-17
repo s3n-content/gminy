@@ -346,17 +346,10 @@ tinymce.init({
                                 </li>
 								
 								<li class="pole21" style="margin: 30px 0;">
-									<input id="gallery-input" type="checkbox"> Pokaż galerie obrazków, które możesz wstawić do treści
-									{{$d := .Domain}}
-										<p id="gallery-info" style="display:none">Jeśli chcesz skorzystać z obrazka, kliknij na nim prawym przyciskiem myszy (PPM) i wybierz "kopiuj adres URL grafiki". Kolejno kliknij PPM w powyższym edytorze tekstu i wybierz 'wstaw obrazek'. Kolejno kliknij PPM w pole "źródło" i wybierz "wklej". Pozostałe pola są opcjonalne, możesz kliknąć zatwierdź, aby dodać obrazek do treści.</p>
-									<div id="gallery" class="unit-100 bckgrnd1 img-gallery" style="display:none">
-										<ul class="blocks-5 img-list">
-											{{range .images}}
-											<li><img src="http://{{$d.Address}}{{.}}" alt="http://{{$d.Address}}{{.}}">
-											<br/><input disabled="disabled" value="http://{{$d.Address}}{{.}}"/></li>
-											{{end}}
-										</ul>
-									</div>						
+									<label>
+										<input id="gallery-input" type="checkbox">Pokaż galerie obrazków, które możesz wstawić do treści
+									</label>
+									<div id="gallery-is"></div>					
 								</li>
 
 
@@ -418,8 +411,8 @@ tinymce.init({
                                 </li>
                                 <li class="pole8">
                                     <label>
-                                        Adres WWW grafiki (miniaturki)
-                                        <span>Grafika wyświetli się w tytule postu. Dozwolone formaty (zakończenie linku) to: .jpg, .png, .webp, .svg, .jpeg<br/>Możesz ją wyszukać w internecie, a następnie skopiować jej adres i wkleić poniżej. <strong>Miniaturkę możesz wybrać z galerii grafiki.</strong></span>
+                                        Ikonka tytułu
+                                        <span>Miniaturka graficzna wyświetli się w tytule postu. Dozwolone formaty to: .jpg, .png, .webp, .svg, .jpeg. Optymalna wielkość ikonki to 200x200 pikseli.<br/>Miniaturkę możesz wybrać z galerii grafiki lub wyszukać w internecie, a następnie skopiować jej adres i wkleić poniżej.</span>
                                         <input class="width-60" type="text" name="Imageurl" placeholder="http://mojastrona.pl/obrazek.jpg" {{if .Form.Imageurl}}{{with .Form.Imageurl}}value="{{.}}" {{end}}{{else}}{{with .Post.Imageurl}}value="{{.}}" {{end}}{{end}}/>
                                     </label>
                                 </li>
@@ -493,8 +486,7 @@ tinymce.init({
 								
                                 <li class="pole20">
                                     <label>
-                                        <input id="showonfront" type="checkbox" name="Showonfrontpage" {{if .Form.Showonfrontpage}}checked="checked"{{else if .Post.Showonfrontpage}}checked="checked"{{end}}
-                                               />Pokaż na stronie głównej (jako wyróżniony)
+                                        <input id="showonfront" type="checkbox" name="Showonfrontpage" {{if .Form.Showonfrontpage}}checked="checked"{{else if .Post.Showonfrontpage}}checked="checked"{{end}}/> Pokaż post na stronie głównej (jako wyróżniony)
                                     </label>
                                 </li>
 								
@@ -528,10 +520,7 @@ tinymce.init({
             }
         });
 		
-		$('#gallery-input').click(function () {
-			$("#gallery").toggle(this.checked);
-			$("#gallery-info").toggle(this.checked);
-		});
+		
 		
         $('body').ready(function () {
             /*for (var i = 1; i < 20; i++) {
@@ -545,7 +534,6 @@ tinymce.init({
                 var before = $('#target4').val();
                 var after = before.substring(1, before.length-1);
                 after = after.replace(/ /g,',');
-                console.log(before + " " + after);
                 $('#target4').attr('value', after);
             }
 
@@ -606,59 +594,8 @@ tinymce.init({
             } else {
                 alert("Coś poszło nie tak. Wróć i ponownie wybierz element do edycji.");
             }
-/*
-            if ($('#locat').prop('checked')) {
-
-                $('.polemapka').removeClass('pointer-events');
-                $('#lng').attr('disabled', false);
-                $('#lat').attr('disabled', false);
-                $('.mapnoti').hide();
-              */  /*$('.pole6').show();
-                $('.pole7').show();*/
-            /*} else {
-            */
-               /* $('.mapnoti').show();
-                $('.polemapka').addClass('pointer-events');
-                $('#lng').attr('disabled', true);
-                $('#lat').attr('disabled', true);*/
-                /*
-                $('.pole6').hide();
-                $('.pole7').hide();*/
-            /*}*/
-
-
-
-            /*  $('#butt1').addClass('btn-active');
-                    $('.typeint').attr('value', '1');*/
-
-            /*if( $('.typeint').val() ){
-                var buttnum = $('.typeint').val();
-                if (buttnum == 0 || buttnum == 2) {
-                    $('#butt' + buttnum).trigger('click').addClass('btn-active');
-                } else {
-                    $('#butt1').addClass('btn-active');
-                    $('.typeint').attr('value', '1');
-
-                    $('.polemapka').show();
-                }
-            }*/
         });
 
-        /*$('#locat').click(function () {
-            if(this.checked){
-                $('.mapnoti').hide();
-                $('.polemapka').removeClass('pointer-events');
-                $('#lng').attr('disabled', false);
-                $('#lat').attr('disabled', false);
-            } else {
-                $('.mapnoti').show();
-                $('.polemapka').addClass('pointer-events');
-                $('#lng').attr('disabled', true);
-                $('#lat').attr('disabled', true);
-            }*/
-
-           /* $('.pole6').toggle(this.checked);
-            $('.pole7').toggle(this.checked);*/
 
 
 
@@ -667,34 +604,26 @@ tinymce.init({
             el = "," + el + ",";
             $('#target4').attr('value', el);
 
-            //if typeint == wydarzenie, ustaw TAG na wydarzenie
+			
             if( $('.typeint').val() == 2 ){
                 var event2 = ",12,";
                 $('#target4').attr('value', event2);
             }
         });
 
-        /*$('#lat').bind('propertychange', function (){
-            $('.polemapkanotif').show();
-
-            var date = new Date;
-            var editdate = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-
-
-               var str = "";
-
-            if( $('#lat').val() && $('#lng').val() ){
-
-                var lat = $('#lat').val(),
-                    lng = $('#lng').val();
-            }
-
-            str += editdate + " Pozycja została zaktualizowana pomyślnie (" + lat + ", " + lng + ").";
-
-            $('.polemapkanotif').text(str);
-        }).change();*/
-
-
+var $imagess = "{{$d := .Domain}}<span id='gallery-info'>Jeśli chcesz skorzystać z obrazka, kliknij na nim prawym przyciskiem myszy (PPM) i wybierz 'kopiuj adres URL grafiki'. Kolejno kliknij PPM w powyższym edytorze tekstu i wybierz 'wstaw obrazek'. Kolejno kliknij PPM w pole 'źródło' i wybierz 'wklej'. Pozostałe pola są opcjonalne, możesz kliknąć zatwierdź, aby dodać obrazek do treści.</span><div id='gallery' class='unit-100 bckgrnd1 img-gallery'><ul class='blocks-5 img-list'>{{range .images}}<li><img src='http://{{$d.Address}}{{.}}' alt='http://{{$d.Address}}{{.}}'><br/><input disabled='disabled' value='http://{{$d.Address}}{{.}}' /></li>{{end}}</ul></div>", isg = 0;
+	$('#gallery-input').click(function() {
+		if( $('#gallery-input').is(':checked') ){	
+			if(isg == 0){
+				isg = 1;
+				$("#gallery-is").append($imagess).html();
+			} else {
+				$("#gallery-is").show();
+			}
+		} else {
+				$("#gallery-is").hide();
+		}
+	});
 
 
     </script>

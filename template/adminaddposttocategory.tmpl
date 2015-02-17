@@ -23,7 +23,7 @@
                                     <input type="text" class="width-60" name="PostUrl" placeholder="Adres artykułu" {{with .Form.PostUrl}}value="{{.}}" {{end}}/>
                                 </label>
                                 <label>
-                                    Dodaj do kategori:
+                                    Dodaj do kategorii:
                                     <select name="CategoryId" class="width-60">
                                         {{$forminid := .Form.CategoryId}}
                                         {{range .CategoriesTree}}

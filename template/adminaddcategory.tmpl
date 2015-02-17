@@ -69,7 +69,7 @@
                                 </li>
                                 <li class="pole3">
                                     <label>Kolor
-                                        <span>Wybierz kolor jaki ma mieć belka</span>
+                                        <span>Wybierz kolor belki</span>
                                         <select id="numbkolor" name="Colorid">
                                             <option class="c20" value="20" selected="selected">Przezroczysty</option>
                                             <option class="c0" value="0">Szary-100</option>
@@ -104,17 +104,17 @@
                                 </li>
                                 <li class="pole5">
                                     <label>
-                                        <input type="checkbox" name="Visible" checked="checked" {{with .Form.Visible}}value="{{.}}" {{end}}/>Czy ma być widoczna/y?
+                                        <input type="checkbox" name="Visible" checked="checked" {{with .Form.Visible}}value="{{.}}" {{end}}/>Widoczna?
                                     </label>
                                 </li>
                                 <li class="pole9">
                                     <label>
-                                        <input type="checkbox" name="Hidetree" checked="checked" {{with .Form.Hidetree}}value="{{.}}"{{end}}/>Czy ukryć drzewo tej kategorii na stronie głównej? (dotyczy kategorii znajdujących się tylko na stronie głównej)
+                                        <input type="checkbox" name="Hidetree" checked="checked" {{with .Form.Hidetree}}value="{{.}}"{{end}}/>Ukryte drzewo kategorii na stronie głównej (dotyczy tylko kategorii pierwszego rzędu znajdujących się na stronie głównej).
                                     </label>
                                 </li>
                                 <li class="pole6">
                                     <label>Kolejność
-                                        <span>Pole nieobowiązkowe, automatycznie doda kolejny element jako ostatni.</span>
+                                        <span>Pole nieobowiązkowe, element automatycznie jest dodawany jako ostatni.</span>
                                         <input type="number" name="Orderele" placeholder="Kolejność na liście..." {{with .Form.Orderele}}value="{{.}}" {{end}}/>
                                     </label>
                                 </li>
@@ -125,8 +125,8 @@
                                 </li>
                                 <li class="pole8">
                                     <label>Adres URL<b class="req">*</b>
-                                        <span>Przykład: <em>http://mojastrona.pl</em>. W przypadku kanału RSS <strong>zwykle</strong> powinien być on zakończony ".xml".</span>
-                                        <input type="text" name="Txt" placeholder="Podaj adres URL..." {{with .Form.Txt}}value="{{.}}" {{end}}/>
+                                        <span>Przykład: <em>http://mojastrona.pl</em>. W przypadku kanału RSS np. http://wiadomosci.wp.pl/rss.xml</span>
+                                        <input type="text" name="Txt" placeholder="Podaj adres URL/kanału..." {{with .Form.Txt}}value="{{.}}" {{end}}/>
 
                                     </label>
                                 </li>
