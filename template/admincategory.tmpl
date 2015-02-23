@@ -1,7 +1,7 @@
 {{define "admincategory"}}{{template "adminheader" .}}
 {{$ThisSiteAddress := .Domain.Url}}
 {{$AdminType := .User.admintype}}
-{{if .b}} {{$b := .b}} {{end}}
+{{$b := .b}}
 <style>
 li button {
     float:right;
