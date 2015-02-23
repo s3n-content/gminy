@@ -57,6 +57,7 @@
                                             {{$forminid := .Form.Id}}
                                         <span>Wybierz do której kategorii ma zostać dodany element.</span>
                                         <select name="Inid">
+                                            <option value="-1" selected="selected">Pozostaw ustawioną wcześniej kategorię nadrzędną.</option>
                                             <option value="0">Strona główna</option>
                                             {{range .CategoriesTree}}
                                                 {{template "admincategorytreeselect" .}}
@@ -66,14 +67,14 @@
                                                     {{end}}
                                                 */}}-->
                                             {{end}}
-                                            
-                                            
+
+
                                           <!--  {{/*{{$forminid := .Form.Inid}}
                                             {{$categoryinid := .Category.Inid}}
                                             {{range .Categories}}
                                             <option value="{{.Id}}" {{if eq $forminid .Id}}selected="selected" {{else if eq $categoryinid .Id}}selected="selected" {{end}}>{{.Title}}</option>
                                             {{end}}
-                                            
+
                                             {{$forminid := .Form.CategoryId}}
                                             {{range .CategoriesTree}}
                                                 {{template "admincategorytreeselect" .}}*/}}
@@ -163,8 +164,8 @@
         <script>
             $('body').ready(function () {
                 var numb = parseInt("{{if .Form.Colorid}}{{.Form.Colorid}}{{else if .Category.Colorid}}{{.Category.Colorid}}{{end}}");
-              
-				
+
+
                 for (var i = 1; i < 20; i++) {
                     if (i == 4 || i == 8) {
                         $('.pole' + i).hide();
@@ -183,9 +184,9 @@
 					numb = numb + 1;
                     $('#numbkolor option:eq(' + numb + ')').attr('selected', 'selected');
                 } else {
-                    $('#numbkolor option:eq(20)').attr('selected', 'selected');					
+                    $('#numbkolor option:eq(20)').attr('selected', 'selected');
 				}
-                
+
                 if ($('.typeint').val() == 0) {
                     for (var i = 1; i < 10; i++) {
                         if (i == 4 || i == 8) {
@@ -211,7 +212,7 @@
                         }
                     }
                 }
-                
+
             });
         </script>
 

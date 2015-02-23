@@ -10,7 +10,7 @@
 <html>
 
 <head>
-    <title>{{.Domain.Name}}</title>
+    <title>{{.Domain.Name}}{{if .Title}} - {{.Title}}{{end}}</title>
 
     <!--[if IE]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -134,7 +134,7 @@
                     </div>
                 </div>
 
-                <div class="unit-row unit-push-20" style="padding: 35px 20px 25px 20px;">
+                <div class="unit-row unit-push-20" style="padding: 10px 20px 25px 20px;">
                     <div class="unit-100" style="  text-align: center;margin-bottom: 50px;">
                         {{if .Telephone}}
                         <div class="unit-40 guz">
@@ -232,7 +232,7 @@
             {{end}}{{end}}
                 </div>
 
-                <div class="unit-row" style="padding: 35px 20px 25px 20px;">
+                <div class="unit-row" style="padding: 10px 20px 25px 20px;">
                     {{if .Locationset}}
                     <div class="unit-push-25 unit-50" style="display:inline-block;">
                         <a href="http://{{$VarMain}}/nav/{{.Url}}/{{.Id}}/{{.Locationlat}}/{{.Locationlng}}" class="btn btn-big btn-blue" alt="Nawiguj pod adres {{.Adres}}" target="_blank"><i class="fa fa-globe"></i> Nawiguj</a>

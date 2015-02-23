@@ -1,4 +1,5 @@
 {{define "admineditpost"}}{{template "adminheader" .}}
+{{if .b}} {{$b := .b}} {{end}}
 
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
 
@@ -79,7 +80,7 @@
 		background: #de2c3b!important;
 	}
 	.img-list li {
-	margin-bottom: 10px;	
+	margin-bottom: 10px;
 		  height: 215px;
 	}
 	.img-list img {
@@ -268,19 +269,7 @@
     google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 
-<script type="text/javascript" src="/assets/tinymce/tinymce.min.js"></script>
-<script type="text/javascript">
-tinymce.init({
-  selector: "textarea",
-  plugins: [
-  "advlist autolink lists link image charmap print preview anchor",
-  "searchreplace visualblocks code fullscreen",
-  "insertdatetime media contextmenu paste textcolor"
-  ],
-  toolbar: "insertfile undo redo | styleselect | bold italic | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
-  language : 'pl',
-});
-</script>
+{{template "tinymce"}}
 </head>
 
 <body>
@@ -309,7 +298,7 @@ tinymce.init({
                         Data utworzenia: {{.Post.Createdon}}<br/>
                         Ostatnio edytowany: {{.Post.Modifiedon}}<br/><br/>
                         {{if .Error}} <p class="error bold upper big">Wystąpił błąd: {{.Error}}</p>{{end}}
-                        <form id="editpost" method="post" action="/admin/form/editpost/{{.Post.Id}}" class="forms">
+                        <form id="editpost" method="post" action="/admin/form/editpost/{{.Post.Id}}{{if $b}}?b={{$b}}{{end}}" class="forms">
 
                             {{/*
                             <p data-tools="buttons" data-target="#target">
@@ -319,7 +308,7 @@ tinymce.init({
                             </p>*/}}
 
                                 <p>Wymagane pola są oznaczone gwiazdką (<span class="req">*</span>)</p>
-                            
+
                             <ul class="formsy">
                                 <li class="pole1">
                                     <label>
@@ -344,12 +333,12 @@ tinymce.init({
 
                                     </label>
                                 </li>
-								
+
 								<li class="pole21" style="margin: 30px 0;">
 									<label>
 										<input id="gallery-input" type="checkbox">Pokaż galerie obrazków, które możesz wstawić do treści
 									</label>
-									<div id="gallery-is"></div>					
+									<div id="gallery-is"></div>
 								</li>
 
 
@@ -483,13 +472,13 @@ tinymce.init({
 
                                     </label>
                                 </li>
-								
+
                                 <li class="pole20">
                                     <label>
                                         <input id="showonfront" type="checkbox" name="Showonfrontpage" {{if .Form.Showonfrontpage}}checked="checked"{{else if .Post.Showonfrontpage}}checked="checked"{{end}}/> Pokaż post na stronie głównej (jako wyróżniony)
                                     </label>
                                 </li>
-								
+
                                 <li class="pole19">
                                     {{/*    <label>
                                         Dodaj do kategorii</label>
@@ -519,9 +508,9 @@ tinymce.init({
                 return false;
             }
         });
-		
-		
-		
+
+
+
         $('body').ready(function () {
             /*for (var i = 1; i < 20; i++) {
                 if (i == 1 || i == 5 || i==6 || i==7 || i == 13 || i == 14 || i == 15 || i == 16 || i == 17 || i == 18) {
@@ -604,7 +593,7 @@ tinymce.init({
             el = "," + el + ",";
             $('#target4').attr('value', el);
 
-			
+
             if( $('.typeint').val() == 2 ){
                 var event2 = ",12,";
                 $('#target4').attr('value', event2);
@@ -613,7 +602,7 @@ tinymce.init({
 
 var $imagess = "{{$d := .Domain}}<span id='gallery-info'>Jeśli chcesz skorzystać z obrazka, kliknij na nim prawym przyciskiem myszy (PPM) i wybierz 'kopiuj adres URL grafiki'. Kolejno kliknij PPM w powyższym edytorze tekstu i wybierz 'wstaw obrazek'. Kolejno kliknij PPM w pole 'źródło' i wybierz 'wklej'. Pozostałe pola są opcjonalne, możesz kliknąć zatwierdź, aby dodać obrazek do treści.</span><div id='gallery' class='unit-100 bckgrnd1 img-gallery'><ul class='blocks-5 img-list'>{{range .images}}<li><img src='http://{{$d.Address}}{{.}}' alt='http://{{$d.Address}}{{.}}'><br/><input disabled='disabled' value='http://{{$d.Address}}{{.}}' /></li>{{end}}</ul></div>", isg = 0;
 	$('#gallery-input').click(function() {
-		if( $('#gallery-input').is(':checked') ){	
+		if( $('#gallery-input').is(':checked') ){
 			if(isg == 0){
 				isg = 1;
 				$("#gallery-is").append($imagess).html();

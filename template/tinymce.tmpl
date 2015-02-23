@@ -1,0 +1,17 @@
+{{define "tinymce"}}
+<script type="text/javascript" src="/assets/tinymce/tinymce.min.js"></script>
+<script type="text/javascript">
+tinymce.init({
+    selector: "textarea",
+    plugins: [
+    "advlist autolink lists link image charmap print preview anchor",
+    "searchreplace visualblocks code fullscreen",
+    "insertdatetime media contextmenu paste textcolor"
+    ],
+    toolbar: "insertfile undo redo | bold italic underline | fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | preview",
+	theme_advanced_font_sizes: "10px,12px,13px,14px,16px,18px,20px",
+    font_size_style_values: "12px,13px,14px,16px,18px,20px",
+    language : 'pl',
+});
+</script>
+{{end}}

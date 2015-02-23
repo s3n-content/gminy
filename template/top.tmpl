@@ -30,7 +30,7 @@
         </div>{{end}}
 
     <div class="icons ellipsis">
-        <a href="#" id="hem1" style="float:left; text-decoration: none; font-size: 29px; line-height: 34px; padding: 13px;"><i class="fa fa-bars" style="margin-right: 10px;"></i> {{.Domain.Name}}</a>
+        <a href="#" id="hem1" style="float:left; text-decoration: none; font-size: 29px; line-height: 34px; padding: 13px;"><i class="fa fa-bars" style="margin-right: 10px;"></i> <i class="fa fa-home"></i></a>
         <a href="/search" style="float:right; right:5px;"><i class="fa fa-question"></i></a>
         <a href="/google" style="float:right; right:55px;"><i class="fa fa-search"></i></a>
     </div>
@@ -51,6 +51,7 @@
         <li><a href="#" class="highcontras">Zwiększ kontrast <i class="fa fa-adjust"></i></a>
         </li>
     </div>
+	
    <!-- <div id="hm2" class="headnav-mobile" style="display:none;">
         <li><a href="#" class="fontplus">Powiększona czcionka <span class="label label-red"><i class="fa fa-plus"></i></span></a>
         </li>
@@ -160,6 +161,9 @@
 <div class="mobileimg units-row end">
 	<div class="unit-centered unit-100 bckgrnd1" style="{{if .Domain.Image}}background:url({{.Domain.Image}});background-size: cover; min-height:100px;{{else}}{{end}}position:relative;z-index:2;">
     </div>
+
+	<span class="headnav-name"><i class="fa fa-chevron-right"></i> {{.Domain.Name}}</span>
 </div>
+
 
 {{end}}

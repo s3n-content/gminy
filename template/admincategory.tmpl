@@ -1,19 +1,20 @@
 {{define "admincategory"}}{{template "adminheader" .}}
-{{$ThisSiteName := .Domain.Name}}
+{{$ThisSiteAddress := .Domain.Url}}
 {{$AdminType := .User.admintype}}
+{{if .b}} {{$b := .b}} {{end}}
 <style>
 li button {
     float:right;
     margin-left: 8px!important;
 }
     {{/*li a {
-    color: #fff;   
+    color: #fff;
 }
 li a:hover {
-    color: #Fff;   
+    color: #Fff;
 }*/}}
 li .label {
- margin-left:8px!important;   
+ margin-left:8px!important;
 }
 </style>
 </head>
@@ -36,7 +37,7 @@ li .label {
                         </ul>
                     </nav>
                 </div>
-                
+
                 <div class="unit-row">
                     <div class="unit-100 catego">
                     <ul>
@@ -47,22 +48,22 @@ li .label {
                     <span class="label label-black">{{if eq .Typeid 2}}RSS{{else if .Typeid}}WWW{{else}}Kategoria{{end}}</span> {{.Title}}{{/*.Imageurl*/}}
                 {{if ge $AdminType 2}}
                 <span>
-                    <a href="/admin/form/editcategory/{{.Id}}"><button class="btn btn-small btn-black"><i class="fa fa-edit"></i> Edytuj</button></a> 
-                    <a href="/admin/form/delete/category/{{.Id}}"><button class="btn btn-small btn-black"><i class="fa fa-close"></i> Usuń</button></a>
+                    <a href="/admin/form/editcategory/{{.Id}}" target="_blank"><button class="btn btn-small btn-black"><i class="fa fa-edit"></i> Edytuj</button></a>
+                    <a href="/admin/form/delete/category/{{.Id}}" target="_blank"><button class="btn btn-small btn-black"><i class="fa fa-close"></i> Usuń</button></a>
                 </span>{{end}}
             </li>
         {{if eq .Typeid 0}}</a>{{end}}
     {{end}}
-                        
-                        
-{{else}}<ul class="insidecategory"> 
+
+
+{{else}}<ul class="insidecategory">
     {{range .Category.Insidecategory}}
         {{if eq .Typeid 0}}<a href="/admin/category/{{.Id}}">{{end}}
             <li class="c{{.Colorid}}">
                     <span class="label label-black">{{if eq .Typeid 2}}RSS{{else if .Typeid}}WWW{{else}}Kategoria{{end}}</span> {{.Title}}{{/*.Imageurl*/}}
                 <span>{{if ge $AdminType 2}}
-                    <a href="/admin/form/editcategory/{{.Id}}"><button class="btn btn-small btn-black"><i class="fa fa-edit"></i> Edytuj</button></a> 
-                    <a href="/admin/form/delete/category/{{.Id}}"><button class="btn btn-small btn-black"><i class="fa fa-close"></i> Usuń</button></a>
+                    <a href="/admin/form/editcategory/{{.Id}}" target="_blank"><button class="btn btn-small btn-black"><i class="fa fa-edit"></i> Edytuj</button></a>
+                    <a href="/admin/form/delete/category/{{.Id}}" target="_blank"><button class="btn btn-small btn-black"><i class="fa fa-close"></i> Usuń</button></a>
                 </span>{{end}}
             </li>
         {{if eq .Typeid 0}}</a>{{end}}
@@ -80,17 +81,17 @@ li .label {
         </div>
         <div class="sep"><div class="elems">
             {{if .Post}}<span>{{.Post.Createdon}}</span>{{end}}{{/*<!--if not .Visible}}<span> | UKRYTY</span>{{end-->*/}}
-        {{if ne $ThisSiteName .SiteName}}<span> z serwisu: <strong>{{.SiteName}}</strong></span>{{else}} 
-            <a href="/admin/form/editpost/{{.OryginalId}}"><span class="label"><i class="fa fa-edit"></i> Edytuj</span></a> 
-            <a href="/admin/form/delete/post/{{.OryginalId}}"><span class="label"><i class="fa fa-close"></i> Usuń</span></a>{{end}} 
-            <a href="/admin/form/delete/postincategory/{{.OryginalId}}"><span class="label"><i class="fa fa-close"></i> Usuń z kategorii</span></a>
+        {{if ne $ThisSiteAddress .Url}}<span> z serwisu: <strong>{{.SiteName}}</strong></span>{{else}}
+            <a href="/admin/form/editpost/{{.Id}}{{if $b}}?b={{$b}}{{end}}"><span class="label"><i class="fa fa-edit"></i> Edytuj</span></a>
+            <a href="/admin/form/delete/post/{{.Id}}" target="_blank"><span class="label"><i class="fa fa-close"></i> Usuń</span></a>{{end}}
+            <a href="/admin/form/delete/postincategory/{{.Id}}" target="_blank"><span class="label"><i class="fa fa-close"></i> Usuń z kategorii</span></a>
             </div></div>
     </div>
-</a>    
+</a>
                         {{end}}{{end}}
                         </ul>
                     </div></div>
-                
+
                 <div class="units-row">
                     <div class="unit-100 units-centered" style="text-align:center;">
                         <span class="btn-group ">
@@ -105,16 +106,16 @@ li .label {
                                     <a href="/admin/category/{{$id}}/{{.}}">
                             <button class="btn btn-outline pagin">{{.}}</button></a>
                                 {{end}}
-                            {{end}} 
+                            {{end}}
                             {{if ne .PageIdPlus -1}}<a href="/admin/category/{{$id}}/{{.PageIdPlus}}"><button class="btn btn-outline pagin">>></button></a>{{end}}
-                            
+
                         </span>
                     </div>
                 </div>
-            
-            
-            
-            
+
+
+
+
             </div></div>
 {{template "adminfooter" .}}
 {{end}}

@@ -1,4 +1,4 @@
-{{define "category"}}{{template "header" .}} {{$ThisSiteName := .Domain.Name}}
+{{define "category"}}{{template "header" .}} {{$ThisSiteAddress := .Domain.Address}}
 </head>
 
 <body>
@@ -43,7 +43,7 @@
                                     <p style="display:none;">Ogólnopolska Karta Dużej Rodziny. Można już składać wnioski.</p>*/}}
                                 </div>
                                 <div class="sep">
-                                    <div class="elems">{{/*<span><strong>26 grudnia 2014</strong> o 14:46</span>*/}} {{if ne $ThisSiteName .SiteName}}<span> z serwisu: <strong>{{.SiteName}}</strong></span>{{end}}</div>
+                                    <div class="elems">{{/*<span><strong>26 grudnia 2014</strong> o 14:46</span>*/}} {{if ne $ThisSiteAddress .Url}}<span> z serwisu: <strong>{{.SiteName}}</strong></span>{{end}}</div>
                                 </div>
                                 <div class=""></div>
                             </div>
