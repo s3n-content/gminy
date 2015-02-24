@@ -82,8 +82,8 @@ li .label {
         <div class="sep"><div class="elems">
             {{if .Post}}<span>{{.Post.Createdon}}</span>{{end}}{{/*<!--if not .Visible}}<span> | UKRYTY</span>{{end-->*/}}
         {{if ne $ThisSiteAddress .Url}}<span> z serwisu: <strong>{{.SiteName}}</strong></span>{{else}}
-            <a href="/admin/form/editpost/{{.Id}}{{if $b}}?b={{$b}}{{end}}"><span class="label"><i class="fa fa-edit"></i> Edytuj</span></a>
-            <a href="/admin/form/delete/post/{{.Id}}" target="_blank"><span class="label"><i class="fa fa-close"></i> Usuń</span></a>{{end}}
+            <a href="/admin/form/editpost/{{.OryginalId}}{{if $b}}?b={{$b}}{{end}}"><span class="label"><i class="fa fa-edit"></i> Edytuj</span></a>
+            <a href="/admin/form/delete/post/{{.OryginalId}}" target="_blank"><span class="label"><i class="fa fa-close"></i> Usuń</span></a>{{end}}
             <a href="/admin/form/delete/postincategory/{{.Id}}" target="_blank"><span class="label"><i class="fa fa-close"></i> Usuń z kategorii</span></a>
             </div></div>
     </div>
