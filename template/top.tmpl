@@ -37,6 +37,9 @@
     <div id="hm1" class="headnav-mobile" style="display:none;">
         <li class="active2"><a href="/"><i class="fa fa-home"></i> {{.Domain.Name}}</a>
         </li>
+        {{if ne .Domain.Address $VarMain}}
+		<li><a href="http://mpolska.mobi">MPolska.mobi <i class="fa fa-globe"></i></a>
+		</li>{{end}}
         <li><a href="http://{{$VarMain}}/search">Gdzie najbliżej <i class="fa fa-question"></i></a>
         </li>
         <li><a href="/qr">Kody QR <i class="fa fa-qrcode"></i> </a>

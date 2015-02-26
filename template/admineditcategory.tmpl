@@ -11,6 +11,10 @@
     label {
         font-size:16px;
     }
+	
+    .forms-list li {
+		display: inline-block;
+	}	
 </style>
 </head>
 
@@ -117,10 +121,37 @@
                                     </label>
                                 </li>
                                 <li class="pole4">
-                                    {{/*<label>Adres obrazka
+									<fieldset>
+        								<legend>Ikonka wpisu</legend>
+										<span>Wybierz ikonkę wpisu</span>
+										<ul class="forms-list">
+											<li>
+												<input type="radio" name="Imageurl" id="im-1" value="home">
+												<label for="im-1"><i class="fa fa-home"></i></label>
+											</li>
+											<li>
+												<input type="radio" name="Imageurl" id="im-2" value="chevron-right">
+												<label for="im-2"><i class="fa fa-chevron-right"></i></label>
+											</li>
+											<li>
+												<input type="radio" name="Imageurl" id="im-3" value="">
+												<label for="im-3">Brak ikonki</label>
+											</li>
+										</ul>
+									</fieldset>
+									
+                                    {{/*
+									<label>Adres obrazka
+                                    	<select class="iurl" name="Imageurl">
+										
+												<option value="home" data-content="<i class='fa fa-home'></i> home"> domek</option>										
+												<option value="chevron-right"><i class="fa fa-chevron-right"></i> strzałka</option>	
+											
+										</select>
+									</label>
                                         <span>Dozwolone formaty (zakończenie linku) to: .jpg, .png, .webp, .svg, .jpeg</span>
                                         <input type="text" name="Imageurl" placeholder="Podaj adres obrazka..." {{if .Form.Imageurl}}value="{{.Form.Imageurl}}" {{else if .Category.Imageurl}}value="{{.Category.Imageurl}}" {{end}}/>
-                                    </label>*/}}
+									*/}}
                                 </li>
                                 <li class="pole5">
                                     <label>
@@ -162,12 +193,13 @@
         </div>
 
         <script>
-            $('body').ready(function () {
+            $('body').ready(function () {		
+				
                 var numb = parseInt("{{if .Form.Colorid}}{{.Form.Colorid}}{{else if .Category.Colorid}}{{.Category.Colorid}}{{end}}");
 
 
                 for (var i = 1; i < 20; i++) {
-                    if (i == 4 || i == 8) {
+                    if (i == 8) {
                         $('.pole' + i).hide();
                     } else {
                         $('.pole' + i).show();
@@ -189,7 +221,7 @@
 
                 if ($('.typeint').val() == 0) {
                     for (var i = 1; i < 10; i++) {
-                        if (i == 4 || i == 8) {
+                        if (i == 8) {
                             $('.pole' + i).hide();
                         } else {
                             $('.pole' + i).show();
@@ -197,7 +229,7 @@
                     }
                 } else if ($('.typeint').val() == 1) {
                     for (var i = 1; i < 10; i++) {
-                        if (i == 4 || i == 9) {
+                        if (i == 9) {
                             $('.pole' + i).hide();
                         } else {
                             $('.pole' + i).show();
@@ -205,7 +237,7 @@
                     }
                 } else if ($('.typeint').val() == 2) {
                     for (var i = 1; i < 10; i++) {
-                        if (i == 4 || i == 9) {
+                        if (i == 9) {
                             $('.pole' + i).hide();
                         } else {
                             $('.pole' + i).show();
@@ -213,7 +245,7 @@
                     }
                 }
 
-            });
+		});
         </script>
 
 

@@ -147,13 +147,13 @@
 							
                             {{range .Categories}} {{if .Visible}}
                             <a href="/{{if eq .Typeid 2}}rss/{{.Id}}">{{else if eq .Typeid 1}}url/{{.Id}}" target="_blank">{{else}}cat/{{.Id}}">{{end}}
-                                <li class="c{{.Colorid}}">{{.Title}}{{/*.Imageurl*/}}</li>
+                                <li class="c{{.Colorid}}">{{if .Imageurl}}<i class="fa fa-{{.Imageurl}}"></i>{{end}} {{.Title}}</li>
                             </a>
                             {{if and .Insidecategory (not .Hidetree)}}
                             <ul class="insidecategory">
                                 {{range .Insidecategory}} {{if .Visible}}
                                 <a href="/{{if eq .Typeid 2}}rss/{{.Id}}">{{else if eq .Typeid 1}}url/{{.Id}}" target="_blank">{{else}}cat/{{.Id}}">{{end}}
-                                    <li class="c{{.Colorid}}">{{.Title}}{{/*.Imageurl*/}}</li>
+                                    <li class="c{{.Colorid}}">{{if .Imageurl}}<i class="fa fa-{{.Imageurl}}"></i>{{end}} {{.Title}}</li>
                                 </a>
                                 {{end}} {{end}}
                             </ul> {{end}} {{end}} {{end}} 

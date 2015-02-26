@@ -23,7 +23,7 @@
                         <ul>
                             {{range .Category.Insidecategory}} {{if .Visible}}
                             <a href="/{{if eq .Typeid 2}}rss{{else if eq .Typeid 1}}url{{else}}cat{{end}}/{{.Id}}">
-                                <li class="c{{.Colorid}}">{{.Title}}{{.Imageurl}}</li>
+                                <li class="c{{.Colorid}}">{{if .Imageurl}}<i class="fa fa-{{.Imageurl}}"></i>{{end}} {{.Title}}</li>
                             </a>
                             {{end}} {{end}}
                         </ul>

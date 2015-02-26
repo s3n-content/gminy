@@ -45,7 +45,7 @@ li .label {
     {{range .Categories}}
         {{if eq .Typeid 0}}<a href="/admin/category/{{.Id}}">{{end}}
             <li class="c{{.Colorid}}">
-                    <span class="label label-black">{{if eq .Typeid 2}}RSS{{else if .Typeid}}WWW{{else}}Kategoria{{end}}</span> {{.Title}}{{/*.Imageurl*/}}
+                    <span class="label label-black">{{if eq .Typeid 2}}RSS{{else if .Typeid}}WWW{{else}}Kategoria{{end}}</span> {{if .Imageurl}}<i class="fa fa-{{.Imageurl}}"></i>{{end}} {{.Title}}
                 {{if ge $AdminType 2}}
                 <span>
                     <a href="/admin/form/editcategory/{{.Id}}" target="_blank"><button class="btn btn-small btn-black"><i class="fa fa-edit"></i> Edytuj</button></a>
@@ -60,7 +60,7 @@ li .label {
     {{range .Category.Insidecategory}}
         {{if eq .Typeid 0}}<a href="/admin/category/{{.Id}}">{{end}}
             <li class="c{{.Colorid}}">
-                    <span class="label label-black">{{if eq .Typeid 2}}RSS{{else if .Typeid}}WWW{{else}}Kategoria{{end}}</span> {{.Title}}{{/*.Imageurl*/}}
+                    <span class="label label-black">{{if eq .Typeid 2}}RSS{{else if .Typeid}}WWW{{else}}Kategoria{{end}}</span> {{if .Imageurl}}<i class="fa fa-{{.Imageurl}}"></i>{{end}} {{.Title}}
                 <span>{{if ge $AdminType 2}}
                     <a href="/admin/form/editcategory/{{.Id}}" target="_blank"><button class="btn btn-small btn-black"><i class="fa fa-edit"></i> Edytuj</button></a>
                     <a href="/admin/form/delete/category/{{.Id}}" target="_blank"><button class="btn btn-small btn-black"><i class="fa fa-close"></i> Usuń</button></a>
@@ -77,10 +77,9 @@ li .label {
         <div class="news-badge"><i class="fa fa-chevron-right{{/*if eq .Type 2}}calendar{{else if .Type}}map-marker{{else}}comment{{end*/}}"></i></div>
         <div class="news-badge-1">
         <h2>{{.Title}}</h2>
-            {{/*<!--<p style="display:none;">Ogólnopolska Karta Dużej Rodziny. Można już składać wnioski.</p>-->*/}}
         </div>
         <div class="sep"><div class="elems">
-            {{if .Post}}<span>{{.Post.Createdon}}</span>{{end}}{{/*<!--if not .Visible}}<span> | UKRYTY</span>{{end-->*/}}
+            {{if .Post}}<span>{{.Post.Createdon}}</span>{{end}}
         {{if ne $ThisSiteAddress .Url}}<span> z serwisu: <strong>{{.SiteName}}</strong></span>{{else}}
             <a href="/admin/form/editpost/{{.OryginalId}}{{if $b}}?b={{$b}}{{end}}"><span class="label"><i class="fa fa-edit"></i> Edytuj</span></a>
             <a href="/admin/form/delete/post/{{.OryginalId}}" target="_blank"><span class="label"><i class="fa fa-close"></i> Usuń</span></a>{{end}}
