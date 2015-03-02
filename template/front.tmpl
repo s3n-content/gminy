@@ -108,13 +108,13 @@
                             {{if and .postinfrontpage (ne .postinfrontpage.Id 0)}}
                             <a href="{{.postinfrontpage.Adres}}">
                                 <li class="{{if eq .postinfrontpage.Type 2}}c5{{else if .postinfrontpage.Type}}c18{{else}}c6{{end}}">
-                                    <div style="display:inline-block;float:left;padding: 8px 14px 8px 0;"><span class="fa-stack fa-lg">
+									{{/*<div style="display:inline-block;float:left;padding: 8px 14px 8px 0;"><span class="fa-stack fa-lg">
 <i class="fa fa-circle fa-stack-2x" style="color:#fff;"></i>
                                         {{if eq .postinfrontpage.Type 2}}<i class="fa fa-calendar fa-stack-1x fa-inverse" style="color:#673ab7"></i>{{else if .postinfrontpage.Type}}<i class="fa fa-map-marker fa-stack-1x fa-inverse" style="color:#607d8b;"></i>{{else}}<i class="fa fa-comment fa-stack-1x fa-inverse" style="color:#3f51b5"></i>{{end}}
 </span> 
-                                    </div>
+                                    </div>*/}}
                                     <div style="display:inline-block">
-                                        <p style="font-weight:400;font-size:28px;margin: 0;padding: 0;">{{.postinfrontpage.Title}}</p>
+                                        <p style="font-weight:400;font-size:28px;margin: 0;padding: 0;">{{if eq .postinfrontpage.Type 2}}<i class="fa fa-calendar"></i>{{else if .postinfrontpage.Type}}<i class="fa fa-map-marker"></i>{{else}}<i class="fa fa-comment"></i>{{end}} {{.postinfrontpage.Title}}</p>
                                     </div>
                                     <div style="display:block">
                                         <p style="font-size: 20px;margin: 0;">{{if eq .postinfrontpage.Type 2}}{{if eq .postinfrontpage.Eventtime .postinfrontpage.Eventtime}}Odbędzie się: {{.postinfrontpage.Eventtime}}{{else}}Trwa od {{.postinfrontpage.Eventtime}} do {{.postinfrontpage.Eventtimeend}}{{end}}{{else if .postinfrontpage.Type}}Adres: {{.postinfrontpage.Address}}{{else}}Kliknij tutaj, aby przejść do artykułu.{{end}}</p>

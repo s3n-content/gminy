@@ -72,7 +72,7 @@ li .label {
 {{if .PostsInCategory}}
     Posty w kategorii: <br />
     {{range .PostsInCategory}}
-<a href="/pic/{{.Id}}" class="no-style">
+<a id="e{{.Id}}" href="/pic/{{.Id}}" class="no-style">
     <div class="news-1 unit-mobile-100" style="margin-bottom:10px; padding:10px 0 5px 0">
         <div class="news-badge"><i class="fa fa-chevron-right{{/*if eq .Type 2}}calendar{{else if .Type}}map-marker{{else}}comment{{end*/}}"></i></div>
         <div class="news-badge-1">
@@ -84,7 +84,15 @@ li .label {
             <a href="/admin/form/editpost/{{.OryginalId}}{{if $b}}?b={{$b}}{{end}}"><span class="label"><i class="fa fa-edit"></i> Edytuj</span></a>
             <a href="/admin/form/delete/post/{{.OryginalId}}" target="_blank"><span class="label"><i class="fa fa-close"></i> Usuń</span></a>{{end}}
             <a href="/admin/form/delete/postincategory/{{.Id}}" target="_blank"><span class="label"><i class="fa fa-close"></i> Usuń z kategorii</span></a>
-            </div></div>
+			{{if not .Orderele}}
+			<span>|</span>
+			<a href="#" id="editorder"><span class="label data-set" data-orderele-id="{{.Id}}">Przypnij post</span></a>
+			{{end}}
+			{{if .Orderele}}
+			<span>|</span>
+			<a href="#e{{.Id}}"><span class="label">Kolejność <strong>{{.Orderele}}</strong></span><span class="label label-green data-up" data-orderele-id="{{.Id}}" data-orderele="{{.Orderele}}"><i class="fa fa-arrow-up"></i></span><span class="label label-red data-down" data-orderele-id="{{.Id}}" data-orderele="{{.Orderele}}"><i class="fa fa-arrow-down"></i></span></a>
+			{{end}}
+			</div></div>
     </div>
 </a>
                         {{end}}{{end}}
@@ -116,5 +124,43 @@ li .label {
 
 
             </div></div>
+		
+		<script>
+			var id, ord;
+			$(document).ready(function(){
+				$('.data-up').click(function(){
+					id = parseInt($(this).attr('data-orderele-id'));
+					ord = parseInt($(this).attr('data-orderele'));
+					ord++;
+					$.ajax({
+						url:"/admin/editpostincategoryorder/" + id + "/" + ord,
+					})
+						.done(function( data ) {
+							location.reload();
+				  	});
+				});
+				$('.data-down').click(function(){
+					id = parseInt($(this).attr('data-orderele-id'));
+					ord = parseInt($(this).attr('data-orderele'));
+					ord--;
+					$.ajax({
+						url:"/admin/editpostincategoryorder/" + id + "/" + ord,
+					})
+						.done(function( data ) {
+							location.reload();
+				  	});
+				});
+				$('.data-set').click(function(){
+					id = parseInt($(this).attr('data-orderele-id'));
+					ord = parseInt(1);
+					$.ajax({
+						url:"/admin/editpostincategoryorder/" + id + "/" + ord,
+					})
+						.done(function( data ) {
+							location.reload();
+					});		
+				});
+			});
+		</script>
 {{template "adminfooter" .}}
 {{end}}

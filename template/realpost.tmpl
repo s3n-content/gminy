@@ -51,6 +51,18 @@
                 {{if .Post.Visible}} {{with .Post}}
 
                 {{if eq .Type 0}}
+				
+				<div class="units-row end">
+                    <nav class="breadcrumbs">
+                        <ul>
+                            <li><a href="/">Strona główna</a>
+                            </li>
+                            <li><span>{{.Title}}</span>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+				
                 <div class="units-row end">
                     <div class="unit-100 p-news">
                         <h1>{{.Title}}</h1>
@@ -83,6 +95,33 @@
                 </div>
                 {{else if eq .Type 1}}
 
+				<div class="units-row end">
+					<div class="unit-row unit-push-20" style="padding: 10px 20px 0px 20px;">
+						<div class="unit-100" style="  text-align: center;margin-bottom: 50px;">
+							{{if .Telephone}}
+							<div class="unit-40 guz">
+								<a href="tel:{{.Telephone}}" class="btn btn-big btn-green" alt="Zadzwoń pod numer {{.Telephone}}"><i class="fa fa-phone"></i> Zadzwoń</a>
+							</div>
+							{{end}} {{if .Locationset}}
+							<div class="unit-40 guz">
+								<a href="http://{{$VarMain}}/nav/{{.Url}}/{{.Id}}/{{.Locationlat}}/{{.Locationlng}}" class="btn btn-big btn-blue" alt="Nawiguj pod adres {{.Adres}}" target="_blank"><i class="fa fa-globe"></i> Nawiguj</a>
+							</div>
+							{{end}}
+						</div>
+					</div>	
+				</div>
+				
+				<div class="units-row end">
+                    <nav class="breadcrumbs">
+                        <ul>
+                            <li><a href="/">Strona główna</a>
+                            </li>
+                            <li><span>{{.Title}}</span>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+					
                 <div class="units-row end">
                     <!--tu-->
                     <div class="unit-100 p-news">
@@ -134,19 +173,7 @@
                     </div>
                 </div>
 
-                <div class="unit-row unit-push-20" style="padding: 10px 20px 25px 20px;">
-                    <div class="unit-100" style="  text-align: center;margin-bottom: 50px;">
-                        {{if .Telephone}}
-                        <div class="unit-40 guz">
-                            <a href="tel:{{.Telephone}}" class="btn btn-big btn-green" alt="Zadzwoń pod numer {{.Telephone}}"><i class="fa fa-phone"></i> Zadzwoń</a>
-                        </div>
-                        {{end}} {{if .Locationset}}
-                        <div class="unit-40 guz">
-                            <a href="http://{{$VarMain}}/nav/{{.Url}}/{{.Id}}/{{.Locationlat}}/{{.Locationlng}}" class="btn btn-big btn-blue" alt="Nawiguj pod adres {{.Adres}}" target="_blank"><i class="fa fa-globe"></i> Nawiguj</a>
-                        </div>
-                        {{end}}
-                    </div>
-                </div>
+                
 
                 {{if and .Locationset (and .Locationlat .Locationlng)}} {{if $iframe}}
                 <div class="unit-row" style="padding-top: 20px;">
@@ -173,7 +200,27 @@
 
                 {{else if eq .Type 2}}
 
-
+                <div class="units-row end">
+					<div class="unit-row" style="padding: 10px 20px 0px 20px;">
+						{{if .Locationset}}
+						<div class="unit-push-25 unit-50" style="display:inline-block;">
+							<a href="http://{{$VarMain}}/nav/{{.Url}}/{{.Id}}/{{.Locationlat}}/{{.Locationlng}}" class="btn btn-big btn-blue" alt="Nawiguj pod adres {{.Adres}}" target="_blank"><i class="fa fa-globe"></i> Nawiguj</a>
+						</div>
+						{{end}}
+					</div>
+				</div>
+			
+				<div class="units-row end">
+                    <nav class="breadcrumbs">
+                        <ul>
+                            <li><a href="/">Strona główna</a>
+                            </li>
+                            <li><span>{{.Title}}</span>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+			
                 <div class="units-row end">
                     <div class="unit-100 p-news">
                         {{if .Title}}
@@ -232,13 +279,6 @@
             {{end}}{{end}}
                 </div>
 
-                <div class="unit-row" style="padding: 10px 20px 25px 20px;">
-                    {{if .Locationset}}
-                    <div class="unit-push-25 unit-50" style="display:inline-block;">
-                        <a href="http://{{$VarMain}}/nav/{{.Url}}/{{.Id}}/{{.Locationlat}}/{{.Locationlng}}" class="btn btn-big btn-blue" alt="Nawiguj pod adres {{.Adres}}" target="_blank"><i class="fa fa-globe"></i> Nawiguj</a>
-                    </div>
-                    {{end}}
-                </div>
 
 
             {{if and .Locationset (and .Locationlat .Locationlng)}} {{if $iframe}}
