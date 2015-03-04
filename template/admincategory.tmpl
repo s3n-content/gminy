@@ -17,6 +17,8 @@ li .label {
  margin-left:8px!important;
 }
 </style>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="Cache-control" content="no-cache">
 </head>
 
 <body>
@@ -70,15 +72,18 @@ li .label {
                         {{end}}</ul>
 {{end}}
 {{if .PostsInCategory}}
-    Posty w kategorii: <br />
+    Posty w kategorii: <br/>
     {{range .PostsInCategory}}
-<a id="e{{.Id}}" href="/pic/{{.Id}}" class="no-style">
     <div class="news-1 unit-mobile-100" style="margin-bottom:10px; padding:10px 0 5px 0">
         <div class="news-badge"><i class="fa fa-chevron-right{{/*if eq .Type 2}}calendar{{else if .Type}}map-marker{{else}}comment{{end*/}}"></i></div>
-        <div class="news-badge-1">
+       
+<a id="e{{.Id}}" href="/pic/{{.Id}}" class="no-style"> 
+	<div class="news-badge-1">
         <h2>{{.Title}}</h2>
         </div>
-        <div class="sep"><div class="elems">
+</a>
+        <div class="sep">
+			<div class="elems">
             {{if .Post}}<span>{{.Post.Createdon}}</span>{{end}}
         {{if ne $ThisSiteAddress .Url}}<span> z serwisu: <strong>{{.SiteName}}</strong></span>{{else}}
             <a href="/admin/form/editpost/{{.OryginalId}}{{if $b}}?b={{$b}}{{end}}"><span class="label"><i class="fa fa-edit"></i> Edytuj</span></a>
@@ -86,15 +91,28 @@ li .label {
             <a href="/admin/form/delete/postincategory/{{.Id}}" target="_blank"><span class="label"><i class="fa fa-close"></i> Usuń z kategorii</span></a>
 			{{if not .Orderele}}
 			<span>|</span>
-			<a href="#" id="editorder"><span class="label data-set" data-orderele-id="{{.Id}}">Przypnij post</span></a>
+			<span class="label data-set" data-orderele-id="{{.Id}}">Przypnij post</span>
 			{{end}}
 			{{if .Orderele}}
 			<span>|</span>
-			<a href="#e{{.Id}}"><span class="label">Kolejność <strong>{{.Orderele}}</strong></span><span class="label label-green data-up" data-orderele-id="{{.Id}}" data-orderele="{{.Orderele}}"><i class="fa fa-arrow-up"></i></span><span class="label label-red data-down" data-orderele-id="{{.Id}}" data-orderele="{{.Orderele}}"><i class="fa fa-arrow-down"></i></span></a>
+				<span class="label">Kolejność <strong>{{.Orderele}}</strong></span>
+				<form action="" style="display:inline-block;">
+					<input class="order" type="number" min="0" value="{{.Orderele}}" style="display: inline; font-size: 12.75px; line-height:1.65em;width:50px;" data-id="{{.Id}}">
+					<button class="btn btn-smaller" type="submit">Zmień kolejność</button>
+				</form>
+				
+				
+				<!--
+<span class="label label-red data-down" data-orderele-id-d="{{.Id}}" data-orderele-d="{{.Orderele}}">
+					<i class="fa fa-arrow-down"></i>
+				</span>
+				<span class="label label-green data-up" data-orderele-id="{{.Id}}" data-orderele="{{.Orderele}}">
+					<i class="fa fa-arrow-up"></i>
+				</span>-->
 			{{end}}
-			</div></div>
+			</div>
+		</div>
     </div>
-</a>
                         {{end}}{{end}}
                         </ul>
                     </div></div>
@@ -126,39 +144,28 @@ li .label {
             </div></div>
 		
 		<script>
-			var id, ord;
+			var id, ord, url;
 			$(document).ready(function(){
-				$('.data-up').click(function(){
-					id = parseInt($(this).attr('data-orderele-id'));
-					ord = parseInt($(this).attr('data-orderele'));
-					ord++;
-					$.ajax({
-						url:"/admin/editpostincategoryorder/" + id + "/" + ord,
-					})
-						.done(function( data ) {
-							location.reload();
-				  	});
-				});
-				$('.data-down').click(function(){
-					id = parseInt($(this).attr('data-orderele-id'));
-					ord = parseInt($(this).attr('data-orderele'));
-					ord--;
-					$.ajax({
-						url:"/admin/editpostincategoryorder/" + id + "/" + ord,
-					})
-						.done(function( data ) {
-							location.reload();
-				  	});
-				});
 				$('.data-set').click(function(){
 					id = parseInt($(this).attr('data-orderele-id'));
 					ord = parseInt(1);
 					$.ajax({
-						url:"/admin/editpostincategoryorder/" + id + "/" + ord,
-					})
-						.done(function( data ) {
-							location.reload();
-					});		
+						url: "/admin/editpostincategoryorder/" + id + "/" + ord,
+					}).done(function( data ) {
+						location.reload(true);
+						history.go(0);
+					});	
+				});
+				$('form').submit(function(event){
+					id = $('.order').attr('data-id');
+					ord = $('input').attr('value');
+					$.ajax({
+						type: 'POST',
+						url: "/admin/editpostincategoryorder/" + id + "/" + ord,
+						success: function() { location.reload(); }
+					});
+
+					event.preventDefault();
 				});
 			});
 		</script>

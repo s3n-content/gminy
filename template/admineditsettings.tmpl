@@ -113,8 +113,8 @@ tinymce.init({
             if (str.slice(0, 1) == '[') {
                 var res = str.substring(1, str.length - 1);
                 res = res.replace(/\s+/g, ";");
-                $('#Images').attr('value', res);
-            }
+                $('#Images').prop('value', res);
+			}
 			
 			var numb = "{{if .Domain.Color}}{{.Domain.Color}}{{end}}";
 
