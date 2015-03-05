@@ -89,18 +89,18 @@ li .label {
             <a href="/admin/form/editpost/{{.OryginalId}}{{if $b}}?b={{$b}}{{end}}"><span class="label"><i class="fa fa-edit"></i> Edytuj</span></a>
             <a href="/admin/form/delete/post/{{.OryginalId}}" target="_blank"><span class="label"><i class="fa fa-close"></i> Usuń</span></a>{{end}}
             <a href="/admin/form/delete/postincategory/{{.Id}}" target="_blank"><span class="label"><i class="fa fa-close"></i> Usuń z kategorii</span></a>
-			{{if not .Orderele}}
+				{{/*{{if not .Orderele}}
 			<span>|</span>
 			<span class="label data-set" data-orderele-id="{{.Id}}">Przypnij post</span>
 			{{end}}
-			{{if .Orderele}}
+			{{if .Orderele}}*/}}
 			<span>|</span>
 				<span class="label">Kolejność <strong>{{.Orderele}}</strong></span>
 				<form action="" style="display:inline-block;">
 					<input class="order" type="number" min="0" value="{{.Orderele}}" style="display: inline; font-size: 12.75px; line-height:1.65em;width:50px;" data-id="{{.Id}}">
 					<button class="btn btn-smaller" type="submit">Zmień kolejność</button>
 				</form>
-			{{end}}
+			{{/*end*/}}
 			</div>
 		</div>
     </div>
@@ -162,12 +162,12 @@ li .label {
 					});	
 				});
 				$('form').submit(function(event){
-					id = $('.order').attr('data-id');
-					ord = $('input').attr('value');
+					id = $(this).find('.order').attr('data-id');
+					ord = $(this).find('input').val();
 					$.ajax({
 						type: 'POST',
 						url: "/admin/editpostincategoryorder/" + id + "/" + ord,
-						success: function() { location.reload(); }
+						success: function() { location.reload(true); }
 					});
 
 					event.preventDefault();

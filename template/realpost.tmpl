@@ -51,7 +51,7 @@
                 {{if .Post.Visible}} {{with .Post}}
 
                 {{if eq .Type 0}}
-
+				
 				<div class="units-row end">
                     <nav class="breadcrumbs">
                         <ul>
@@ -62,7 +62,7 @@
                         </ul>
                     </nav>
                 </div>
-
+				
                 <div class="units-row end">
                     <div class="unit-100 p-news">
                         <h1>{{.Title}}</h1>
@@ -95,7 +95,7 @@
                 </div>
                 {{else if eq .Type 1}}
 
-
+				
 				<div class="units-row end">
                     <nav class="breadcrumbs end">
                         <ul>
@@ -106,7 +106,7 @@
                         </ul>
                     </nav>
                 </div>
-
+					
                 <div class="units-row end">
                     <div class="p-news">
                         {{if .Title}}
@@ -120,7 +120,7 @@
                         </dl>
                     </div>
                 </div>
-
+				
 				<div class="units-row end">
 					<div class="units-row" style="text-align: center;">
 							{{if .Telephone}}
@@ -134,8 +134,8 @@
 							{{end}}
 					</div>
 				</div>
-
-
+				
+				
                 <div class="units-row end">
                     {{if eq $layout 1}} {{/* element ponizej jest niepotrzebny w layout 1, wiec go nie wyswietla */}} {{else}}
                     {{if not $iframe}}
@@ -178,7 +178,7 @@
                     </div>
                 </div>
 
-
+                
 
                 {{if and .Locationset (and .Locationlat .Locationlng)}} {{if $iframe}}
                 <div class="unit-row" style="padding-top: 20px;">
@@ -206,9 +206,9 @@
 
                 {{else if eq .Type 2}}
 
-
-
-
+                
+				
+			
 				<div class="units-row end">
                     <nav class="breadcrumbs">
                         <ul>
@@ -219,21 +219,21 @@
                         </ul>
                     </nav>
                 </div>
-
+			
                 <div class="units-row end">
                     <div class="unit-100 p-news">
                         {{if .Title}}
                         <h1>{{.Title}}</h1>{{end}}
                         <dl>
                             {{/*if .Createdon}}<dt>opublikowano</dt>
-                            <dd>{{.Createdon}}</dd>{{end*/}}
+                            <dd>{{.Createdon}}</dd>{{end*/}} 
                             {{if .Source}}<dt>autor</dt>
                             <dd>{{.Source}}</dd>{{end}}
                             <dt></dt><dd></dd>
                         </dl>
                     </div>
                 </div>
-
+			
 				<div class="units-row" style="text-align: center;">
 						{{if .Locationset}}
 						<div class="unit-100" style="display:inline-block;">
@@ -241,7 +241,7 @@
 						</div>
 						{{end}}
 				</div>
-
+			
                 <div class="units-row end">
                     <div class="{{if $iframe}}unit-100{{else}}{{if eq $layout 1}}unit-100{{else}}unit-70{{end}}{{end}}" style="padding: 5px; text-align:justify;">
                         <div class="units-row end" style="clear:both; min-height: 165px; border-bottom:1px solid rgba(0,0,0,0.2)">
@@ -335,8 +335,5 @@
         {{end}}
 
         {{end}}
-            {{if $iframe}}</div></div>
-    <script src="/assets/js/iframeResizer.contentWindow.min.js"></script>
-  </body></html>
-  {{else}}{{template "footer" .}}{{end}}
+            {{if $iframe}}</div></div></body>{{else}}{{template "footer" .}}{{end}}
             {{end}}
