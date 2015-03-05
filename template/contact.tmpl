@@ -1,5 +1,5 @@
 {{define "contact"}}{{template "header" .}}
-
+{{$domainname := .Domain.Name}}
 
 </head>
 
@@ -11,7 +11,7 @@
                 <div class="units-row end">
                     <nav class="breadcrumbs">
                         <ul>
-                            <li><a href="/">Strona główna</a>
+                            <li><a href="/">{{$domainname}}</a>
                             </li>
                             <li><span>Kontakt</span>
                             </li>
@@ -27,14 +27,14 @@
                 </div>
                 {{if or .Domain.Email .Domain.Telephone}}
                 <div class="units-row">
-                    <div class="unit-40 unit-centered bckgrnd2" style="padding: 50px 40px 60px 40px;">
+                    <div class="unit-60 unit-centered bckgrnd2" style="padding: 50px 40px 60px 40px;">
                         <i class="fa fa-envelope-o fa-5x" style="position:relative;float:left;margin-right:10px;margin-top:-19px;"></i> <h2 style="color: #222;">Skontaktuj się.</h4>
 						<div class="units-row end" style="margin-top: 50px;">
 							<div class="unit-100" style="padding:20px">
-							{{if .Domain.Email}}<a href="mailto:{{.Domain.Email}}" style="font-size:21px; margin-bottom:15px;"><button class="btn btn-red width-100">Wyślij e-mail<br/><i class="fa fa-envelope"></i> {{.Domain.Email}}</button></a>{{end}}
+								{{if .Domain.Email}}<a href="mailto:{{.Domain.Email}}" style="font-size:21px; margin-bottom:15px;text-decoration:none;"><div class="btn-red width-100" style="text-align:center;padding:20px 0;"><h3 style="color:#fff!important;">Wyślij e-mail</h3><p><i class="fa fa-envelope"></i> {{.Domain.Email}}</p></div></a>{{end}}
 							</div>
 							<div class="unit-100" style="padding:20px">
-							{{if .Domain.Telephone}}<a href="tel:{{.Domain.Telephone}}" style="font-size:21px"><button class="btn btn-green width-100">Zadzwoń<br/><i class="fa fa-phone"></i> {{.Domain.Telephone}}</button></a>{{end}}
+								{{if .Domain.Telephone}}<a href="tel:{{.Domain.Telephone}}" style="font-size:21px; margin-bottom:15px;text-decoration:none;"><div class="btn-green width-100" style="text-align:center;padding:20px 0;"><h3 style="color:#fff!important;">Zadzwoń</h3><p><i class="fa fa-phone"></i> {{.Domain.Telephone}}</p></div></a>{{end}}
 							</div>
 						</div>
                     </div>

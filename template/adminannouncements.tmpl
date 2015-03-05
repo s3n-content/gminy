@@ -13,6 +13,10 @@
     label {
         font-size: 16px;
     }
+	.prol {
+		text-decoration: underline;
+		cursor: pointer;
+	}
 </style>
 </head>
 
@@ -50,10 +54,12 @@
                                 <td class="width-35">{{.Text}}</td>
                                 <td class="width-35">Utworzono: <em>{{.Createdon}}</em><br/>
                                     Ostatnia edycja: <em>{{.Modifiedon}}</em><br/>
-                                    Ukryte po <em>{{if eq .Hideafter 4}}nigdy{{else if eq .Hideafter 3}}4 tygodniach{{else if eq .Hideafter 2}}3 tygodniach{{else if .Hideafter}}2 tygodniach{{else}}tygodniu{{end}}</em><br/>
+                                    Ukryte po <em>{{if eq .Hideafter 4}}nigdy{{else if eq .Hideafter 3}}4 tygodniach{{else if eq .Hideafter 2}}3 tygodniach{{else if .Hideafter}}2 tygodniach{{else}}tygodniu{{end}}</em>
+									<br/>
                                                     Widoczny <strong>{{if .Visible}}TAK{{else}}NIE{{end}}</strong>                
                                 </td>
                                 <td class="width-10"><a href="/li1/{{.Id}}" target="_blank">Zobacz</a><br/>
+									{{if ne .Hideafter 4}}<a class="prol" data-id="{{.Id}}">Przedłuż</a><br/>{{end}}
                                                     <a href="/admin/form/editannouncement/{{.Id}}" target="_blank">Edytuj</a><br/>
                                                     <a href="/admin/form/delete/announcement/{{.Id}}" target="_blank">Usuń</a>
                                 
@@ -65,4 +71,17 @@
                 </div>
             </div>
         </div>
-    </div>{{template "adminfooter" .}}{{end}}
+    </div>
+	<script>
+		var id;
+		$('.prol').click(function(){
+			id = $(this).attr('data-id');
+			$.ajax({
+				url: '/admin/renewannounement/' + id,
+			}).done(function(data){
+				location.reload();
+				history.go(0);
+			});
+		});
+	</script>
+	{{template "adminfooter" .}}{{end}}

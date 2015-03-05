@@ -1,21 +1,17 @@
 /* =Upload
 -----------------------------------------------------------------------------*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/upload\.less}line{font-family:\000033}}
 .tools-droparea {
   position: relative;
   overflow: hidden;
   padding: 80px 20px;
   border: 3px dashed rgba(0, 0, 0, 0.1);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/upload\.less}line{font-family:\000038}}
 .tools-droparea.drag-hover {
   background: rgba(200, 222, 250, 0.75);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/upload\.less}line{font-family:\0000311}}
 .tools-droparea.drag-drop {
   background: rgba(250, 248, 200, 0.5);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/upload\.less}line{font-family:\0000315}}
 .tools-droparea-placeholder {
   text-align: center;
   font-size: 11px;

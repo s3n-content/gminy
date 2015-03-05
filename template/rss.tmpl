@@ -17,7 +17,7 @@
                 <div class="units-row end">
                     <nav class="breadcrumbs">
                         <ul>
-                            <li><a href="/">Strona główna</a>
+                            <li><a href="/">{{$ThisSiteName}}</a>
                             </li>
                             {{if .Category.Tracetocategory}} {{template "categorytrace" .Category.Tracetocategory}} {{end}}
                             <li><span>{{.Category.Title}}</span>

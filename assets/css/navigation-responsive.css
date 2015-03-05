@@ -1,12 +1,10 @@
 /* =Navigation Responsive
 -----------------------------------------------------------------------------*/
 @media only screen and (max-width: 767px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/navigation-responsive\.less}line{font-family:\000035}}
   .navbar {
     position: fixed;
     clear: both;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/navigation-responsive\.less}line{font-family:\000038}}
   .navbar.navbar-left,
   .navbar.navbar-right,
   .navbar li,
@@ -15,18 +13,15 @@
     float: left;
     display: inline;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/navigation-responsive\.less}line{font-family:\0000318}}
   .navbar li,
   .navbar.navbar-right li {
     margin-left: 0;
     margin-right: 0;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/navigation-responsive\.less}line{font-family:\0000325}}
   .fullwidth ul,
   .fullwidth li {
     width: auto;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/navigation-responsive\.less}line{font-family:\0000329}}
   .fullwidth li {
     display: block;
   }

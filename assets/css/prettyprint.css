@@ -1,80 +1,64 @@
 /* string content */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/prettyprint\.less}line{font-family:\000032}}
 .str {
   color: #dd1144;
 }
 /* a keyword */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/prettyprint\.less}line{font-family:\000037}}
 .kwd {
   color: #333333;
 }
 /* a comment */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/prettyprint\.less}line{font-family:\0000312}}
 .com {
   color: #999988;
 }
 /* a type name */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/prettyprint\.less}line{font-family:\0000317}}
 .typ {
   color: #445588;
 }
 /* a literal value */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/prettyprint\.less}line{font-family:\0000322}}
 .lit {
   color: #445588;
 }
 /* punctuation */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/prettyprint\.less}line{font-family:\0000327}}
 .pun {
   color: #888;
 }
 /* lisp open bracket */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/prettyprint\.less}line{font-family:\0000332}}
 .opn {
   color: #333333;
 }
 /* lisp close bracket */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/prettyprint\.less}line{font-family:\0000337}}
 .clo {
   color: #333333;
 }
 /* a markup tag name */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/prettyprint\.less}line{font-family:\0000342}}
 .tag {
   color: #367ac3;
 }
 /* a markup attribute name */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/prettyprint\.less}line{font-family:\0000347}}
 .atn {
   color: #51a7c9;
 }
 /* a markup attribute value */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/prettyprint\.less}line{font-family:\0000352}}
 .atv {
   color: #709c1a;
 }
 /* a declaration */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/prettyprint\.less}line{font-family:\0000357}}
 .dec {
   color: #666;
 }
 /* a variable name */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/prettyprint\.less}line{font-family:\0000362}}
 .var {
   color: teal;
 }
 /* a function name */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/prettyprint\.less}line{font-family:\0000367}}
 .fun {
   color: #990000;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/prettyprint\.less}line{font-family:\0000370}}
 .linenums ol li {
   list-style-type: none;
   counter-increment: list;
   position: relative;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/prettyprint\.less}line{font-family:\0000376}}
 .linenums ol li:after {
   content: counter(list);
   position: absolute;

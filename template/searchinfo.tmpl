@@ -1,5 +1,6 @@
 {{define "searchinfo"}} {{template "header" .}}
 
+{{$domainname := .Domain.Name}}
 
 
 
@@ -14,7 +15,7 @@
                 <div class="units-row end">
                     <nav class="breadcrumbs">
                         <ul>
-                            <li><a href="/">Strona główna</a>
+                            <li><a href="/">{{$domainname}}</a>
                             </li>
                             <li><a href="/search">Gdzie najbliżej</a>
                             </li>

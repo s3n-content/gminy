@@ -3,12 +3,13 @@
 </head>
 <body>
         <div id="cont" class="units-container bckgrnd">
-            
+
         {{template "top" .}}
         <div id="main" class="units-row end">
             <div class="unit-centered unit-80 bckgrnd5">
-                
+
                 <iframe id="frame" frameborder="0" src="{{.PiC.Address}}?iframe" width="100%" class="iframe-seamless" style="min-height:960px;"><a href="{{.PiC.Address}}" sandbox="allow-top-navigation">Kliknij tutaj, aby przeczytać artykuł</a></iframe>
             </div>
         </div>
+<script src="/assets/js/iframeResizer.min.js"></script>
 {{template "footer" .}}{{end}}

@@ -1,46 +1,35 @@
 /*thankstomaterial-ui-com*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003289}}
 .mui-text-full-black {
   color: #000000;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003290}}
 .mui-text-dark-black {
   color: rgba(0, 0, 0, 0.87);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003291}}
 .mui-text-light-black {
   color: rgba(0, 0, 0, 0.54);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003292}}
 .mui-text-min-black {
   color: rgba(0, 0, 0, 0.26);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003293}}
 .mui-text-full-white {
   color: #ffffff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003294}}
 .mui-text-dark-white {
   color: rgba(255, 255, 255, 0.87);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003295}}
 .mui-text-light-white {
   color: rgba(255, 255, 255, 0.54);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003297}}
 .mui-font-weight-light {
   font-weight: 300;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003298}}
 .mui-font-weight-normal {
   font-weight: 400;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003299}}
 .mui-font-weight-medium {
   font-weight: 500;
 }
 /* Type Styles */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003302}}
 .mui-font-style-display-4 {
   font-size: 112px;
   line-height: 128px;
@@ -50,7 +39,6 @@
   font-weight: 300;
   color: rgba(0, 0, 0, 0.54);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003312}}
 .mui-font-style-display-3 {
   font-size: 56px;
   line-height: 64px;
@@ -60,7 +48,6 @@
   font-weight: 400;
   color: rgba(0, 0, 0, 0.54);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003322}}
 .mui-font-style-display-2 {
   font-size: 45px;
   line-height: 48px;
@@ -69,7 +56,6 @@
   font-weight: 400;
   color: rgba(0, 0, 0, 0.54);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003331}}
 .mui-font-style-display-1 {
   font-size: 34px;
   line-height: 40px;
@@ -79,7 +65,6 @@
   font-weight: 400;
   color: rgba(0, 0, 0, 0.54);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003341}}
 .mui-font-style-headline {
   font-size: 24px;
   line-height: 32px;
@@ -89,7 +74,6 @@
   font-weight: 400;
   color: rgba(0, 0, 0, 0.87);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003351}}
 .mui-font-style-title {
   font-size: 20px;
   line-height: 28px;
@@ -99,7 +83,6 @@
   font-weight: 500;
   color: rgba(0, 0, 0, 0.87);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003361}}
 .mui-font-style-subhead-2 {
   font-size: 15px;
   line-height: 28px;
@@ -109,7 +92,6 @@
   font-weight: 400;
   color: rgba(0, 0, 0, 0.87);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003371}}
 .mui-font-style-subhead-1 {
   font-size: 15px;
   line-height: 28px;
@@ -122,7 +104,6 @@
   margin-bottom: 13px;
   color: rgba(0, 0, 0, 0.87);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003379}}
 .mui-font-style-body-2 {
   font-size: 13px;
   line-height: 24px;
@@ -132,7 +113,6 @@
   font-weight: 500;
   color: rgba(0, 0, 0, 0.87);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003389}}
 .mui-font-style-body-1 {
   font-size: 13px;
   line-height: 20px;
@@ -142,7 +122,6 @@
   font-weight: 400;
   color: rgba(0, 0, 0, 0.87);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003399}}
 .mui-font-style-caption {
   font-size: 12px;
   line-height: 20px;
@@ -152,7 +131,6 @@
   font-weight: 400;
   color: rgba(0, 0, 0, 0.54);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003409}}
 .mui-font-style-menu {
   font-size: 13px;
   line-height: 20px;
@@ -162,7 +140,6 @@
   font-weight: 500;
   color: rgba(0, 0, 0, 0.87);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003419}}
 .mui-font-style-button {
   font-size: 14px;
   line-height: 20px;
@@ -173,2035 +150,1527 @@
   font-weight: 500;
   color: rgba(0, 0, 0, 0.87);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003433}}
 .red-50 {
   background-color: #ffebee;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003433}}
 .red-50:hover {
   background-color: #ffaeba;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003434}}
 .red-100 {
   background-color: #ffcdd2;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003434}}
 .red-100:hover {
   background-color: #ff909b;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003435}}
 .red-200 {
   background-color: #ef9a9a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003435}}
 .red-200:hover {
   background-color: #e76565;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003436}}
 .red-300 {
   background-color: #e57373;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003436}}
 .red-300:hover {
   background-color: #db3f3f;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003437}}
 .red-400 {
   background-color: #ef5350;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003437}}
 .red-400:hover {
   background-color: #ea1c18;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003438}}
 .red-500 {
   background-color: #f44336;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003438}}
 .red-500:hover {
   background-color: #e11b0c;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003439}}
 .red-600 {
   background-color: #e53935;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003439}}
 .red-600:hover {
   background-color: #c41d19;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003440}}
 .red-700 {
   background-color: #d32f2f;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003440}}
 .red-700:hover {
   background-color: #a22222;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003441}}
 .red-800 {
   background-color: #c62828;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003441}}
 .red-800:hover {
   background-color: #931e1e;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003442}}
 .red-900 {
   background-color: #b71c1c;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003442}}
 .red-900:hover {
   background-color: #821414;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003443}}
 .red-A100 {
   background-color: #ff8a80;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003443}}
 .red-A100:hover {
   background-color: #ff5243;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003444}}
 .red-A200 {
   background-color: #ff5252;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003444}}
 .red-A200:hover {
   background-color: #ff1515;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003445}}
 .red-A400 {
   background-color: #ff1744;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003445}}
 .red-A400:hover {
   background-color: #d9002a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003446}}
 .red-A700 {
   background-color: #d50000;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003446}}
 .red-A700:hover {
   background-color: #980000;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003448}}
 .pink-50 {
   background-color: #fce4ec;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003448}}
 .pink-50:hover {
   background-color: #f6adc5;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003449}}
 .pink-100 {
   background-color: #f8bbd0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003449}}
 .pink-100:hover {
   background-color: #f284aa;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003450}}
 .pink-200 {
   background-color: #f48fb1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003450}}
 .pink-200:hover {
   background-color: #ef578a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003451}}
 .pink-300 {
   background-color: #f06292;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003451}}
 .pink-300:hover {
   background-color: #eb2a6b;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003452}}
 .pink-400 {
   background-color: #ec407a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003452}}
 .pink-400:hover {
   background-color: #d91658;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003453}}
 .pink-500 {
   background-color: #e91e63;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003453}}
 .pink-500:hover {
   background-color: #b8124a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003454}}
 .pink-600 {
   background-color: #d81b60;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003454}}
 .pink-600:hover {
   background-color: #a21448;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003455}}
 .pink-700 {
   background-color: #c2185b;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003455}}
 .pink-700:hover {
   background-color: #8c1141;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003456}}
 .pink-800 {
   background-color: #ad1457;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003456}}
 .pink-800:hover {
   background-color: #760e3b;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003457}}
 .pink-900 {
   background-color: #880e4f;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003457}}
 .pink-900:hover {
   background-color: #51082f;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003458}}
 .pink-A100 {
   background-color: #ff80ab;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003458}}
 .pink-A100:hover {
   background-color: #ff4383;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003459}}
 .pink-A200 {
   background-color: #ff4081;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003459}}
 .pink-A200:hover {
   background-color: #ff0359;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003460}}
 .pink-A400 {
   background-color: #f50057;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003460}}
 .pink-A400:hover {
   background-color: #b80041;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003461}}
 .pink-A700 {
   background-color: #c51162;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003461}}
 .pink-A700:hover {
   background-color: #8d0c46;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003463}}
 .purple-50 {
   background-color: #f3e5f5;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003463}}
 .purple-50:hover {
   background-color: #dfb9e4;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003464}}
 .purple-100 {
   background-color: #e1bee7;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003464}}
 .purple-100:hover {
   background-color: #cc91d6;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003465}}
 .purple-200 {
   background-color: #ce93d8;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003465}}
 .purple-200:hover {
   background-color: #ba66c8;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003466}}
 .purple-300 {
   background-color: #ba68c8;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003466}}
 .purple-300:hover {
   background-color: #a141b2;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003467}}
 .purple-400 {
   background-color: #ab47bc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003467}}
 .purple-400:hover {
   background-color: #843591;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003468}}
 .purple-500 {
   background-color: #9c27b0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003468}}
 .purple-500:hover {
   background-color: #701c7e;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003469}}
 .purple-600 {
   background-color: #8e24aa;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003469}}
 .purple-600:hover {
   background-color: #641977;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003470}}
 .purple-700 {
   background-color: #7b1fa2;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003470}}
 .purple-700:hover {
   background-color: #54156f;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003471}}
 .purple-800 {
   background-color: #6a1b9a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003471}}
 .purple-800:hover {
   background-color: #461266;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003472}}
 .purple-900 {
   background-color: #4a148c;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003472}}
 .purple-900:hover {
   background-color: #2e0c56;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003473}}
 .purple-A100 {
   background-color: #ea80fc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003473}}
 .purple-A100:hover {
   background-color: #e044fb;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003474}}
 .purple-A200 {
   background-color: #e040fb;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003474}}
 .purple-A200:hover {
   background-color: #d505f9;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003475}}
 .purple-A400 {
   background-color: #d500f9;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003475}}
 .purple-A400:hover {
   background-color: #a100bc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003476}}
 .purple-A700 {
   background-color: #aa00ff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003476}}
 .purple-A700:hover {
   background-color: #8100c2;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003478}}
 .deep-purple-50 {
   background-color: #ede7f6;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003478}}
 .deep-purple-50:hover {
   background-color: #ccbae5;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003479}}
 .deep-purple-100 {
   background-color: #d1c4e9;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003479}}
 .deep-purple-100:hover {
   background-color: #ae97d8;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003480}}
 .deep-purple-200 {
   background-color: #b39ddb;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003480}}
 .deep-purple-200:hover {
   background-color: #9070cb;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003481}}
 .deep-purple-300 {
   background-color: #9575cd;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003481}}
 .deep-purple-300:hover {
   background-color: #7248bd;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003482}}
 .deep-purple-400 {
   background-color: #7e57c2;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003482}}
 .deep-purple-400:hover {
   background-color: #603ba1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003483}}
 .deep-purple-500 {
   background-color: #673ab7;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003483}}
 .deep-purple-500:hover {
   background-color: #4d2b89;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003484}}
 .deep-purple-600 {
   background-color: #5e35b1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003484}}
 .deep-purple-600:hover {
   background-color: #452782;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003485}}
 .deep-purple-700 {
   background-color: #512da8;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003485}}
 .deep-purple-700:hover {
   background-color: #3a2078;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003486}}
 .deep-purple-800 {
   background-color: #4527a0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003486}}
 .deep-purple-800:hover {
   background-color: #301b6f;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003487}}
 .deep-purple-900 {
   background-color: #311b92;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003487}}
 .deep-purple-900:hover {
   background-color: #20115e;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003488}}
 .deep-purple-A100 {
   background-color: #b388ff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003488}}
 .deep-purple-A100:hover {
   background-color: #8c4bff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003489}}
 .deep-purple-A200 {
   background-color: #7c4dff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003489}}
 .deep-purple-A200:hover {
   background-color: #4f10ff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003490}}
 .deep-purple-A400 {
   background-color: #651fff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003490}}
 .deep-purple-A400:hover {
   background-color: #4600e1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003491}}
 .deep-purple-A700 {
   background-color: #6200ea;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003491}}
 .deep-purple-A700:hover {
   background-color: #4800ad;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003493}}
 .indigo-50 {
   background-color: #e8eaf6;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003493}}
 .indigo-50:hover {
   background-color: #bcc2e5;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003494}}
 .indigo-100 {
   background-color: #c5cae9;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003494}}
 .indigo-100:hover {
   background-color: #99a1d8;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003495}}
 .indigo-200 {
   background-color: #9fa8da;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003495}}
 .indigo-200:hover {
   background-color: #7380c9;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003496}}
 .indigo-300 {
   background-color: #7986cb;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003496}}
 .indigo-300:hover {
   background-color: #4d5eba;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003497}}
 .indigo-400 {
   background-color: #5c6bc0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003497}}
 .indigo-400:hover {
   background-color: #3e4da1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003498}}
 .indigo-500 {
   background-color: #3f51b5;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003498}}
 .indigo-500:hover {
   background-color: #2f3d88;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003499}}
 .indigo-600 {
   background-color: #3949ab;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003499}}
 .indigo-600:hover {
   background-color: #2a357d;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003500}}
 .indigo-700 {
   background-color: #303f9f;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003500}}
 .indigo-700:hover {
   background-color: #222c70;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003501}}
 .indigo-800 {
   background-color: #283593;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003501}}
 .indigo-800:hover {
   background-color: #1b2463;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003502}}
 .indigo-900 {
   background-color: #1a237e;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003502}}
 .indigo-900:hover {
   background-color: #10154b;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003503}}
 .indigo-A100 {
   background-color: #8c9eff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003503}}
 .indigo-A100:hover {
   background-color: #4f6aff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003504}}
 .indigo-A200 {
   background-color: #536dfe;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003504}}
 .indigo-A200:hover {
   background-color: #1639fe;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003505}}
 .indigo-A400 {
   background-color: #3d5afe;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003505}}
 .indigo-A400:hover {
   background-color: #0127fc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003506}}
 .indigo-A700 {
   background-color: #304ffe;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003506}}
 .indigo-A700:hover {
   background-color: #0125f0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003508}}
 .blue-50 {
   background-color: #e3f2fd;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003508}}
 .blue-50:hover {
   background-color: #aad7f9;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003509}}
 .blue-100 {
   background-color: #bbdefb;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003509}}
 .blue-100:hover {
   background-color: #81c2f8;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003510}}
 .blue-200 {
   background-color: #90caf9;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003510}}
 .blue-200:hover {
   background-color: #56aef6;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003511}}
 .blue-300 {
   background-color: #64b5f6;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003511}}
 .blue-300:hover {
   background-color: #2a99f3;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003512}}
 .blue-400 {
   background-color: #42a5f5;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003512}}
 .blue-400:hover {
   background-color: #0d89ed;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003513}}
 .blue-500 {
   background-color: #2196f3;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003513}}
 .blue-500:hover {
   background-color: #0b76cc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003514}}
 .blue-600 {
   background-color: #1e88e5;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003514}}
 .blue-600:hover {
   background-color: #1468b1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003515}}
 .blue-700 {
   background-color: #1976d2;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003515}}
 .blue-700:hover {
   background-color: #12579b;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003516}}
 .blue-800 {
   background-color: #1565c0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003516}}
 .blue-800:hover {
   background-color: #0f4889;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003517}}
 .blue-900 {
   background-color: #0d47a1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003517}}
 .blue-900:hover {
   background-color: #082e68;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003518}}
 .blue-A100 {
   background-color: #82b1ff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003518}}
 .blue-A100:hover {
   background-color: #458bff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003519}}
 .blue-A200 {
   background-color: #448aff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003519}}
 .blue-A200:hover {
   background-color: #0764ff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003520}}
 .blue-A400 {
   background-color: #2979ff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003520}}
 .blue-A400:hover {
   background-color: #0058eb;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003521}}
 .blue-A700 {
   background-color: #2962ff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003521}}
 .blue-A700:hover {
   background-color: #003feb;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003523}}
 .light-blue-50 {
   background-color: #e1f5fe;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003523}}
 .light-blue-50:hover {
   background-color: #a6e1fc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003524}}
 .light-blue-100 {
   background-color: #b3e5fc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003524}}
 .light-blue-100:hover {
   background-color: #78d1fa;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003525}}
 .light-blue-200 {
   background-color: #81d4fa;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003525}}
 .light-blue-200:hover {
   background-color: #46c0f8;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003526}}
 .light-blue-300 {
   background-color: #4fc3f7;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003526}}
 .light-blue-300:hover {
   background-color: #14aff4;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003527}}
 .light-blue-400 {
   background-color: #29b6f6;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003527}}
 .light-blue-400:hover {
   background-color: #0998d9;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003528}}
 .light-blue-500 {
   background-color: #03a9f4;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003528}}
 .light-blue-500:hover {
   background-color: #027fb8;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003529}}
 .light-blue-600 {
   background-color: #039be5;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003529}}
 .light-blue-600:hover {
   background-color: #0272a9;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003530}}
 .light-blue-700 {
   background-color: #0288d1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003530}}
 .light-blue-700:hover {
   background-color: #016194;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003531}}
 .light-blue-800 {
   background-color: #0277bd;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003531}}
 .light-blue-800:hover {
   background-color: #015180;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003532}}
 .light-blue-900 {
   background-color: #01579b;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003532}}
 .light-blue-900:hover {
   background-color: #01355e;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003533}}
 .light-blue-A100 {
   background-color: #80d8ff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003533}}
 .light-blue-A100:hover {
   background-color: #43c5ff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003534}}
 .light-blue-A200 {
   background-color: #40c4ff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003534}}
 .light-blue-A200:hover {
   background-color: #03b1ff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003535}}
 .light-blue-A400 {
   background-color: #00b0ff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003535}}
 .light-blue-A400:hover {
   background-color: #0086c2;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003536}}
 .light-blue-A700 {
   background-color: #0091ea;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003536}}
 .light-blue-A700:hover {
   background-color: #006bad;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003538}}
 .cyan-50 {
   background-color: #e0f7fa;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003538}}
 .cyan-50:hover {
   background-color: #abe9f2;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003539}}
 .cyan-100 {
   background-color: #b2ebf2;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003539}}
 .cyan-100:hover {
   background-color: #7edde9;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003540}}
 .cyan-200 {
   background-color: #80deea;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003540}}
 .cyan-200:hover {
   background-color: #4bd0e1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003541}}
 .cyan-300 {
   background-color: #4dd0e1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003541}}
 .cyan-300:hover {
   background-color: #23bace;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003542}}
 .cyan-400 {
   background-color: #26c6da;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003542}}
 .cyan-400:hover {
   background-color: #1c97a6;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003543}}
 .cyan-500 {
   background-color: #00bcd4;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003543}}
 .cyan-500:hover {
   background-color: #008697;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003544}}
 .cyan-600 {
   background-color: #00acc1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003544}}
 .cyan-600:hover {
   background-color: #007584;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003545}}
 .cyan-700 {
   background-color: #0097a7;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003545}}
 .cyan-700:hover {
   background-color: #00606a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003546}}
 .cyan-800 {
   background-color: #00838f;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003546}}
 .cyan-800:hover {
   background-color: #004b52;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003547}}
 .cyan-900 {
   background-color: #006064;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003547}}
 .cyan-900:hover {
   background-color: #002527;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003548}}
 .cyan-A100 {
   background-color: #84ffff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003548}}
 .cyan-A100:hover {
   background-color: #47ffff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003549}}
 .cyan-A200 {
   background-color: #18ffff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003549}}
 .cyan-A200:hover {
   background-color: #00dada;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003550}}
 .cyan-A400 {
   background-color: #00e5ff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003550}}
 .cyan-A400:hover {
   background-color: #00aec2;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003551}}
 .cyan-A700 {
   background-color: #00b8d4;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003551}}
 .cyan-A700:hover {
   background-color: #008397;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003553}}
 .teal-50 {
   background-color: #e0f2f1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003553}}
 .teal-50:hover {
   background-color: #b5e0de;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003554}}
 .teal-100 {
   background-color: #b2dfdb;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003554}}
 .teal-100:hover {
   background-color: #87cdc7;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003555}}
 .teal-200 {
   background-color: #80cbc4;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003555}}
 .teal-200:hover {
   background-color: #55b9b0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003556}}
 .teal-300 {
   background-color: #4db6ac;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003556}}
 .teal-300:hover {
   background-color: #3a8c84;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003557}}
 .teal-400 {
   background-color: #26a69a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003557}}
 .teal-400:hover {
   background-color: #1b746c;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003558}}
 .teal-500 {
   background-color: #009688;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003558}}
 .teal-500:hover {
   background-color: #005951;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003559}}
 .teal-600 {
   background-color: #00897b;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003559}}
 .teal-600:hover {
   background-color: #004c44;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003560}}
 .teal-700 {
   background-color: #00796b;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003560}}
 .teal-700:hover {
   background-color: #003c35;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003561}}
 .teal-800 {
   background-color: #00695c;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003561}}
 .teal-800:hover {
   background-color: #002c26;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003562}}
 .teal-900 {
   background-color: #004d40;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003562}}
 .teal-900:hover {
   background-color: #00100d;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003563}}
 .teal-A100 {
   background-color: #a7ffeb;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003563}}
 .teal-A100:hover {
   background-color: #6affdd;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003564}}
 .teal-A200 {
   background-color: #64ffda;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003564}}
 .teal-A200:hover {
   background-color: #27ffcb;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003565}}
 .teal-A400 {
   background-color: #1de9b6;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003565}}
 .teal-A400:hover {
   background-color: #12b78e;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003566}}
 .teal-A700 {
   background-color: #00bfa5;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003566}}
 .teal-A700:hover {
   background-color: #008270;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003568}}
 .green-50 {
   background-color: #e8f5e9;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003568}}
 .green-50:hover {
   background-color: #bde2c0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003569}}
 .green-100 {
   background-color: #c8e6c9;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003569}}
 .green-100:hover {
   background-color: #9ed3a0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003570}}
 .green-200 {
   background-color: #a5d6a7;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003570}}
 .green-200:hover {
   background-color: #7bc37e;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003571}}
 .green-300 {
   background-color: #81c784;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003571}}
 .green-300:hover {
   background-color: #57b45b;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003572}}
 .green-400 {
   background-color: #66bb6a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003572}}
 .green-400:hover {
   background-color: #469e4a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003573}}
 .green-500 {
   background-color: #4caf50;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003573}}
 .green-500:hover {
   background-color: #39843c;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003574}}
 .green-600 {
   background-color: #43a047;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003574}}
 .green-600:hover {
   background-color: #317534;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003575}}
 .green-700 {
   background-color: #388e3c;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003575}}
 .green-700:hover {
   background-color: #276229;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003576}}
 .green-800 {
   background-color: #2e7d32;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003576}}
 .green-800:hover {
   background-color: #1e5020;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003577}}
 .green-900 {
   background-color: #1b5e20;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003577}}
 .green-900:hover {
   background-color: #0d2e10;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003578}}
 .green-A100 {
   background-color: #b9f6ca;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003578}}
 .green-A100:hover {
   background-color: #83efa1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003579}}
 .green-A200 {
   background-color: #69f0ae;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003579}}
 .green-A200:hover {
   background-color: #31ea90;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003580}}
 .green-A400 {
   background-color: #00e676;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003580}}
 .green-A400:hover {
   background-color: #00a957;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003581}}
 .green-A700 {
   background-color: #00c853;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003581}}
 .green-A700:hover {
   background-color: #008b3a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003583}}
 .light-green-50 {
   background-color: #f1f8e9;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003583}}
 .light-green-50:hover {
   background-color: #d3e9bb;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003584}}
 .light-green-100 {
   background-color: #dcedc8;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003584}}
 .light-green-100:hover {
   background-color: #bfde9a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003585}}
 .light-green-200 {
   background-color: #c5e1a5;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003585}}
 .light-green-200:hover {
   background-color: #a7d277;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003586}}
 .light-green-300 {
   background-color: #aed581;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003586}}
 .light-green-300:hover {
   background-color: #90c653;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003587}}
 .light-green-400 {
   background-color: #9ccc65;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003587}}
 .light-green-400:hover {
   background-color: #7eb73d;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003588}}
 .light-green-500 {
   background-color: #8bc34a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003588}}
 .light-green-500:hover {
   background-color: #6c9c34;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003589}}
 .light-green-600 {
   background-color: #7cb342;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003589}}
 .light-green-600:hover {
   background-color: #5d8632;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003590}}
 .light-green-700 {
   background-color: #689f38;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003590}}
 .light-green-700:hover {
   background-color: #4a7228;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003591}}
 .light-green-800 {
   background-color: #558b2f;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003591}}
 .light-green-800:hover {
   background-color: #395d20;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003592}}
 .light-green-900 {
   background-color: #33691e;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003592}}
 .light-green-900:hover {
   background-color: #1c3910;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003593}}
 .light-green-A100 {
   background-color: #ccff90;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003593}}
 .light-green-A100:hover {
   background-color: #b0ff53;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003594}}
 .light-green-A200 {
   background-color: #b2ff59;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003594}}
 .light-green-A200:hover {
   background-color: #96ff1c;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003595}}
 .light-green-A400 {
   background-color: #76ff03;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003595}}
 .light-green-A400:hover {
   background-color: #5ac500;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003596}}
 .light-green-A700 {
   background-color: #64dd17;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003596}}
 .light-green-A700:hover {
   background-color: #4ba611;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003598}}
 .lime-50 {
   background-color: #f9fbe7;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003598}}
 .lime-50:hover {
   background-color: #ecf2b3;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003599}}
 .lime-100 {
   background-color: #f0f4c3;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003599}}
 .lime-100:hover {
   background-color: #e3eb8f;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003600}}
 .lime-200 {
   background-color: #e6ee9c;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003600}}
 .lime-200:hover {
   background-color: #d9e568;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003601}}
 .lime-300 {
   background-color: #dce775;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003601}}
 .lime-300:hover {
   background-color: #cfde41;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003602}}
 .lime-400 {
   background-color: #d4e157;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003602}}
 .lime-400:hover {
   background-color: #c4d526;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003603}}
 .lime-500 {
   background-color: #cddc39;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003603}}
 .lime-500:hover {
   background-color: #a9b720;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003604}}
 .lime-600 {
   background-color: #c0ca33;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003604}}
 .lime-600:hover {
   background-color: #929927;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003605}}
 .lime-700 {
   background-color: #afb42b;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003605}}
 .lime-700:hover {
   background-color: #7f831f;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003606}}
 .lime-800 {
   background-color: #9e9d24;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003606}}
 .lime-800:hover {
   background-color: #6c6b19;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003607}}
 .lime-900 {
   background-color: #827717;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003607}}
 .lime-900:hover {
   background-color: #4e470e;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003608}}
 .lime-A100 {
   background-color: #f4ff81;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003608}}
 .lime-A100:hover {
   background-color: #efff44;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003609}}
 .lime-A200 {
   background-color: #eeff41;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003609}}
 .lime-A200:hover {
   background-color: #e9ff04;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003610}}
 .lime-A400 {
   background-color: #c6ff00;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003610}}
 .lime-A400:hover {
   background-color: #96c200;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003611}}
 .lime-A700 {
   background-color: #aeea00;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003611}}
 .lime-A700:hover {
   background-color: #80ad00;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003613}}
 .yellow-50 {
   background-color: #fffde7;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003613}}
 .yellow-50:hover {
   background-color: #fff8aa;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003614}}
 .yellow-100 {
   background-color: #fff9c4;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003614}}
 .yellow-100:hover {
   background-color: #fff387;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003615}}
 .yellow-200 {
   background-color: #fff59d;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003615}}
 .yellow-200:hover {
   background-color: #ffef60;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003616}}
 .yellow-300 {
   background-color: #fff176;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003616}}
 .yellow-300:hover {
   background-color: #ffeb39;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003617}}
 .yellow-400 {
   background-color: #ffee58;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003617}}
 .yellow-400:hover {
   background-color: #ffe81b;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003618}}
 .yellow-500 {
   background-color: #ffeb3b;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003618}}
 .yellow-500:hover {
   background-color: #fde300;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003619}}
 .yellow-600 {
   background-color: #fdd835;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003619}}
 .yellow-600:hover {
   background-color: #f2c602;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003620}}
 .yellow-700 {
   background-color: #fbc02d;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003620}}
 .yellow-700:hover {
   background-color: #e6a604;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003621}}
 .yellow-800 {
   background-color: #f9a825;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003621}}
 .yellow-800:hover {
   background-color: #db8906;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003622}}
 .yellow-900 {
   background-color: #f57f17;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003622}}
 .yellow-900:hover {
   background-color: #c66109;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003623}}
 .yellow-A100 {
   background-color: #ffff8d;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003623}}
 .yellow-A100:hover {
   background-color: #ffff50;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003624}}
 .yellow-A200 {
   background-color: #ffff00;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003624}}
 .yellow-A200:hover {
   background-color: #c2c200;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003625}}
 .yellow-A400 {
   background-color: #ffea00;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003625}}
 .yellow-A400:hover {
   background-color: #c2b200;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003626}}
 .yellow-A700 {
   background-color: #ffd600;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003626}}
 .yellow-A700:hover {
   background-color: #c2a300;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003628}}
 .amber-50 {
   background-color: #fff8e1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003628}}
 .amber-50:hover {
   background-color: #ffeaa4;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003629}}
 .amber-100 {
   background-color: #ffecb3;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003629}}
 .amber-100:hover {
   background-color: #ffdd76;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003630}}
 .amber-200 {
   background-color: #ffe082;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003630}}
 .amber-200:hover {
   background-color: #ffd145;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003631}}
 .amber-300 {
   background-color: #ffd54f;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003631}}
 .amber-300:hover {
   background-color: #ffc612;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003632}}
 .amber-400 {
   background-color: #ffca28;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003632}}
 .amber-400:hover {
   background-color: #eab000;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003633}}
 .amber-500 {
   background-color: #ffc107;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003633}}
 .amber-500:hover {
   background-color: #c99700;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003634}}
 .amber-600 {
   background-color: #ffb300;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003634}}
 .amber-600:hover {
   background-color: #c28800;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003635}}
 .amber-700 {
   background-color: #ffa000;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003635}}
 .amber-700:hover {
   background-color: #c27a00;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003636}}
 .amber-800 {
   background-color: #ff8f00;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003636}}
 .amber-800:hover {
   background-color: #c26d00;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003637}}
 .amber-900 {
   background-color: #ff6f00;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003637}}
 .amber-900:hover {
   background-color: #c25400;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003638}}
 .amber-A100 {
   background-color: #ffe57f;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003638}}
 .amber-A100:hover {
   background-color: #ffd942;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003639}}
 .amber-A200 {
   background-color: #ffd740;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003639}}
 .amber-A200:hover {
   background-color: #ffca03;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003640}}
 .amber-A400 {
   background-color: #ffc400;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003640}}
 .amber-A400:hover {
   background-color: #c29500;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003641}}
 .amber-A700 {
   background-color: #ffab00;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003641}}
 .amber-A700:hover {
   background-color: #c28200;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003643}}
 .orange-50 {
   background-color: #fff3e0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003643}}
 .orange-50:hover {
   background-color: #ffdba3;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003644}}
 .orange-100 {
   background-color: #ffe0b2;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003644}}
 .orange-100:hover {
   background-color: #ffc775;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003645}}
 .orange-200 {
   background-color: #ffcc80;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003645}}
 .orange-200:hover {
   background-color: #ffb343;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003646}}
 .orange-300 {
   background-color: #ffb74d;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003646}}
 .orange-300:hover {
   background-color: #ff9e10;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003647}}
 .orange-400 {
   background-color: #ffa726;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003647}}
 .orange-400:hover {
   background-color: #e88a00;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003648}}
 .orange-500 {
   background-color: #ff9800;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003648}}
 .orange-500:hover {
   background-color: #c27400;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003649}}
 .orange-600 {
   background-color: #fb8c00;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003649}}
 .orange-600:hover {
   background-color: #be6a00;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003650}}
 .orange-700 {
   background-color: #f57c00;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003650}}
 .orange-700:hover {
   background-color: #b85d00;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003651}}
 .orange-800 {
   background-color: #ef6c00;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003651}}
 .orange-800:hover {
   background-color: #b25000;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003652}}
 .orange-900 {
   background-color: #e65100;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003652}}
 .orange-900:hover {
   background-color: #a93b00;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003653}}
 .orange-A100 {
   background-color: #ffd180;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003653}}
 .orange-A100:hover {
   background-color: #ffbb43;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003654}}
 .orange-A200 {
   background-color: #ffab40;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003654}}
 .orange-A200:hover {
   background-color: #ff9003;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003655}}
 .orange-A400 {
   background-color: #ff9100;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003655}}
 .orange-A400:hover {
   background-color: #c26e00;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003656}}
 .orange-A700 {
   background-color: #ff6d00;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003656}}
 .orange-A700:hover {
   background-color: #c25300;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003658}}
 .deep-orange-50 {
   background-color: #fbe9e7;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003658}}
 .deep-orange-50:hover {
   background-color: #f2b9b3;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003659}}
 .deep-orange-100 {
   background-color: #ffccbc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003659}}
 .deep-orange-100:hover {
   background-color: #ff9d7f;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003660}}
 .deep-orange-200 {
   background-color: #ffab91;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003660}}
 .deep-orange-200:hover {
   background-color: #ff7c54;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003661}}
 .deep-orange-300 {
   background-color: #ff8a65;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003661}}
 .deep-orange-300:hover {
   background-color: #ff5c28;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003662}}
 .deep-orange-400 {
   background-color: #ff7043;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003662}}
 .deep-orange-400:hover {
   background-color: #ff4106;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003663}}
 .deep-orange-500 {
   background-color: #ff5722;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003663}}
 .deep-orange-500:hover {
   background-color: #e43700;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003664}}
 .deep-orange-600 {
   background-color: #f4511e;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003664}}
 .deep-orange-600:hover {
   background-color: #cb380a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003665}}
 .deep-orange-700 {
   background-color: #e64a19;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003665}}
 .deep-orange-700:hover {
   background-color: #af3813;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003666}}
 .deep-orange-800 {
   background-color: #d84315;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003666}}
 .deep-orange-800:hover {
   background-color: #a03210;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003667}}
 .deep-orange-900 {
   background-color: #bf360c;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003667}}
 .deep-orange-900:hover {
   background-color: #852608;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003668}}
 .deep-orange-A100 {
   background-color: #ff9e80;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003668}}
 .deep-orange-A100:hover {
   background-color: #ff6f43;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003669}}
 .deep-orange-A200 {
   background-color: #ff6e40;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003669}}
 .deep-orange-A200:hover {
   background-color: #ff4003;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003670}}
 .deep-orange-A400 {
   background-color: #ff3d00;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003670}}
 .deep-orange-A400:hover {
   background-color: #c22e00;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003671}}
 .deep-orange-A700 {
   background-color: #dd2c00;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003671}}
 .deep-orange-A700:hover {
   background-color: #a02000;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003673}}
 .brown-50 {
   background-color: #efebe9;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003673}}
 .brown-50:hover {
   background-color: #d5cbc6;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003674}}
 .brown-100 {
   background-color: #d7ccc8;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003674}}
 .brown-100:hover {
   background-color: #bdaba5;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003675}}
 .brown-200 {
   background-color: #bcaaa4;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003675}}
 .brown-200:hover {
   background-color: #a28981;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003676}}
 .brown-300 {
   background-color: #a1887f;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003676}}
 .brown-300:hover {
   background-color: #836960;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003677}}
 .brown-400 {
   background-color: #8d6e63;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003677}}
 .brown-400:hover {
   background-color: #69524a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003678}}
 .brown-500 {
   background-color: #795548;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003678}}
 .brown-500:hover {
   background-color: #533a31;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003679}}
 .brown-600 {
   background-color: #6d4c41;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003679}}
 .brown-600:hover {
   background-color: #47312a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003680}}
 .brown-700 {
   background-color: #5d4037;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003680}}
 .brown-700:hover {
   background-color: #372620;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003681}}
 .brown-800 {
   background-color: #4e342e;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003681}}
 .brown-800:hover {
   background-color: #281a17;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003682}}
 .brown-900 {
   background-color: #3e2723;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003682}}
 .brown-900:hover {
   background-color: #170e0d;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003684}}
 .blue-grey-50 {
   background-color: #eceff1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003684}}
 .blue-grey-50:hover {
   background-color: #c9d1d7;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003685}}
 .blue-grey-100 {
   background-color: #cfd8dc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003685}}
 .blue-grey-100:hover {
   background-color: #acbbc2;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003686}}
 .blue-grey-200 {
   background-color: #b0bec5;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003686}}
 .blue-grey-200:hover {
   background-color: #8da1ab;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003687}}
 .blue-grey-300 {
   background-color: #90a4ae;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003687}}
 .blue-grey-300:hover {
   background-color: #6d8794;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003688}}
 .blue-grey-400 {
   background-color: #78909c;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003688}}
 .blue-grey-400:hover {
   background-color: #5b717c;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003689}}
 .blue-grey-500 {
   background-color: #607d8b;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003689}}
 .blue-grey-500:hover {
   background-color: #475c67;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003690}}
 .blue-grey-600 {
   background-color: #546e7a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003690}}
 .blue-grey-600:hover {
   background-color: #3b4d56;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003691}}
 .blue-grey-700 {
   background-color: #455a64;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003691}}
 .blue-grey-700:hover {
   background-color: #2c3940;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003692}}
 .blue-grey-800 {
   background-color: #37474f;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003692}}
 .blue-grey-800:hover {
   background-color: #1e272b;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003693}}
 .blue-grey-900 {
   background-color: #263238;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003693}}
 .blue-grey-900:hover {
   background-color: #0d1114;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003695}}
 .grey-50 {
   background-color: #fafafa;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003695}}
 .grey-50:hover {
   background-color: #dbdbdb;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003696}}
 .grey-100 {
   background-color: #f5f5f5;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003696}}
 .grey-100:hover {
   background-color: #d6d6d6;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003697}}
 .grey-200 {
   background-color: #eeeeee;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003697}}
 .grey-200:hover {
   background-color: #cfcfcf;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003698}}
 .grey-300 {
   background-color: #e0e0e0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003698}}
 .grey-300:hover {
   background-color: #c1c1c1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003699}}
 .grey-400 {
   background-color: #bdbdbd;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003699}}
 .grey-400:hover {
   background-color: #9e9e9e;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003700}}
 .grey-500 {
   background-color: #9e9e9e;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003700}}
 .grey-500:hover {
   background-color: #7f7f7f;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003701}}
 .grey-600 {
   background-color: #757575;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003701}}
 .grey-600:hover {
   background-color: #565656;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003702}}
 .grey-700 {
   background-color: #616161;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003702}}
 .grey-700:hover {
   background-color: #424242;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003703}}
 .grey-800 {
   background-color: #424242;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003703}}
 .grey-800:hover {
   background-color: #232323;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003704}}
 .grey-900 {
   background-color: #212121;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003704}}
 .grey-900:hover {
   background-color: #020202;
 }
@@ -2225,7 +1694,6 @@
 .c17 { .brown-500; }
 .c18 { .blue-grey-500; }
 .c19 { .grey-500; }*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003728}}
 .red-500,
 .red-600,
 .red-700,
@@ -2302,7 +1770,6 @@
 .c19 a {
   color: #ffffff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003748}}
 .c4 a,
 .c5 a,
 .c6 a,
@@ -2355,7 +1822,6 @@
 .grey-900 {
   color: rgba(255, 255, 255, 0.87);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/new\/assets\/less\/colors\.less}line{font-family:\00003765}}
 .c12 a,
 .c13 a,
 .c14 a,

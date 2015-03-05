@@ -100,15 +100,6 @@ li .label {
 					<input class="order" type="number" min="0" value="{{.Orderele}}" style="display: inline; font-size: 12.75px; line-height:1.65em;width:50px;" data-id="{{.Id}}">
 					<button class="btn btn-smaller" type="submit">Zmień kolejność</button>
 				</form>
-				
-				
-				<!--
-<span class="label label-red data-down" data-orderele-id-d="{{.Id}}" data-orderele-d="{{.Orderele}}">
-					<i class="fa fa-arrow-down"></i>
-				</span>
-				<span class="label label-green data-up" data-orderele-id="{{.Id}}" data-orderele="{{.Orderele}}">
-					<i class="fa fa-arrow-up"></i>
-				</span>-->
 			{{end}}
 			</div>
 		</div>
@@ -122,17 +113,31 @@ li .label {
                         <span class="btn-group ">
                             {{$id := .Category.Id}}
                             {{$pid := .PageId}}
-                            {{if eq .PageId 0}}{{else if ne .PageIdMinus -1}}<a href="/admin/category/{{$id}}/{{.PageIdMinus}}"><button class="btn btn-outline pagin">&lt;&lt;</button></a>{{end}}
+							{{$pidp := .PageIdPlus}}
+							{{$pidm := .PageIdMinus}}
+                            {{if eq .PageId 0}}{{else if ne .PageIdMinus -1}}
+								<a href="/admin/category/{{$id}}/{{.PageIdMinus}}">
+									<button class="btn btn-outline pagin">&lt;&lt;</button>
+								</a>
+							{{end}}
                             {{range .PageList}}
-                                {{if eq . $pid}}
-                                    <a href="/admin/category/{{$id}}/{{.}}">
-                            <button class="btn btn-outline btn-active pagin">{{.}}</button></a>
-                                {{else}}
-                                    <a href="/admin/category/{{$id}}/{{.}}">
-                            <button class="btn btn-outline pagin">{{.}}</button></a>
-                                {{end}}
+								{{if or (ne $pidp -1) (ne $pidm -1)}}
+									{{if eq . $pid}}
+										<a href="/admin/category/{{$id}}/{{.}}">
+											<button class="btn btn-outline btn-active pagin">{{.}}</button>
+										</a>
+									{{else}}
+										<a href="/admin/category/{{$id}}/{{.}}">
+											<button class="btn btn-outline pagin">{{.}}</button>
+										</a>
+									{{end}}
+								{{end}}
                             {{end}}
-                            {{if ne .PageIdPlus -1}}<a href="/admin/category/{{$id}}/{{.PageIdPlus}}"><button class="btn btn-outline pagin">>></button></a>{{end}}
+                            {{if ne .PageIdPlus -1}}
+								<a href="/admin/category/{{$id}}/{{.PageIdPlus}}">
+									<button class="btn btn-outline pagin">>></button>
+								</a>
+							{{end}}
 
                         </span>
                     </div>

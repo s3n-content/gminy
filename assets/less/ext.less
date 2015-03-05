@@ -443,7 +443,7 @@
 }
 
 .p-news {
-	padding-top: 30px;
+	padding-top: 10px;
 	@media only screen and (max-width: 767px) {
 		padding-left: 0px;
 		h1 {
@@ -459,7 +459,7 @@
 		small {}
 	}
 	dl {
-		margin-bottom: 40px;
+		/*margin-bottom: 40px;*/
 	}
 	dl dt {
 		background: #2196f3;
@@ -506,16 +506,23 @@ dl dd {
 }
 
 .loc-img {
-	img {
-		max-height: 200px;
-		padding: 10px;
-		float: left;
-	}
+	padding: 10px;
+	height: 100%;
+	text-align: center;
+		img {
+			width:100%;
+			@media only screen and (max-width: 767px) {
+				width: 100%;
+				display: block;
+			}
+		}
+	
 	@media only screen and (max-width: 767px) {
 		margin-bottom: 0px!important;
-		img {
-			display: block;
-		}
+		height: 200px;
+		display:block;
+		clear: both;
+		overflow: hidden;
 	}
 }
 
@@ -547,9 +554,9 @@ dl dd {
 		}
 		li {
 			margin: 6px 0; //5
-			padding: 2px 20px;//2 20 //10 20
+			padding: 0px 20px;//2 20 //10 20
 			font-size: 24px;
-			line-height: 40px;
+			line-height: 38px; //40
 			font-weight: 300;
 		}
 	}
@@ -1027,5 +1034,17 @@ li.c20:hover {
 				background-color: darken(@grey-900, 12%)!important;
 			}
 		}
+	}
+}
+.sdl {
+	@media only screen and (max-width: 767px) {
+			display: block;
+			clear: both;
+	}
+}
+
+.touchmap {
+	@media only screen and (max-width: 767px) {
+		padding:10px 50px 0 0;
 	}
 }

@@ -4,7 +4,7 @@
 {{$iframe := .iframe}}
 {{$last := .lastfourposts}}
 
-
+{{$domainname := .Domain.Name}}
 {{if $iframe}}
 <!DOCTYPE html>
 <html>
@@ -51,18 +51,18 @@
                 {{if .Post.Visible}} {{with .Post}}
 
                 {{if eq .Type 0}}
-				
+
 				<div class="units-row end">
                     <nav class="breadcrumbs">
                         <ul>
-                            <li><a href="/">Strona główna</a>
+							<li><a href="/">{{$domainname}}</a>
                             </li>
                             <li><span>{{.Title}}</span>
                             </li>
                         </ul>
                     </nav>
                 </div>
-				
+
                 <div class="units-row end">
                     <div class="unit-100 p-news">
                         <h1>{{.Title}}</h1>
@@ -95,36 +95,20 @@
                 </div>
                 {{else if eq .Type 1}}
 
+
 				<div class="units-row end">
-					<div class="unit-row unit-push-20" style="padding: 10px 20px 0px 20px;">
-						<div class="unit-100" style="  text-align: center;margin-bottom: 50px;">
-							{{if .Telephone}}
-							<div class="unit-40 guz">
-								<a href="tel:{{.Telephone}}" class="btn btn-big btn-green" alt="Zadzwoń pod numer {{.Telephone}}"><i class="fa fa-phone"></i> Zadzwoń</a>
-							</div>
-							{{end}} {{if .Locationset}}
-							<div class="unit-40 guz">
-								<a href="http://{{$VarMain}}/nav/{{.Url}}/{{.Id}}/{{.Locationlat}}/{{.Locationlng}}" class="btn btn-big btn-blue" alt="Nawiguj pod adres {{.Adres}}" target="_blank"><i class="fa fa-globe"></i> Nawiguj</a>
-							</div>
-							{{end}}
-						</div>
-					</div>	
-				</div>
-				
-				<div class="units-row end">
-                    <nav class="breadcrumbs">
+                    <nav class="breadcrumbs end">
                         <ul>
-                            <li><a href="/">Strona główna</a>
+							<li><a href="/">{{$domainname}}</a>
                             </li>
                             <li><span>{{.Title}}</span>
                             </li>
                         </ul>
                     </nav>
                 </div>
-					
+
                 <div class="units-row end">
-                    <!--tu-->
-                    <div class="unit-100 p-news">
+                    <div class="p-news">
                         {{if .Title}}
                         <h1>{{.Title}}</h1>{{end}}
                         <dl>
@@ -136,6 +120,22 @@
                         </dl>
                     </div>
                 </div>
+
+				<div class="units-row end">
+					<div class="units-row" style="text-align: center;">
+							{{if .Telephone}}
+							<div class="unit-50 guz">
+								<a href="tel:{{.Telephone}}" class="btn btn-big btn-green" alt="Zadzwoń pod numer {{.Telephone}}"><i class="fa fa-phone"></i> Zadzwoń</a>
+							</div>
+							{{end}} {{if .Locationset}}
+							<div class="unit-50 guz">
+								<a href="http://{{$VarMain}}/nav/{{.Url}}/{{.Id}}/{{.Locationlat}}/{{.Locationlng}}" class="btn btn-big btn-blue" alt="Nawiguj pod adres {{.Adres}}" target="_blank"><i class="fa fa-globe"></i> Nawiguj</a>
+							</div>
+							{{end}}
+					</div>
+				</div>
+
+
                 <div class="units-row end">
                     {{if eq $layout 1}} {{/* element ponizej jest niepotrzebny w layout 1, wiec go nie wyswietla */}} {{else}}
                     {{if not $iframe}}
@@ -148,12 +148,16 @@
                         {{end}}
                     </div>{{end}}
                     {{end}}
-                    <div class="{{if $iframe}}unit-100{{else}}{{if eq $layout 1}}unit-100{{else}}unit-70{{end}}{{end}} bckgrnd1" style="padding: 5px; text-align:justify;">
-                        <div class="unit-row units-mobile-100 end" style="clear:both; min-height: 165px; border-bottom:1px solid rgba(0,0,0,0.2)">
-                            <div class="unit-100 loc-info loc-img">
+                    <div class="{{if $iframe}}unit-100{{else}}{{if eq $layout 1}}unit-100{{else}}unit-70{{end}}{{end}}" style="padding: 5px; text-align:justify;">
+                        <div class="units-row end" style="clear:both; min-height: 165px; border-bottom:1px solid rgba(0,0,0,0.2)">
+                            <div class="row loc-info">
                                 {{if .Imageurl}}
-                                <img src="{{.Imageurl}}" alt="" />{{end}}
-                                <dl>
+								<div class="loc-img unit-30">
+								<img src="{{.Imageurl}}" alt="" />
+								</div>
+								{{end}}
+								<div class="sdl unit-70">
+								<dl>
                                     {{if .Address}}<dt>Adres</dt>
                                     <dd>{{.Address}}</dd>{{end}}
                                     {{if .Tags}}<dt>Kategoria</dt>
@@ -164,16 +168,17 @@
                                     </dd>{{end}}
                                     {{if $iframe}}<dt>Źródło</dt><dd><a href="http://{{.Url}}" target="_blank">{{.Sitename}}</a></dd>{{end}}
                                 </dl>
+									</div>
                             </div>
                         </div>
                         {{if .Text}}
-                        <div style="padding:15px">{{.Text}}</div>{{end}}
+                        <div style="padding:15px; clear:both;">{{.Text}}</div>{{end}}
                 {{if .Moreinformations}}
                                     <p style="text-align:right;padding:10px;">{{.Moreinformations}}</p>{{end}}
                     </div>
                 </div>
 
-                
+
 
                 {{if and .Locationset (and .Locationlat .Locationlng)}} {{if $iframe}}
                 <div class="unit-row" style="padding-top: 20px;">
@@ -181,7 +186,8 @@
                     </div>
                 </div>
                 {{else}}
-                <div class="unit-row" style="padding-top: 80px;">
+				<h6>Lokalizacja obiektu na mapie</h6>
+                <div class="units-row end touchmap">
                     <div id="map-canvas" class="bckgrnd2" data-geo-lat="{{.Locationlat}}" data-geo-long="{{.Locationlng}}"></div>
                 </div>
                 {{end}} {{end}}
@@ -200,64 +206,64 @@
 
                 {{else if eq .Type 2}}
 
-                <div class="units-row end">
-					<div class="unit-row" style="padding: 10px 20px 0px 20px;">
-						{{if .Locationset}}
-						<div class="unit-push-25 unit-50" style="display:inline-block;">
-							<a href="http://{{$VarMain}}/nav/{{.Url}}/{{.Id}}/{{.Locationlat}}/{{.Locationlng}}" class="btn btn-big btn-blue" alt="Nawiguj pod adres {{.Adres}}" target="_blank"><i class="fa fa-globe"></i> Nawiguj</a>
-						</div>
-						{{end}}
-					</div>
-				</div>
-			
+
+
+
 				<div class="units-row end">
                     <nav class="breadcrumbs">
                         <ul>
-                            <li><a href="/">Strona główna</a>
+							<li><a href="/">{{$domainname}}</a>
                             </li>
                             <li><span>{{.Title}}</span>
                             </li>
                         </ul>
                     </nav>
                 </div>
-			
+
                 <div class="units-row end">
                     <div class="unit-100 p-news">
                         {{if .Title}}
                         <h1>{{.Title}}</h1>{{end}}
                         <dl>
                             {{/*if .Createdon}}<dt>opublikowano</dt>
-                            <dd>{{.Createdon}}</dd>{{end*/}} 
+                            <dd>{{.Createdon}}</dd>{{end*/}}
                             {{if .Source}}<dt>autor</dt>
                             <dd>{{.Source}}</dd>{{end}}
                             <dt></dt><dd></dd>
                         </dl>
                     </div>
                 </div>
+
+				<div class="units-row" style="text-align: center;">
+						{{if .Locationset}}
+						<div class="unit-100" style="display:inline-block;">
+							<a href="http://{{$VarMain}}/nav/{{.Url}}/{{.Id}}/{{.Locationlat}}/{{.Locationlng}}" class="btn btn-big btn-blue" alt="Nawiguj pod adres {{.Adres}}" target="_blank"><i class="fa fa-globe"></i> Nawiguj</a>
+						</div>
+						{{end}}
+				</div>
+
                 <div class="units-row end">
                     <div class="{{if $iframe}}unit-100{{else}}{{if eq $layout 1}}unit-100{{else}}unit-70{{end}}{{end}}" style="padding: 5px; text-align:justify;">
-                        <div class="unit-row bckgrnd1" style="clear:both; min-height: 80px;margin-bottom:20px;">
-
-                            <div class="unit-100 loc-info loc-img">
+                        <div class="units-row end" style="clear:both; min-height: 165px; border-bottom:1px solid rgba(0,0,0,0.2)">
+                            <div class="row loc-info">
                                 {{if .Imageurl}}
-                                <img src="{{.Imageurl}}">{{end}}
-                                <dl>
-                                    {{if eq .Eventtime .Eventtimeend}}
-                                    <dt>Odbędzie się</dt>
-                                    <dd>{{.Eventtimeend}}</dd>
-                                    {{else}}
-                                    <dt>Trwa od</dt><dd>{{.Eventtime}}</dd>
-                                    <dt>do</dt><dd>{{.Eventtimeend}}</dd>
-                                    {{end}}
-                                    {{if .Address}}<dt>Adres</dt><dd>{{.Address}}</dd>{{end}}
+								<div class="loc-img unit-30">
+								<img src="{{.Imageurl}}" alt="" />
+								</div>
+								{{end}}
+								<div class="sdl unit-70">
+								<dl>
+                                    {{if .Address}}<dt>Adres</dt>
+                                    <dd>{{.Address}}</dd>{{end}}
                                     {{if .Tags}}<dt>Kategoria</dt>
-                                    <dd>{{template "tags" .}}</dd>{{end}}
-                                    {{if .Mapscript}}<dd><a href="{{.Mapscript}}" target="_blank">{{.Mapscript}}</a></dd>{{end}}
-                                    {{if .Telephone}}<dt>Zadzwoń <i class="fa fa-phone"></i></dt>
+                                    <dd>{{template "tags" .}}</dd>{{end}} {{if .Mapscript}}<dt>Strona WWW</dt>
+                                    <dd><a href="{{.Mapscript}}" target="_blank">{{.Mapscript}}</a>
+                                    </dd>{{end}} {{if .Telephone}}<dt>Telefon</dt>
                                     <dd><a href="tel:{{.Telephone}}">{{.Telephone}}</a>
                                     </dd>{{end}}
-                                    {{if $iframe}}<dt>Źródło</dt><dd><a href="{{.Url}}" target="_blank">{{.Sitename}}</a></dd>{{end}}
+                                    {{if $iframe}}<dt>Źródło</dt><dd><a href="http://{{.Url}}" target="_blank">{{.Sitename}}</a></dd>{{end}}
                                 </dl>
+									</div>
                             </div>
                         </div>
 
@@ -287,7 +293,8 @@
                     </div>
                 </div>
                 {{else}}
-                <div class="unit-row" style="padding-top: 80px;">
+				<h6>Lokalizacja wydarzenia na mapie</h6>
+                <div class="units-row end touchmap">
                     <div id="map-canvas" class="bckgrnd2" data-geo-lat="{{.Locationlat}}" data-geo-long="{{.Locationlng}}"></div>
                 </div>
             {{end}} {{end}}
@@ -328,5 +335,8 @@
         {{end}}
 
         {{end}}
-            {{if $iframe}}</div></div></body>{{else}}{{template "footer" .}}{{end}}
+            {{if $iframe}}</div></div>
+    <script src="/assets/js/iframeResizer.contentWindow.min.js"></script>
+  </body></html>
+  {{else}}{{template "footer" .}}{{end}}
             {{end}}
