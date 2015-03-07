@@ -52,14 +52,14 @@
                             <tr>
                                 <td class="width-20">{{.Title}}</td>
                                 <td class="width-35">{{.Text}}</td>
-                                <td class="width-35">Utworzono: <em>{{.Createdon}}</em><br/>
+                                <td class="width-35">{{/*Utworzono: <em>{{.Createdon}}</em><br/>*/}}
                                     Ostatnia edycja: <em>{{.Modifiedon}}</em><br/>
-                                    Ukryte po <em>{{if eq .Hideafter 4}}nigdy{{else if eq .Hideafter 3}}4 tygodniach{{else if eq .Hideafter 2}}3 tygodniach{{else if .Hideafter}}2 tygodniach{{else}}tygodniu{{end}}</em>
+									Wyświetlane od <strong>{{.Createdon}}</strong> przez <strong>{{if eq .Hideafter 4}}zawsze{{else if eq .Hideafter 3}}4 tygodnie{{else if eq .Hideafter 2}}3 tygodnie{{else if .Hideafter}}2 tygodnie{{else}}tydzień{{end}}</strong>
 									<br/>
-                                                    Widoczny <strong>{{if .Visible}}TAK{{else}}NIE{{end}}</strong>                
+                                                    Widoczne <strong>{{if .Visible}}TAK{{else}}NIE{{end}}</strong>                
                                 </td>
                                 <td class="width-10"><a href="/li1/{{.Id}}" target="_blank">Zobacz</a><br/>
-									{{if ne .Hideafter 4}}<a class="prol" data-id="{{.Id}}">Przedłuż</a><br/>{{end}}
+									{{if ne .Hideafter 4}}<a class="prol" data-id="{{.Id}}" data-tools="tooltip" data-theme="red" title="Przedłuż o kolejny okres">Przedłuż</a><br/>{{end}}
                                                     <a href="/admin/form/editannouncement/{{.Id}}" target="_blank">Edytuj</a><br/>
                                                     <a href="/admin/form/delete/announcement/{{.Id}}" target="_blank">Usuń</a>
                                 
@@ -78,8 +78,9 @@
 			id = $(this).attr('data-id');
 			$.ajax({
 				url: '/admin/renewannounement/' + id,
+				timeout: 1000,
 			}).done(function(data){
-				location.reload();
+				location.reload(true);
 				history.go(0);
 			});
 		});

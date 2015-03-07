@@ -381,12 +381,12 @@
 
                                     </label>
                                 </li>
-                                <li class="pole8">
+                                <li class="pole8"><!--{{/*
                                     <label>
                                         Miniaturka
                                         <span>Miniaturka graficzna wyświetli się przy tytule postu. Dozwolone formaty to: .jpg, .png, .webp, .svg, .jpeg. Optymalna wielkość miniatury to 200x200 pikseli.<br/>Miniaturkę możesz wybrać z galerii grafiki lub wyszukać w internecie, a następnie skopiować jej adres i wkleić poniżej.</span>
                                         <input class="width-60" type="text" name="Imageurl" placeholder="http://mojastrona.pl/obrazek.jpg" {{with .Form.Imageurl}}value="{{.}}" {{end}}/>
-                                    </label>
+                                    </label>*/}}-->
                                 </li>
 
                                 <li class="pole9">
@@ -419,6 +419,7 @@
                                 <li class="pole14">
                                     <label>
                                         Strona WWW
+										<span>Przykład: <code>http://www.mojastrona.pl</code></span>
                                         <input class="width-60" type="text" name="Mapscript" placeholder="Adres www..." {{with .Form.Mapscript}}value="{{.}}" {{end}}/>
 
                                     </label>
@@ -489,7 +490,7 @@
         });
         $('body').ready(function () {
             for (var i = 1; i < 22; i++) {
-                if (i == 1 || i == 5 || i == 13 || i == 15 || i == 16 || i == 17 || i == 18) {
+                if (i == 1 || i == 5 || i == 8 || i == 13 || i == 15 || i == 16 || i == 17 || i == 18) {
                     $('.pole' + i).hide();
                 } else {
                     $('.pole' + i).show();
@@ -532,7 +533,7 @@
         $('.butt').click(function () {
             if (this.value == 0) {
                 for (var i = 1; i < 22; i++) {
-                    if (i == 2 || i == 3 || i == 8 || i == 19 || i == 20 || i == 21) {
+                    if (i == 2 || i == 3 /*|| i == 8*/ || i == 19 || i == 20 || i == 21) {
                         $('.pole' + i).show();
                     } else {
                         $('.pole' + i).hide();
@@ -549,7 +550,7 @@
                 $('#visib').attr('checked', true);
             } else if (this.value == 1) {
                 for (var i = 1; i < 21; i++) {
-                    if (i == 1 || i == 5 || i == 13 || i == 15 || i == 16 || i == 17 || i == 18) {
+                    if (i == 1 || i == 5 || i == 8 || i == 13 || i == 15 || i == 16 || i == 17 || i == 18) {
                         $('.pole' + i).hide();
                     } else {
                         $('.pole' + i).show();
@@ -566,7 +567,7 @@
                 $('#visib').attr('checked', true);
             } else if (this.value == 2) {
                 for (var i = 1; i < 21; i++) {
-                    if (i == 1 || i == 4 || i == 5 /*|| i == 6 || i == 7 */|| i == 9 || i == 10 || i == 11 || i == 13 || i == 15 || i == 16) {
+                    if (i == 1 || i == 4 || i == 5 || i == 8 /*|| i == 6 || i == 7 */|| i == 9 || i == 10 || i == 11 || i == 13 || i == 15 || i == 16) {
                         $('.pole' + i).hide();
                     } else {
                         $('.pole' + i).show();

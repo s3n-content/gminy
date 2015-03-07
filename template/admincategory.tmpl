@@ -46,13 +46,15 @@ li .label {
 {{if .Categories}}
     {{range .Categories}}
         {{if eq .Typeid 0}}<a href="/admin/category/{{.Id}}">{{end}}
-            <li class="c{{.Colorid}}">
-                    <span class="label label-black">{{if eq .Typeid 2}}RSS{{else if .Typeid}}WWW{{else}}Kategoria{{end}}</span> {{if .Imageurl}}<i class="fa fa-{{.Imageurl}}"></i>{{end}} {{.Title}}
-                {{if ge $AdminType 2}}
-                <span>
-                    <a href="/admin/form/editcategory/{{.Id}}" target="_blank"><button class="btn btn-small btn-black"><i class="fa fa-edit"></i> Edytuj</button></a>
+            <li class="c{{.Colorid}}" style="position:relative;">
+                    <div class="ellipsis" style="display:inline-block;width:55%;">{{if .Imageurl}} <i class="fa fa-{{.Imageurl}}"></i>{{end}} {{.Title}}</div>
+				<div style="display:inline-block; position:absolute;right: 7px;top: 7px;">
+				{{if ge $AdminType 2}}
                     <a href="/admin/form/delete/category/{{.Id}}" target="_blank"><button class="btn btn-small btn-black"><i class="fa fa-close"></i> Usuń</button></a>
-                </span>{{end}}
+                    <a href="/admin/form/editcategory/{{.Id}}" target="_blank"><button class="btn btn-small btn-black"><i class="fa fa-edit"></i> Edytuj</button></a>
+                {{end}}
+					<button class="btn btn-small btn-black"><i class="fa fa-caret-right"></i> {{if eq .Typeid 2}}RSS{{else if .Typeid}}WWW{{else}}Kategoria{{end}}</button>
+				</div>
             </li>
         {{if eq .Typeid 0}}</a>{{end}}
     {{end}}
@@ -61,12 +63,15 @@ li .label {
 {{else}}<ul class="insidecategory">
     {{range .Category.Insidecategory}}
         {{if eq .Typeid 0}}<a href="/admin/category/{{.Id}}">{{end}}
-            <li class="c{{.Colorid}}">
-                    <span class="label label-black">{{if eq .Typeid 2}}RSS{{else if .Typeid}}WWW{{else}}Kategoria{{end}}</span> {{if .Imageurl}}<i class="fa fa-{{.Imageurl}}"></i>{{end}} {{.Title}}
-                <span>{{if ge $AdminType 2}}
-                    <a href="/admin/form/editcategory/{{.Id}}" target="_blank"><button class="btn btn-small btn-black"><i class="fa fa-edit"></i> Edytuj</button></a>
+            <li class="c{{.Colorid}}" style="position:relative;">
+                    <div class="ellipsis" style="display:inline-block;width:55%;">{{if .Imageurl}} <i class="fa fa-{{.Imageurl}}"></i>{{end}} {{.Title}}</div>
+				<div style="display:inline-block; position:absolute;right: 7px;top: 7px;">
+				{{if ge $AdminType 2}}
                     <a href="/admin/form/delete/category/{{.Id}}" target="_blank"><button class="btn btn-small btn-black"><i class="fa fa-close"></i> Usuń</button></a>
-                </span>{{end}}
+                    <a href="/admin/form/editcategory/{{.Id}}" target="_blank"><button class="btn btn-small btn-black"><i class="fa fa-edit"></i> Edytuj</button></a>
+                {{end}}
+					<button class="btn btn-small btn-black"><i class="fa fa-caret-right"></i> {{if eq .Typeid 2}}RSS{{else if .Typeid}}WWW{{else}}Kategoria{{end}}</button>
+				</div>
             </li>
         {{if eq .Typeid 0}}</a>{{end}}
                         {{end}}</ul>

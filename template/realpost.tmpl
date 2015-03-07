@@ -120,21 +120,19 @@
                         </dl>
                     </div>
                 </div>
-				
-				<div class="units-row end">
-					<div class="units-row" style="text-align: center;">
-							{{if .Telephone}}
-							<div class="unit-50 guz">
-								<a href="tel:{{.Telephone}}" class="btn btn-big btn-green" alt="Zadzwoń pod numer {{.Telephone}}"><i class="fa fa-phone"></i> Zadzwoń</a>
-							</div>
-							{{end}} {{if .Locationset}}
-							<div class="unit-50 guz">
-								<a href="http://{{$VarMain}}/nav/{{.Url}}/{{.Id}}/{{.Locationlat}}/{{.Locationlng}}" class="btn btn-big btn-blue" alt="Nawiguj pod adres {{.Adres}}" target="_blank"><i class="fa fa-globe"></i> Nawiguj</a>
-							</div>
-							{{end}}
-					</div>
+
+				<div class="units-row units-split units-mobile-50" style="text-align: center;">
+						{{if .Telephone}}
+						<div class="unit-40 guz">
+							<a href="tel:{{.Telephone}}" class="btn btn-big btn-green" alt="Zadzwoń pod numer {{.Telephone}}"><i class="fa fa-phone"></i> Zadzwoń</a>
+						</div>
+						{{end}} {{if .Locationset}}
+						<div class="unit-60 guz">
+							<a href="http://{{$VarMain}}/nav/{{.Url}}/{{.Id}}/{{.Locationlat}}/{{.Locationlng}}" class="btn btn-big btn-blue" alt="Nawiguj pod adres {{.Adres}}" target="_blank"><i class="fa fa-globe"></i> Nawiguj</a>
+						</div>
+						{{end}}
 				</div>
-				
+
 				
                 <div class="units-row end">
                     {{if eq $layout 1}} {{/* element ponizej jest niepotrzebny w layout 1, wiec go nie wyswietla */}} {{else}}
@@ -151,12 +149,12 @@
                     <div class="{{if $iframe}}unit-100{{else}}{{if eq $layout 1}}unit-100{{else}}unit-70{{end}}{{end}}" style="padding: 5px; text-align:justify;">
                         <div class="units-row end" style="clear:both; min-height: 165px; border-bottom:1px solid rgba(0,0,0,0.2)">
                             <div class="row loc-info">
-                                {{if .Imageurl}}
+                                {{if .Imageurl}}<!--
 								<div class="loc-img unit-30">
 								<img src="{{.Imageurl}}" alt="" />
-								</div>
+								</div>-->
 								{{end}}
-								<div class="sdl unit-70">
+								<div class="sdl unit-100">
 								<dl>
                                     {{if .Address}}<dt>Adres</dt>
                                     <dd>{{.Address}}</dd>{{end}}
@@ -234,9 +232,9 @@
                     </div>
                 </div>
 			
-				<div class="units-row" style="text-align: center;">
+				<div class="units-row units-split units-mobile-100" style="text-align: center;">
 						{{if .Locationset}}
-						<div class="unit-100" style="display:inline-block;">
+						<div class="unit-60 guz">
 							<a href="http://{{$VarMain}}/nav/{{.Url}}/{{.Id}}/{{.Locationlat}}/{{.Locationlng}}" class="btn btn-big btn-blue" alt="Nawiguj pod adres {{.Adres}}" target="_blank"><i class="fa fa-globe"></i> Nawiguj</a>
 						</div>
 						{{end}}
@@ -246,12 +244,12 @@
                     <div class="{{if $iframe}}unit-100{{else}}{{if eq $layout 1}}unit-100{{else}}unit-70{{end}}{{end}}" style="padding: 5px; text-align:justify;">
                         <div class="units-row end" style="clear:both; min-height: 165px; border-bottom:1px solid rgba(0,0,0,0.2)">
                             <div class="row loc-info">
-                                {{if .Imageurl}}
+                                {{if .Imageurl}}<!--
 								<div class="loc-img unit-30">
 								<img src="{{.Imageurl}}" alt="" />
-								</div>
+								</div>-->
 								{{end}}
-								<div class="sdl unit-70">
+								<div class="sdl unit-100">
 								<dl>
                                     {{if .Address}}<dt>Adres</dt>
                                     <dd>{{.Address}}</dd>{{end}}
