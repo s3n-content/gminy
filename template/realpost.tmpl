@@ -149,12 +149,12 @@
                     <div class="{{if $iframe}}unit-100{{else}}{{if eq $layout 1}}unit-100{{else}}unit-70{{end}}{{end}}" style="padding: 5px; text-align:justify;">
                         <div class="units-row end" style="clear:both; min-height: 165px; border-bottom:1px solid rgba(0,0,0,0.2)">
                             <div class="row loc-info">
-                                {{if .Imageurl}}<!--
+                                {{if .Imageurl}}
 								<div class="loc-img unit-30">
 								<img src="{{.Imageurl}}" alt="" />
-								</div>-->
+								</div>
 								{{end}}
-								<div class="sdl unit-100">
+								<div class="sdl unit-70">
 								<dl>
                                     {{if .Address}}<dt>Adres</dt>
                                     <dd>{{.Address}}</dd>{{end}}
@@ -270,6 +270,18 @@
                 {{if .Moreinformations}}
                                     <p style="text-align:right;padding-top:15px;">{{.Moreinformations}}</p>{{end}}
                     </div>
+					  {{if eq $layout 1}}{{else}}
+                    {{if not $iframe}}
+                    <div class="unit-30 bckgrnd1 list-news-other">
+                        <button class="btn btn-green bckgrnd2" style="width:100%">Przeczytaj również</button>
+                        {{range $last}}
+                        <a href="{{.Adres}}">
+                            <p>{{if eq .Type 2}}<i class="fa fa-calendar"></i>{{else if .Type}}<i class="fa fa-map-marker"></i>{{else}}<i class="fa fa-comments"></i>{{end}} {{.Title}}</p>{{/*<span>{{printf "%.28s" .Text}}...</span>*/}}{{/*<small><i class="fa fa-clock-o"></i> {{.Createdon}}</small>*/}}
+                        </a>
+                        {{end}}
+                    </div>
+            {{end}}{{end}}
+                </div>
 					
 					
 
@@ -287,18 +299,7 @@
             {{end}} {{end}}
 			
 					
-           {{if eq $layout 1}}{{else}}
-                    {{if not $iframe}}
-                    <div class="unit-30 bckgrnd1 list-news-other">
-                        <button class="btn btn-green bckgrnd2" style="width:100%">Przeczytaj również</button>
-                        {{range $last}}
-                        <a href="{{.Adres}}">
-                            <p>{{if eq .Type 2}}<i class="fa fa-calendar"></i>{{else if .Type}}<i class="fa fa-map-marker"></i>{{else}}<i class="fa fa-comments"></i>{{end}} {{.Title}}</p>{{/*<span>{{printf "%.28s" .Text}}...</span>*/}}{{/*<small><i class="fa fa-clock-o"></i> {{.Createdon}}</small>*/}}
-                        </a>
-                        {{end}}
-                    </div>
-            {{end}}{{end}}
-                </div>
+         
 
 
 

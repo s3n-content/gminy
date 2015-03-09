@@ -406,12 +406,12 @@
 
                                     </label>
                                 </li>
-                                <li class="pole8"><!--{{/*
+                                <li class="pole8">
                                     <label>
                                         Miniaturka
                                         <span>Miniaturka graficzna wyświetli się przy tytule postu. Dozwolone formaty to: .jpg, .png, .webp, .svg, .jpeg. Optymalna wielkość miniatury to 200x200 pikseli.<br/>Miniaturkę możesz wybrać z galerii grafiki lub wyszukać w internecie, a następnie skopiować jej adres i wkleić poniżej.</span>
                                         <input class="width-60" type="text" name="Imageurl" placeholder="http://mojastrona.pl/obrazek.jpg" {{if .Form.Imageurl}}{{with .Form.Imageurl}}value="{{.}}" {{end}}{{else}}{{with .Post.Imageurl}}value="{{.}}" {{end}}{{end}}/>
-                                    </label>*/}}-->
+                                    </label>
                                 </li>
 
                                 <li class="pole9">
@@ -540,7 +540,7 @@
 
             if (editnow == 0) {
                 for (var i = 1; i < 22; i++) {
-                    if (i == 2 || i == 3 /*|| i == 8*/ || i == 19 || i == 20 || i == 21) {
+                    if (i == 2 || i == 3 || i == 8 || i == 19 || i == 20 || i == 21) {
                         $('.pole' + i).show();
                     } else {
                         $('.pole' + i).hide();
@@ -557,7 +557,7 @@
                 $('#visib').attr('checked', true);
             } else if (editnow == 1) {
                 for (var i = 1; i < 22; i++) {
-                    if (i == 1 || i == 5 || i == 8 || i == 13 || i == 15 || i == 16 || i == 17 || i == 18) {
+                    if (i == 1 || i == 5 || i == 13 || i == 15 || i == 16 || i == 17 || i == 18) {
                         $('.pole' + i).hide();
                     } else {
                         $('.pole' + i).show();
@@ -574,7 +574,7 @@
                 $('#visib').attr('checked', true);
             } else if (editnow == 2) {
                 for (var i = 1; i < 22; i++) {
-                    if (i == 1 || i == 4 || i == 5 || i == 8 || /*|| i == 7 ||*/ i == 9 || i == 10 || i == 11 || i == 13 || i == 15 || i == 16) {
+                    if (i == 1 || i == 4 || i == 5 || /*|| i == 7 ||*/ i == 9 || i == 10 || i == 11 || i == 13 || i == 15 || i == 16) {
                         $('.pole' + i).hide();
                     } else {
                         $('.pole' + i).show();
