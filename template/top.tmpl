@@ -14,7 +14,7 @@
 		<li><a href="http://mpolska.mobi/search" alt="Gdzie najbliżej">Gdzie najbliżej</a></li>
         <li><a href="/contact">Kontakt</a>
         </li>
-        {{if ne .Domain.Address $VarMain}}<li><a href="http://mpolska.mobi" target="_blank"><img src="/assets/img/mobi.png" alt="mobi"></a></li>{{end}}
+        {{if ne .Domain.Address $VarMain}}<li class="speie"><a href="http://mpolska.mobi" target="_blank"><img src="http://mpolska.mobi/assets/img/mobi.png" alt="mobi"></a></li>{{end}}
 
     </ul>
 
@@ -31,9 +31,11 @@
 
     <div class="icons ellipsis">
         <a href="/" style="float:left;position:fixed;left:0px;"><i class="fa fa-home"></i></a>
+		<a href="http://mpolska.mobi" style="float:left;position:fixed;left:57px;padding:12px;"><img src="http://mpolska.mobi/assets/img/mobi.png" alt="mobi"></a>
         <a href="#" id="hem1" style="position:fixed;right:0px; float:right; text-decoration: none; line-height: 34px;"><i class="fa fa-bars" style="margin-right: 10px;"></i></a>
         <a href="/search" style="position:fixed;float:right; right:60px;"><i class="fa fa-compass"></i></a>
         <a href="/google" style="position:fixed;float:right; right:110px;"><i class="fa fa-search"></i></a>
+		<!--tu dodaj ikonke, po lewej stronie domku-->
     </div>
     <div id="hm1" class="headnav-mobile" style="display:none;">
         <li class="active2"><a href="/"><i class="fa fa-home"></i> {{.Domain.Name}}</a>
@@ -41,7 +43,7 @@
         {{if ne .Domain.Address $VarMain}}
 		<li><a href="http://mpolska.mobi">MPolska.mobi <i class="fa fa-globe"></i></a>
 		</li>{{end}}
-        <li><a href="http://{{$VarMain}}/search">Gdzie najbliżej <i class="fa fa-question"></i></a>
+        <li><a href="http://mpolska.mobi/search">Gdzie najbliżej <i class="fa fa-compass"></i></a>
         </li>
         <li><a href="/qr">Kody QR <i class="fa fa-qrcode"></i> </a>
         </li>
