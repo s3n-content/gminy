@@ -53,6 +53,12 @@ tinymce.init({
                                         <textarea id="Images" name="Images" placeholder="Linki do obrazków rozdzielone średnikami...">{{if .Form.Images}}{{.Form.Images}}{{else if .Domain.Images}}{{.Domain.Images}}{{end}}</textarea>
                                     </label>
                                 </li>
+                                <li>
+                                    <label>Adres ikonki w pasku przeglądarki (favicon)
+										<span>Jest to ikonka wyświetlająca się obok adresu strony, na pasku adresu przeglądarki. Plik musi zaczynać się od <strong>http://</strong> i mieć rozszerzenie <strong>.ico</strong> (Uwaga: aby zmiany zostały zastosowane potrzeba wyczyścić dane strony, ewentualnie poczekać - przeglądarka zrobi to sama)</span>
+                                        <input type="text" name="Favicon" placeholder="http://mojastrona.pl/favicon.ico" class="width-60" {{if .Form.Favicon}}value="{{.Form.Favicon}}" {{else if .Domain.Favicon}}value="{{.Domain.Favicon}}" {{end}}/>
+                                    </label>
+                                </li>
 								<li>
 									<label>Wybierz kolor górnej belki.
                                         <select id="numbkolor" name="Color">

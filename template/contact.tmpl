@@ -27,8 +27,7 @@
                 </div>
                 {{if or .Domain.Email .Domain.Telephone}}
                 <div class="units-row">
-                    <div class="unit-60 unit-centered bckgrnd2" style="padding: 50px 40px 60px 40px;">
-                        <i class="fa fa-envelope-o fa-5x" style="position:relative;float:left;margin-right:10px;margin-top:-19px;"></i> <h2 style="color: #222;">Skontaktuj się.</h4>
+                    <div class="unit-60 unit-centered bckgrnd2" style="padding: 1px 40px 60px 40px;">
 						<div class="units-row end" style="margin-top: 50px;">
 							<div class="unit-100" style="padding:20px">
 								{{if .Domain.Email}}<a href="mailto:{{.Domain.Email}}" style="font-size:21px; margin-bottom:15px;text-decoration:none;"><div class="btn-red width-100" style="text-align:center;padding:20px 0;"><h3 style="color:#fff!important;">Wyślij e-mail</h3><p><i class="fa fa-envelope"></i> {{.Domain.Email}}</p></div></a>{{end}}

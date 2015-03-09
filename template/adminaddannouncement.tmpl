@@ -64,7 +64,13 @@
 							</li>
 							<li>
 								<label>Podaj treść ogłoszenia<span class="req">*</span>
+								<span>Kopiując tekst z innego dokumentu lub strony internetowej należy przed wklejeniem bezwzględnie wyczyścić formatowanie <code>EDYCJA > WKLEJ JAKO ZWYKŁY TEKST</code>. Tekst wklejamy poprzez wciśnięcie 2 klawiszy <kbd>CTRL + V</kbd></span>
 									<textarea name="Text" cols="15">{{if .Form.Text}}{{.Form.Text}}{{end}}</textarea>
+										<div style="padding:10px;border:1px solid rgba(0,0,0,0.2);"><h5>Instrukcje</h5>
+											Aby wstawić film wybierz <code>Wstaw > Wstaw wideo > Osadź</code>. Wklej kod HTML z filmem. Przykład z serwisu YouTube: pod filmem znajduje się opcja <code>Udostępnij</code> wybierz ją, a potem <code>Umieść na stronie</code>. Skopiuj podany w ramce kod do pola Osadź.
+										<br/>
+											Aby dodać <strong>funkcjonalny adres e-mail</strong> lub <strong>numer telefonu</strong> należy: <code>Wstaw > Wstaw link</code>. W pole URL (czyli adres) wpisujemy <code>mailto:moj.adres@email.pl</code> W przypadku numeru telefonu: <code>tel:500600700</code> (numer musi składać się tylko i wyłącznie z cyfr)
+										</div>
 								</label>
 							</li>
 

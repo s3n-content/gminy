@@ -99,7 +99,7 @@
     <div id="cont" class="units-container bckgrnd">
         {{template "top" .}}
         <div id="main" class="units-row end">
-            <div class="unit-centered unit-80 bckgrnd5" style="padding:15px 20px;">
+            <div class="unit-centered unit-80 bckgrnd5" style="padding:0px 15px 20px 15px;">
                 <br />
                 <div class="units-row">
                     <div class="unit-mobile-100 catego">
@@ -114,10 +114,10 @@
 </span> 
                                     </div>*/}}
                                     <div style="display:inline-block">
-                                        <p style="font-weight:400;font-size:28px;margin: 0;padding: 0;">{{if eq .postinfrontpage.Type 2}}<i class="fa fa-calendar"></i>{{else if .postinfrontpage.Type}}<i class="fa fa-map-marker"></i>{{else}}<i class="fa fa-comment"></i>{{end}} {{.postinfrontpage.Title}}</p>
+                                        <p style="font-weight:400;font-size:24px;margin: 0;padding: 0;">{{if eq .postinfrontpage.Type 2}}<i class="fa fa-calendar"></i>{{else if .postinfrontpage.Type}}<i class="fa fa-map-marker"></i>{{else}}<i class="fa fa-comment"></i>{{end}} {{.postinfrontpage.Title}}</p>
                                     </div>
                                     <div style="display:block">
-                                        <p style="font-size: 20px;margin: 0;">{{if eq .postinfrontpage.Type 2}}{{if eq .postinfrontpage.Eventtime .postinfrontpage.Eventtime}}Odbędzie się: {{.postinfrontpage.Eventtime}}{{else}}Trwa od {{.postinfrontpage.Eventtime}} do {{.postinfrontpage.Eventtimeend}}{{end}}{{else if .postinfrontpage.Type}}Adres: {{.postinfrontpage.Address}}{{else}}Kliknij tutaj, aby przejść do artykułu.{{end}}</p>
+                                        <p style="font-size: 20px;margin: 0;">{{if eq .postinfrontpage.Type 2}}{{if eq .postinfrontpage.Eventtime .postinfrontpage.Eventtime}}Rozpoczyna się: {{.postinfrontpage.Eventtime}}{{else}}Trwa od {{.postinfrontpage.Eventtime}} do {{.postinfrontpage.Eventtimeend}}{{end}}{{else if .postinfrontpage.Type}}Adres: {{.postinfrontpage.Address}}{{else}}Kliknij tutaj, aby przejść do artykułu.{{end}}</p>
                                     </div>
                                 </li>
                             </a>

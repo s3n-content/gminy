@@ -51,7 +51,7 @@
                             {{range .announcements}}
                             <tr>
                                 <td class="width-20">{{.Title}}</td>
-                                <td class="width-35">{{.Text}}</td>
+                                <td class="width-35">{{printf "%.50s" .Text}}</td>
                                 <td class="width-35">{{/*Utworzono: <em>{{.Createdon}}</em><br/>*/}}
                                     Ostatnia edycja: <em>{{.Modifiedon}}</em><br/>
 									Wyświetlane od <strong>{{.Createdon}}</strong> przez <strong>{{if eq .Hideafter 4}}zawsze{{else if eq .Hideafter 3}}4 tygodnie{{else if eq .Hideafter 2}}3 tygodnie{{else if .Hideafter}}2 tygodnie{{else}}tydzień{{end}}</strong>
