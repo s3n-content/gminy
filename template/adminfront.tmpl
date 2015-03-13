@@ -96,6 +96,12 @@
                         </div>
                         <div class="unit-33 adml">
                             <ul class="adml">
+                            {{if ge .User.admintype 1}}
+                                <li class="red-700">
+                                    <a href="/admin/form/changepassword">
+                                        <i class="fa fa-key fa-2x"></i><p>Zmień hasło</p></a>
+                                </li>
+                            {{end}}
                             {{if ge .User.admintype 3}}
                                 <li class="red-700">
                                     <a href="/admin/form/editsettings">

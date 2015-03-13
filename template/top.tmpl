@@ -14,7 +14,7 @@
 		<li><a href="http://mpolska.mobi/search" alt="Gdzie najbliżej">Gdzie najbliżej</a></li>
         <li><a href="/contact">Kontakt</a>
         </li>
-        {{if ne .Domain.Address $VarMain}}<li class="speie"><a href="http://mpolska.mobi" target="_blank"><img src="http://mpolska.mobi/assets/img/mobi.png" alt="mobi"></a></li>{{end}}
+        {{if ne .Domain.Address $VarMain}}<li class="speie" style="padding: 2px 0!important;"><a href="http://mpolska.mobi" target="_blank"><img src="/assets/img/mpo.png" alt="mobi" style="width: auto; height: 37px; vertical-align: middle!important;"></a></li>{{end}}
 
     </ul>
 
@@ -34,7 +34,7 @@
         <a href="#" id="hem1" style="position:fixed;right:0px; float:right; text-decoration: none; line-height: 34px;"><i class="fa fa-bars" style="margin-right: 10px;"></i></a>
         <a href="/search" style="position:fixed;float:right; right:60px;"><i class="fa fa-compass"></i></a>
         <a href="/google" style="position:fixed;float:right; right:110px;"><i class="fa fa-search"></i></a>
-		<a href="http://mpolska.mobi" style="float:right;position:fixed;right:160px;"><img src="http://mpolska.mobi/assets/img/mobi.png" style="height:45px;width:auto;" alt="mobi"></a>
+		<a href="http://mpolska.mobi" style="float:right;position:fixed;right:160px;"><img src="/assets/img/mpo.png" style="height:45px;width:auto;" alt="mobi"></a>
     </div>
     <div id="hm1" class="headnav-mobile" style="display:none;">
         <li class="active2"><a href="/"><i class="fa fa-home"></i> {{.Domain.Name}}</a>
