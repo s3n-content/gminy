@@ -1,6 +1,8 @@
 {{define "admintop"}}
 <div id="header" class="units-row end logo">
-    <div class="unit-centered unit-80 bckgrnd1" style="{{if .Domain.Image}}background:url({{.Domain.Image}});background-size: cover; min-height:200px;{{else}}{{end}}position:relative;z-index:111;"></div>
+	<div class="unit-centered unit-80 bckgrnd1">
+		<img src="{{.Domain.Image}}" style="max-width:100%;height:auto!important;" alt="logo">	
+	</div>
 </div>
 <nav class="{{if eq .Domain.Color 4}}headnav headnav4{{else if eq .Domain.Color 3}}headnav headnav3{{else if eq .Domain.Color 2}}headnav headnav2{{else if eq .Domain.Color 1}}headnav headnav1{{else}}headnav{{end}}">
     <ul class="nav-ul">
