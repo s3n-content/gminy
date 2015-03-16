@@ -59,9 +59,9 @@
                                                     Widoczne <strong>{{if .Visible}}TAK{{else}}NIE{{end}}</strong>                
                                 </td>
                                 <td class="width-10"><a href="/li1/{{.Id}}" target="_blank">Zobacz</a><br/>
-									{{if ne .Hideafter 4}}<a class="prol" data-id="{{.Id}}" data-tools="tooltip" data-theme="red" title="Przedłuż o kolejny okres">Przedłuż</a><br/>{{end}}
-                                                    <a href="/admin/form/editannouncement/{{.Id}}" target="_blank">Edytuj</a><br/>
-                                                    <a href="/admin/form/delete/announcement/{{.Id}}" target="_blank">Usuń</a>
+									{{/*if ne .Hideafter 4}}<a class="prol" data-id="{{.Id}}" data-tools="tooltip" data-theme="red" title="Przedłuż o kolejny okres">Przedłuż</a><br/>{{end*/}}
+                                                    <a href="/admin/form/editannouncement/{{.Id}}">Edytuj</a><br/>
+                                                    <a href="/admin/form/delete/announcement/{{.Id}}">Usuń</a>
                                 
                                 </td>
                             </tr>{{end}}

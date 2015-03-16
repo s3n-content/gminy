@@ -96,6 +96,11 @@
                                     </select>
                                 </label>
                             </li>
+                            <li>
+                                <label>Czy przedłużyć ogłoszenie?
+                                    <input type="checkbox" id="prol"/>
+                                </label>
+                            </li>
                         </ul>
                         <P>
                             <input class="btn btn-blue" type="submit" value="Wyslij" />
@@ -127,6 +132,16 @@
     if( numb ) {
         $('#hid option:eq(' + numb + ')').attr('selected', 'selected')
     }
+	
+	$('form').submit(function() {
+		if($('#prol').is(':checked')) {
+			var id = '{{.announcement.Id}}';
+			$.ajax({
+				url: '/admin/renewannounement/' + id,
+				timeout: 1000,
+			});
+		}
+	});
     </script>
     
     {{template "adminfooter" .}}{{end}}

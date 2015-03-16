@@ -2,7 +2,7 @@
 {{$VarMain := .VarMain}}
 
 <div id="header" class="units-row end logo">
-		<div class="unit-centered unit-80 bckgrnd1" style="{{if .Domain.Image}}background:url({{.Domain.Image}});background-size: cover; min-height:200px;{{else}}{{end}}position:relative;z-index:111;">
+		<div class="unit-centered unit-80 bckgrnd1" style="{{if .Domain.Image}}background:url({{.Domain.Image}});background-position: 0px; background-repeat:no-repeat; min-height:200px;{{else}}{{end}}position:relative;z-index:111;">
 		</div>
 </div>
 
@@ -14,7 +14,7 @@
 		<li><a href="http://mpolska.mobi/search" alt="Gdzie najbliżej">Gdzie najbliżej</a></li>
         <li><a href="/contact">Kontakt</a>
         </li>
-        {{if ne .Domain.Address $VarMain}}<li class="speie" style="padding: 2px 0!important;"><a href="http://mpolska.mobi" target="_blank"><img src="/assets/img/mpo.png" alt="mobi" style="width: auto; height: 37px; vertical-align: middle!important;"></a></li>{{end}}
+        {{if ne .Domain.Address $VarMain}}<li class="speie" style="padding:0px!important;"><a href="http://mpolska.mobi" target="_blank"><img src="/assets/img/mpo.png" alt="mobi" style="width: auto; height: 33px; vertical-align: middle!important;padding-bottom: 6px;"></a></li>{{end}}
 
     </ul>
 
@@ -30,30 +30,30 @@
         </div>{{end}}
 
     <div class="icons ellipsis">
-        <a href="/" style="float:left;position:fixed;left:0px;"><i class="fa fa-home"></i></a>
+        <a href="/" style="float:left;position:fixed;left:0px;z-index:11111;"><i class="fa fa-home"></i></a>
         <a href="#" id="hem1" style="position:fixed;right:0px; float:right; text-decoration: none; line-height: 34px;"><i class="fa fa-bars" style="margin-right: 10px;"></i></a>
         <a href="/search" style="position:fixed;float:right; right:60px;"><i class="fa fa-compass"></i></a>
         <a href="/google" style="position:fixed;float:right; right:110px;"><i class="fa fa-search"></i></a>
-		<a href="http://mpolska.mobi" style="float:right;position:fixed;right:160px;"><img src="/assets/img/mpo.png" style="height:45px;width:auto;" alt="mobi"></a>
+		<a href="http://mpolska.mobi" style="float:right;position:fixed;right:160px;"><img src="/assets/img/mpo.png" style="height:45px;width:auto;padding:4px;" alt="mobi"></a>
     </div>
     <div id="hm1" class="headnav-mobile" style="display:none;">
         <li class="active2"><a href="/"><i class="fa fa-home"></i> {{.Domain.Name}}</a>
         </li>
         {{if ne .Domain.Address $VarMain}}
-		<li><a href="http://mpolska.mobi">MPolska.mobi <i class="fa fa-globe"></i></a>
+		<li><a href="http://mpolska.mobi"><i class="fa fa-globe"></i> MPolska.mobi</a>
 		</li>{{end}}
-        <li><a href="http://mpolska.mobi/search">Gdzie najbliżej <i class="fa fa-compass"></i></a>
+        <li><a href="http://mpolska.mobi/search"><i class="fa fa-compass"></i> Gdzie najbliżej</a>
         </li>
-        <li><a href="/qr">Kody QR <i class="fa fa-qrcode"></i> </a>
+        <li><a href="/qr"><i class="fa fa-qrcode"></i> Kody QR</a>
         </li>
-        <li><a href="/google">Wyszukiwarka <i class="fa fa-search"></i> </a>
+        <li><a href="/google"><i class="fa fa-search"></i> Wyszukiwarka</a>
         </li>
-        <li><a href="/contact">Kontakt <i class="fa fa-phone"></i> </a>
+        <li><a href="/contact"><i class="fa fa-phone"></i> Kontakt</a>
         </li>
         <li class="divider"></li>
-		<li><a href="#" class="fontplus">Powiększona czcionka <span class="label label-red"><i class="fa fa-plus"></i></span></a>
+		<li><a href="#" class="fontplus"><span class="label label-red"><i class="fa fa-plus"></i></span> Powiększona czcionka</a>
         </li>
-        <li><a href="#" class="highcontras">Zwiększ kontrast <i class="fa fa-adjust"></i></a>
+        <li><a href="#" class="highcontras"><i class="fa fa-adjust"></i> Zwiększ kontrast</a>
         </li>
     </div>
 	

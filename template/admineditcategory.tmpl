@@ -235,10 +235,9 @@
                     $('.typeint').attr('value', '0');
                 }
                 if( numb ) {
-					numb = numb + 1;
-                    $('#numbkolor option:eq(' + numb + ')').attr('selected', 'selected');
+                    $('.c' + numb).attr('selected', 'selected');
                 } else {
-                    $('#numbkolor option:eq(20)').attr('selected', 'selected');
+                    $('.c20').attr('selected', 'selected');
 				}
 
                 if ($('.typeint').val() == 0) {
