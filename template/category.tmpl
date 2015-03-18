@@ -36,7 +36,7 @@
 
                         {{if .PostsInCategory}}{{range .PostsInCategory}} {{/*if .Visible*/}}
                         <a href="/pic/{{.Id}}" class="no-style">
-                            <div class="news-1 unit-mobile-100" style=" padding:10px 0 5px 0">{{/*margin-bottom:10px;*/}}
+                            <div class="news-1 unit-mobile-100" {{/*style=" padding:10px 0 5px 0"*/}}>{{/*margin-bottom:10px;*/}}
                                 <div class="news-badge"><i class="fa fa-chevron-right{{/*if eq .Type 2}}calendar{{else if .Type}}map-marker{{else}}comment{{end*/}}"></i>
                                 </div>
                                 <div class="news-badge-1">

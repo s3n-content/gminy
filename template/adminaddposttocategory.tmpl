@@ -16,8 +16,7 @@
                             <fieldset>
                                 <legend>Dodaj treść do kategorii</legend>
 
-                                <div class="bckgrnd1" style="margin:10px;padding:15px; text-align:justify;">Możesz tutaj zaimportować element (artykuł, post, wydarzenie) z innej strony poprzez wklejenie adresu tego elementu. Wybierz kategorię, do której ma zostać dodany element, po czym zatwierdź.
-                                    <p>Elementu nie będziesz mógł edytować. Będzie wyświetlany w oryginalnej formie.</p> </div>
+                                <div class="bckgrnd1" style="margin:10px;padding:15px; text-align:justify;">Jeżeli chcesz dodać element (artykuł, obiekt, wydarzenie) z innej strony, na swoją postępuj zgodnie z instrukcją:<p>1. Wejdź w kategorie, w której znajduje się dany element<br/>2. Kliknij prawym przyciskiem myszy na tytuł elementu i wybierz "Kopiuj adres linku" (skrót, adres - w zależności od przeglądarki)<br/>3. Wklej adres w pole poniżej (przykład http://mojastrona.pl/<strong>pic</strong>/38190380)<br/>4. Wybierz kategorię do której mają być dodany wpis</p>Importowanego elementu nie można edytować, będzie on wyświetlany w oryginalnej formie.</div>
 
                                 <label>Adres artykułu ({{/*przykład: http://example.com/art/121 lub */}}http://example.com/pic/41):
                                     <input type="text" class="width-60" name="PostUrl" placeholder="Adres artykułu" {{with .Form.PostUrl}}value="{{.}}" {{end}}/>
