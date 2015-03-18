@@ -375,9 +375,9 @@
                                     </label>
                                 </li>
                                 <div id="posit">
-									<label>Lokalizacja</label>
                                     <ul class="formsy forms-inline-list">
                                         <li class="pole6">
+									<h3>Lokalizacja</h3>
                                             <label>
                                                 Szerokość geograficzna
                                                 <input id="lat" class="width-50" type="text" name="Locationlat" placeholder="Szerokość (lat)" {{if .Form.Locationlat}}{{with .Form.Locationlat}}value="{{.}}" {{end}}{{else}}{{with .Post.Locationlat}}value="{{.}}" {{end}}{{end}}  />
@@ -392,7 +392,7 @@
                                     </ul>
                                 </div>
                                 <li class="polemapka">
-                                    <span>Upewnij się, że pola powyżej są uzupełnione danymi (zawierają liczby oznaczające długość i szerokość geograficzną). W przeciwnym wypadku w "Gdzie najbliżej" mapa obiektu będzie źle wyświetlana, a nawigacja będzie działać niepoprawnie.</span>
+                                    <span>Długość i szerokość geograficzna reprezentowana jest w formacie WGS84 - Lat, Lng np. 52.2296756, 21.012228700000037<br/>Upewnij się, że pola powyżej są uzupełnione danymi (zawierają liczby oznaczające długość i szerokość geograficzną). W przeciwnym wypadku w "Gdzie najbliżej" mapa obiektu będzie źle wyświetlana, a nawigacja będzie działać niepoprawnie.</span>
                                     <input id="pac-input" class="controls" type="text" placeholder="Podaj lokalizację">
 
                                     <div id="map-canvas">Przykro nam. :(

@@ -351,9 +351,9 @@
                                     </label>
                                 </li>
                                 <div id="posit">
-									<label>Lokalizacja</label>
                                     <ul class="formsy forms-inline-list">
                                     <li class="pole6">
+									<h3>Lokalizacja</h3>
                                         <label>Szerokość geograficzna
                                             <input id="lat" class="width-50" type="text" name="Locationlat" placeholder="Szerokość (lat)" {{with .Form.Locationlat}}value="{{.}}" {{end}}/>
                                         </label>
@@ -367,7 +367,7 @@
                                     </ul>
                                 </div>
                                 <li class="polemapka">
-                                    <span>Upewnij się, że pola powyżej są uzupełnione danymi (zawierają liczby oznaczające długość i szerokość geograficzną). W przeciwnym wypadku "nawigacja" mapa obiektu będzie źle wyświetlana, a nawigacja będzie działać niepoprawnie.</span>
+                                    <span>Długość i szerokość geograficzna reprezentowana jest w formacie WGS84 - Lat, Lng np. 52.2296756, 21.012228700000037<br/>Upewnij się, że pola powyżej są uzupełnione danymi (zawierają liczby oznaczające długość i szerokość geograficzną). W przeciwnym wypadku "nawigacja" mapa obiektu będzie źle wyświetlana, a nawigacja będzie działać niepoprawnie.</span>
                                     <input id="pac-input" class="controls" type="text" placeholder="Podaj lokalizację">
 
                                     <div id="map-canvas">Przykro nam. :(
@@ -532,7 +532,7 @@
         $('.butt').click(function () {
             if (this.value == 0) {
                 for (var i = 1; i < 22; i++) {
-                    if (i == 2 || i == 3 || i == 8 || i == 19 || i == 20 || i == 21) {
+                    if (i == 2 || i == 3 /*|| i == 8*/ || i == 19 || i == 20 || i == 21) {
                         $('.pole' + i).show();
                     } else {
                         $('.pole' + i).hide();
