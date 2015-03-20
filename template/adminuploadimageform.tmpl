@@ -36,10 +36,10 @@
 				<div class="unit-row">
 					<div class="unit-100">
 
-						{{if .Error}} <p class="error bold upper big">Wystąpił błąd: {{.Error}}<br/>Skorzystaj z oprogramowania, które skompresuje obrazek (zmniejszy rozmiar pliku). <br/>Przykład: <a href="http://jpeg-optimizer.com" target="_blank">http://jpeg-optimizer.com</a> <br/><a href="https://tinypng.com/" target="_blank">https://tinypng.com/</a> </p>{{end}}
+						{{if .Error}} <p class="error bold upper big">WYSTĄPIŁ BŁĄD: {{.Error}}<br/>Skorzystaj z oprogramowania, które skompresuje obrazek (zmniejszy rozmiar pliku). <br/>Przykład: <a href="http://jpeg-optimizer.com" target="_blank">http://jpeg-optimizer.com</a> <br/><a href="https://tinypng.com/" target="_blank">https://tinypng.com/</a> </p>{{end}}
 
 						<h3>Prześlij grafikę</h3>
-						<p>Wybierz plik z dysku i kliknij "Wyślij plik". Plik powinien być w formacie grafiki <strong>(nie PDF!)</strong>, tj. .jpg, .gif, .png, itp.</p>
+						<p>Wybierz plik z dysku i kliknij "Wyślij plik". Plik powinien być w formacie grafiki <strong>(nie PDF!)</strong>, tj. .jpg, .gif, .png, itp i wagę nie więksżą niż 0.5MB.</p>
 						<form method="post" action="/admin/form/uploadimage" enctype="multipart/form-data">
 							<input id="plik" type="file" name="image0" />
 							<input type="submit" value="Wyślij plik" />
