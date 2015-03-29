@@ -24,9 +24,13 @@
                                 {{if and .CategoriesTo .CategoriesSub}}
                                 <label>Wybierz, <strong>z której</strong> kategorii mają być importowane dane:
                                     <select name="CategorySubId">
+                                        {{range .CategoriesSubTree}}
+                                            {{template "admincategorytreeselect" .}}
+                                        {{end}}
+                                        {{/*}}
                                         {{$formcatsubid := .Form.CategorySubId}} {{range .CategoriesSub}} {{if .Visible}}
                                         <option value="{{.Id}}" {{if eq $formcatsubid .Id}}selected="selected" {{end}}>{{.Title}}</option>
-                                        {{end}} {{end}}
+                                        {{end}} {{end}}{{*/}}
                                     </select>
                                     </label>
                                         <label>
