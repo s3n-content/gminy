@@ -260,6 +260,8 @@
                                     <dd><a href="tel:{{.Telephone}}">{{.Telephone}}</a>
                                     </dd>{{end}}
                                     {{if $iframe}}<dt>Źródło</dt><dd><a href="http://{{.Url}}" target="_blank">{{.Sitename}}</a></dd>{{end}}
+									{{if .Eventtime}}<dt>Rozpoczyna się</dt><dd>{{.Eventtime}}</dd>{{end}}
+									{{if .Eventtimeend}}<dt>Kończy się</dt><dd>{{.Eventtimeend}}</dd>{{end}}
                                 </dl>
 									</div>
                             </div>
