@@ -72,14 +72,14 @@
 										</a>
 									{{else}}
 										<a href="/cat/{{$id}}/{{.}}">
-											<button class="btn btn-outline pagin">{{add (int .) 1}}</button>
+											<button class="btn btn-outline btn-active pagin">{{add (int .) 1}}</button>
 										</a>
 									{{end}}
 								{{end}}
                             {{end}}
                             {{if ne .PageIdPlus -1}}
 								<a href="/cat/{{$id}}/{{.PageIdPlus}}">
-									<button class="btn btn-outline pagin">>></button>
+									<button class="btn btn-outline btn-active pagin">>></button>
 								</a>
 							{{end}}
 
