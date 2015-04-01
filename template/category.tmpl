@@ -61,14 +61,14 @@
 							{{$pidm := .PageIdMinus}}
                             {{if eq .PageId 0}}{{else if ne .PageIdMinus -1}}
 								<a href="/cat/{{$id}}/{{.PageIdMinus}}">
-									<button class="btn btn-outline pagin">&lt;&lt;</button>
+									<button class="btn btn-outline btn-active pagin">&lt;&lt;</button>
 								</a>
 							{{end}}
                             {{range .PageList}}
 								{{if or (ne $pidp -1) (ne $pidm -1)}}
 									{{if eq . $pid}}
 										<a href="/cat/{{$id}}/{{.}}">
-											<button class="btn btn-outline btn-active pagin">{{add (int .) 1}}</button>
+											<button class="btn btn-outline pagin">{{add (int .) 1}}</button>
 										</a>
 									{{else}}
 										<a href="/cat/{{$id}}/{{.}}">
