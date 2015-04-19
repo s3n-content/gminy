@@ -7,7 +7,7 @@
     </div><!-- end of cont(tent) -->
     {{if .Domain}}
       {{if .Domain.Analytics}}
-        {{.Domain.Analytics}}
+        {{donotparse .Domain.Analytics}}
       {{end}}
     {{end}}
 {{/*
