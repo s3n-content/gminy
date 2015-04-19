@@ -3,13 +3,13 @@
     .formsy {
         list-style-type: none;
     }
-    
+
     span {
         display: block;
         font-size: 14px;
         text-indent: 5px;
     }
-    
+
     label {
         font-size: 16px;
     }
@@ -88,8 +88,8 @@ tinymce.init({
                                         <textarea id="contact" class="width-60" name="Text" placeholder="Zamieść tutaj dowolną treść zakładki kontakt.">{{if .Domain.Text}}{{.Domain.TextStr}}{{else if .Form.Text}}{{.Form.Text}}{{end}}</textarea>
                                     </label>
                                 </li>
-                                
-                                
+
+
                                 <li>
                                     <label>Numer telefonu znajdujący się w zakładce kontakt.
                                         <span>Format 123456789. W przypadku telefonów stacjonarnych podajemy kierunkowy i resztę, np. 857678989</span>
@@ -99,6 +99,13 @@ tinymce.init({
                                 <li>
                                     <label>Adres e-mail znajdujący się w zakładce kontakt.
                                         <input type="email" name="Email" placeholder="Adres e-mail..." class="width-60" {{if .Form.Email}}value="{{.Form.Email}}" {{else if .Domain.Email}}value="{{.Domain.Email}}" {{end}}/>
+                                    </label>
+                                </li>
+
+                                <li>
+                                    <label>Kod Analytics.
+                                        <span>Więcej informacji: <a href="https://support.google.com/analytics/answer/1008080?hl=pl">https://support.google.com/analytics/answer/1008080?hl=pl</a></span>
+                                        <textarea class="width-60" name="Analytics" placeholder="Zamieść tutaj kod śledzenia.">{{if .Domain.Analytics}}{{.Domain.Analytics}}{{else if .Form.Analytics}}{{.Form.Analytics}}{{end}}</textarea>
                                     </label>
                                 </li>
                             </ul>
@@ -121,7 +128,7 @@ tinymce.init({
                 res = res.replace(/\s+/g, ";");
                 $('#Images').prop('value', res);
 			}
-			
+
 			var numb = "{{if .Domain.Color}}{{.Domain.Color}}{{end}}";
 
 			if( numb ) {
