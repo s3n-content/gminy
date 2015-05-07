@@ -96,9 +96,10 @@
                         infowindow.open(map);
                         markers.push(marker);
                         infos.push(infowindow);
-                        console.log(locat);
-                        document.getElementById('lat').value = locat.k;
-                        document.getElementById('lng').value = locat.D;
+                        document.getElementById('lat').value = locat[Object.keys(locat)[0]];
+                        document.getElementById('lng').value = locat[Object.keys(locat)[1]];
+                        //document.getElementById('lat').value = locat.k;
+                        //document.getElementById('lng').value = locat.D;
                     }
 
                     function setAllMap(map) {
