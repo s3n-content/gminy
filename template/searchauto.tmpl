@@ -1,7 +1,7 @@
 {{define "searchauto"}} {{template "header" .}}
 {{$domainname := .Domain.Name}}
 
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&language=pl"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzJJwWS_gCp-ROUEEp8lEbB9UI-MXAtgY"></script>
 <style>
     #map-canvas {
         min-height: 450px;
@@ -68,8 +68,8 @@
                                     position: pos,
                                     content: 'Jeśli znajdujesz się tutaj, kliknij niebieski guzik powyżej.'
                                 });
-                                document.getElementById('lat').value = pos.k;
-                                document.getElementById('lng').value = pos.D;
+                                document.getElementById('lat').value = pos[Object.keys(pos)[0]];
+                                document.getElementById('lng').value = pos[Object.keys(pos)[1]];
                                 map.setCenter(pos);
                             }, function () {
                                 handleNoGeolocation(true);

@@ -1,6 +1,6 @@
 {{define "adminaddpost"}}{{template "adminheader" .}}
 
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzJJwWS_gCp-ROUEEp8lEbB9UI-MXAtgY&libraries=places"></script>
 
 <style>
     .formsy {
@@ -156,8 +156,8 @@
             } else {
                 map.setCenter(place.geometry.location);
                 map.setZoom(15);
-                $('#lat').attr('value', place.geometry.location.k);
-                $('#lng').attr('value', place.geometry.location.D);
+                $('#lat').attr('value', place.geometry.location[Object.keys(place.geometry.location)[0]]);
+                $('#lng').attr('value', place.geometry.location[Object.keys(place.geometry.location)[1]]);
             }
 
             marker.setIcon(({
@@ -220,8 +220,8 @@
         infowindow.open(map);
         markers.push(marker);
         infos.push(infowindow);
-        document.getElementById('lat').value = location.k;
-        document.getElementById('lng').value = location.D;
+        document.getElementById('lat').value = location[Object.keys(location)[0]];
+        document.getElementById('lng').value = location[Object.keys(location)[1]];
     }
     function setAllMap(map) {
         for (var i = 0; i < markers.length; i++) {

@@ -145,8 +145,8 @@
                                     map: map,
                                     position: results[0].geometry.location
                                 });
-								document.getElementById('lat').value = results[0].geometry.location.k;
-								document.getElementById('lng').value = results[0].geometry.location.D;
+								document.getElementById('lat').value = results[0].geometry.location[Object.keys(results[0].geometry.location)[0]];
+								document.getElementById('lng').value = results[0].geometry.location[Object.keys(results[0].geometry.location)[1]];
                                 var infowindow = new google.maps.InfoWindow({
                                     content: 'Jeśli znajdujesz się tutaj, kliknij niebieski guzik.',
                                     position: results[0].geometry.location
