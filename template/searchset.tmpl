@@ -96,8 +96,8 @@
                         infowindow.open(map);
                         markers.push(marker);
                         infos.push(infowindow);
-                        document.getElementById('lat').value = locat[Object.keys(locat)[0]];
-                        document.getElementById('lng').value = locat[Object.keys(locat)[1]];
+                        document.getElementById('lat').value = locat[Object.keys(locat)[0]]();
+                        document.getElementById('lng').value = locat[Object.keys(locat)[1]]();
                         //document.getElementById('lat').value = locat.k;
                         //document.getElementById('lng').value = locat.D;
                     }
@@ -145,8 +145,8 @@
                                     map: map,
                                     position: results[0].geometry.location
                                 });
-								document.getElementById('lat').value = results[0].geometry.location[Object.keys(results[0].geometry.location)[0]];
-								document.getElementById('lng').value = results[0].geometry.location[Object.keys(results[0].geometry.location)[1]];
+				document.getElementById('lat').value = results[0].geometry.location[Object.keys(results[0].geometry.location)[0]]();
+				document.getElementById('lng').value = results[0].geometry.location[Object.keys(results[0].geometry.location)[1]]();
                                 var infowindow = new google.maps.InfoWindow({
                                     content: 'Jeśli znajdujesz się tutaj, kliknij niebieski guzik.',
                                     position: results[0].geometry.location
