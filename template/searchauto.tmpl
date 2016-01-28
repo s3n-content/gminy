@@ -68,8 +68,8 @@
                                     position: pos,
                                     content: 'Jeśli znajdujesz się tutaj, kliknij niebieski guzik powyżej.'
                                 });
-                                document.getElementById('lat').value = pos[Object.keys(pos)[0]];
-                                document.getElementById('lng').value = pos[Object.keys(pos)[1]];
+                                document.getElementById('lat').value = pos[Object.keys(pos)[0]]();
+                                document.getElementById('lng').value = pos[Object.keys(pos)[1]]();
                                 map.setCenter(pos);
                             }, function () {
                                 handleNoGeolocation(true);
